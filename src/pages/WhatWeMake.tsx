@@ -27,9 +27,21 @@ export default function WhatWeMake() {
                 </div>
               ))}
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
               <img src={productsDisplay} alt="Pentagon product range — PTO gearboxes and hydraulic valves" className="rounded-lg object-cover w-full h-64 md:h-80" />
               <img src={hydraulicValve} alt="Hydraulic valve assembly" className="rounded-lg object-cover w-full h-64 md:h-80 bg-muted" />
+            </div>
+
+            {/* Industries */}
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Industries</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {["Hydraulics & Industrial Machinery", "Robotics", "Aerospace", "Defence"].map((sector) => (
+                  <div key={sector} className="border border-border rounded-lg px-4 py-6 text-center">
+                    <span className="text-sm font-medium text-foreground">{sector}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

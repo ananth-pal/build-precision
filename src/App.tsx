@@ -8,8 +8,9 @@ import Capabilities from "./pages/Capabilities";
 import Machining from "./pages/CapMachining";
 import GearCutting from "./pages/CapGearCutting";
 import CapAssembly from "./pages/CapAssembly";
+import Technologies from "./pages/Technologies";
 import WhatWeMake from "./pages/WhatWeMake";
-import HowWeWork from "./pages/HowWeWork";
+import OurApproach from "./pages/OurApproach";
 import About from "./pages/About";
 import Heritage from "./pages/Heritage";
 import Leadership from "./pages/Leadership";
@@ -30,8 +31,9 @@ const App = () => (
           <Route path="/capabilities/machining" element={<Machining />} />
           <Route path="/capabilities/gear-cutting" element={<GearCutting />} />
           <Route path="/capabilities/assembly" element={<CapAssembly />} />
+          <Route path="/technologies" element={<Technologies />} />
           <Route path="/what-we-make" element={<WhatWeMake />} />
-          <Route path="/how-we-work" element={<HowWeWork />} />
+          <Route path="/our-approach" element={<OurApproach />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/heritage" element={<Heritage />} />
           <Route path="/about/leadership" element={<Leadership />} />

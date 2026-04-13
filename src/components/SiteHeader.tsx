@@ -14,8 +14,9 @@ const navItems = [
       { label: "Assembly", path: "/capabilities/assembly" },
     ],
   },
+  { label: "Technologies", path: "/technologies" },
   { label: "What We Make", path: "/what-we-make" },
-  { label: "How We Work", path: "/how-we-work" },
+  { label: "Our Approach", path: "/our-approach" },
   {
     label: "About",
     path: "/about",

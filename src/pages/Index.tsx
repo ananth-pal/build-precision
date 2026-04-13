@@ -91,6 +91,19 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Facility Video Placeholder */}
+        <section className="section-padding bg-secondary">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center border border-border">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-primary"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+                <p className="text-sm text-muted-foreground">Facility walkthrough video — coming soon</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

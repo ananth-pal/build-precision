@@ -17,8 +17,9 @@ export default function SiteFooter() {
             <nav className="space-y-2">
               {[
                 { label: "Capabilities", path: "/capabilities" },
+                { label: "Technologies", path: "/technologies" },
                 { label: "What We Make", path: "/what-we-make" },
-                { label: "How We Work", path: "/how-we-work" },
+                { label: "Our Approach", path: "/our-approach" },
                 { label: "About", path: "/about" },
                 { label: "Contact / RFQ", path: "/contact" },
               ].map((l) => (
