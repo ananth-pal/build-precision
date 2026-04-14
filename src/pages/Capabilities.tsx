@@ -5,9 +5,9 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 
 const caps = [
-  { icon: Cog, title: "Machining", desc: "CNC turning, milling, grinding, finishing, and in-house tooling design from engineers who built machine tools.", path: "/capabilities/machining" },
-  { icon: CircleDot, title: "Gear Cutting", desc: "Dedicated gear cutting division — hobbing, shaving, shaping, broaching, and precision grinding with full profile testing.", path: "/capabilities/gear-cutting" },
-  { icon: Box, title: "Assembly", desc: "Clean-room assembly, automated functional testing, and serialised traceability on every unit shipped.", path: "/capabilities/assembly" },
+  { icon: Cog, title: "Machining", desc: "Precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys. In-house fixturing design from a team that built machine tools.", path: "/capabilities/machining" },
+  { icon: CircleDot, title: "Gear Cutting", desc: "Spur and helical gears, splined shafts, and transmission components. Dedicated facility with in-house profile testing.", path: "/capabilities/gear-cutting" },
+  { icon: Box, title: "Assembly", desc: "Clean-room builds with automated functional testing and serialised traceability on every unit shipped.", path: "/capabilities/assembly" },
 ];
 
 export default function Capabilities() {

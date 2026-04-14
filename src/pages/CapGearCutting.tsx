@@ -1,4 +1,5 @@
-import { Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -7,34 +8,26 @@ export default function GearCutting() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Gear Cutting" subtitle="[PLACEHOLDER — owner to write intro: gear types, processes, output.]" />
+      <PageHero title="Gear Cutting" subtitle="Spur and helical gears, splined shafts, and transmission components from a dedicated facility." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="capability-card">
-              <h3 className="text-lg font-semibold mb-4">Cutting & Forming</h3>
-              <ul className="text-sm text-muted-foreground space-y-2">
-                <li>Hobbing</li>
-                <li>Shaving</li>
-                <li>Shaping</li>
-                <li>Broaching</li>
-                <li>Tooth rounding / chamfering</li>
-              </ul>
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">What Gets Made Here</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Spur and helical gears, splined shafts, and related transmission components for powertrain and hydraulic applications. Produced in Pentagon's dedicated gear cutting facility (Plant 2) — a separate division, not a department within the main machine shop.
+              </p>
             </div>
-            <div className="capability-card">
-              <h3 className="text-lg font-semibold mb-4">Grinding & Testing</h3>
-              <ul className="text-sm text-muted-foreground space-y-2">
-                <li>Bore grinding</li>
-                <li>Angular grinding</li>
-                <li>Cylindrical grinding</li>
-                <li>Profile / PCD testing</li>
-                <li>Roll testing</li>
-              </ul>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Gear Cutting Different</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                The gear cutting division is self-contained, with in-house profile and PCD testing. Gears produced here feed directly into Pentagon's own sub-assembly builds — the same team that cuts the gears assembles the PTOs. There is no handoff between suppliers at this stage.
+              </p>
             </div>
           </div>
-          <a href="#" className="download-btn">
-            <Download size={16} /> Download Equipment List
-          </a>
+          <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+            See the equipment and processes behind this capability <ArrowRight size={14} />
+          </Link>
         </div>
       </main>
       <SiteFooter />
