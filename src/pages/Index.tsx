@@ -80,13 +80,13 @@ export default function Home() {
             <h2 className="text-2xl lg:text-3xl font-bold">What makes Pentagon different</h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Pentagon did not start as a job shop. The company built custom special-purpose machines for India's largest automotive OEMs before transitioning to contract manufacturing. That origin means Pentagon designs and manufactures all its own jigs, fixtures, and gauges in-house, and its maintenance team can strip, rebuild, and customise machine tools from first principles. When we provide Design for Manufacture feedback, it comes from engineers who have built the machines themselves.
+                Pentagon Machines and Services Pvt. Ltd. is a precision contract manufacturing company headquartered in Chennai, India. It started in 19xx building custom special-purpose machines for India's largest automotive OEMs before transitioning to contract manufacturing in 19xx. That origin means Pentagon designs and manufactures all its own jigs, fixtures, and gauges in-house, and its maintenance team can strip, rebuild, and customise machine tools from first principles.
               </p>
               <p>
-                Since 1999, Pentagon has supplied a multinational hydraulics OEM in Australia continuously — developing 75+ product variants from prototype stage across that period. 75 variants of a complex hydraulic product, developed in-house from engineering documentation, over 26 years, for a single demanding international partner.
+                Since 1999, Pentagon has supplied a leading multinational hydraulics OEM in Australia continuously — developing 75+ product variants from prototype stage across that period. Since 2008, the company has also produced engine balancer assemblies for Simpson & Co. Ltd., one of India's largest engine manufacturers.
               </p>
               <p>
-                Every assembly that leaves Pentagon carries a unique serial number linked to heat/lot data and critical dimensions. Inspection documentation ships with every unit. Traceability is not an add-on — it is built into the production system.
+                Pentagon operates two highly efficient ISO 9001:2015 certified advanced manufacturing facilities totaling 43,200 square feet. These facilities feature clean room assembly, testing and automated validation technologies, as well as a comprehensive range of CNC machine tools and metrology equipment to ensure exceptional quality and reliability.
               </p>
             </div>
           </div>
