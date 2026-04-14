@@ -20,11 +20,18 @@ const checklist = [
   "PPAP/FAI/traceability requirements and target dates",
 ];
 
-export default function OurApproach() {
+const standards = [
+  { label: "ISO 9001:2015", note: "Quality Management System, certified by Intertek (UKAS accredited)" },
+  { label: "ISO 14001:2015", note: "Environmental Management System [status: in progress — confirm with owner before publishing]" },
+  { label: "ISO 45001:2018", note: "Occupational Health & Safety [status: in progress — confirm with owner before publishing]" },
+  { label: "PPAP and APQP", note: "capability" },
+];
+
+export default function WorkingWithPentagon() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Our Approach" subtitle="[PLACEHOLDER — owner to write intro.]" />
+      <PageHero title="Working with Pentagon" subtitle="[PLACEHOLDER — owner to write intro.]" />
       <main className="flex-1">
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
@@ -75,6 +82,37 @@ export default function OurApproach() {
               <a href="#" className="download-btn mt-4 opacity-50 pointer-events-none">
                 <Download size={16} /> Download Sample Inspection Report
               </a>
+            </div>
+
+            {/* Standards & Certifications */}
+            <div className="mt-16 border-t border-border pt-8">
+              <h3 className="text-lg font-semibold mb-4">Standards & Certifications</h3>
+              <ul className="space-y-2">
+                {standards.map((s) => (
+                  <li key={s.label} className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">{s.label}</span> — {s.note}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* ESG */}
+            <div className="mt-12 border-t border-border pt-8">
+              <h3 className="text-lg font-semibold mb-6">ESG</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <h4 className="text-sm font-semibold text-foreground mb-1">Quality</h4>
+                  <p className="text-sm text-muted-foreground">ISO 9001:2015 certified. [1 sentence — owner to write]</p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-foreground mb-1">Environment</h4>
+                  <p className="text-sm text-muted-foreground">ISO 14001:2015 in progress. [1 sentence — owner to write]</p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-foreground mb-1">Safety</h4>
+                  <p className="text-sm text-muted-foreground">ISO 45001:2018 in progress. [1 sentence — owner to write]</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -19,7 +19,7 @@ export default function SiteFooter() {
                 { label: "Capabilities", path: "/capabilities" },
                 { label: "Technologies", path: "/technologies" },
                 { label: "What We Make", path: "/what-we-make" },
-                { label: "Our Approach", path: "/our-approach" },
+                { label: "Working with Pentagon", path: "/working-with-pentagon" },
                 { label: "About", path: "/about" },
                 { label: "Contact / RFQ", path: "/contact" },
               ].map((l) => (

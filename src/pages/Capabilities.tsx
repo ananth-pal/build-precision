@@ -17,24 +17,9 @@ export default function Capabilities() {
       <PageHero title="Capabilities" subtitle="Three integrated capability areas under one roof." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          {/* Partner Qualification Block */}
-          <div className="mb-12 border border-border rounded-lg p-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Partner Qualification</h3>
-            <div className="grid sm:grid-cols-3 gap-6">
-              <div>
-                <div className="text-sm font-medium text-foreground">Batch Size</div>
-                <div className="text-sm text-muted-foreground mt-1">[PLACEHOLDER — owner to supply]</div>
-              </div>
-              <div>
-                <div className="text-sm font-medium text-foreground">Materials</div>
-                <div className="text-sm text-muted-foreground mt-1">Steel, cast iron, ductile iron, non-ferrous alloys [owner to confirm and expand]</div>
-              </div>
-              <div>
-                <div className="text-sm font-medium text-foreground">Workpiece Dimensions</div>
-                <div className="text-sm text-muted-foreground mt-1">[PLACEHOLDER — owner to supply]</div>
-              </div>
-            </div>
-          </div>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
+            Pentagon manufactures across steel, cast iron, ductile iron, and non-ferrous alloys [owner to confirm and expand], handling small-to-medium batch production with workpiece dimensions and batch sizes to suit a range of powertrain, hydraulic, and industrial applications. [PLACEHOLDER — owner to supply batch size and dimensional range]
+          </p>
 
           <div className="grid md:grid-cols-3 gap-8">
             {caps.map((c) => (

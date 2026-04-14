@@ -16,7 +16,7 @@ const navItems = [
   },
   { label: "Technologies", path: "/technologies" },
   { label: "What We Make", path: "/what-we-make" },
-  { label: "Our Approach", path: "/our-approach" },
+  { label: "Working with Pentagon", path: "/working-with-pentagon" },
   {
     label: "About",
     path: "/about",
