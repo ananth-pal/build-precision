@@ -10,7 +10,7 @@ import GearCutting from "./pages/CapGearCutting";
 import CapAssembly from "./pages/CapAssembly";
 import Technologies from "./pages/Technologies";
 import WhatWeMake from "./pages/WhatWeMake";
-import OurApproach from "./pages/OurApproach";
+import WorkingWithPentagon from "./pages/OurApproach";
 import About from "./pages/About";
 import Heritage from "./pages/Heritage";
 import Leadership from "./pages/Leadership";
@@ -33,7 +33,7 @@ const App = () => (
           <Route path="/capabilities/assembly" element={<CapAssembly />} />
           <Route path="/technologies" element={<Technologies />} />
           <Route path="/what-we-make" element={<WhatWeMake />} />
-          <Route path="/our-approach" element={<OurApproach />} />
+          <Route path="/working-with-pentagon" element={<WorkingWithPentagon />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/heritage" element={<Heritage />} />
           <Route path="/about/leadership" element={<Leadership />} />

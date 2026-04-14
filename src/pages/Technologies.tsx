@@ -36,13 +36,6 @@ const categories = [
   },
 ];
 
-const standards = [
-  { label: "ISO 9001:2015", note: "Quality Management System, certified by Intertek (UKAS accredited)" },
-  { label: "ISO 14001:2015", note: "Environmental Management System [status: in progress — confirm with owner before publishing]" },
-  { label: "ISO 45001:2018", note: "Occupational Health & Safety [status: in progress — confirm with owner before publishing]" },
-  { label: "PPAP and APQP", note: "capability" },
-];
-
 export default function Technologies() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -54,7 +47,7 @@ export default function Technologies() {
       <main className="flex-1">
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
-            <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
+            <p className="text-muted-foreground leading-relaxed max-w-3xl mb-4">
               Pentagon operates two dedicated manufacturing facilities — one for machining and assembly, one for gear cutting. The equipment base has its roots in Pentagon's original machine tool manufacturing business; the same team that once built special-purpose machines for India's largest automotive OEMs now uses that knowledge to specify, maintain, and where necessary rebuild the equipment that runs production. [Owner to refine]
             </p>
             <p className="text-sm text-muted-foreground mb-12">
@@ -71,24 +64,13 @@ export default function Technologies() {
               ))}
             </div>
 
-            <div className="mb-16">
+            <div>
               <a href="#" className="download-btn">
                 <Download size={16} /> Download Full Equipment List
               </a>
               <p className="text-xs text-muted-foreground mt-2">
                 The PDF contains machine makes, models, and specifications for all six categories.
               </p>
-            </div>
-
-            <div className="border-t border-border pt-8">
-              <h3 className="text-lg font-semibold mb-4">Standards & Certifications</h3>
-              <ul className="space-y-2">
-                {standards.map((s) => (
-                  <li key={s.label} className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">{s.label}</span> — {s.note}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </section>
