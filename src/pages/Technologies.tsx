@@ -57,6 +57,9 @@ export default function Technologies() {
             <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
               Pentagon operates two dedicated manufacturing facilities — one for machining and assembly, one for gear cutting. The equipment base has its roots in Pentagon's original machine tool manufacturing business; the same team that once built special-purpose machines for India's largest automotive OEMs now uses that knowledge to specify, maintain, and where necessary rebuild the equipment that runs production. [Owner to refine]
             </p>
+            <p className="text-sm text-muted-foreground mb-12">
+              For what Pentagon produces using these technologies, see <a href="/capabilities" className="text-primary font-medium hover:underline">Capabilities →</a>
+            </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {categories.map((c) => (
