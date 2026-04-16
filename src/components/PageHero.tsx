@@ -22,7 +22,7 @@ export default function PageHero({ title, subtitle, backgroundImage, children }:
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background mb-4">{title}</h1>
-        {subtitle && <p className="text-base text-background/90 max-w-2xl leading-relaxed tracking-wide whitespace-pre-line">{subtitle}</p>}
+        {subtitle && <p className="text-base text-background/90 max-w-4xl leading-relaxed tracking-wide whitespace-pre-line">{subtitle}</p>}
         {children}
       </div>
     </section>
