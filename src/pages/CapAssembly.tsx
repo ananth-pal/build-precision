@@ -8,7 +8,7 @@ export default function CapAssembly() {
       <SiteHeader />
       <PageHero
         title="Assembly"
-        subtitle="Our assembly capability stands out not through labor cost alone, but through a production system built on lean management, disciplined assembly methods, and accumulated operator skill. Standard work, operator certification, and control plans ensure that critical steps are defined, executed consistently, and checked at the right stage of assembly rather than left to final inspection."
+        subtitle="Our assembly capability stands out not through labor cost alone, but through a production system built on lean management, disciplined assembly methods, and accumulated operator skill. Standard work, operator certification, and control plans ensure that critical steps are defined, executed consistently, and checked at the right stage of assembly."
       />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto space-y-16">
