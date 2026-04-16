@@ -13,13 +13,6 @@ export default function CapAssembly() {
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto space-y-16">
 
-          {/* Introduction */}
-          <section className="max-w-3xl">
-            <h2 className="text-2xl font-bold mb-6">How Our Factory Assembly Stands Out</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              The offering goes beyond machined parts. Fit-up, testing, and packaging for final use are handled within the same scope, so assemblies leave as complete modules ready to install and perform in the field. This reduces integration risk, shortens installation time, and lowers total landed cost.
-            </p>
-          </section>
 
           {/* Types of Assemblies & Batch Sizes — two-column */}
           <section className="grid md:grid-cols-2 gap-12">
