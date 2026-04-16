@@ -1,23 +1,28 @@
 
 
-## Plan: Update Portfolio Page
+## Plan: Rewrite Assembly Capabilities Page
 
-### Changes to `src/pages/WhatWeMake.tsx`
+### File: `src/pages/CapAssembly.tsx`
 
-1. **Page hero title**: Change "What We Make" to "Portfolio"
-2. **Add "What We Make" subheading** above the product cards grid
-3. **Add "Industries We Serve" subheading** above the industries section
-4. **Split "Hydraulics & Industrial Machinery"** into two separate cards: "Hydraulics" and "Industrial Machinery"
-5. **Enhance industry cards** with placeholder images (using unsplash/placeholder URLs) and lorem ipsum description text beneath each industry name
-6. **Update industries data** to an array of objects with title, image, and description fields; render as visually richer cards with images
+Replace the entire page content with the provided copy, structured as follows:
 
-### Result
-- 5 industry cards: Hydraulics, Industrial Machinery, Robotics, Aerospace, Defence
-- Each industry card gets a placeholder image and a short lorem ipsum blurb
-- Clear section headings separate products from industries
+1. **Hero**: Title "Assembly", subtitle summarizing the value proposition (first paragraph of Introduction)
+2. **Introduction section**: Two-paragraph intro covering the engineered production system and value proposition
+3. **Content sections** — each as a styled block with heading and body text:
+   - Types of Assemblies
+   - Batch Sizes and Scale-Up
+   - Inspection and Tests
+   - Sourcing and Integration
+   - Logistics and Shipment Readiness
+4. **Conclusion section**: Final two paragraphs as a visually distinct closing block
+
+### Layout approach
+- Follow the pattern used in `CapGearCutting.tsx` — prose-driven sections with `text-sm text-muted-foreground leading-relaxed` styling
+- Use alternating full-width and two-column layouts to break up the text wall
+- Remove the old placeholder cards and stat block entirely
 
 ### Files modified
 | File | Change |
 |---|---|
-| `src/pages/WhatWeMake.tsx` | All changes above |
+| `src/pages/CapAssembly.tsx` | Full rewrite with provided copy |
 
