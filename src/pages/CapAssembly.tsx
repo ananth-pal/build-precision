@@ -11,7 +11,7 @@ export default function CapAssembly() {
         subtitle={"Our assembly capability stands out not through labor cost alone, but through a production system built on lean management, disciplined assembly methods, and accumulated operator skill. Standard work, operator certification, and control plans ensure that critical steps are defined, executed consistently, and checked at the right stage of assembly.\n\nAssemblies leave as complete modules ready to install and perform in the field. This reduces integration risk, shortens manufacturing timelines, and lowers total landed cost."}
       />
       <main className="flex-1 section-padding">
-        <div className="max-w-7xl mx-auto space-y-16">
+        <div className="max-w-7xl mx-auto space-y-10">
 
 
           {/* Types of Assemblies & Batch Sizes — two-column */}
