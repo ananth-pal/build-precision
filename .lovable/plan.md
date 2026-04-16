@@ -1,28 +1,31 @@
 
 
-## Plan: Rewrite Assembly Capabilities Page
+## Problem
 
-### File: `src/pages/CapAssembly.tsx`
+The Assembly page content is well-written but visually underweight:
+- Card headings use `text-base` — too small to establish hierarchy
+- Body text uses `text-sm text-muted-foreground` — reads as fine print rather than primary content
+- Cards have minimal border styling with no visual distinction between sections
+- The conclusion block blends in rather than standing out
+- Overall the page feels like a footnote rather than a capability showcase
 
-Replace the entire page content with the provided copy, structured as follows:
+## Plan
 
-1. **Hero**: Title "Assembly", subtitle summarizing the value proposition (first paragraph of Introduction)
-2. **Introduction section**: Two-paragraph intro covering the engineered production system and value proposition
-3. **Content sections** — each as a styled block with heading and body text:
-   - Types of Assemblies
-   - Batch Sizes and Scale-Up
-   - Inspection and Tests
-   - Sourcing and Integration
-   - Logistics and Shipment Readiness
-4. **Conclusion section**: Final two paragraphs as a visually distinct closing block
+**1. Strengthen typography hierarchy**
+- Card headings: `text-base` → `text-lg font-semibold` with stronger foreground color
+- Body text: `text-sm text-muted-foreground` → `text-base text-muted-foreground` for comfortable reading
+- Conclusion closing statement: bump to `text-base font-semibold`
 
-### Layout approach
-- Follow the pattern used in `CapGearCutting.tsx` — prose-driven sections with `text-sm text-muted-foreground leading-relaxed` styling
-- Use alternating full-width and two-column layouts to break up the text wall
-- Remove the old placeholder cards and stat block entirely
+**2. Add section headers above card groups**
+- Add a light section label above each card group (e.g., no new copy — just subtle visual grouping via slightly more spacing or a thin separator)
 
-### Files modified
-| File | Change |
-|---|---|
-| `src/pages/CapAssembly.tsx` | Full rewrite with provided copy |
+**3. Improve card presence**
+- Add subtle shadow: `shadow-sm` on cards for lift
+- Increase padding: `p-6` → `p-8` for breathing room
+- Widen container: `max-w-5xl` → `max-w-6xl` to use more page width
+
+**4. Elevate the conclusion block**
+- Use a left border accent (`border-l-4 border-primary`) instead of just `bg-secondary` to make it feel like a confident closing statement
+
+**Files changed:** `src/pages/CapAssembly.tsx` only
 
