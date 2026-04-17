@@ -53,6 +53,38 @@ export default function Machining() {
             </p>
           </div>
 
+          {/* Quality & Safety */}
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <h3 className="text-lg font-semibold mb-4">Quality & Safety</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              [PLACEHOLDER — owner to write]
+            </p>
+          </div>
+
+          {/* Machine Tools and Measurement */}
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <h3 className="text-lg font-semibold mb-4">Machine Tools and Measurement</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              [PLACEHOLDER — owner to write]
+            </p>
+          </div>
+
+          {/* Workpiece Dimensions */}
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <h3 className="text-lg font-semibold mb-4">Workpiece Dimensions</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              [PLACEHOLDER — owner to write]
+            </p>
+          </div>
+
+          {/* Materials */}
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <h3 className="text-lg font-semibold mb-4">Materials</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              [PLACEHOLDER — owner to write]
+            </p>
+          </div>
+
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See the equipment and processes behind this capability <ArrowRight size={14} />
           </Link>
