@@ -59,7 +59,7 @@ export default function Technologies() {
                 <div key={c.title} className="capability-card">
                   <c.icon className="text-primary mb-4" size={28} />
                   <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{c.desc}</p>
                 </div>
               ))}
             </div>
