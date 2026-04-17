@@ -11,9 +11,7 @@ export default function Machining() {
       <SiteHeader />
       <PageHero title="Machining" subtitle="Precision components and housings held to tight tolerances across small-to-medium batch sizes." backgroundImage={heroCnc} />
       <main className="flex-1 section-padding">
-        <div className="max-w-6xl mx-auto space-y-10">
-
-          {/* Batch Sizes & What Gets Made */}
+        <div className="max-w-6xl mx-auto space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Batch Sizes</h3>
@@ -21,68 +19,55 @@ export default function Machining() {
                 We are best suited to machined parts with enough repeat demand to recover setup cost and enough technical complexity to justify careful process definition. In practice, this typically means annual volumes from approx. 10's to 100,000's. That range is particularly well matched to high-mix, low-to-medium-volume work, which remains our specialty.
               </p>
             </div>
+
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">What Gets Made Here</h3>
+              <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Machining Different</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Complex components and sub-assembly parts — housings, shafts, and precision machined components — held to tight tolerances across small-to-medium batch sizes. Materials: steel, cast iron, ductile iron, and non-ferrous alloys. [Owner to add tolerance range and batch size range once confirmed]
+                All jigs, fixtures, and gauges are designed and manufactured in-house — a direct consequence of Pentagon's machine tool manufacturing origin. Pentagon does not outsource fixturing. This means faster development cycles and tighter control over first-article quality.
               </p>
             </div>
-          </div>
 
-          {/* What Makes It Different */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Machining Different</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              All jigs, fixtures, and gauges are designed and manufactured in-house — a direct consequence of Pentagon's machine tool manufacturing origin. Pentagon does not outsource fixturing. This means faster development cycles and tighter control over first-article quality.
-            </p>
-          </div>
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Design Consulting Services</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Design consulting is most useful before a part is released to production. We review tolerances, material choice, datum strategy, clamping, and other features that drive machining cost or process instability. This helps reduce avoidable complexity and supports a clean transition from development into repeat production. For early-stage customers, this can also be offered as a separate project phase. SolidWorks CAD and 3D printing are used to support design review and visual prototyping.
+              </p>
+            </div>
 
-          {/* Design Consulting Services */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Design Consulting Services</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              Design consulting is most useful before a part is released to production. We review tolerances, material choice, datum strategy, clamping, and other features that drive machining cost or process instability. This helps reduce avoidable complexity and supports a clean transition from development into repeat production. For early-stage customers, this can also be offered as a separate project phase. SolidWorks CAD and 3D printing are used to support design review and visual prototyping.
-            </p>
-          </div>
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Sourcing and Logistics</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                We maintain decades-long relationships with key vendors certified for castings, forgings, heat treatment, and raw materials from India and abroad to meet customers' desired quality. Incoming goods inspection, traceability, and controlled storage, support stable production, while packing, labeling, and dispatch ensure parts arrive in the required condition and with the required traceability and documentation. Parts are shipped worldwide.
+              </p>
+            </div>
 
-          {/* Sourcing and Logistics */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Sourcing and Logistics</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              We maintain decades-long relationships with key vendors certified for castings, forgings, heat treatment, and raw materials from India and abroad to meet customers' desired quality. Incoming goods inspection, traceability, and controlled storage, support stable production, while packing, labeling, and dispatch ensure parts arrive in the required condition and with the required traceability and documentation. Parts are shipped worldwide.
-            </p>
-          </div>
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Quality & Safety</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                [PLACEHOLDER — owner to write]
+              </p>
+            </div>
 
-          {/* Quality & Safety */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Quality & Safety</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              [PLACEHOLDER — owner to write]
-            </p>
-          </div>
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Machine Tools and Measurement</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                [PLACEHOLDER — owner to write]
+              </p>
+            </div>
 
-          {/* Machine Tools and Measurement */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Machine Tools and Measurement</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              [PLACEHOLDER — owner to write]
-            </p>
-          </div>
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Workpiece Dimensions</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                [PLACEHOLDER — owner to write]
+              </p>
+            </div>
 
-          {/* Workpiece Dimensions */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Workpiece Dimensions</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              [PLACEHOLDER — owner to write]
-            </p>
-          </div>
-
-          {/* Materials */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Materials</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              [PLACEHOLDER — owner to write]
-            </p>
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Materials</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                [PLACEHOLDER — owner to write]
+              </p>
+            </div>
           </div>
 
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
