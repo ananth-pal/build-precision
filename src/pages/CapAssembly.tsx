@@ -42,7 +42,7 @@ export default function CapAssembly() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Sourcing and Integration</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Complete assemblies often combine factory-machined parts with bought-out hardware, customer-nominated components, valves, harnesses, seals, or configured devices. Off-the-shelf components are sourced to the required quality level and integrated under controlled revision and assembly conditions. Practical fit-up judgment is applied where nominally correct parts do not come together exactly as intended on the drawing. This is particularly important in mixed-source assemblies, where interface problems tend to appear late if they are not addressed during build.
+                Complete assemblies combine factory-machined parts with bought-out hardware as needed. Off-the-shelf components are sourced from India and abroad as per requirements. Practical fit-up judgment is applied where nominally correct parts do not come together exactly as intended on the drawing. This is particularly important in mixed-source assemblies, where interface problems tend to appear late if they are not addressed during build.
               </p>
             </div>
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
