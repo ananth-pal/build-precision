@@ -13,27 +13,27 @@ export default function Machining() {
       <main className="flex-1 section-padding">
         <div className="max-w-6xl mx-auto space-y-10">
 
-          {/* What Gets Made & What Makes It Different */}
+          {/* Batch Sizes & What Gets Made */}
           <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Batch Sizes</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                We are best suited to machined parts with enough repeat demand to recover setup cost and enough technical complexity to justify careful process definition. In practice, this typically means annual volumes from around 50 to 20,000 parts. That range is particularly well matched to high-mix, medium-volume work, which remains our specialty.
+              </p>
+            </div>
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">What Gets Made Here</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Complex components and sub-assembly parts — housings, shafts, and precision machined components — held to tight tolerances across small-to-medium batch sizes. Materials: steel, cast iron, ductile iron, and non-ferrous alloys. [Owner to add tolerance range and batch size range once confirmed]
               </p>
             </div>
-            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Machining Different</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                All jigs, fixtures, and gauges are designed and manufactured in-house — a direct consequence of Pentagon's machine tool manufacturing origin. Pentagon does not outsource fixturing. This means faster development cycles and tighter control over first-article quality.
-              </p>
-            </div>
           </div>
 
-          {/* Batch Sizes */}
+          {/* What Makes It Different */}
           <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Batch Sizes</h3>
+            <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Machining Different</h3>
             <p className="text-base text-muted-foreground leading-relaxed">
-              We are best suited to machined parts with enough repeat demand to recover setup cost and enough technical complexity to justify careful process definition. In practice, this typically means annual volumes from around 50 to 20,000 parts. That range is particularly well matched to high-mix, medium-volume work, which remains our specialty.
+              All jigs, fixtures, and gauges are designed and manufactured in-house — a direct consequence of Pentagon's machine tool manufacturing origin. Pentagon does not outsource fixturing. This means faster development cycles and tighter control over first-article quality.
             </p>
           </div>
 
