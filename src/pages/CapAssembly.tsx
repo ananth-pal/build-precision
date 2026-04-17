@@ -53,16 +53,6 @@ export default function CapAssembly() {
             </div>
           </div>
 
-          {/* Conclusion */}
-          <div className="border-l-4 border-primary bg-card rounded-lg p-8">
-            <p className="text-base text-muted-foreground leading-relaxed mb-4">
-              We extend our offering beyond machined parts into modules that are assembled, verified, and ready for use. That includes a broad range of assembly types, support from development builds into recurring production, application-specific inspection and testing, mixed-source integration, and shipment under defined handling and documentation requirements.
-            </p>
-            <p className="text-base font-semibold leading-relaxed">
-              What distinguishes this work is control over the details that determine whether an assembly goes together cleanly, passes test, and installs without difficulty.
-            </p>
-          </div>
-
         </div>
       </main>
       <SiteFooter />
