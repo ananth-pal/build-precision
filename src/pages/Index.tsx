@@ -29,7 +29,7 @@ export default function Home() {
               We build the products your customers bet their business on
             </h1>
             <p className="text-lg text-background/80 max-w-2xl mb-8">
-              Precision contract manufacturer. Chennai, India. From machining and gear cutting to validated assemblies — under one roof.
+              Pentagon is a precision contract manufacturer headquartered in Chennai, India that consolidates operations from machining and gear cutting to validating assemblies under one roof.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/capabilities" className="inline-flex items-center px-6 py-3 border-2 border-background/40 text-background font-medium rounded hover:bg-background/10 transition-colors">
