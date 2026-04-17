@@ -7,11 +7,11 @@ const categories = [
   {
     icon: Cog,
     title: "Machine Tools",
-    desc: "Machine list excerpt: CNC horizontal and vertical machining centres, CNC turning, fine boring, surface and cylindrical grinding, lapping and honing. [PLACEHOLDER — owner to add specifics]",
+    desc: "Machine list excerpt: CNC horizontal and vertical machining centres, CNC turning, fine boring, surface and cylindrical grinding, lapping and honing. [PLACEHOLDER — owner to add specifics]\nHobbing, shaving, shaping, broaching, tooth rounding and chamfering, bore and angular grinding. Profile and PCD testing in-house. [PLACEHOLDER]",
   },
   {
     icon: CircleDot,
-    title: "Gear Cutting",
+    title: "Machine Tools for Gear Cutting",
     desc: "Hobbing, shaving, shaping, broaching, tooth rounding and chamfering, bore and angular grinding. Profile and PCD testing in-house. [PLACEHOLDER]",
   },
   {
@@ -59,7 +59,7 @@ export default function Technologies() {
                 <div key={c.title} className="capability-card">
                   <c.icon className="text-primary mb-4" size={28} />
                   <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{c.desc}</p>
                 </div>
               ))}
             </div>
