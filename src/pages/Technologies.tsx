@@ -10,11 +10,6 @@ const categories = [
     desc: "Machine list excerpt: CNC horizontal and vertical machining centres, CNC turning, fine boring, surface and cylindrical grinding, lapping and honing. [PLACEHOLDER — owner to add specifics]\nHobbing, shaving, shaping, broaching, tooth rounding and chamfering, bore and angular grinding. Profile and PCD testing in-house. [PLACEHOLDER]",
   },
   {
-    icon: CircleDot,
-    title: "Machine Tools for Gear Cutting",
-    desc: "Hobbing, shaving, shaping, broaching, tooth rounding and chamfering, bore and angular grinding. Profile and PCD testing in-house. [PLACEHOLDER]",
-  },
-  {
     icon: Ruler,
     title: "Measurement & Metrology",
     desc: "CNC scanning CMM, surface roughness measurement to nanometre resolution, height gauging, CNC tool pre-setter. All instruments calibrated periodically in-house and through external agencies. [PLACEHOLDER]",
