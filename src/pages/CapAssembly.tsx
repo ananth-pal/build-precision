@@ -48,7 +48,7 @@ export default function CapAssembly() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Logistics and Shipment Readiness</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Handling and dispatch requirements are addressed as part of the assembly scope. Depending on the product, this may include dust-sensitive handling, temperature-controlled environments, ESD-conscious packaging, corrosion protection, customer-specific labeling, or export-ready documentation. Where required, packing and release records can show that controlled conditions were maintained through final dispatch. This is important for assemblies whose condition on arrival matters as much as their condition at final test.
+                Handling and dispatch requirements are addressed as part of the assembly scope. Depending on the product, this may include dust-sensitive handling, temperature-controlled environments, corrosion protection or customer-specific labeling. Where required, instruction manuals and warranty cards can be included in packing.&nbsp;
               </p>
             </div>
           </div>
