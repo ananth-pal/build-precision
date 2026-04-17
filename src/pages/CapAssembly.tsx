@@ -18,7 +18,7 @@ export default function CapAssembly() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Types of Assemblies</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Assembly scope ranges from precision mechanical modules to integrated electromechanical systems weighing up to 30 kg. This includes motion-critical assemblies built around shafts, bearings, seals, and aligned housings, as well as products with harnesses, sensors, controls, or fluid-power elements. Some assemblies are driven mainly by interface control between machined and purchased parts. Others are driven by geometry, such as thin large assemblies that are sensitive to handling, fastening, or shipment. In both cases, alignment, surface condition, and final fit are controlled through the assembly process.
+                Assembly scope ranges from precision mechanical modules to integrated electromechanical systems weighing up to 30 kg. This includes motion-critical assemblies built around shafts, bearings, seals, and housings, as well as programmed products with harnesses, sensors, controls, or fluid-power elements. Some assemblies' control is driven mainly by interface control between machined and purchased parts. Others are driven by geometry, such as thin large assemblies that are sensitive to handling, fastening, or shipment.&nbsp;
               </p>
             </div>
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
