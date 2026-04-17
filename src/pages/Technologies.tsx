@@ -7,7 +7,7 @@ const categories = [
   {
     icon: Cog,
     title: "Machining",
-    desc: "CNC horizontal and vertical machining centres, CNC turning, fine boring, surface and cylindrical grinding, lapping and honing. [PLACEHOLDER — owner to add specifics]",
+    desc: "Machine list excerpt: CNC horizontal and vertical machining centres, CNC turning, fine boring, surface and cylindrical grinding, lapping and honing. [PLACEHOLDER — owner to add specifics]",
   },
   {
     icon: CircleDot,
