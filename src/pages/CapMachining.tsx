@@ -18,7 +18,7 @@ export default function Machining() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Batch Sizes</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                We are best suited to machined parts with enough repeat demand to recover setup cost and enough technical complexity to justify careful process definition. In practice, this typically means annual volumes from around 50 to 20,000 parts. That range is particularly well matched to high-mix, medium-volume work, which remains our specialty.
+                We are best suited to machined parts with enough repeat demand to recover setup cost and enough technical complexity to justify careful process definition. In practice, this typically means annual volumes from approx. 10's to 100,000's. That range is particularly well matched to high-mix, low-to-medium-volume work, which remains our specialty.
               </p>
             </div>
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
