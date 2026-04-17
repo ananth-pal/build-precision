@@ -37,6 +37,14 @@ export default function Machining() {
             </p>
           </div>
 
+          {/* Sourcing and Logistics */}
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <h3 className="text-lg font-semibold mb-4">Sourcing and Logistics</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              We maintain decades-long relationships with key vendors certified for castings, forgings, heat treatment, and raw materials from India and abroad to meet customers' desired quality. Incoming goods inspection, traceability, and controlled storage, support stable production, while packing, labeling, and dispatch ensure parts arrive in the required condition and with the required traceability and documentation. Parts are shipped worldwide.
+            </p>
+          </div>
+
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See the equipment and processes behind this capability <ArrowRight size={14} />
           </Link>
