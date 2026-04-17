@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 const categories = [
   {
     icon: Cog,
-    title: "Machining",
+    title: "Machine Tools",
     desc: "Machine list excerpt: CNC horizontal and vertical machining centres, CNC turning, fine boring, surface and cylindrical grinding, lapping and honing. [PLACEHOLDER — owner to add specifics]",
   },
   {
