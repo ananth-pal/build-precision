@@ -16,12 +16,7 @@ const categories = [
   },
   {
     icon: Droplets,
-    title: "Cleaning & Washing",
-    desc: "[PLACEHOLDER — owner to write]",
-  },
-  {
-    icon: Scissors,
-    title: "Deburring",
+    title: "Cleaning, Washing, and Deburring",
     desc: "[PLACEHOLDER — owner to write]",
   },
   {
