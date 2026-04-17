@@ -45,13 +45,16 @@ export default function Technologies() {
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {categories.map((c) => (
-                <div key={c.title} className="capability-card">
-                  <c.icon className="text-primary mb-4" size={28} />
-                  <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{c.desc}</p>
-                </div>
-              ))}
+              {categories.map((c) => {
+                const slug = c.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+                return (
+                  <div key={c.title} id={slug} className="capability-card scroll-mt-24">
+                    <c.icon className="text-primary mb-4" size={28} />
+                    <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{c.desc}</p>
+                  </div>
+                );
+              })}
             </div>
 
             <div>
