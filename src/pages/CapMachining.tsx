@@ -21,9 +21,9 @@ export default function Machining() {
             </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Machining Different</h3>
+              <h3 className="text-lg font-semibold mb-4">Design Consulting Services</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                All jigs, fixtures, and gauges are designed and manufactured in-house — a direct consequence of Pentagon's machine tool manufacturing origin. Pentagon does not outsource fixturing. This means faster development cycles and tighter control over first-article quality.
+                Design consulting is most useful before a part is released to production. We review tolerances, material choice, datum strategy, clamping, and other features that drive machining cost or process instability. This helps reduce avoidable complexity and supports a clean transition from development into repeat production. For early-stage customers, this can also be offered as a separate project phase. SolidWorks CAD and 3D printing are used to support design review and visual prototyping.
               </p>
             </div>
 
