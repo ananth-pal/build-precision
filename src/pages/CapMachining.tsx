@@ -110,12 +110,6 @@ export default function Machining() {
               </p>
             </div>
 
-            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Workpiece Dimensions</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                [PLACEHOLDER — owner to write]
-              </p>
-            </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Materials</h3>
