@@ -18,10 +18,17 @@ export default function GearCutting() {
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm mb-12">
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm mb-8">
             <h3 className="text-lg font-semibold mb-4">Gear Types</h3>
             <p className="text-base text-muted-foreground leading-relaxed">
               External and internal spur and helical gears up to around 6 module and 200 mm outside diameter are produced routinely to ISO accuracy grade 4. Splined shafts, pinion shafts, and other transmission components are also manufactured. Tooth rounding and chamfering are standard, while crowning, tip relief, and similar profile modifications are included where the application calls for them.
+            </p>
+          </div>
+
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm mb-12">
+            <h3 className="text-lg font-semibold mb-4">Process</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Blank preparation, tooth cutting, heat treatment, and post-heat treatment finishing are managed under one roof. Heat treatment is coordinated with long-standing certified vendors, and post-HT correction of bore and reference faces is standard. Inspection records and material traceability carry through from blank to finished gear.
             </p>
           </div>
 
