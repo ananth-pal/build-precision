@@ -115,6 +115,8 @@ export default function Machining() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Machine Tools and Measurement</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
+                Turning, milling, boring, grinding, gear cutting, and finishing processes are carried out in-house. Measurement covers dimensional inspection, form and geometry, surface finish, and gear metrology.
+                <br />
                 See{" "}
                 <Link to="/technologies#machine-tools" className="text-primary font-medium hover:underline">
                   Machine Tools
@@ -123,7 +125,7 @@ export default function Machining() {
                 <Link to="/technologies#measurement-metrology" className="text-primary font-medium hover:underline">
                   Measurement &amp; Metrology
                 </Link>{" "}
-                in Technologies for the equipment and instruments used.
+                in Technologies for the full list.
               </p>
             </div>
 
