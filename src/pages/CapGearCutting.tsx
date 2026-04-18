@@ -32,9 +32,9 @@ export default function GearCutting() {
             </p>
           </div>
 
-          <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
-            See the equipment and processes behind this capability <ArrowRight size={14} />
-          </Link>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
+            Materials, batch sizes, sourcing and logistics, and quality apply equally to gear work and are covered on the <Link to="/capabilities/machining" className="text-primary hover:underline">Machining</Link> page. Equipment and gear-specific processes are covered under <Link to="/technologies" className="text-primary hover:underline">Means of Production</Link>.
+          </p>
         </div>
       </main>
       <SiteFooter />
