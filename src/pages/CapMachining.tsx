@@ -40,7 +40,7 @@ export default function Machining() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Machining" subtitle="Precision components and housings held to tight tolerances across small-to-medium batch sizes." backgroundImage={heroCnc} />
+      <PageHero title="Machining" subtitle="Technically demanding machined components and housings. Suited to parts where process definition and repeat consistency are required." backgroundImage={heroCnc} />
       <main className="flex-1 section-padding">
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
