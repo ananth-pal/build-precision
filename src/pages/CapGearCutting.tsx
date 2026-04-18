@@ -11,13 +11,6 @@ export default function GearCutting() {
       <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own sub-assembly builds." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Gear Cutting Different</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
-              The gear cutting division is self-contained, with in-house profile and PCD testing. Gears produced here feed directly into Pentagon's own sub-assembly builds — the same team that cuts the gears assembles the PTOs. There is no handoff between suppliers at this stage.
-            </p>
-          </div>
-
           <div className="bg-card border border-border rounded-lg p-8 shadow-sm mb-8">
             <h3 className="text-lg font-semibold mb-4">Gear Types</h3>
             <p className="text-base text-muted-foreground leading-relaxed">
