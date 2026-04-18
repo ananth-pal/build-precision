@@ -25,6 +25,14 @@ export default function GearCutting() {
               </p>
             </div>
           </div>
+
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm mb-12">
+            <h3 className="text-lg font-semibold mb-4">Gear Types</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              External and internal spur and helical gears up to around 6 module and 200 mm outside diameter are produced routinely to ISO accuracy grade 4. Splined shafts, pinion shafts, and other transmission components are also manufactured. Tooth rounding and chamfering are standard, while crowning, tip relief, and similar profile modifications are included where the application calls for them.
+            </p>
+          </div>
+
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See the equipment and processes behind this capability <ArrowRight size={14} />
           </Link>
