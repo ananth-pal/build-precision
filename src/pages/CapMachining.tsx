@@ -1,11 +1,25 @@
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
 import heroCnc from "@/assets/hero-cnc.jpg";
 
+const qualityRows: [string, string][] = [
+  ["Calibration", "Traceable to national standards, performed in-house"],
+  ["Machine tool maintenance", "In-house; machines stripped and rebuilt as needed"],
+  ["Drawing control", "Revision-controlled through a PLM system"],
+  ["Material traceability", "Incoming inspection through dispatch; outside-processed items re-inspected on return"],
+  ["Reports", "First article, dimensional, and process records produced as the job requires"],
+  ["Non-conformances", "Disclosed to the customer, contained, and closed with corrective action"],
+];
+
 export default function Machining() {
+  const [qualityVersion, setQualityVersion] = useState<1 | 2>(1);
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -36,10 +50,49 @@ export default function Machining() {
             </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Quality & Safety</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                [PLACEHOLDER — owner to write]
-              </p>
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                Quality
+                <button
+                  type="button"
+                  onClick={() => setQualityVersion((v) => (v === 1 ? 2 : 1))}
+                  aria-label="Toggle version"
+                  className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <RefreshCw className="h-3.5 w-3.5" />
+                  <span className="text-xs font-normal opacity-70">v{qualityVersion}</span>
+                </button>
+              </h3>
+              {qualityVersion === 1 ? (
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Our quality management system is certified to ISO 9001:2015. Calibration is traceable to national standards and machine tool maintenance is performed in-house — our team can strip and rebuild machine tools from scratch. Drawings are revision-controlled through a PLM system; material traceability runs from incoming inspection through dispatch, and outside-processed items are re-inspected on return. First article reports, dimensional reports, and process records are produced as the job requires, with non-conformances disclosed to the customer, contained, and closed with corrective action.
+                </p>
+              ) : (
+                <div className="space-y-4">
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Our quality management system is certified to ISO 9001:2015. See table for more.
+                  </p>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" size="sm">View quality details</Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-2xl">
+                      <DialogHeader>
+                        <DialogTitle>Quality</DialogTitle>
+                      </DialogHeader>
+                      <Table>
+                        <TableBody>
+                          {qualityRows.map(([item, detail]) => (
+                            <TableRow key={item}>
+                              <TableCell className="font-medium align-top w-1/3">{item}</TableCell>
+                              <TableCell className="text-muted-foreground">{detail}</TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              )}
             </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
