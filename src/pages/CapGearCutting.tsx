@@ -11,19 +11,11 @@ export default function GearCutting() {
       <PageHero title="Gear Cutting" subtitle="Spur and helical gears, splined shafts, and transmission components from a dedicated facility." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            <div>
-              <h3 className="text-lg font-semibold mb-4">What Gets Made Here</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Spur and helical gears, splined shafts, and related transmission components for powertrain and hydraulic applications. Produced in Pentagon's dedicated gear cutting facility (Plant 2) — a separate division, not a department within the main machine shop.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Gear Cutting Different</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                The gear cutting division is self-contained, with in-house profile and PCD testing. Gears produced here feed directly into Pentagon's own sub-assembly builds — the same team that cuts the gears assembles the PTOs. There is no handoff between suppliers at this stage.
-              </p>
-            </div>
+          <div className="mb-12">
+            <h3 className="text-lg font-semibold mb-4">What Makes Pentagon's Gear Cutting Different</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
+              The gear cutting division is self-contained, with in-house profile and PCD testing. Gears produced here feed directly into Pentagon's own sub-assembly builds — the same team that cuts the gears assembles the PTOs. There is no handoff between suppliers at this stage.
+            </p>
           </div>
 
           <div className="bg-card border border-border rounded-lg p-8 shadow-sm mb-12">
