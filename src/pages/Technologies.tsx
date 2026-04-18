@@ -14,17 +14,17 @@ const categories = [
   {
     icon: Ruler,
     title: "Measurement & Metrology",
-    desc: "CNC scanning CMM, surface roughness measurement to nanometre resolution, height gauging, CNC tool pre-setter. All instruments calibrated periodically in-house and through external agencies. [PLACEHOLDER]",
+    desc: "CNC scanning CMM, surface roughness measurement to nanometre resolution, height gauging, air/plug/ring gauges. All instruments calibrated periodically in-house and through external agencies. [PLACEHOLDER]",
   },
   {
     icon: Droplets,
-    title: "Cleaning, Washing, and Deburring",
+    title: "Deburring, Washing, and Cleaning",
     desc: "[PLACEHOLDER — owner to write]",
   },
   {
     icon: Wrench,
     title: "Tooling",
-    desc: "All jigs, fixtures, and gauges — manual and hydraulic — are designed and manufactured in-house. This capability originates from Pentagon's machine tool heritage and is not outsourced.",
+    desc: "All jigs, fixtures, and gauges — manual and hydraulic — are designed and manufactured in-house. This capability originates from Pentagon's machine tool heritage and is not outsourced. A wide range of cutting tools is available along with a CNC tool pre-setter.",
   },
 ];
 
