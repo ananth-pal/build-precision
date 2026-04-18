@@ -8,7 +8,7 @@ export default function GearCutting() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Gear Cutting" subtitle="Spur and helical gears, splined shafts, and transmission components from a dedicated facility." />
+      <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own sub-assembly builds." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
