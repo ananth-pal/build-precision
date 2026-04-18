@@ -64,7 +64,7 @@ export default function Machining() {
               </h3>
               {qualityVersion === 1 ? (
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Our quality management system is certified to ISO 9001:2015. Calibration is traceable to national standards and machine tool maintenance is performed in-house — our team can strip and rebuild machine tools from scratch. Drawings are revision-controlled through a PLM system; material traceability runs from incoming inspection through dispatch, and outside-processed items are re-inspected on return. First article reports, dimensional reports, and process records are produced as the job requires, with non-conformances disclosed to the customer, contained, and closed with corrective action.
+                  Our quality management system is certified to ISO 9001:2015. Calibration is traceable to national standards and machine tool maintenance is performed in-house — our team can strip and rebuild machine tools from scratch. Drawings are revision-controlled through a PLM system, which also allows material traceability from incoming inspection through dispatch. Externally-processed items are re-inspected on return. First article reports, dimensional reports, and process records are produced as the job requires, with non-conformances disclosed to the customer, contained, and closed with corrective action.
                 </p>
               ) : (
                 <div className="space-y-4">
