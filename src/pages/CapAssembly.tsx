@@ -13,12 +13,20 @@ export default function CapAssembly() {
       <main className="flex-1 section-padding">
         <div className="max-w-6xl mx-auto space-y-10">
 
-          {/* Batch Sizes & Scale-Up */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Batch Sizes and Scale-Up</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              Assembly is supported from prototype and pilot builds through recurring production. Early orders typically require closer engineering involvement, flexible sequencing, and faster feedback into design. As volumes stabilize, the process is strengthened through fixtures, clearer work instructions, better material presentation, and more formal validation steps. This allows development builds to remain flexible while repeat production becomes more robust and efficient.
-            </p>
+          {/* Types of Assemblies & Batch Sizes */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Types of Assemblies</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Assembly scope ranges from precision mechanical modules to integrated electromechanical systems weighing up to 30 kg. This includes motion-critical assemblies built around shafts, bearings, seals, and housings, as well as programmed products with harnesses, sensors, controls, or fluid-power elements. Some assemblies' control is driven mainly by interface control between machined and purchased parts. Others are driven by geometry, such as thin large assemblies that are sensitive to handling, fastening, or shipment.&nbsp;
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Batch Sizes and Scale-Up</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Assembly is supported from prototype and pilot builds through recurring production. Early orders typically require closer engineering involvement, flexible sequencing, and faster feedback into design. As volumes stabilize, the process is strengthened through fixtures, clearer work instructions, better material presentation, and more formal validation steps. This allows development builds to remain flexible while repeat production becomes more robust and efficient.
+              </p>
+            </div>
           </div>
 
           {/* Inspection and Tests */}
