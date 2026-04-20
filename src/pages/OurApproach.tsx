@@ -20,14 +20,14 @@ export default function WorkingWithPentagon() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Working with Pentagon" subtitle="At Pentagon, precision dictates our every process. Every stage of our workflow is built on collaboration, technical rigour, and continuous improvement to ensure each product meets the highest standards of quality and performance." />
+      <PageHero title="Working with Pentagon" subtitle="Pentagon approaches every engagement as a long-term engineering partnership. We give design feedback before tooling starts, invest in new machinery when a design requires it, and treat full traceability as standard on every assembly. Our longest client relationship is 26 years. That is the standard we hold ourselves to." />
       <main className="flex-1">
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
             {/* Values statement */}
             <div className="max-w-3xl mb-12">
-              <p className="text-muted-foreground leading-relaxed italic">
-                Pentagon approaches every engagement as a long-term engineering partnership. We give design feedback before tooling starts, invest in new machinery when a design requires it, and treat full traceability as standard on every assembly. Our longest client relationship is 26 years. That is the standard we hold ourselves to.
+<p className="text-muted-foreground leading-relaxed italic">
+                At Pentagon, precision dictates our every process. Every stage of our workflow is built on collaboration, technical rigour, and continuous improvement to ensure each product meets the highest standards of quality and performance.
               </p>
             </div>
 
