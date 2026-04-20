@@ -67,56 +67,39 @@ export default function Machining() {
             </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                Engineering and Quality
-                <button
-                  type="button"
-                  onClick={() => setQualityVersion((v) => (v === 1 ? 2 : 1))}
-                  aria-label="Toggle version"
-                  className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <RefreshCw className="h-3.5 w-3.5" />
-                  <span className="text-xs font-normal opacity-70">v{qualityVersion}</span>
-                </button>
-              </h3>
-              {qualityVersion === 1 ? (
-                <div className="space-y-4">
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Our quality management system is certified to ISO 9001:2015. Measurement covers dimensional inspection, form and geometry, surface finish, and gear metrology.
-                  </p>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button variant="outline" size="sm">View engineering and quality details</Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-2xl">
-                      <DialogHeader>
-                        <DialogTitle>Engineering and Quality</DialogTitle>
-                      </DialogHeader>
-                      <Table>
-                        <TableBody>
-                          {qualityRows.map(([item, detail]) => (
-                            <TableRow key={item}>
-                              <TableCell className="font-medium align-top w-1/3">{item}</TableCell>
-                              <TableCell className="text-muted-foreground">{detail}</TableCell>
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
-                    </DialogContent>
-                  </Dialog>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    See{" "}
-                    <Link to="/technologies#measurement-metrology" className="text-primary font-medium hover:underline">
-                      Measurement &amp; Metrology
-                    </Link>{" "}
-                    for the full process list.
-                  </p>
-                </div>
-              ) : (
+              <h3 className="text-lg font-semibold mb-4">Engineering and Quality</h3>
+              <div className="space-y-4">
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Our quality management system is certified to ISO 9001:2015. Calibration is traceable to national standards and machine tool maintenance is performed in-house — our team can strip and rebuild machine tools from scratch. Drawings are revision-controlled through a PLM system, which also allows material traceability from incoming inspection through dispatch. Externally-processed items are re-inspected on return. First article reports, dimensional reports, and process records are included with product as the job requires, with non-conformances contained, and closed with corrective action.
+                  Our quality management system is certified to ISO 9001:2015. Measurement covers dimensional inspection, form and geometry, surface finish, and gear metrology.
                 </p>
-              )}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm">View engineering and quality details</Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>Engineering and Quality</DialogTitle>
+                    </DialogHeader>
+                    <Table>
+                      <TableBody>
+                        {qualityRows.map(([item, detail]) => (
+                          <TableRow key={item}>
+                            <TableCell className="font-medium align-top w-1/3">{item}</TableCell>
+                            <TableCell className="text-muted-foreground">{detail}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </DialogContent>
+                </Dialog>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  See{" "}
+                  <Link to="/technologies#measurement-metrology" className="text-primary font-medium hover:underline">
+                    Measurement &amp; Metrology
+                  </Link>{" "}
+                  for the full process list.
+                </p>
+              </div>
             </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
