@@ -54,10 +54,10 @@ export default function Home() {
         <HomeCapabilitySection />
 
         {/* Differentiator Block */}
-        <section className="section-padding">
-          <div className="max-w-4xl mx-auto space-y-8">
+        <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto space-y-6">
             <h2 className="text-2xl lg:text-3xl font-bold">What makes Pentagon different</h2>
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
               <p>
                 Pentagon Machines and Services Pvt. Ltd. is a precision contract manufacturing company headquartered in Chennai, India. It started in 19xx building custom special-purpose machines for India's largest automotive OEMs before transitioning to contract manufacturing in 19xx. That origin means Pentagon designs and manufactures all its own jigs, fixtures, and gauges in-house, and its maintenance team can strip, rebuild, and customise machine tools from first principles.
               </p>
@@ -71,9 +71,9 @@ export default function Home() {
           </div>
         </section>
         {/* Facility Video Placeholder */}
-        <section className="section-padding bg-secondary">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center border border-border">
+        <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16 bg-secondary">
+          <div className="max-w-7xl mx-auto">
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center border border-border max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-primary"><path d="M8 5v14l11-7z" /></svg>
