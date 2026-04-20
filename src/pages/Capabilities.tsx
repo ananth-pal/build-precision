@@ -21,7 +21,7 @@ export default function Capabilities() {
             Pentagon manufactures precision components and assemblies in steel, cast iron, ductile iron, and non-ferrous alloys. Work spans housings, shafts, valve bodies, gear sets, and integrated assemblies. The operation is optimised for medium-volume work where part complexity justifies careful process definition and batch sizes are large enough to recover setup cost.
 
 
-            Machining, gear cutting, and assembly sit inside the same operation, so the part is engineered as one build from material through to tested module.
+            Machining, gear cutting, and assembly are integrated so the part is engineered as one build from material through to tested module.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
