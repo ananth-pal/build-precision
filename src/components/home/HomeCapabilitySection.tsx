@@ -63,10 +63,10 @@ function VersionTwo() {
         <article className="capability-card space-y-3">
           <h3 className="text-xl font-semibold">Capabilities</h3>
           <p className="font-semibold text-foreground text-sm">
-            Machining. Gear cutting. Assembly.
+            Machining, Gear cutting, Assembly
           </p>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Machining, gear cutting, and assembly in one operation. Precision components and housings in steel, cast iron, ductile iron and non-ferrous alloys. Spur and helical gears, splined shafts, and integrated electromechanical assemblies up to 30 kg. Best suited to high-mix, medium-volume work with annual volumes typically from around 50 to 20,000 parts.
+            Precision components and housings in steel, cast iron, ductile iron and non-ferrous alloys. Spur and helical gears, splined shafts, and integrated electromechanical assemblies up to 30 kg. Best suited to high-mix, medium-volume work.
           </p>
           <Link to="/capabilities" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See capabilities <ArrowRight size={14} />
@@ -75,10 +75,10 @@ function VersionTwo() {
         <article className="capability-card space-y-3">
           <h3 className="text-xl font-semibold">Means of Production</h3>
           <p className="font-semibold text-foreground text-sm">
-            Two plants. In-house tooling, metrology, and test rigs.
+            Two plants, best-in-class machines and tooling
           </p>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Two plants in Ambattur Industrial Estate. CNC horizontal and vertical machining centres, CNC turning, cylindrical and surface grinding. A dedicated gear-cutting division with hobbing, shaving, shaping, broaching and profile testing. Clean-room assembly with automated test rigs. CMM and high-resolution surface metrology in-house.
+            43,200 sq. ft. across two plants. CNC horizontal and vertical machining centres, CNC turning, cylindrical and surface grinding. A dedicated gear-cutting division with hobbing, shaving, shaping, broaching and profile testing. Clean-room assembly with automated test rigs. CMM and high-resolution surface metrology in-house.
           </p>
           <Link to="/means-of-production" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See means of production <ArrowRight size={14} />
