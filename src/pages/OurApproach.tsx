@@ -7,7 +7,7 @@ const steps = [
   { num: "02", title: "DFM & Tooling", desc: "Design for Manufacture feedback; in-house jig and fixture design; control plan." },
   { num: "03", title: "Prototyping", desc: "Sample builds; linked inspection and functional test reports." },
   { num: "04", title: "Validation", desc: "Performance testing; capability runs; packaging trials." },
-  { num: "05", title: "Ramp and Sustain", desc: "Release, engineering change management, order handling, and buffer stock, with ongoing quality reporting through the life of the programme." },
+  { num: "05", title: "Ramp and Sustain", desc: "Engineering change management; order handling; buffer stock; Ongoing quality reporting" },
 ];
 
 const standards = [
