@@ -28,16 +28,15 @@ export default function WorkingWithPentagon() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Working with Pentagon" subtitle="Pentagon approaches every engagement as a long-term engineering partnership. We give design feedback before tooling starts, invest in new machinery when a design requires it, and treat full traceability as standard on every assembly. Our longest client relationship is 26 years. That is the standard we hold ourselves to." />
+      <PageHero title="Working with Pentagon" subtitle="Pentagon treats each engagement as long-term production work. We give design feedback before tooling starts, add machinery when a part requires it, and keep traceability standard on every assembly. Our longest customer relationship runs to 26 years." />
       <main className="flex-1">
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
-            {/* Values statement */}
-            <div className="max-w-3xl mb-12">
-<p className="text-muted-foreground leading-relaxed italic">
-                At Pentagon, precision dictates our every process. Every stage of our workflow is built on collaboration, technical rigour, and continuous improvement to ensure each product meets the highest standards of quality and performance.
-              </p>
-            </div>
+            {/* How we engage */}
+            <h2 className="text-lg font-semibold mb-4">How we engage</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12">
+              Most of our work is repeat production for OEM customers. The steps below describe how a new part or assembly moves from release into stable supply.
+            </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {steps.map((s) => (
@@ -56,6 +55,21 @@ export default function WorkingWithPentagon() {
                 {standards.map((s) => (
                   <li key={s.label} className="text-sm text-muted-foreground">
                     <span className="font-medium text-foreground">{s.label}</span> — {s.note}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Memberships & Export Recognition */}
+            <div className="mt-12 border-t border-border pt-8">
+              <h3 className="text-lg font-semibold mb-4">Memberships & Export Recognition</h3>
+              <p className="text-sm text-muted-foreground mb-4 max-w-3xl">
+                Pentagon is a recognised manufacturer-exporter and a member of the principal engineering and fluid-power bodies in India.
+              </p>
+              <ul className="space-y-2">
+                {memberships.map((m) => (
+                  <li key={m.label} className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">{m.label}</span> — {m.note}
                   </li>
                 ))}
               </ul>
