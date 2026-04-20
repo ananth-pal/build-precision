@@ -4,17 +4,14 @@ import PageHero from "@/components/PageHero";
 
 const steps = [
   { num: "01", title: "Kickoff & NDA", desc: "Scope, volumes, standards, PPAP requirements." },
-  { num: "02", title: "DFM & Tooling", desc: "Design for Manufacture feedback; in-house jig and fixture design; control plan.", note: "We give feedback on design intent, not just tolerances. If a drawing can be made more manufacturable without compromising function, we say so." },
+  { num: "02", title: "DFM & Tooling", desc: "Design for Manufacture feedback; in-house jig and fixture design; control plan." },
   { num: "03", title: "Prototyping", desc: "Sample builds; linked inspection and functional test reports." },
   { num: "04", title: "Validation", desc: "Performance testing; capability runs; packaging trials." },
-  { num: "05", title: "Ramp-up", desc: "Engineering change management; order handling; buffer stock." },
-  { num: "06", title: "Sustain", desc: "Ongoing quality reporting; ESG compliance. Export packaging, Incoterms, lead time reliability, engineering change management. [Owner to supply specifics]" },
+  { num: "05", title: "Ramp and Sustain", desc: "Release, engineering change management, order handling, and buffer stock, with ongoing quality reporting through the life of the programme." },
 ];
 
 const standards = [
   { label: "ISO 9001:2015", note: "Quality Management System, certified by Intertek (UKAS accredited)" },
-  { label: "ISO 14001:2015", note: "Environmental Management System [status: in progress — confirm with owner before publishing]" },
-  { label: "ISO 45001:2018", note: "Occupational Health & Safety [status: in progress — confirm with owner before publishing]" },
 ];
 
 export default function WorkingWithPentagon() {
