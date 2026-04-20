@@ -28,9 +28,9 @@ function VersionOne() {
   return (
     <div className="space-y-8">
       <div className="capability-card">
-        <h2 className="text-2xl lg:text-3xl font-bold mb-4">From material to tested module</h2>
+        <h2 className="text-2xl lg:text-3xl font-bold mb-4">What Pentagon can do</h2>
         <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mb-8">
-          A typical gearbox component moves through several stations before shipping.
+          Precision components move through one or more of these stages at our facility as per customer needs
         </p>
         <div className="flex flex-wrap items-start gap-y-8 gap-x-1 md:gap-x-2">
           {flowSteps.map((step, i) => (
