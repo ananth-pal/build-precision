@@ -1,4 +1,3 @@
-import { Download } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -10,14 +9,6 @@ const steps = [
   { num: "04", title: "Validation", desc: "Performance testing; capability runs; packaging trials." },
   { num: "05", title: "Ramp-up", desc: "Engineering change management; order handling; buffer stock." },
   { num: "06", title: "Sustain", desc: "Ongoing quality reporting; ESG compliance. Export packaging, Incoterms, lead time reliability, engineering change management. [Owner to supply specifics]" },
-];
-
-const checklist = [
-  "3D and 2D toleranced drawings",
-  "Bill of materials and expected annual volumes",
-  "Applicable standards and test specifications",
-  "Special process requirements (heat treatment, coatings, packaging)",
-  "PPAP/FAI/traceability requirements and target dates",
 ];
 
 const standards = [
