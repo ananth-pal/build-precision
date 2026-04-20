@@ -16,7 +16,7 @@ const industries = [
   { title: "Industrial Machinery", image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&h=300&fit=crop", desc: "Robust assemblies and machined parts designed for heavy-duty industrial equipment and automation systems." },
   { title: "Robotics", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop", desc: "High-precision gears and drive components enabling accurate, repeatable motion in robotic platforms." },
   { title: "Aerospace", image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=400&h=300&fit=crop", desc: "Mission-critical parts manufactured to exacting tolerances for aerospace propulsion and actuation systems." },
-  { title: "Defence", image: "https://images.unsplash.com/photo-1579912437766-7896df6d3cd3?w=400&h=300&fit=crop", desc: "Reliable, battle-tested components for defence vehicles, weapons systems, and support equipment." },
+  { title: "Strategic Sectors", image: "https://images.unsplash.com/photo-1518365050014-70fe7232897f?w=400&h=300&fit=crop", desc: "Precision components for ground-support equipment, transport platforms, and auxiliary systems serving public-sector and strategic programmes." },
 ];
 
 export default function WhatWeMake() {
