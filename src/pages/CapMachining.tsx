@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import heroCnc from "@/assets/hero-cnc.jpg";
 
 const qualityRows: [string, string][] = [
-  ["Calibration", "Traceable to national standards, performed in-house"],
+  ["Calibration", "Traceable to national standards, performed in-house and with external specialists where needed"],
   ["Machine tool maintenance", "In-house; machines stripped and rebuilt as needed"],
   ["Drawing control", "Revision-controlled through a PLM system"],
   ["Material traceability", "Incoming inspection through dispatch; outside-processed items re-inspected on return"],
@@ -90,7 +90,7 @@ export default function Machining() {
                     </DialogTrigger>
                     <DialogContent className="max-w-2xl">
                       <DialogHeader>
-                        <DialogTitle>Quality</DialogTitle>
+                        <DialogTitle>Engineering and Quality</DialogTitle>
                       </DialogHeader>
                       <Table>
                         <TableBody>
