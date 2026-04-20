@@ -4,9 +4,9 @@ export default function ProgrammesInProduction() {
       <h2 className="text-2xl lg:text-3xl font-bold mb-8">Programmes in production</h2>
       <div className="grid md:grid-cols-2 gap-6">
         <article className="capability-card space-y-3">
-          <h3 className="text-xl font-semibold">PTO gearboxes for global transmission brands</h3>
+          <h3 className="text-xl font-semibold">Power Takeoff (PTO) gearboxes for global transmission brands</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Twenty-six years of development and supply. 75+ PTO variants — cable-operated, pneumatic, hydraulic, and hot-shift — built to run with Allison, Eaton, Hino, Isuzu, Mack, Mitsubishi, Volvo and ZF transmissions. Jigs and fixtures, housing machining, gear cutting, assembly, testing, and engineering change management handled inside one operation.
+            26 years of development and supply to a long standing multinational OEM in Australia. 75+ PTO variants — cable-operated, pneumatic, hydraulic, and hot-shift — built to run with Allison, Eaton, Hino, Isuzu, Mack, Mitsubishi, Volvo and ZF transmissions. Jigs and fixtures, housing machining, gear cutting, assembly, testing, and engineering change management handled through product lifecycle.
           </p>
         </article>
         <article className="capability-card space-y-3">
