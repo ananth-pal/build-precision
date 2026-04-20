@@ -18,7 +18,7 @@ export default function WorkingWithPentagon() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Working with Pentagon" subtitle="[PLACEHOLDER — owner to write intro.]" />
+      <PageHero title="Working with Pentagon" subtitle="At Pentagon, precision dictates our every process. Every stage of our workflow is built on collaboration, technical rigour, and continuous improvement to ensure each product meets the highest standards of quality and performance." />
       <main className="flex-1">
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
@@ -27,7 +27,6 @@ export default function WorkingWithPentagon() {
               <p className="text-muted-foreground leading-relaxed italic">
                 Pentagon approaches every engagement as a long-term engineering partnership. We give design feedback before tooling starts, invest in new machinery when a design requires it, and treat full traceability as standard on every assembly. Our longest client relationship is 26 years. That is the standard we hold ourselves to.
               </p>
-              <p className="text-xs text-muted-foreground mt-2">[Owner to refine]</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -36,11 +35,6 @@ export default function WorkingWithPentagon() {
                   <div className="text-primary font-bold text-2xl mb-2">{s.num}</div>
                   <h3 className="text-lg font-semibold mb-2">{s.title}</h3>
                   <p className="text-sm text-muted-foreground">{s.desc}</p>
-                  {s.note && (
-                    <p className="text-sm text-muted-foreground italic mt-3 pt-3 border-t border-border">
-                      {s.note}
-                    </p>
-                  )}
                 </div>
               ))}
             </div>
