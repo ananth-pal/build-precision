@@ -127,9 +127,9 @@ export default function Heritage() {
 
             {eras.map((era) => (
               <section key={era.number}>
-                {/* Era divider — rail passes through, no dot */}
-                <div className="relative py-12 md:py-20">
-                  <div className="ml-12 md:ml-0 md:text-center">
+                {/* Era divider — masks the rail behind it */}
+                <div className="relative py-12 md:py-20 md:flex md:justify-center">
+                  <div className="relative z-10 ml-12 md:ml-0 md:text-center bg-background md:px-6">
                     <div className="text-primary text-sm md:text-base font-semibold tracking-wide">
                       {era.number} · {era.range}
                     </div>
