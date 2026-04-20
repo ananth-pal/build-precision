@@ -12,6 +12,8 @@ const steps = [
 
 const standards = [
   { label: "ISO 9001:2015", note: "Quality Management System, certified by Intertek (UKAS accredited)" },
+  { label: "ISO 14001", note: "Environmental Management System (in progress)" },
+  { label: "ISO 45001", note: "Occupational Health & Safety Management System (in progress)" },
 ];
 
 export default function WorkingWithPentagon() {
