@@ -30,19 +30,19 @@ function VersionOne() {
       <div className="capability-card">
         <h2 className="text-2xl lg:text-3xl font-bold mb-4">From material to tested module</h2>
         <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mb-8">
-          A typical gearbox component moves through several stations before shipping. Outside processes — heat treatment, castings, forgings — are routed through long-standing certified vendors and controlled through incoming inspection.
+          A typical gearbox component moves through several stations before shipping.
         </p>
-        <div className="flex flex-wrap items-start gap-y-6 gap-x-2 md:gap-x-4">
+        <div className="flex flex-wrap items-start gap-y-8 gap-x-1 md:gap-x-2">
           {flowSteps.map((step, i) => (
             <div key={step.label} className="flex items-center">
-              <div className="flex flex-col items-start">
-                <span className="text-xs text-muted-foreground font-medium tracking-wider mb-1">{step.num}</span>
-                <span className="text-xs uppercase tracking-widest text-foreground font-semibold whitespace-nowrap">{step.label}</span>
+              <div className="flex flex-col items-start min-w-[100px]">
+                <span className="text-xs text-muted-foreground font-medium tracking-wider mb-2">{step.num}</span>
+                <span className="text-base font-semibold uppercase tracking-wide text-foreground">{step.label}</span>
               </div>
               {i < flowSteps.length - 1 && (
-                <div className="hidden md:flex items-center mx-3 md:mx-4">
-                  <div className="w-8 md:w-12 h-px bg-border" />
-                  <ChevronRight size={14} className="text-muted-foreground/60 -ml-1" aria-hidden />
+                <div className="hidden md:flex items-center mx-2 md:mx-4">
+                  <div className="w-6 md:w-10 h-px bg-border" />
+                  <ChevronRight size={16} className="text-muted-foreground/60 -ml-1" aria-hidden />
                 </div>
               )}
             </div>
@@ -60,8 +60,11 @@ function VersionTwo() {
   return (
     <div className="space-y-8">
       <div className="grid md:grid-cols-2 gap-6">
-        <article className="capability-card space-y-4">
+        <article className="capability-card space-y-3">
           <h3 className="text-xl font-semibold">Capabilities</h3>
+          <p className="font-semibold text-foreground text-sm">
+            Machining. Gear cutting. Assembly.
+          </p>
           <p className="text-muted-foreground text-sm leading-relaxed">
             Machining, gear cutting, and assembly in one operation. Precision components and housings in steel, cast iron, ductile iron and non-ferrous alloys. Spur and helical gears, splined shafts, and integrated electromechanical assemblies up to 30 kg. Best suited to high-mix, medium-volume work with annual volumes typically from around 50 to 20,000 parts.
           </p>
@@ -69,8 +72,11 @@ function VersionTwo() {
             See capabilities <ArrowRight size={14} />
           </Link>
         </article>
-        <article className="capability-card space-y-4">
+        <article className="capability-card space-y-3">
           <h3 className="text-xl font-semibold">Means of Production</h3>
+          <p className="font-semibold text-foreground text-sm">
+            Two plants. In-house tooling, metrology, and test rigs.
+          </p>
           <p className="text-muted-foreground text-sm leading-relaxed">
             Two plants in Ambattur Industrial Estate. CNC horizontal and vertical machining centres, CNC turning, cylindrical and surface grinding. A dedicated gear-cutting division with hobbing, shaving, shaping, broaching and profile testing. Clean-room assembly with automated test rigs. CMM and high-resolution surface metrology in-house.
           </p>
