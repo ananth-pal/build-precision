@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
 export default function ProgrammesInProduction() {
   return (
     <div>
@@ -15,6 +18,11 @@ export default function ProgrammesInProduction() {
             Mid-engine balancer assemblies developed and supplied in repeat production for [XX] years. [Programme volume / component count / balancing class to be confirmed]. [One concrete technical feature — to be confirmed].
           </p>
         </article>
+      </div>
+      <div className="mt-6">
+        <Link to="/portfolio" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+          See portfolio <ArrowRight size={14} />
+        </Link>
       </div>
     </div>
   );
