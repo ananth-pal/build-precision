@@ -4,14 +4,11 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import ProgrammesInProduction from "./ProgrammesInProduction";
 
 const flowSteps = [
-  "Design review",
-  "Blank preparation",
-  "Machining",
-  "Gear cutting",
-  "Grinding & finishing",
-  "Assembly",
-  "Functional testing",
-  "Serialised dispatch",
+  { num: "01", label: "Machining" },
+  { num: "02", label: "Gear cutting" },
+  { num: "03", label: "Assembly" },
+  { num: "04", label: "Testing" },
+  { num: "05", label: "Dispatch" },
 ];
 
 function DeepLinks() {
@@ -31,16 +28,22 @@ function VersionOne() {
   return (
     <div className="space-y-8">
       <div className="capability-card">
-        <h2 className="text-2xl lg:text-3xl font-bold mb-4">How work moves through the factory</h2>
-        <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mb-6">
-          Most programmes touch several stations. A typical gearbox component moves from raw material through tested module inside one operation, with outside processes routed through long-standing certified vendors and controlled through incoming inspection.
+        <h2 className="text-2xl lg:text-3xl font-bold mb-4">From material to tested module</h2>
+        <p className="text-muted-foreground text-sm leading-relaxed max-w-3xl mb-8">
+          A typical gearbox component moves through several stations before shipping. Outside processes — heat treatment, castings, forgings — are routed through long-standing certified vendors and controlled through incoming inspection.
         </p>
-        <div className="flex flex-wrap items-center gap-y-3">
+        <div className="flex flex-wrap items-start gap-y-6 gap-x-2 md:gap-x-4">
           {flowSteps.map((step, i) => (
-            <div key={step} className="flex items-center">
-              <span className="text-sm text-foreground whitespace-nowrap">{step}</span>
+            <div key={step.label} className="flex items-center">
+              <div className="flex flex-col items-start">
+                <span className="text-xs text-muted-foreground font-medium tracking-wider mb-1">{step.num}</span>
+                <span className="text-xs uppercase tracking-widest text-foreground font-semibold whitespace-nowrap">{step.label}</span>
+              </div>
               {i < flowSteps.length - 1 && (
-                <ChevronRight size={14} className="mx-2 text-muted-foreground/60 shrink-0" aria-hidden />
+                <div className="hidden md:flex items-center mx-3 md:mx-4">
+                  <div className="w-8 md:w-12 h-px bg-border" />
+                  <ChevronRight size={14} className="text-muted-foreground/60 -ml-1" aria-hidden />
+                </div>
               )}
             </div>
           ))}
