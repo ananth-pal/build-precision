@@ -83,13 +83,6 @@ export default function Machining() {
                 <div className="space-y-4">
                   <p className="text-base text-muted-foreground leading-relaxed">
                     Our quality management system is certified to ISO 9001:2015. Measurement covers dimensional inspection, form and geometry, surface finish, and gear metrology.
-                    <br />
-                    <br />
-                    See{" "}
-                    <Link to="/technologies#measurement-metrology" className="text-primary font-medium hover:underline">
-                      Measurement &amp; Metrology
-                    </Link>{" "}
-                    for the full process list.
                   </p>
                   <Dialog>
                     <DialogTrigger asChild>
@@ -111,6 +104,13 @@ export default function Machining() {
                       </Table>
                     </DialogContent>
                   </Dialog>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    See{" "}
+                    <Link to="/technologies#measurement-metrology" className="text-primary font-medium hover:underline">
+                      Measurement &amp; Metrology
+                    </Link>{" "}
+                    for the full process list.
+                  </p>
                 </div>
               ) : (
                 <p className="text-base text-muted-foreground leading-relaxed">
@@ -122,7 +122,10 @@ export default function Machining() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Machine Tools</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Turning, milling, boring, grinding, gear cutting, and finishing processes are carried out in-house on machines operated and maintained by a team with a machine-tool-building background. Machines are kept to original accuracy through in-house maintenance. See{" "}
+                Turning, milling, boring, grinding, gear cutting, and finishing processes are carried out in-house on machines operated and maintained by a team with a machine-tool-building background. Machines are kept to original accuracy through in-house maintenance.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mt-4">
+                See{" "}
                 <Link to="/technologies#machine-tools" className="text-primary font-medium hover:underline">
                   Machine Tools
                 </Link>{" "}
