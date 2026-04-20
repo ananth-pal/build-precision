@@ -156,7 +156,7 @@ export default function Machining() {
                     <DialogTrigger asChild>
                       <Button variant="outline" size="sm">View materials</Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-2xl">
+                    <DialogContent className="max-w-3xl">
                       <DialogHeader>
                         <DialogTitle>Materials</DialogTitle>
                       </DialogHeader>
