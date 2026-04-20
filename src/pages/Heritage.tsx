@@ -1,4 +1,3 @@
-import { Download } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -166,12 +165,6 @@ export default function Heritage() {
           {/* Narrative */}
           <div className="space-y-6 text-muted-foreground leading-relaxed max-w-3xl">
             <p className="text-sm italic">Pentagon is part of The Sellvinds Group; group companies manufacture automotive components including cylinder heads and crankshafts for leading Indian OEMs.</p>
-          </div>
-
-          <div className="mt-12">
-            <a href="#" className="download-btn">
-              <Download size={16} /> Download Company Brochure
-            </a>
           </div>
         </div>
       </main>
