@@ -27,7 +27,7 @@ const materialsEstablished = [
 
 const materialsCapable = [
   "Stainless steels",
-  "Tool steels",
+  
   "Titanium",
   "Inconel",
   "PEEK, POM",
@@ -184,7 +184,7 @@ export default function Machining() {
                 </div>
               ) : (
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Materials worked regularly include carbon and alloy steels — including case-hardening and nitriding grades — cast steel, gray and ductile iron, wrought aluminium, and cast aluminium. Tooling, process definition, and repeat experience are established for these materials. Stainless and tool steels, titanium, Inconel, PEEK, POM, brass, and copper are within the machines' capability and are taken on where tooling can be specified and procured for the job. Stock is accepted as bar, plate, castings, or forgings.
+                  Materials worked regularly include carbon, alloy and tool steels — including case-hardening, nitriding, and through hardening grades — cast steel, gray and ductile iron, wrought aluminium, and cast aluminium. Tooling, process definition, and repeat experience are established for these materials. Stainless steels, titanium, Inconel, PEEK, POM, brass, and copper are within the machines' capability and are taken on where tooling can be specified and procured for the job. Stock is accepted as bar, plate, castings, or forgings.
                 </p>
               )}
             </div>
