@@ -11,7 +11,7 @@ import heroCnc from "@/assets/hero-cnc.jpg";
 
 const qualityRows: [string, string][] = [
   ["Calibration", "Traceable to national standards, performed in-house and with external specialists where needed"],
-  ["Machine tool maintenance", "In-house; machines stripped and rebuilt as needed"],
+  
   ["Drawing control", "Revision-controlled through a PLM system"],
   ["Material traceability", "Incoming inspection through dispatch; outside-processed items re-inspected on return"],
   ["Reports", "First article, dimensional, and process records included with product as the job requires"],
