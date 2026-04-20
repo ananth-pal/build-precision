@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -46,6 +46,12 @@ export default function About() {
                 Read more <ArrowRight size={14} />
               </span>
             </Link>
+          </div>
+
+          <div className="pt-8">
+            <a href="#" className="download-btn">
+              <Download size={16} /> Download Company Brochure
+            </a>
           </div>
         </div>
       </main>
