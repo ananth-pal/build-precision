@@ -18,10 +18,7 @@ export default function Capabilities() {
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12 whitespace-pre-line">
-            Pentagon manufactures precision components and assemblies in steel, cast iron, ductile iron, and non-ferrous alloys. Work spans housings, shafts, valve bodies, gear sets, and integrated assemblies. The operation is optimised for medium-volume work where part complexity justifies careful process definition and batch sizes are large enough to recover setup cost.
-
-
-            Machining, gear cutting, and assembly are integrated so the part is engineered as one build from material through to tested module.
+            Pentagon manufactures precision components and assemblies in steel, cast iron, ductile iron, and non-ferrous alloys. Work spans housings, shafts, valve bodies, gear sets, and integrated assemblies. The operation is optimised for medium-volume work where part complexity justifies careful process definition and batch sizes are large enough to recover setup cost. Machining, gear cutting, and assembly are integrated so the part is engineered as one build from material through to tested module.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
