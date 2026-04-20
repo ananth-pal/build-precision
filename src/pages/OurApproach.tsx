@@ -63,19 +63,22 @@ export default function WorkingWithPentagon() {
 
             {/* ESG */}
             <div className="mt-12 border-t border-border pt-8">
-              <h3 className="text-lg font-semibold mb-6">ESG</h3>
+              <h3 className="text-lg font-semibold mb-2">Environmental, Social & Governance (ESG)</h3>
+              <p className="text-sm text-muted-foreground mb-6 max-w-3xl">
+                We set benchmarks that exceed statutory requirements through a culture of integrity and continuous improvement. This is demonstrated by our commitment to:
+              </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground mb-1">Quality</h4>
-                  <p className="text-sm text-muted-foreground">ISO 9001:2015 certified. [1 sentence — owner to write]</p>
+                  <h4 className="text-sm font-semibold text-foreground mb-2">Employee Welfare</h4>
+                  <p className="text-sm text-muted-foreground">We provide comprehensive medical insurance for our entire workforce, exceeding legal mandates to ensure the security of our skilled team.</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground mb-1">Environment</h4>
-                  <p className="text-sm text-muted-foreground">ISO 14001:2015 in progress. [1 sentence — owner to write]</p>
+                  <h4 className="text-sm font-semibold text-foreground mb-2">Industrial Responsibility</h4>
+                  <p className="text-sm text-muted-foreground">We ensure the safe and ethical disposal of all industrial waste, maintaining clean-room standards across our 43,200 sq. ft. facilities.</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground mb-1">Safety</h4>
-                  <p className="text-sm text-muted-foreground">ISO 45001:2018 in progress. [1 sentence — owner to write]</p>
+                  <h4 className="text-sm font-semibold text-foreground mb-2">Resource Efficiency</h4>
+                  <p className="text-sm text-muted-foreground">We prioritise energy-efficient manufacturing processes and utilise recyclable packaging—including customer-branded cartons and reusable wooden crates—to minimise our environmental footprint.</p>
                 </div>
               </div>
             </div>
