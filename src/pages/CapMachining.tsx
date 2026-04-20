@@ -14,7 +14,7 @@ const qualityRows: [string, string][] = [
   ["Machine tool maintenance", "In-house; machines stripped and rebuilt as needed"],
   ["Drawing control", "Revision-controlled through a PLM system"],
   ["Material traceability", "Incoming inspection through dispatch; outside-processed items re-inspected on return"],
-  ["Reports", "First article, dimensional, and process records produced as the job requires"],
+  ["Reports", "First article, dimensional, and process records included with product as the job requires"],
   ["Non-conformances", "Contained, and closed with corrective action"],
 ];
 
@@ -107,7 +107,7 @@ export default function Machining() {
                 </div>
               ) : (
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Our quality management system is certified to ISO 9001:2015. Calibration is traceable to national standards and machine tool maintenance is performed in-house — our team can strip and rebuild machine tools from scratch. Drawings are revision-controlled through a PLM system, which also allows material traceability from incoming inspection through dispatch. Externally-processed items are re-inspected on return. First article reports, dimensional reports, and process records are produced as the job requires, with non-conformances contained, and closed with corrective action.
+                  Our quality management system is certified to ISO 9001:2015. Calibration is traceable to national standards and machine tool maintenance is performed in-house — our team can strip and rebuild machine tools from scratch. Drawings are revision-controlled through a PLM system, which also allows material traceability from incoming inspection through dispatch. Externally-processed items are re-inspected on return. First article reports, dimensional reports, and process records are included with product as the job requires, with non-conformances contained, and closed with corrective action.
                 </p>
               )}
             </div>
