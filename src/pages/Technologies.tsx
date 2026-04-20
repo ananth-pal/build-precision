@@ -1,83 +1,160 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { Download, Cog, CircleDot, Ruler, Droplets, Scissors, Wrench } from "lucide-react";
+import { Cog, Settings, Wrench, Ruler, Hammer, Network } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-const categories = [
+const cards = [
   {
     icon: Cog,
-    title: "Machine Tools",
-    desc: "Machine list excerpt: CNC horizontal and vertical machining centres, CNC turning, fine boring, surface and cylindrical grinding, lapping and honing. [PLACEHOLDER — owner to add specifics]\nHobbing, shaving, shaping, broaching, tooth rounding and chamfering, bore and angular grinding. Profile and PCD testing in-house. [PLACEHOLDER]",
+    title: "Machine Tools: Non-Gears",
+    desc: "General machining, from raw or near-net-shape input through finished part.",
+    details: [
+      "CNC horizontal machining centres — Makino",
+      "CNC vertical machining centres",
+      "CNC turning centres",
+      "Fine-boring machines",
+      "Vertical mills",
+      "Radial drills",
+      "Special-purpose machines",
+      "Double-disc lapping machine",
+      "Surface grinding machine",
+    ],
   },
   {
-    icon: Ruler,
-    title: "Measurement & Metrology",
-    desc: "CNC scanning CMM, surface roughness measurement to nanometre resolution, height gauging, air/plug/ring gauges. All instruments calibrated periodically in-house and through external agencies. [PLACEHOLDER]",
-  },
-  {
-    icon: Droplets,
-    title: "Deburring, Washing, and Cleaning",
-    desc: "[PLACEHOLDER — owner to write]",
+    icon: Settings,
+    title: "Machine Tools: Gears",
+    desc: "A dedicated plant covering the route from blank preparation through finished teeth.",
+    details: [
+      "CNC gear hobbers — Cooper Pfauter, up to 6 module",
+      "Gear shaper — Lorenz, up to 4 module",
+      "Gear shaver — Red Ring, up to 200 mm dia",
+      "Vertical broaching machine — 10 ton",
+      "Gear tooth rounding and chamfering",
+      "CNC bore grinder",
+      "CNC angular wheelhead grinder",
+      "Cylindrical grinders",
+      "Gear profile and PCD tester — Osaka GC 3H",
+      "Gear roll tester",
+    ],
   },
   {
     icon: Wrench,
-    title: "Tooling",
-    desc: "All jigs, fixtures, and gauges — manual and hydraulic — are designed and manufactured in-house. This capability originates from Pentagon's machine tool heritage and is not outsourced. A wide range of cutting tools is available along with a CNC tool pre-setter.",
+    title: "Assembly and Test",
+    desc: "Clean-room assembly of hydraulic valves, gear pumps, PTO gearboxes, and engine balancers, with automated testing for hydraulic units.",
+    details: [
+      "Automatic pump-testing cycle via Siemens PLC",
+      "50 HP AC induction motor with closed-loop RPM control via Siemens vector drive",
+      "Maximum pressure: 315 bar",
+      "Bosch proportional pressure relief valve",
+      "Webster flow transducer and Stauff flow meter",
+      "Pressure and temperature transducers",
+      "Two-stage filtration through oversized Stauff pressure-line filters",
+      "Heat exchanger with cooling tower",
+      "Safety interlocks on pressure, flow, temperature, and clogged filters",
+    ],
+  },
+  {
+    icon: Ruler,
+    title: "Measurement and Metrology",
+    desc: "CMM, surface roughness, height gauging, and dedicated gauges, with calibration cycled in-house and via external agencies.",
+    details: [
+      "CNC scanning CMM — Zeiss",
+      "Surface roughness tester, nanometre resolution — Zeiss",
+      "Height measuring machines — Trimos, Electronica",
+      "Air, plug, and ring gauges",
+    ],
+  },
+  {
+    icon: Hammer,
+    title: "Tooling and Supporting Processes",
+    desc: "In-house jig, fixture, and gauge design and manufacture, plus deburring, washing, and painting.",
+    details: [
+      "Jig, fixture, and receiver gauge design and manufacture (manual and hydraulic)",
+      "Cutting tool range with Zoller CNC tool presetter",
+      "SolidWorks for tooling design and early manufacturability review with customers",
+      "Component washing machines and painting system (Plant 1)",
+      "Gear deburring and vibratory deburring (Plant 2)",
+    ],
+  },
+  {
+    icon: Network,
+    title: "Sourcing and Outside Processes",
+    desc: "Long-standing vendor network for castings, forgings, heat treatment, and non-critical machined components.",
+    details: [
+      "Castings and forgings — long-standing certified vendors in India and abroad",
+      "Heat treatment — IATF 16949 certified specialist vendor with automated sealed-quench furnace facility",
+      "Non-critical machined components — certified machine shops",
+      "Incoming inspection, traceability, and controlled storage applied to all supplied material",
+    ],
   },
 ];
 
 export default function Technologies() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash) {
-      const el = document.getElementById(location.hash.slice(1));
-      if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
-      }
-    }
-  }, [location]);
-
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
       <PageHero
-        title="Technologies"
-        subtitle="What Pentagon uses to manufacture."
+        title="Means of Production"
+        subtitle="Equipment, measurement, and supporting systems across two Pentagon facilities in Chennai."
       />
       <main className="flex-1">
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
             <p className="text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              Pentagon operates two dedicated manufacturing facilities — one for machining and assembly, one for gear cutting. The equipment base has its roots in Pentagon's original machine tool manufacturing business; the same team that once built special-purpose machines for India's largest automotive OEMs now uses that knowledge to specify, maintain, and where necessary rebuild the equipment that runs production. [Owner to refine]
+              Pentagon operates two ISO 9001:2015 certified facilities in Ambattur Industrial Estate totalling 43,200 sq ft — one for non-gear machining and assembly, one for gear cutting. The equipment base has its roots in Pentagon's original machine tool business. The same team that once built special-purpose machines for India's leading automotive OEMs now specifies, maintains, and where necessary rebuilds the equipment that runs production.
             </p>
-            <p className="text-sm text-muted-foreground mb-12">
-              For what Pentagon produces using these technologies, see <a href="/capabilities" className="text-primary font-medium hover:underline">Capabilities →</a>
+            <p className="text-sm text-muted-foreground mb-12 max-w-3xl">
+              For the parts and assemblies produced on this equipment, see{" "}
+              <a href="/capabilities" className="text-primary font-medium hover:underline">Capabilities →</a>
+              . For representative examples, see{" "}
+              <a href="/what-we-make" className="text-primary font-medium hover:underline">Portfolio →</a>
+              .
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {categories.map((c) => {
-                const slug = c.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-                return (
-                  <div key={c.title} id={slug} className="capability-card scroll-mt-24">
-                    <c.icon className="text-primary mb-4" size={28} />
-                    <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{c.desc}</p>
-                  </div>
-                );
-              })}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {cards.map((c) => (
+                <div key={c.title} className="capability-card flex flex-col">
+                  <c.icon className="text-primary mb-4" size={28} />
+                  <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{c.desc}</p>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button className="self-start text-sm font-medium text-primary hover:underline">
+                        See details →
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-lg">
+                      <DialogHeader>
+                        <DialogTitle>{c.title}</DialogTitle>
+                        <DialogDescription>{c.desc}</DialogDescription>
+                      </DialogHeader>
+                      <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed mt-2">
+                        {c.details.map((d) => (
+                          <li key={d}>{d}</li>
+                        ))}
+                      </ul>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              ))}
             </div>
+          </div>
+        </section>
 
-            <div>
-              <a href="#" className="download-btn">
-                <Download size={16} /> Download Full Equipment List
-              </a>
-              <p className="text-xs text-muted-foreground mt-2">
-                The PDF contains machine makes, models, and specifications for all six categories.
-              </p>
-            </div>
+        <section className="section-padding bg-secondary">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6">New Processes and Equipment</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-3xl">
+              When new work calls for a process we don't currently run in-house, the first move is typically to place the operation with an established subcontractor — many carried over from Pentagon's machine tool days and proven over long relationships. Depending on volume and fit, we then bring the process in-house through one of three routes: acquiring new machines, acquiring and rebuilding used machines, or re-tooling an existing machine. The same logic applies to supporting infrastructure — fixturing, gauging, cleaning, and, where required, controlled environments for inspection or assembly. This is how Pentagon has historically entered new part families and new industries without starting from a blank factory.
+            </p>
           </div>
         </section>
       </main>
