@@ -165,8 +165,6 @@ export default function Heritage() {
 
           {/* Narrative */}
           <div className="space-y-6 text-muted-foreground leading-relaxed max-w-3xl">
-            <p>[PLACEHOLDER — owner to write: The machine tool origin and what it means for engineering culture today.]</p>
-            <p>[PLACEHOLDER — owner to write: The transition to contract manufacturing and what continuity across that transition looks like.]</p>
             <p className="text-sm italic">Pentagon is part of The Sellvinds Group; group companies manufacture automotive components including cylinder heads and crankshafts for leading Indian OEMs.</p>
           </div>
 
