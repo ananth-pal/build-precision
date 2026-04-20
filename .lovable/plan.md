@@ -1,42 +1,45 @@
 
 
-## Goal
-Update the "Quality & Safety" card on the Machining capability page to show "Quality" with two reviewable content variants the user can toggle between via an icon near the title.
+User wants three edits to `src/pages/OurApproach.tsx`:
 
-## Approach
+1. Merge "Ramp-up" (05) and "Sustain" (06) into a single "Ramp and Sustain" step, with content closer to the brochure.
+2. Remove the italic note on step 02 (DFM & Tooling).
+3. Remove placeholder text on the page.
 
-**Single card, two variants, toggle icon near title.** A small icon button (e.g., `Eye` or `RefreshCw` from lucide-react) sits next to the "Quality" heading. Clicking it cycles between Version 1 (prose) and Version 2 (intro + table-opening trigger). A subtle label like "v1 / v2" appears next to the icon so reviewers know which version they're seeing.
+Let me parse the brochure to get the exact "Ramp and Sustain" copy.
+<lov-plan-tools>
+<lov-tool-use id="toolu_vrtx_01XkasKSxCJq8kZkvYtfJ58b" name="document--parse_document" integration-id="document" data="{\"file_path\": \"user-uploads://Pentagon_Brochure-2.pdf\"}">
+</lov-tool-use>
 
-### Version 1 — Prose
-Renders the full paragraph as written, in the same `text-base text-muted-foreground leading-relaxed` style used elsewhere on the page.
+<lov-tool-use id="toolu_vrtx_01N5EMTcWiKnojj6b27T6bZo" name="document--parse_document" integration-id="document" data="{\"file_path\": \"user-uploads://Pentagon_Brochure-2.pdf\"}">
+</lov-tool-use>
+<lov-plan>
+Edits to `src/pages/OurApproach.tsx`:
 
-### Version 2 — Intro + Table Popup
-Renders the short intro line, then a button "View quality details" that opens a Dialog (shadcn `dialog.tsx`, already in the project). The dialog contains the 6-row table:
+**1. Merge Ramp-up + Sustain back into one step**
 
-| Item | Detail |
-|---|---|
-| Calibration | Traceable to national standards, performed in-house |
-| Machine tool maintenance | In-house; machines stripped and rebuilt as needed |
-| Drawing control | Revision-controlled through a PLM system |
-| Material traceability | Incoming inspection through dispatch; outside-processed items re-inspected on return |
-| Reports | First article, dimensional, and process records produced as the job requires |
-| Non-conformances | Disclosed to the customer, contained, and closed with corrective action |
+Replace steps 05 and 06 with a single combined step matching the brochure:
+- `05 — Ramp and Sustain` — "Release, engineering change, order handling, buffer stock, and ongoing quality reporting."
 
-Table styled with shadcn `table.tsx` (also already in the project), matching the minimal aesthetic — thin row dividers, no heavy borders.
+Final steps array (5 items):
+- 01 Kickoff and NDA
+- 02 DFM and Tooling
+- 03 Prototyping
+- 04 Validation
+- 05 Ramp and Sustain
 
-## Implementation
+**2. Remove italic content in step 02 (DFM and Tooling)**
 
-**File changed:** `src/pages/CapMachining.tsx` only.
+Drop the `note` field on the DFM card ("We give feedback on design intent, not just tolerances..."). The italic block at the bottom of that card disappears.
 
-1. Add `useState` for `qualityVersion` (`1 | 2`).
-2. Replace the existing "Quality & Safety" card block with a new card that:
-   - Renders title "Quality" + small toggle icon button (`aria-label="Toggle version"`) + `v1`/`v2` indicator.
-   - Conditionally renders v1 prose or v2 intro + Dialog trigger.
-3. Import `Dialog`, `DialogContent`, `DialogHeader`, `DialogTitle`, `DialogTrigger` from `@/components/ui/dialog`.
-4. Import `Table`, `TableBody`, `TableCell`, `TableRow` from `@/components/ui/table`.
-5. Import a toggle icon (`RefreshCw` from `lucide-react`).
+**3. Remove placeholder text**
 
-## Notes
-- This is a review-mode pattern — the toggle is intentionally lightweight, not a polished feature. Once the user picks a winner, the toggle and unused variant get removed.
-- No new files, no routes, no new dependencies.
+- Hero subtitle `[PLACEHOLDER — owner to write intro.]` → replace with brochure intro: *"At Pentagon, precision dictates our every process. Every stage of our workflow is built on collaboration, technical rigour, and continuous improvement to ensure each product meets the highest standards of quality and performance."*
+- Remove the small `[Owner to refine]` caption under the values paragraph.
+- Remove `[status: in progress — confirm with owner before publishing]` notes from ISO 14001 and ISO 45001 entries (leaving the cert names with a clean short note, or drop them entirely — defaulting to keeping only ISO 9001:2015 to avoid shipping unconfirmed claims, consistent with brochure which only lists ISO 9001:2015).
 
+**4. No other changes**
+
+ESG section, page title ("Working with Pentagon"), and overall layout stay as-is.
+
+Files touched: `src/pages/OurApproach.tsx` only.
