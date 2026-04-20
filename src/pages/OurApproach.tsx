@@ -15,7 +15,6 @@ const standards = [
   { label: "ISO 9001:2015", note: "Quality Management System, certified by Intertek (UKAS accredited)" },
   { label: "ISO 14001:2015", note: "Environmental Management System [status: in progress — confirm with owner before publishing]" },
   { label: "ISO 45001:2018", note: "Occupational Health & Safety [status: in progress — confirm with owner before publishing]" },
-  { label: "PPAP and APQP", note: "capability" },
 ];
 
 export default function WorkingWithPentagon() {
