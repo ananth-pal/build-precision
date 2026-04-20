@@ -82,7 +82,11 @@ export default function Machining() {
               {qualityVersion === 1 ? (
                 <div className="space-y-4">
                   <p className="text-base text-muted-foreground leading-relaxed">
-                    Our quality management system is certified to ISO 9001:2015. Measurement covers dimensional inspection, form and geometry, surface finish, and gear metrology.
+                    Our quality management system is certified to ISO 9001:2015. Measurement covers dimensional inspection, form and geometry, surface finish, and gear metrology. See{" "}
+                    <Link to="/technologies#measurement-metrology" className="text-primary font-medium hover:underline">
+                      Measurement &amp; Metrology
+                    </Link>{" "}
+                    in Technologies for the full list.
                     <br />
                     <br />
                     See table for more.
@@ -118,15 +122,9 @@ export default function Machining() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Machine Tools and Measurement</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Turning, milling, boring, grinding, gear cutting, and finishing processes are carried out in-house.
-                <br />
-                See{" "}
+                Turning, milling, boring, grinding, gear cutting, and finishing processes are carried out in-house. See{" "}
                 <Link to="/technologies#machine-tools" className="text-primary font-medium hover:underline">
                   Machine Tools
-                </Link>{" "}
-                and{" "}
-                <Link to="/technologies#measurement-metrology" className="text-primary font-medium hover:underline">
-                  Measurement &amp; Metrology
                 </Link>{" "}
                 in Technologies for the full list.
               </p>
