@@ -35,7 +35,7 @@ const materialsCapable = [
 ];
 
 export default function Machining() {
-  const [qualityVersion, setQualityVersion] = useState<1 | 2>(1);
+  
   const [materialsVersion, setMaterialsVersion] = useState<1 | 2>(1);
   return (
     <div className="min-h-screen flex flex-col">
