@@ -20,9 +20,9 @@ const qualityRows: [string, string][] = [
 
 const materialsEstablished = [
   "Carbon, alloy and tool steels, including case-hardening, nitriding, and through hardening grades",
-  "Cast steel",
   "Gray iron and ductile iron",
   "Wrought aluminium and cast aluminium",
+  "Cast steel",
 ];
 
 const materialsCapable = [
