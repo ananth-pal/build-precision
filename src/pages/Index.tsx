@@ -1,20 +1,14 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Cog, CircleDot, Box } from "lucide-react";
 import heroCnc from "@/assets/hero-cnc.jpg";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
 
 const stats = [
   { number: "45+", label: "Years manufacturing heritage" },
   { number: "65", label: "Year group legacy" },
   { number: "100+", label: "Product types developed & exported" },
   { number: "75+", label: "Variants, one product family, one partner" },
-];
-
-const capabilities = [
-  { icon: Cog, title: "Machining", desc: "CNC turning, milling, grinding, and in-house tooling design — from a team that built machine tools before becoming a contract manufacturer.", path: "/capabilities/machining" },
-  { icon: CircleDot, title: "Gear Cutting", desc: "Dedicated gear cutting division: hobbing, shaving, shaping, broaching, and precision grinding with full profile testing.", path: "/capabilities/gear-cutting" },
-  { icon: Box, title: "Assembly", desc: "Clean-room assembly, functional testing on automated rigs, and serialised traceability on every unit shipped.", path: "/capabilities/assembly" },
 ];
 
 export default function Home() {
@@ -56,23 +50,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Capability Tiles */}
-        <section className="section-padding bg-secondary">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              {capabilities.map((c) => (
-                <Link key={c.title} to={c.path} className="capability-card group bg-background">
-                  <c.icon className="text-primary mb-4" size={32} />
-                  <h3 className="text-xl font-semibold mb-3">{c.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{c.desc}</p>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Learn more <ArrowRight size={14} />
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Capability Section (V1/V2 toggle) */}
+        <HomeCapabilitySection />
 
         {/* Differentiator Block */}
         <section className="section-padding">
