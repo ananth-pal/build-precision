@@ -3,17 +3,25 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 
 const steps = [
-  { num: "01", title: "Kickoff & NDA", desc: "Scope, volumes, standards, PPAP requirements." },
-  { num: "02", title: "DFM & Tooling", desc: "Design for Manufacture feedback; in-house jig and fixture design; control plan." },
-  { num: "03", title: "Prototyping", desc: "Sample builds; linked inspection and functional test reports." },
-  { num: "04", title: "Validation", desc: "Performance testing; capability runs; packaging trials." },
-  { num: "05", title: "Ramp and Sustain", desc: "Engineering change management; order handling; buffer stock; Ongoing quality reporting" },
+  { num: "01", title: "Kickoff & NDA", desc: "Scope, volumes, applicable standards, and PPAP requirements confirmed." },
+  { num: "02", title: "DFM & Tooling", desc: "Design-for-manufacture review; in-house jig and fixture design; control plan defined." },
+  { num: "03", title: "Prototyping", desc: "Sample builds with linked inspection and functional test reports." },
+  { num: "04", title: "Validation", desc: "Performance testing, capability runs, and packaging trials." },
+  { num: "05", title: "Ramp and Sustain", desc: "Engineering change management, order handling, buffer stock, and ongoing quality reporting." },
 ];
 
 const standards = [
-  { label: "ISO 9001:2015", note: "Quality Management System, certified by Intertek (UKAS accredited)" },
-  { label: "ISO 14001", note: "Environmental Management System (in progress)" },
-  { label: "ISO 45001", note: "Occupational Health & Safety Management System (in progress)" },
+  { label: "ISO 9001:2015", note: "Quality Management System, certified by Intertek (UKAS-accredited)." },
+  { label: "ISO 14001", note: "Environmental Management System (in progress)." },
+  { label: "ISO 45001", note: "Occupational Health & Safety Management System (in progress)." },
+];
+
+const memberships = [
+  { label: "One Star Export House", note: "DGFT recognition for exporters meeting a minimum cumulative export threshold under the Foreign Trade Policy. Valid through 2028." },
+  { label: "EEPC India", note: "Engineering Export Promotion Council, registered Manufacturer Exporter." },
+  { label: "FIEO", note: "Federation of Indian Export Organisations, registered Manufacturer Exporter." },
+  { label: "FPSI", note: "Fluid Power Society of India, industrial member since 2010." },
+  { label: "AIEMA", note: "Ambattur Industrial Estate Manufacturers' Association, member since 2015." },
 ];
 
 export default function WorkingWithPentagon() {
