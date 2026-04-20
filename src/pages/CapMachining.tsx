@@ -122,7 +122,7 @@ export default function Machining() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Machine Tools</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Turning, milling, boring, grinding, gear cutting, and finishing processes are carried out in-house. Our expert in-house team is capable of stripping and reassembling machine tools as needed. See{" "}
+                Turning, milling, boring, grinding, gear cutting, and finishing processes are carried out in-house on machines operated and maintained by a team with a machine-tool-building background. Machines are kept to original accuracy through in-house maintenance. See{" "}
                 <Link to="/technologies#machine-tools" className="text-primary font-medium hover:underline">
                   Machine Tools
                 </Link>{" "}
