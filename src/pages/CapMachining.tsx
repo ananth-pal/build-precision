@@ -84,6 +84,7 @@ export default function Machining() {
                   <p className="text-base text-muted-foreground leading-relaxed">
                     Our quality management system is certified to ISO 9001:2015. Measurement covers dimensional inspection, form and geometry, surface finish, and gear metrology.
                     <br />
+                    <br />
                     See table for more.
                   </p>
                   <Dialog>
