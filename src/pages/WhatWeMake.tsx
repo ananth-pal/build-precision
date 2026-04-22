@@ -139,14 +139,14 @@ export default function WhatWeMake() {
             </div>
 
             <div className="mt-12">
-              <p className="text-sm text-muted-foreground mb-4">
+              <p className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
                 Active enquiry and early-stage development in:
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {emergingMarkets.map((name) => (
                   <div
                     key={name}
-                    className="border border-border rounded-md px-4 py-3 text-sm text-muted-foreground"
+                    className="border border-border rounded-md px-4 py-3 text-sm font-semibold text-foreground"
                   >
                     {name}
                   </div>
