@@ -204,6 +204,21 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Closing CTA */}
+        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20 border-t border-border">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-2xl lg:text-3xl font-bold">Start a conversation</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Are you looking for a reliable manufacturing partner that is committed to a longstanding relationship? Send us your drawing and we can get started.
+            </p>
+            <div className="flex justify-center">
+              <Link to="/contact" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-medium rounded hover:opacity-90 transition-opacity">
+                Request a Quote
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Stats */}
         <section className="border-t border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
