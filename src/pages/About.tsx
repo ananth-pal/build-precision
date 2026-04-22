@@ -18,7 +18,7 @@ export default function About() {
           {/* Our Facilities */}
           <div className="pt-8">
             <h2 className="text-2xl font-bold mb-2">Our Facilities</h2>
-            <p className="text-sm text-muted-foreground mb-8">Combined: 43,200 sq ft across both facilities.</p>
+            <p className="text-sm text-muted-foreground mb-8">43,200 sq ft total footprint — 20,000 sq ft built-up today, with the balance held for capacity expansion as customer programmes scale.</p>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="capability-card">
                 <h3 className="text-lg font-semibold mb-2">Plant 1 — Machining, Assembly & Administration</h3>

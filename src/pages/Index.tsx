@@ -62,7 +62,7 @@ export default function Home() {
                 Since 1999, Pentagon has supplied a leading multinational hydraulics OEM in Australia continuously — developing 75+ product variants from prototype stage across that period. Since 2008, the company has also produced engine balancer assemblies for Simpson & Co. Ltd., one of India's largest engine manufacturers.
               </p>
               <p>
-                Pentagon operates two highly efficient ISO 9001:2015 certified advanced manufacturing facilities totaling 43,200 square feet. These facilities feature clean room assembly, testing and automated validation technologies, as well as a comprehensive range of CNC machine tools and metrology equipment to ensure exceptional quality and reliability.
+                Pentagon operates two highly efficient ISO 9001:2015 certified advanced manufacturing facilities on a 43,200 sq ft footprint (20,000 sq ft built-up, balance ready for development as customer programmes grow). These facilities feature clean room assembly, testing and automated validation technologies, as well as a comprehensive range of CNC machine tools and metrology equipment to ensure exceptional quality and reliability.
               </p>
             </div>
           </div>
