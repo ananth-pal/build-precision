@@ -25,6 +25,7 @@ const cards = [
       "Radial drills",
       "Double-disc lapping machine",
       "Surface grinding machine",
+      "Vertical single pass honing machines",
       "Special-purpose machines",
     ],
   },
