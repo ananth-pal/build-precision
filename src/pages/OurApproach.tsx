@@ -28,7 +28,7 @@ export default function WorkingWithPentagon() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Working with Pentagon" subtitle="Pentagon treats each engagement as long-term production work. We give design feedback before tooling starts, add machinery when a part requires it, and keep traceability standard on every assembly. Our longest customer relationship runs to 26 years." />
+      <PageHero title="Working with Pentagon" subtitle="Pentagon treats each engagement as long-term production work. We give design feedback before tooling starts, add machinery when a part requires it, and keep traceability standard on every assembly. Our longest and largest customer relationship runs to almost 3 decades." />
       <main className="flex-1">
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
