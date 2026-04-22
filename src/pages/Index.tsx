@@ -137,7 +137,7 @@ export default function Home() {
         </section>
 
         {/* What Makes Pentagon Different */}
-        <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16 bg-secondary">
+        <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-7xl mx-auto space-y-6">
             <h2 className="text-2xl lg:text-3xl font-bold">What makes Pentagon different</h2>
             <p className="text-muted-foreground leading-relaxed max-w-4xl">
