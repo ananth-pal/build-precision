@@ -92,7 +92,7 @@ function VersionTwo() {
 }
 
 export default function HomeCapabilitySection() {
-  const [version, setVersion] = useState<"v1" | "v2">("v1");
+  const [version, setVersion] = useState<"v1" | "v2">("v2");
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20 bg-background">
