@@ -110,7 +110,7 @@ export default function Home() {
         {/* Scale and heritage */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-7xl mx-auto space-y-10">
-            <h2 className="text-2xl lg:text-3xl font-bold">Scale and heritage</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold">Who We Are</h2>
 
             {/* Paragraph 1 + compact photo to the right */}
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
@@ -139,7 +139,7 @@ export default function Home() {
         {/* What Makes Pentagon Different */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-7xl mx-auto space-y-6">
-            <h2 className="text-2xl lg:text-3xl font-bold">What makes Pentagon different</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold">What makes us different</h2>
             <p className="text-muted-foreground leading-relaxed max-w-4xl">
               Our strength lies in DFM feedback and coordinating with multinational teams to optimise manufacturability and support efficient scaling from development to mass production. We believe in flexible manufacturing suited to a wide variety of precision components delivered in small-medium volumes. Our consistent on-time delivery record reflects disciplined planning, process control and long-term accountability.
             </p>
