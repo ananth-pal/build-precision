@@ -32,18 +32,34 @@ const families = [
   },
 ];
 
-const endMarketsCurrent = [
-  "Off-Highway and Commercial Vehicles",
-  "Automotive",
-  "Industrial Machinery",
-  "Agriculture",
-];
-
-const endMarketsTarget = [
-  "Medical",
-  "Robotics",
-  "Aerospace",
-  "Defence",
+const endMarkets = [
+  {
+    name: "Off-Highway, Commercial Vehicles, and Agriculture",
+    supplied:
+      "Power take-off gearboxes, hydraulic valves, and gear pumps for auxiliary power and fluid-power systems on commercial, off-highway, and agricultural vehicles. Agricultural exposure is second-tier — parts are supplied to engine and hydraulic OEMs whose products are then built into agricultural equipment.",
+    demanding:
+      "Parts typically combine precision-bored housings with machined gear cavities and integrated hydraulic sub-assembly, and carry field duty cycles that make serial traceability and field-performance history relevant at qualification.",
+    capabilities:
+      "Gear cutting (hobbing, shaving, broaching, tooth chamfering), CNC bore and angular grinding, and clean-room hydraulic assembly with automated test-rig validation.",
+  },
+  {
+    name: "Automotive",
+    supplied:
+      "Engine balancer assemblies for diesel engine builders, and precision-machined gear, shaft, and housing components for drivetrain and transmission applications.",
+    demanding:
+      "Tolerance on gear flanks, splined shafts, and mating housings is the usual gating requirement, along with PPAP-grade inspection documentation and stable repeat production.",
+    capabilities:
+      "CNC hobbing and shaving on spur and helical gears, CMM inspection linked to part serial numbers, and long-run production discipline.",
+  },
+  {
+    name: "Industrial Machinery",
+    supplied:
+      "Precision-machined housings, gears, shafts, and sub-assemblies for industrial machinery OEMs.",
+    demanding:
+      "Part mix in this category typically runs to heavier castings and forgings with multiple machined datums, mixed-process routings (machining, heat treatment, grinding, lapping), and in-house fixture and gauge development at first-article stage.",
+    capabilities:
+      "CNC horizontal and vertical milling (Makino), turning, fine boring, surface and cylindrical grinding, and lapping and honing.",
+  },
 ];
 
 const fitCharacteristics = [
