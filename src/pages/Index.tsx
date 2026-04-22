@@ -71,24 +71,39 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Differentiator Block */}
+        {/* Scale and heritage */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-          <div className="max-w-7xl mx-auto space-y-6">
-            <h2 className="text-2xl lg:text-3xl font-bold">What makes Pentagon different</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-4xl">
-              <p>
-                Pentagon Machines and Services Pvt. Ltd. is a precision contract manufacturing company headquartered in Chennai, India. It started in 19xx building custom special-purpose machines for India's largest automotive OEMs before transitioning to contract manufacturing in 19xx. That origin means Pentagon designs and manufactures all its own jigs, fixtures, and gauges in-house, and its maintenance team can strip, rebuild, and customise machine tools from first principles.
+          <div className="max-w-7xl mx-auto space-y-10">
+            <h2 className="text-2xl lg:text-3xl font-bold">Scale and heritage</h2>
+
+            {/* Paragraph 1 + Slot A */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <p className="text-muted-foreground leading-relaxed">
+                Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. That origin shapes how Pentagon operates today — jigs, fixtures, and gauges are designed and manufactured in-house, and the maintenance team can strip, rebuild, and customise machine tools from first principles.
               </p>
-              <p>
-                Since 1999, Pentagon has supplied a leading multinational hydraulics OEM in Australia continuously — developing 75+ product variants from prototype stage across that period. Since 2008, the company has also produced engine balancer assemblies for Simpson & Co. Ltd., one of India's largest engine manufacturers.
-              </p>
-              <p>
-                Pentagon operates two highly efficient ISO 9001:2015 certified advanced manufacturing facilities on a 43,200 sq ft footprint (20,000 sq ft built-up, balance ready for development as customer programmes grow). These facilities feature clean room assembly, testing and automated validation technologies, as well as a comprehensive range of CNC machine tools and metrology equipment to ensure exceptional quality and reliability.
-              </p>
-              <p>
-                Pentagon handles precision machining, gear cutting, and assembly for safety-critical components with full material and process traceability on every delivered part, supporting OEM programmes that run for decades.
+              <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6">
+                <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                  [Photograph of Plant 1 machine shop or Plant 2 gear-cutting facility — to be supplied]
+                </span>
+              </div>
+            </div>
+
+            {/* Paragraph 2 + Slot B */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6 lg:order-1">
+                <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                  [Photograph of CMM or metrology bay — to be supplied]
+                </span>
+              </div>
+              <p className="text-muted-foreground leading-relaxed lg:order-2">
+                Operations are split across two plants in Ambattur Industrial Estate, Chennai. Plant 1 houses machining, assembly, testing, and administration. Plant 2 is a dedicated gear-cutting division. Total footprint is 43,200 sq. ft., of which 20,000 sq. ft. is currently built-up, with the balance ready for expansion as customer programmes grow. Both plants are ISO 9001:2015 certified.
               </p>
             </div>
+
+            {/* Paragraph 3 */}
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              Pentagon is now in its second generation of management, with the third generation joining the business. Line managers and senior staff have, in many cases, spent over two decades with the company.
+            </p>
           </div>
         </section>
 
