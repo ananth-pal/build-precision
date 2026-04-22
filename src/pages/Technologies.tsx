@@ -70,7 +70,7 @@ const cards = [
       "CNC scanning CMM — Zeiss",
       "Surface roughness tester, nanometre resolution — Zeiss",
       "Height measuring machines — Trimos, Electronica",
-      "Air, plug, and ring gauges",
+      "Air gauges (plug and ring) and receiver gauges",
     ],
   },
   {
