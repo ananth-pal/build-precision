@@ -80,22 +80,22 @@ const memberships: Credential[] = [
 
 function CredentialCard({ item }: { item: Credential }) {
   return (
-    <div className="border border-border rounded-lg p-5 bg-card flex gap-4 items-center">
-      <div className="w-28 h-14 flex-shrink-0 flex items-center justify-center bg-white rounded border border-border">
+    <div className="border border-border rounded-lg bg-card overflow-hidden flex flex-col">
+      <div className="w-full h-36 bg-white flex items-center justify-center p-6 border-b border-border">
         {item.logo ? (
           <img
             src={item.logo}
             alt={`${item.label} logo`}
-            className="max-h-full max-w-full object-contain p-1"
+            className="max-h-full max-w-full object-contain"
             loading="lazy"
           />
         ) : (
-          <span className="text-[10px] uppercase tracking-wide text-muted-foreground font-medium">
+          <span className="text-xs uppercase tracking-wide text-muted-foreground font-medium px-3 py-1 border border-border rounded-full">
             {item.status ?? "—"}
           </span>
         )}
       </div>
-      <div className="min-w-0">
+      <div className="p-5 min-w-0">
         <div className="font-medium text-foreground text-sm">{item.label}</div>
         {item.fullName && (
           <div className="text-xs text-muted-foreground">{item.fullName}</div>
@@ -133,7 +133,7 @@ export default function WorkingWithPentagon() {
             {/* Standards & Certifications */}
             <div className="border-t border-border pt-8">
               <h3 className="text-lg font-semibold mb-4">Standards & Certifications</h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {standards.map((s) => (
                   <CredentialCard key={s.label} item={s} />
                 ))}
@@ -146,7 +146,7 @@ export default function WorkingWithPentagon() {
               <p className="text-sm text-muted-foreground mb-6 max-w-3xl">
                 Pentagon is a recognised manufacturer-exporter and a member of the principal engineering and fluid-power bodies in India.
               </p>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {memberships.map((m) => (
                   <CredentialCard key={m.label} item={m} />
                 ))}
