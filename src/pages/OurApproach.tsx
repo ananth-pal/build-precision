@@ -16,6 +16,57 @@ const steps = [
   { num: "05", title: "Ramp and Sustain", desc: "Engineering change management, order handling, buffer stock, and ongoing quality reporting." },
 ];
 
+const valuePillars = [
+  {
+    pillar: "Design-to-Deployment (DFM) Support",
+    sub: "Engineering for Efficiency",
+    body: "From legacy drawings to production in months, we provide early manufacturability feedback.",
+    tagline: "We bridge the gap between design and production.",
+  },
+  {
+    pillar: "Capacity-Ahead Investment",
+    sub: "Ready to Scale",
+    body: "We invest in machinery and infrastructure before demand increases.",
+    tagline: "Your growth is never bottlenecked.",
+  },
+  {
+    pillar: "Systemic Traceability",
+    sub: "Accountability You Can Trust",
+    body: "Every assembly has serial tracking with full audit trail.",
+    tagline: "From raw material to final validation.",
+  },
+  {
+    pillar: "Continuous Improvement (Kaizen)",
+    sub: "Evolution as Standard",
+    body: "Continuous learning, waste reduction, and process improvement.",
+    tagline: "We refine processes constantly.",
+  },
+  {
+    pillar: "High-mix Specialisation",
+    sub: "Agility for Complexity",
+    body: "Managing 100+ product types with precision.",
+    tagline: "We thrive in complexity.",
+  },
+  {
+    pillar: "Long-Term Partnerships",
+    sub: "Extension of Your Factory",
+    body: "Aligned with your long-term growth plans.",
+    tagline: "We become strategic partners.",
+  },
+  {
+    pillar: "Supply Chain Resilience",
+    sub: "Zero Disruption",
+    body: "Strong vendor network.",
+    tagline: "Ensuring timely delivery always.",
+  },
+  {
+    pillar: "Proven Reliability",
+    sub: "Decades of Performance",
+    body: "65-year legacy of the Sellvinds Group in delivering critical assemblies and components.",
+    tagline: "Trusted by global brands.",
+  },
+];
+
 type Credential = {
   label: string;
   fullName?: string;
