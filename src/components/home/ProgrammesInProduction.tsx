@@ -15,7 +15,7 @@ export default function ProgrammesInProduction() {
         <article className="capability-card space-y-3">
           <h3 className="text-xl font-semibold">Engine balancer assemblies for an Indian OEM engine manufacturer</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Mid-engine balancer assemblies developed and supplied in repeat production for [XX] years. [Programme volume / component count / balancing class to be confirmed]. [One concrete technical feature — to be confirmed].
+            Mid-engine balancer assemblies designed by AVL, developed in-house for manufacturing and supplied to India's leading tractor engine manufacturer, Simpson and Co. Ltd. This is a critical assembly driven by the engine crankshaft and rotating at twice the engine RPM, with the lube oil pump also mounted to it.
           </p>
         </article>
       </div>
