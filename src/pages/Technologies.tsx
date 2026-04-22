@@ -81,7 +81,6 @@ const cards = [
       "Cutting tool range with Zoller CNC tool presetter",
       "SolidWorks for tooling design and early manufacturability review with customers",
       "Component washing machines and painting system",
-      "Gear deburring and vibratory deburring (Plant 2)",
     ],
   },
   {
