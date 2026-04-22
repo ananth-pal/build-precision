@@ -1,45 +1,57 @@
 
 
-User wants three edits to `src/pages/OurApproach.tsx`:
+## Add Logos to Memberships, Export Recognition & Standards
 
-1. Merge "Ramp-up" (05) and "Sustain" (06) into a single "Ramp and Sustain" step, with content closer to the brochure.
-2. Remove the italic note on step 02 (DFM & Tooling).
-3. Remove placeholder text on the page.
+Enhance the "Working with Pentagon" page (`/working-with-pentagon`) by displaying official logos alongside organisation names, since logos are more recognisable. Also remove date references as requested.
 
-Let me parse the brochure to get the exact "Ramp and Sustain" copy.
-<lov-plan-tools>
-<lov-tool-use id="toolu_vrtx_01XkasKSxCJq8kZkvYtfJ58b" name="document--parse_document" integration-id="document" data="{\"file_path\": \"user-uploads://Pentagon_Brochure-2.pdf\"}">
-</lov-tool-use>
+### Layout approach
 
-<lov-tool-use id="toolu_vrtx_01N5EMTcWiKnojj6b27T6bZo" name="document--parse_document" integration-id="document" data="{\"file_path\": \"user-uploads://Pentagon_Brochure-2.pdf\"}">
-</lov-tool-use>
-<lov-plan>
-Edits to `src/pages/OurApproach.tsx`:
+A **horizontal logo card** layout works best here — each item becomes a row (or grid cell on wider screens) with:
+- **Left**: Logo in a fixed-height container (white background, contained, max-height ~56px) so logos with different aspect ratios sit on a consistent baseline.
+- **Right**: Bold short name/acronym + full expansion + descriptive note.
 
-**1. Merge Ramp-up + Sustain back into one step**
+This keeps the technical/minimal aesthetic, treats logos as quiet credentials (not marketing badges), and preserves the names for reference. Two-column grid on `md+`, single column on mobile.
 
-Replace steps 05 and 06 with a single combined step matching the brochure:
-- `05 — Ramp and Sustain` — "Release, engineering change, order handling, buffer stock, and ongoing quality reporting."
+### Changes to `src/pages/OurApproach.tsx`
 
-Final steps array (5 items):
-- 01 Kickoff and NDA
-- 02 DFM and Tooling
-- 03 Prototyping
-- 04 Validation
-- 05 Ramp and Sustain
+**1. Copy uploaded logos into `src/assets/logos/`:**
+- `aiema_logo.webp` → `aiema.webp`
+- `one-star_export_house.jpg` → `one-star-export-house.jpg`
+- `ISO_19001.png` → `iso-9001-intertek-ukas.png`
+- `FPSI_logo.jpg` → `fpsi.jpg`
+- `EEPC-India.png` → `eepc-india.png`
+- `federation-of-indian-export-organisations-logo-png_seeklogo-363337.png` → `fieo.png`
 
-**2. Remove italic content in step 02 (DFM and Tooling)**
+**2. Import logos as ES6 modules** at the top of the file.
 
-Drop the `note` field on the DFM card ("We give feedback on design intent, not just tolerances..."). The italic block at the bottom of that card disappears.
+**3. Update `standards` array** — add `logo` to ISO 9001 entry only (the uploaded combined Intertek/UKAS image applies there). ISO 14001/45001 remain text-only with an "in progress" tag.
 
-**3. Remove placeholder text**
+**4. Update `memberships` array** — add `logo` field to each, remove date phrases:
+- One Star Export House: drop "Valid through 2028." → "DGFT recognition for exporters meeting a minimum cumulative export threshold under the Foreign Trade Policy."
+- FPSI: drop "since 2010." → "Fluid Power Society of India, industrial member."
+- AIEMA: drop "since 2015." → "Ambattur Industrial Estate Manufacturers' Association, member."
+- EEPC India and FIEO: unchanged (no dates).
 
-- Hero subtitle `[PLACEHOLDER — owner to write intro.]` → replace with brochure intro: *"At Pentagon, precision dictates our every process. Every stage of our workflow is built on collaboration, technical rigour, and continuous improvement to ensure each product meets the highest standards of quality and performance."*
-- Remove the small `[Owner to refine]` caption under the values paragraph.
-- Remove `[status: in progress — confirm with owner before publishing]` notes from ISO 14001 and ISO 45001 entries (leaving the cert names with a clean short note, or drop them entirely — defaulting to keeping only ISO 9001:2015 to avoid shipping unconfirmed claims, consistent with brochure which only lists ISO 9001:2015).
+**5. Render with new card layout** for both Standards and Memberships sections:
 
-**4. No other changes**
+```text
+┌─────────────────────────────────────────────────┐
+│ ┌──────────┐  AIEMA                             │
+│ │  [logo]  │  Ambattur Industrial Estate        │
+│ │          │  Manufacturers' Association.       │
+│ └──────────┘  Member.                           │
+└─────────────────────────────────────────────────┘
+```
 
-ESG section, page title ("Working with Pentagon"), and overall layout stay as-is.
+- Card: `border border-border rounded-lg p-5 bg-card flex gap-4 items-center`
+- Logo box: `w-28 h-14 flex-shrink-0 flex items-center justify-center bg-white rounded` with `<img className="max-h-full max-w-full object-contain" />`
+- Text: acronym in `font-medium text-foreground text-sm`, full name/note in `text-xs text-muted-foreground`
+- Grid: `grid md:grid-cols-2 gap-4`
 
-Files touched: `src/pages/OurApproach.tsx` only.
+For Standards, ISO 14001/45001 (no logo yet) render in the same card shell with the logo slot replaced by a small "In progress" pill so the row heights stay aligned.
+
+### Notes
+- All logos imported from `src/assets/logos/` for proper Vite bundling.
+- White background behind logos ensures coloured/dark marks (FIEO, EEPC, FPSI) read correctly on the page's white surface — keeps composition clean.
+- No new dependencies; no other pages affected.
+
