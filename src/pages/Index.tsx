@@ -173,10 +173,18 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            {/* Expanding into line */}
-            <p className="text-sm text-muted-foreground italic leading-relaxed mt-8 max-w-4xl">
-              Expanding into: medical, aerospace, defence, and robotics applications — Pentagon's precision machining, gear cutting, traceability, and in-house tooling transfer directly to these sectors as qualified programmes emerge.
-            </p>
+            {/* Expanding into callout */}
+            <div className="mt-8 max-w-4xl border-l-4 border-primary bg-muted/40 rounded-r-md p-5">
+              <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                Expanding into
+              </div>
+              <p className="text-foreground font-semibold mb-2">
+                Medical · Aerospace · Defence · Robotics
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Pentagon's precision machining, gear cutting, traceability, and in-house tooling transfer directly to these sectors as qualified programmes emerge.
+              </p>
+            </div>
             <div className="mt-6">
               <Link to="/what-we-make" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
                 See our portfolio →
