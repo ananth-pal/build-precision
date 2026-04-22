@@ -219,7 +219,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-2xl lg:text-3xl font-bold">Start a conversation</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Are you looking for a reliable manufacturing partner that is committed to a longstanding relationship? Send us your drawing and we can get started.
+              Are you looking for a reliable manufacturing partner that is committed to a longstanding relationship? Send us your enquiry and we can get started.
             </p>
             <div className="flex justify-center">
               <Link to="/contact" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-medium rounded hover:opacity-90 transition-opacity">
