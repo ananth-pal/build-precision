@@ -47,6 +47,27 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            {/* Momentum line */}
+            <p className="text-sm text-muted-foreground text-center max-w-3xl mx-auto mt-8 leading-relaxed">
+              Capacity expansion is underway at Pentagon, with the third generation of the family joining the business alongside decades-long OEM supply programmes.
+            </p>
+
+            {/* Currently underway block */}
+            <div className="mt-8 pt-6 border-t border-border max-w-4xl mx-auto">
+              <div className="text-xs font-semibold uppercase tracking-wider text-primary text-center mb-4">
+                Currently underway
+              </div>
+              <ul className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-3 sm:gap-0 text-sm text-muted-foreground text-center">
+                <li className="sm:px-6">
+                  Plant 2 gear-cutting facility refurbishment — epoxy flooring and modernised services
+                </li>
+                <li className="hidden sm:block w-px h-5 bg-border" aria-hidden="true" />
+                <li className="sm:px-6">
+                  ISO 45001 and ISO 14001 certification — audits in progress
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -63,6 +84,9 @@ export default function Home() {
               </p>
               <p>
                 Pentagon operates two highly efficient ISO 9001:2015 certified advanced manufacturing facilities on a 43,200 sq ft footprint (20,000 sq ft built-up, balance ready for development as customer programmes grow). These facilities feature clean room assembly, testing and automated validation technologies, as well as a comprehensive range of CNC machine tools and metrology equipment to ensure exceptional quality and reliability.
+              </p>
+              <p>
+                Pentagon handles precision machining, gear cutting, and assembly for safety-critical components with full material and process traceability on every delivered part, supporting OEM programmes that run for decades.
               </p>
             </div>
           </div>
