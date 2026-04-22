@@ -136,24 +136,33 @@ export default function WhatWeMake() {
 
         {/* End Markets */}
         <section className="section-padding">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">End Markets</h2>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Pentagon's products currently serve the following end markets:
+            <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
+              Pentagon's products end up in the following markets. Each market block describes what
+              we supply, what makes those parts demanding, and which capabilities drive fit.
             </p>
-            <ul className="space-y-2 mb-10 text-foreground">
-              {endMarketsCurrent.map((m) => (
-                <li key={m} className="leading-relaxed">{m}</li>
+            <div className="grid md:grid-cols-2 gap-8">
+              {endMarkets.map((m) => (
+                <div key={m.name}>
+                  <h3 className="text-lg font-semibold mb-4">{m.name}</h3>
+                  <div className="space-y-3 leading-relaxed">
+                    <p>
+                      <span className="font-medium text-foreground">Pentagon supplies: </span>
+                      <span className="text-muted-foreground">{m.supplied}</span>
+                    </p>
+                    <p>
+                      <span className="font-medium text-foreground">What makes it demanding: </span>
+                      <span className="text-muted-foreground">{m.demanding}</span>
+                    </p>
+                    <p>
+                      <span className="font-medium text-foreground">Relevant capabilities: </span>
+                      <span className="text-muted-foreground">{m.capabilities}</span>
+                    </p>
+                  </div>
+                </div>
               ))}
-            </ul>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Target markets for future development:
-            </p>
-            <ul className="space-y-2 text-foreground">
-              {endMarketsTarget.map((m) => (
-                <li key={m} className="leading-relaxed">{m}</li>
-              ))}
-            </ul>
+            </div>
           </div>
         </section>
 
