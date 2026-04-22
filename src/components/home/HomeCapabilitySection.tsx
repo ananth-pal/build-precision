@@ -66,7 +66,7 @@ function VersionTwo() {
             Machining, Gear cutting, Assembly
           </p>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Precision components and housings in steel, cast iron, ductile iron and non-ferrous alloys. Spur and helical gears, splined shafts, and integrated electromechanical assemblies up to 30 kg. Best suited to high-mix, medium-volume work.
+            Precision components and housings in steel, cast iron, ductile iron and non-ferrous alloys. Spur and helical gears, splined shafts, and integrated electromechanical assemblies up to 30 kg. Best suited to high-mix, medium-volume work. Every delivered part carries full material and process traceability, supporting OEM programmes that run for decades.
           </p>
           <Link to="/capabilities" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See capabilities <ArrowRight size={14} />
