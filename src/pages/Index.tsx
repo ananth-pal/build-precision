@@ -148,7 +148,7 @@ export default function Home() {
               Our strength lies in DFM feedback and coordinating with multinational teams to optimise manufacturability and support efficient scaling from development to mass production. We believe in flexible manufacturing suited to a wide variety of precision components delivered in small-medium volumes. Our consistent on-time delivery record reflects disciplined planning, process control and long-term accountability.
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-4xl">
-              Our deep engineering knowledge, lean workforce, efficient production methods and global export reliability make us trustworthy partners to global OEMs that seek outsourcing opportunities in today’s geopolitical climate (a China plus one era).
+              Our deep engineering knowledge, lean workforce, efficient production methods and global export reliability make us trustworthy partners to global OEMs that seek outsourcing opportunities in today’s geopolitical climate.
             </p>
             <Link to="/working-with-pentagon" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
               See our commitment →
