@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Download } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -38,9 +38,6 @@ export default function Contact() {
                   <a href="mailto:enquiries@sellvindsgroup.com" className="text-sm hover:text-primary">enquiries@sellvindsgroup.com</a>
                 </div>
               </div>
-              <a href="#" className="download-btn">
-                <Download size={16} /> Download RFQ Checklist
-              </a>
             </div>
 
             {/* Right - Form */}
