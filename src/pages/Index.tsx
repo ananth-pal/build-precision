@@ -19,24 +19,14 @@ const stats = [
 
 const markets = [
   {
-    label: "Off-highway and commercial vehicles",
-    body: "Power take-off gearboxes, housings, and transmission components for trucks, construction, and material handling equipment.",
-    placeholder: "[Photograph of commercial truck, construction equipment, or similar off-highway application — to be supplied]",
+    label: "Off-highway, commercial vehicles, and agriculture",
+    body: "Power take-off gearboxes, housings, transmission components, and engine balancer assemblies for trucks, construction equipment, material handling, and tractor engine manufacturers.",
+    placeholder: "[Photograph of commercial truck, construction equipment, tractor, or similar off-highway application — to be supplied]",
   },
   {
     label: "Automotive",
     body: "Engine components and balancer assemblies produced in repeat production for Indian automotive OEMs.",
     placeholder: "[Photograph of engine assembly, automotive powertrain component, or finished Pentagon automotive part — to be supplied]",
-  },
-  {
-    label: "Industrial machinery",
-    body: "Precision machined components and integrated assemblies for industrial equipment builders.",
-    placeholder: "[Photograph of industrial machinery or related application — to be supplied]",
-  },
-  {
-    label: "Agriculture",
-    body: "Engine balancer assemblies and precision components for tractor engine manufacturers.",
-    placeholder: "[Photograph of agricultural equipment, tractor engine, or similar — to be supplied]",
   },
 ];
 
