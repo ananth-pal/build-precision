@@ -110,7 +110,7 @@ export default function Technologies() {
         <section className="section-padding">
           <div className="max-w-7xl mx-auto">
             <p className="text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              Pentagon operates two ISO 9001:2015 certified facilities in Ambattur Industrial Estate on a 43,200 sq ft footprint (20,000 sq ft built-up, balance held for expansion) — one for non-gear machining and assembly, one for gear cutting. The equipment base has its roots in Pentagon's original machine tool business. The same team that once built special-purpose machines for India's leading automotive OEMs now specifies, maintains, and where necessary rebuilds the equipment that runs production.
+              Pentagon operates two ISO 9001:2015 certified facilities in Ambattur Industrial Estate on a 43,200 sq ft footprint (20,000 sq ft built-up, balance held for expansion) — one for component machining and assembly, one for gear cutting. The equipment base has its roots in Pentagon's original machine tool business. The same team that once built special-purpose machines for India's leading automotive OEMs now specifies, maintains, and where necessary rebuilds the equipment that runs production.
             </p>
             <p className="text-sm text-muted-foreground mb-12 max-w-3xl">
               For the parts and assemblies produced on this equipment, see{" "}
