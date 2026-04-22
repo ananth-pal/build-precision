@@ -51,35 +51,9 @@ const endMarkets = [
     capabilities:
       "CNC hobbing and shaving on spur and helical gears, CMM inspection linked to part serial numbers, and long-run production discipline.",
   },
-  {
-    name: "Industrial Machinery",
-    supplied:
-      "Precision-machined housings, gears, shafts, and sub-assemblies for industrial machinery OEMs.",
-    demanding:
-      "Part mix in this category typically runs to heavier castings and forgings with multiple machined datums, mixed-process routings (machining, heat treatment, grinding, lapping), and in-house fixture and gauge development at first-article stage.",
-    capabilities:
-      "CNC horizontal and vertical milling (Makino), turning, fine boring, surface and cylindrical grinding, and lapping and honing.",
-  },
 ];
 
-const fitCharacteristics = [
-  {
-    lead: "High feature density per part",
-    rest: " — housings, blocks, or shafts with many machined features held to tight tolerance.",
-  },
-  {
-    lead: "Gears, splines, or precision bores integrated into housings",
-    rest: " that must also seal, align, or transmit load.",
-  },
-  {
-    lead: "Mixed-component assemblies",
-    rest: " combining machined parts with hydraulic, pneumatic, or electrical sub-systems.",
-  },
-  {
-    lead: "Serial traceability, inspection documentation, and repeatable production",
-    rest: " over long run durations.",
-  },
-];
+const emergingMarkets = ["Medical", "Robotics", "Aerospace", "Defence"];
 
 export default function WhatWeMake() {
   return (
@@ -163,33 +137,22 @@ export default function WhatWeMake() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <hr className="border-border" />
-        </div>
-
-        {/* Work We Are Suited To */}
-        <section className="section-padding">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Work We Are Suited To</h2>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              The work we are best suited to shares a set of characteristics more than an industry:
-            </p>
-            <ul className="space-y-4 mb-6 list-disc pl-5">
-              {fitCharacteristics.map((c) => (
-                <li key={c.lead} className="leading-relaxed text-foreground">
-                  <span className="font-semibold">{c.lead}</span>
-                  <span className="text-muted-foreground">{c.rest}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-muted-foreground leading-relaxed">
-              If a part or assembly in your supply chain matches most of these characteristics, the
-              end industry is not the qualifier — the part is. We welcome enquiries regardless of
-              sector.
-            </p>
+            <div className="mt-12">
+              <p className="text-sm text-muted-foreground mb-4">
+                Active enquiry and early-stage development in:
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {emergingMarkets.map((name) => (
+                  <div
+                    key={name}
+                    className="border border-border rounded-md px-4 py-3 text-sm text-muted-foreground"
+                  >
+                    {name}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
