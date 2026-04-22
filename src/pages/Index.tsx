@@ -1,8 +1,14 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import heroCnc from "@/assets/hero-cnc.jpg";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
+
+const heroSlides = [
+  "[Photograph 1: finished PTO gearbox or assembly — to be supplied]",
+  "[Photograph 2: rack of gears or Plant 2 gear-cutting floor — to be supplied]",
+  "[Photograph 3: CMM inspection or Plant 1 machining centre — to be supplied]",
+];
 
 const stats = [
   { number: "45+", label: "Years manufacturing heritage" },
@@ -50,18 +56,52 @@ const currentlyUnderway = [
 ];
 
 export default function Home() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setActiveSlide((i) => (i + 1) % heroSlides.length);
+    }, 5000);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center overflow-hidden" style={{ backgroundImage: `linear-gradient(135deg, hsla(220,20%,10%,0.85), hsla(348,76%,45%,0.2)), url(${heroCnc})`, backgroundSize: "cover", backgroundPosition: "center" }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-background max-w-3xl leading-tight mb-6">
-              We build the products your customers bet their business on
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-muted">
+          {/* Rotating still images (placeholders until photography supplied) */}
+          <div className="absolute inset-0">
+            {heroSlides.map((label, i) => (
+              <div
+                key={i}
+                className="absolute inset-0 flex items-center justify-center text-center px-8 bg-muted"
+                style={{
+                  opacity: i === activeSlide ? 1 : 0,
+                  transition: "opacity 1200ms ease-in-out",
+                }}
+              >
+                <span className="text-xs uppercase tracking-wider text-muted-foreground max-w-md">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+          {/* Darkened overlay (~40%) for legibility */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(135deg, hsla(220,20%,10%,0.75), hsla(348,76%,45%,0.35))",
+            }}
+          />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background max-w-4xl leading-tight mb-6">
+              Precision machining, gear cutting, and assembly for OEM programmes
             </h1>
             <p className="text-lg text-background/80 max-w-2xl mb-8">
-              Pentagon is a precision contract manufacturer headquartered in Chennai, India that consolidates operations from machining and gear cutting to validating assemblies under one roof.
+              Based in Chennai, India. Supplying OEM programmes across off-highway, commercial vehicles, automotive, industrial machinery, and agriculture — some for over 25 years.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/capabilities" className="inline-flex items-center px-6 py-3 border-2 border-background/40 text-background font-medium rounded hover:bg-background/10 transition-colors">
