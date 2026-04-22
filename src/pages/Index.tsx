@@ -74,6 +74,38 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Capability Section (V1/V2 toggle) — includes Programmes in production */}
+        <HomeCapabilitySection />
+
+        {/* Scale and heritage */}
+        <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto space-y-10">
+            <h2 className="text-2xl lg:text-3xl font-bold">Scale and heritage</h2>
+
+            {/* Paragraph 1 + compact photo to the right */}
+            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+              <p className="text-muted-foreground leading-relaxed lg:col-span-2">
+                Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. That origin shapes how Pentagon operates today — jigs, fixtures, and gauges are designed and manufactured in-house, and the maintenance team can strip, rebuild, and customise machine tools from first principles.
+              </p>
+              <div className="bg-muted border border-border rounded flex items-center justify-center text-center px-4 py-6 min-h-[140px]">
+                <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                  [Plant 1 machine shop or in-house tooling — to be supplied]
+                </span>
+              </div>
+            </div>
+
+            {/* Paragraph 2 — full width */}
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              Operations are split across two plants in Ambattur Industrial Estate, Chennai. Plant 1 houses machining, assembly, testing, and administration. Plant 2 is a dedicated gear-cutting division. Total footprint is 43,200 sq. ft., of which 20,000 sq. ft. is currently built-up, with the balance ready for expansion as customer programmes grow. Both plants are ISO 9001:2015 certified.
+            </p>
+
+            {/* Paragraph 3 — full width */}
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              Pentagon is now in its second generation of management, with the third generation joining the business. Line managers and senior staff have, in many cases, spent over two decades with the company.
+            </p>
+          </div>
+        </section>
+
         {/* Markets we serve */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-7xl mx-auto">
@@ -98,59 +130,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Capability Section (V1/V2 toggle) — includes Programmes in production */}
-        <HomeCapabilitySection />
-
-        {/* Scale and heritage */}
-        <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-          <div className="max-w-7xl mx-auto space-y-10">
-            <h2 className="text-2xl lg:text-3xl font-bold">Scale and heritage</h2>
-
-            {/* Paragraph 1 + Slot A */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <p className="text-muted-foreground leading-relaxed">
-                Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. That origin shapes how Pentagon operates today — jigs, fixtures, and gauges are designed and manufactured in-house, and the maintenance team can strip, rebuild, and customise machine tools from first principles.
-              </p>
-              <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                  [Photograph of Plant 1 machine shop or Plant 2 gear-cutting facility — to be supplied]
-                </span>
-              </div>
-            </div>
-
-            {/* Paragraph 2 + Slot B */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6 lg:order-1">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                  [Photograph of CMM or metrology bay — to be supplied]
-                </span>
-              </div>
-              <p className="text-muted-foreground leading-relaxed lg:order-2">
-                Operations are split across two plants in Ambattur Industrial Estate, Chennai. Plant 1 houses machining, assembly, testing, and administration. Plant 2 is a dedicated gear-cutting division. Total footprint is 43,200 sq. ft., of which 20,000 sq. ft. is currently built-up, with the balance ready for expansion as customer programmes grow. Both plants are ISO 9001:2015 certified.
-              </p>
-            </div>
-
-            {/* Paragraph 3 */}
-            <p className="text-muted-foreground leading-relaxed max-w-4xl">
-              Pentagon is now in its second generation of management, with the third generation joining the business. Line managers and senior staff have, in many cases, spent over two decades with the company.
-            </p>
-          </div>
-        </section>
-
         {/* Currently underway */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16 bg-secondary">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl lg:text-3xl font-bold mb-8">Currently underway</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {currentlyUnderway.map((item) => (
-                <div key={item.title} className="space-y-3">
-                  {item.placeholder && (
-                    <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6">
-                      <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                        {item.placeholder}
-                      </span>
-                    </div>
-                  )}
+                <div key={item.title} className="space-y-3 flex flex-col">
+                  <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6">
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                      {item.placeholder ?? "[Photograph of Pentagon quality or documentation process — to be supplied]"}
+                    </span>
+                  </div>
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
                   <p className="text-xs italic text-muted-foreground">{item.status}</p>
