@@ -115,7 +115,7 @@ export default function Home() {
             {/* Paragraph 1 + compact photo to the right */}
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
               <p className="text-muted-foreground leading-relaxed lg:col-span-2">
-                Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. That origin shapes how Pentagon operates today — jigs, fixtures, and gauges are designed and manufactured in-house, and the maintenance team can strip, rebuild, and customise machine tools from first principles.
+                Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. These strong foundational roots enable us to design and manufacture all our own jigs, fixtures, and gauges in-house, along with a strong maintenance team that can strip, rebuild, and customise machine tools from first principles.
               </p>
               <div className="bg-muted border border-border rounded flex items-center justify-center text-center px-4 py-6 min-h-[140px]">
                 <span className="text-xs uppercase tracking-wider text-muted-foreground">
