@@ -80,7 +80,7 @@ const cards = [
     desc: "In-house jig, fixture, and gauge design and manufacture, plus deburring, washing, and painting.",
     details: [
       "Jig, fixture, and receiver gauge design and manufacture (manual and hydraulic)",
-      "Wide range of cutting tool range with Zoller CNC tool presetter",
+      "Wide range of cutting tools and tool holders with Zoller CNC tool presetter",
       "SolidWorks for tooling design and early manufacturability review with customers",
       "Component washing machines and painting system",
     ],
