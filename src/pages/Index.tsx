@@ -1,8 +1,14 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import heroCnc from "@/assets/hero-cnc.jpg";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
+
+const heroSlides = [
+  "[Photograph 1: finished PTO gearbox or assembly — to be supplied]",
+  "[Photograph 2: rack of gears or Plant 2 gear-cutting floor — to be supplied]",
+  "[Photograph 3: CMM inspection or Plant 1 machining centre — to be supplied]",
+];
 
 const stats = [
   { number: "45+", label: "Years manufacturing heritage" },
