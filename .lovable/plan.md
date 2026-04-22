@@ -1,48 +1,52 @@
 
 
-## Add Built-Up Area Detail with Expansion-Ready Framing
+## Portfolio page — End Markets rebuild
 
-Currently every "43,200 sq ft" mention reads as one number. The reality — 20,000 sq ft built-up, balance ready for development against customer demand — should be presented as **headroom**, not a shortfall. Framing: a working footprint plus dedicated land already in hand for capacity expansion when a customer programme calls for it.
+Restructure the End Markets section on `/what-we-make` so it functions as connective tissue between the product cards and the Fit section. Delete the Target markets list. Combine Agriculture into Off-Highway. No other changes to the page.
 
-### Standard phrasing (use consistently)
+### Changes to `src/pages/WhatWeMake.tsx`
 
-Short form (inline, one-liner contexts):
-> 43,200 sq ft total — 20,000 sq ft built-up, balance held for capacity expansion to customer programmes.
+**1. Delete the Target markets block in full**
+- Remove the `endMarketsTarget` array.
+- Remove the "Target markets for future development:" paragraph and its list in the JSX.
+- Diversification messaging stays carried by the existing Fit section ("Work We Are Suited To").
 
-Long form (where there's room to elaborate):
-> Pentagon's two plants occupy a 43,200 sq ft footprint, with 20,000 sq ft currently built-up production space. The remaining land is held in reserve and ready to be developed as customer programmes scale — capacity expansion without a site move.
+**2. Replace the current End Markets list with a 2×2 grid of structured market blocks**
 
-### File-by-file edits
+Replace `endMarketsCurrent` (a string array) with a structured array of three market entries — Off-Highway and Commercial Vehicles (now also covering Agriculture), Automotive, and Industrial Machinery — each with four fields:
+- `name` — market heading (H3)
+- `supplied` — what Pentagon supplies into this market (one sentence)
+- `demanding` — what makes those parts demanding
+- `capabilities` — which Pentagon capabilities drive fit
 
-**1. `src/pages/About.tsx`** (line 21) — "Our Facilities" subtitle
-- Replace: `Combined: 43,200 sq ft across both facilities.`
-- With: `43,200 sq ft total footprint — 20,000 sq ft built-up today, with the balance held for capacity expansion as customer programmes scale.`
+**3. Combine Agriculture into Off-Highway**
 
-**2. `src/pages/Index.tsx`** (line 65) — Differentiator block
-- Replace `…totaling 43,200 square feet.` with `…on a 43,200 sq ft footprint (20,000 sq ft built-up, balance ready for development as customer programmes grow).`
+Single combined block, copy:
 
-**3. `src/pages/Technologies.tsx`** (line 113) — Means of Production intro
-- Replace `…totalling 43,200 sq ft —` with `…on a 43,200 sq ft footprint (20,000 sq ft built-up, balance held for expansion) —`
+- **Name:** Off-Highway, Commercial Vehicles, and Agriculture
+- **Supplied:** Power take-off gearboxes, hydraulic valves, and gear pumps for auxiliary power and fluid-power systems on commercial, off-highway, and agricultural vehicles. Agricultural exposure is second-tier — parts are supplied to engine and hydraulic OEMs whose products are then built into agricultural equipment.
+- **Demanding:** Parts typically combine precision-bored housings with machined gear cavities and integrated hydraulic sub-assembly, and carry field duty cycles that make serial traceability and field-performance history relevant at qualification.
+- **Capabilities:** Gear cutting (hobbing, shaving, broaching, tooth chamfering), CNC bore and angular grinding, and clean-room hydraulic assembly with automated test-rig validation.
 
-**4. `src/components/home/HomeCapabilitySection.tsx`** (line 81) — capability blurb
-- Replace opening sentence `43,200 sq. ft. across two plants.` with `43,200 sq. ft. across two plants — 20,000 sq. ft. built-up, balance ready for expansion.`
+**4. Automotive block** — copy as drafted in the brief.
 
-**5. `src/pages/Heritage.tsx`** (line 109) — "Today" timeline entry
-- Replace `43,200 sq ft across two plants in Ambattur, Chennai.` with `43,200 sq ft across two plants in Ambattur, Chennai (20,000 sq ft built-up, balance ready for development).`
+**5. Industrial Machinery block** — copy as drafted in the brief.
 
-**6. `src/pages/OurApproach.tsx`** (line 174) — Industrial Responsibility paragraph
-- Replace `…across our 43,200 sq. ft. facilities.` with `…across our facilities (20,000 sq. ft. built-up on a 43,200 sq. ft. site).`
+**6. Section layout**
 
-### Memory update
+- Section heading remains: **End Markets** (existing H2 style).
+- Intro paragraph (replaces the current short intro line):
+  > Pentagon's products end up in the following markets. Each market block describes what we supply, what makes those parts demanding, and which capabilities drive fit.
+- Below the intro, a 2×2 grid (`grid md:grid-cols-2 gap-8`) of three blocks. Three entries in a 2-col grid means the third (Industrial Machinery) sits alone on the second row at desktop — acceptable and matches the rhythm of the product-card grid above. Single column on mobile.
+- Each block: market name as H3 (`text-lg font-semibold`), then three short labelled lines beneath:
+  - `Pentagon supplies:` followed by the `supplied` text
+  - `What makes it demanding:` followed by the `demanding` text
+  - `Relevant capabilities:` followed by the `capabilities` text
+- Labels in `font-medium text-foreground`, body in `text-muted-foreground`, leading-relaxed. No cards, no borders, no photos — same typographic restraint as the Fit section.
+- Container width widened from `max-w-3xl` to `max-w-7xl` to accommodate the 2-col grid, matching the What We Make grid above.
 
-Update `mem://features/manufacturing-facilities` so future copy stays consistent:
-- Change `Total Area: 43,200 sq ft across two plants.` to:
-  - `Site footprint: 43,200 sq ft across two plants.`
-  - `Built-up production area: 20,000 sq ft.`
-  - `Remaining land held for capacity expansion to customer programmes (positive framing — never describe as "unused" or "vacant").`
+### What stays untouched
 
-### Notes
-- No layout changes; copy-only edits.
-- "Held for / ready for development as customer programmes scale" reframes spare land as commercial readiness rather than under-utilisation.
-- Numbers stay verbatim everywhere (43,200 / 20,000) so they're easy to search and audit later.
+- Hero, credibility band, What We Make 4-card grid, Work We Are Suited To section, closing invitation with cross-links, header, footer.
+- Section ordering and the `<hr>` separators between sections.
 
