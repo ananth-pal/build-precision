@@ -31,7 +31,7 @@ export default function CapAssembly() {
 
           {/* Inspection and Tests */}
           <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Inspection and Tests</h3>
+            <h3 className="text-lg font-semibold mb-4">Inspection and Testing</h3>
             <p className="text-base text-muted-foreground leading-relaxed">
               Inspection and functional test plans are defined according to the function of the assembly and the customer requirement. Depending on the product, this may include dimensional verification, torque checks, leak or pressure testing, continuity checks, or functional testing. A sampling plan is used for inspection as needed. Test benches can be adapted to the application where needed. Calibration is maintained in line with the Quality Management System, and digital test records form part of the delivered package.
             </p>
