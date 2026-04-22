@@ -1,6 +1,12 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import logoIso9001 from "@/assets/logos/iso-9001-intertek-ukas.png";
+import logoOneStar from "@/assets/logos/one-star-export-house.jpg";
+import logoEepc from "@/assets/logos/eepc-india.png";
+import logoFieo from "@/assets/logos/fieo.png";
+import logoFpsi from "@/assets/logos/fpsi.jpg";
+import logoAiema from "@/assets/logos/aiema.webp";
 
 const steps = [
   { num: "01", title: "Kickoff & NDA", desc: "Scope, volumes, applicable standards, and PPAP requirements confirmed." },
@@ -10,19 +16,95 @@ const steps = [
   { num: "05", title: "Ramp and Sustain", desc: "Engineering change management, order handling, buffer stock, and ongoing quality reporting." },
 ];
 
-const standards = [
-  { label: "ISO 9001:2015", note: "Quality Management System, certified by Intertek (UKAS-accredited)." },
-  { label: "ISO 14001:2026", note: "Environmental Management System (in progress)." },
-  { label: "ISO 45001:2018", note: "Occupational Health & Safety Management System (in progress)." },
+type Credential = {
+  label: string;
+  fullName?: string;
+  note: string;
+  logo?: string;
+  status?: string;
+};
+
+const standards: Credential[] = [
+  {
+    label: "ISO 9001:2015",
+    fullName: "Quality Management System",
+    note: "Certified by Intertek (UKAS-accredited).",
+    logo: logoIso9001,
+  },
+  {
+    label: "ISO 14001:2026",
+    fullName: "Environmental Management System",
+    note: "Certification in progress.",
+    status: "In progress",
+  },
+  {
+    label: "ISO 45001:2018",
+    fullName: "Occupational Health & Safety Management System",
+    note: "Certification in progress.",
+    status: "In progress",
+  },
 ];
 
-const memberships = [
-  { label: "One Star Export House", note: "DGFT recognition for exporters meeting a minimum cumulative export threshold under the Foreign Trade Policy. Valid through 2028." },
-  { label: "EEPC India", note: "Engineering Export Promotion Council, registered Manufacturer Exporter." },
-  { label: "FIEO", note: "Federation of Indian Export Organisations, registered Manufacturer Exporter." },
-  { label: "FPSI", note: "Fluid Power Society of India, industrial member since 2010." },
-  { label: "AIEMA", note: "Ambattur Industrial Estate Manufacturers' Association, member since 2015." },
+const memberships: Credential[] = [
+  {
+    label: "One Star Export House",
+    fullName: "DGFT Export House Recognition",
+    note: "DGFT recognition for exporters meeting a minimum cumulative export threshold under the Foreign Trade Policy.",
+    logo: logoOneStar,
+  },
+  {
+    label: "EEPC India",
+    fullName: "Engineering Export Promotion Council",
+    note: "Registered Manufacturer Exporter.",
+    logo: logoEepc,
+  },
+  {
+    label: "FIEO",
+    fullName: "Federation of Indian Export Organisations",
+    note: "Registered Manufacturer Exporter.",
+    logo: logoFieo,
+  },
+  {
+    label: "FPSI",
+    fullName: "Fluid Power Society of India",
+    note: "Industrial member.",
+    logo: logoFpsi,
+  },
+  {
+    label: "AIEMA",
+    fullName: "Ambattur Industrial Estate Manufacturers' Association",
+    note: "Member.",
+    logo: logoAiema,
+  },
 ];
+
+function CredentialCard({ item }: { item: Credential }) {
+  return (
+    <div className="border border-border rounded-lg p-5 bg-card flex gap-4 items-center">
+      <div className="w-28 h-14 flex-shrink-0 flex items-center justify-center bg-white rounded border border-border">
+        {item.logo ? (
+          <img
+            src={item.logo}
+            alt={`${item.label} logo`}
+            className="max-h-full max-w-full object-contain p-1"
+            loading="lazy"
+          />
+        ) : (
+          <span className="text-[10px] uppercase tracking-wide text-muted-foreground font-medium">
+            {item.status ?? "—"}
+          </span>
+        )}
+      </div>
+      <div className="min-w-0">
+        <div className="font-medium text-foreground text-sm">{item.label}</div>
+        {item.fullName && (
+          <div className="text-xs text-muted-foreground">{item.fullName}</div>
+        )}
+        <div className="text-xs text-muted-foreground mt-1">{item.note}</div>
+      </div>
+    </div>
+  );
+}
 
 export default function WorkingWithPentagon() {
   return (
@@ -51,28 +133,24 @@ export default function WorkingWithPentagon() {
             {/* Standards & Certifications */}
             <div className="border-t border-border pt-8">
               <h3 className="text-lg font-semibold mb-4">Standards & Certifications</h3>
-              <ul className="space-y-2">
+              <div className="grid md:grid-cols-2 gap-4">
                 {standards.map((s) => (
-                  <li key={s.label} className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">{s.label}</span> — {s.note}
-                  </li>
+                  <CredentialCard key={s.label} item={s} />
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* Memberships & Export Recognition */}
             <div className="mt-12 border-t border-border pt-8">
               <h3 className="text-lg font-semibold mb-4">Memberships & Export Recognition</h3>
-              <p className="text-sm text-muted-foreground mb-4 max-w-3xl">
+              <p className="text-sm text-muted-foreground mb-6 max-w-3xl">
                 Pentagon is a recognised manufacturer-exporter and a member of the principal engineering and fluid-power bodies in India.
               </p>
-              <ul className="space-y-2">
+              <div className="grid md:grid-cols-2 gap-4">
                 {memberships.map((m) => (
-                  <li key={m.label} className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">{m.label}</span> — {m.note}
-                  </li>
+                  <CredentialCard key={m.label} item={m} />
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* ESG */}
