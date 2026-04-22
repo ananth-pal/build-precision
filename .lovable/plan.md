@@ -1,52 +1,27 @@
 
 
-## Portfolio page — End Markets rebuild
+## Add partnership invitation to Home page
 
-Restructure the End Markets section on `/what-we-make` so it functions as connective tissue between the product cards and the Fit section. Delete the Target markets list. Combine Agriculture into Off-Highway. No other changes to the page.
+Place the new copy as a closing call-to-action band at the bottom of the home page, directly above the stats strip. It works there because the page has just walked the reader through capability, scale, philosophy, markets, and current activity — by that point the reader either bounces or wants to act. A short invitation with a single clear next step ("send your drawing") is the right close.
 
-### Changes to `src/pages/WhatWeMake.tsx`
+### Copy
 
-**1. Delete the Target markets block in full**
-- Remove the `endMarketsTarget` array.
-- Remove the "Target markets for future development:" paragraph and its list in the JSX.
-- Diversification messaging stays carried by the existing Fit section ("Work We Are Suited To").
+> Are you looking for a reliable manufacturing partner that is committed to a longstanding relationship? Send us your drawing and we can get started.
 
-**2. Replace the current End Markets list with a 2×2 grid of structured market blocks**
+### Placement
 
-Replace `endMarketsCurrent` (a string array) with a structured array of three market entries — Off-Highway and Commercial Vehicles (now also covering Agriculture), Automotive, and Industrial Machinery — each with four fields:
-- `name` — market heading (H3)
-- `supplied` — what Pentagon supplies into this market (one sentence)
-- `demanding` — what makes those parts demanding
-- `capabilities` — which Pentagon capabilities drive fit
+`src/pages/Index.tsx` — insert a new `<section>` between the existing "Currently underway" section and the "Stats" section.
 
-**3. Combine Agriculture into Off-Highway**
+### Design
 
-Single combined block, copy:
-
-- **Name:** Off-Highway, Commercial Vehicles, and Agriculture
-- **Supplied:** Power take-off gearboxes, hydraulic valves, and gear pumps for auxiliary power and fluid-power systems on commercial, off-highway, and agricultural vehicles. Agricultural exposure is second-tier — parts are supplied to engine and hydraulic OEMs whose products are then built into agricultural equipment.
-- **Demanding:** Parts typically combine precision-bored housings with machined gear cavities and integrated hydraulic sub-assembly, and carry field duty cycles that make serial traceability and field-performance history relevant at qualification.
-- **Capabilities:** Gear cutting (hobbing, shaving, broaching, tooth chamfering), CNC bore and angular grinding, and clean-room hydraulic assembly with automated test-rig validation.
-
-**4. Automotive block** — copy as drafted in the brief.
-
-**5. Industrial Machinery block** — copy as drafted in the brief.
-
-**6. Section layout**
-
-- Section heading remains: **End Markets** (existing H2 style).
-- Intro paragraph (replaces the current short intro line):
-  > Pentagon's products end up in the following markets. Each market block describes what we supply, what makes those parts demanding, and which capabilities drive fit.
-- Below the intro, a 2×2 grid (`grid md:grid-cols-2 gap-8`) of three blocks. Three entries in a 2-col grid means the third (Industrial Machinery) sits alone on the second row at desktop — acceptable and matches the rhythm of the product-card grid above. Single column on mobile.
-- Each block: market name as H3 (`text-lg font-semibold`), then three short labelled lines beneath:
-  - `Pentagon supplies:` followed by the `supplied` text
-  - `What makes it demanding:` followed by the `demanding` text
-  - `Relevant capabilities:` followed by the `capabilities` text
-- Labels in `font-medium text-foreground`, body in `text-muted-foreground`, leading-relaxed. No cards, no borders, no photos — same typographic restraint as the Fit section.
-- Container width widened from `max-w-3xl` to `max-w-7xl` to accommodate the 2-col grid, matching the What We Make grid above.
+- Full-width band, `bg-secondary` (matches the alternating section rhythm — Currently underway is already `bg-secondary`, so use plain white background here to break the repetition, with a top border).
+- Centred content, `max-w-3xl mx-auto`, generous vertical padding (`py-16 lg:py-20`).
+- Single short heading: **"Start a conversation"** (h2, same size as other section headings).
+- The invitation copy as one paragraph below the heading, `text-muted-foreground`, `leading-relaxed`.
+- One CTA button only: **"Request a Quote"** linking to `/contact`, styled to match the primary CTA already used in the hero (`bg-primary text-primary-foreground`). No secondary button — the section's whole job is to funnel to contact.
 
 ### What stays untouched
 
-- Hero, credibility band, What We Make 4-card grid, Work We Are Suited To section, closing invitation with cross-links, header, footer.
-- Section ordering and the `<hr>` separators between sections.
+- Hero, capability section, scale and heritage, what makes Pentagon different, markets we serve, currently underway, stats, header, footer.
+- No theme tokens, no new components, no images.
 
