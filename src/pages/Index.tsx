@@ -133,6 +133,10 @@ export default function Home() {
             <p className="text-muted-foreground leading-relaxed max-w-4xl">
               Pentagon is now in its second generation of management, with the third generation joining the business. Line managers and senior staff have, in many cases, spent over two decades with the company.
             </p>
+
+            <Link to="/about" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+              Learn more about us →
+            </Link>
           </div>
         </section>
 
@@ -146,6 +150,9 @@ export default function Home() {
             <p className="text-muted-foreground leading-relaxed max-w-4xl">
               Our deep engineering knowledge, lean workforce, efficient production methods and global export reliability make us trustworthy partners to global OEMs that seek outsourcing opportunities in today’s geopolitical climate (a China plus one era).
             </p>
+            <Link to="/working-with-pentagon" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+              See our commitment →
+            </Link>
           </div>
         </section>
 
@@ -170,6 +177,11 @@ export default function Home() {
             <p className="text-sm text-muted-foreground italic leading-relaxed mt-8 max-w-4xl">
               Expanding into: medical, aerospace, defence, and robotics applications — Pentagon's precision machining, gear cutting, traceability, and in-house tooling transfer directly to these sectors as qualified programmes emerge.
             </p>
+            <div className="mt-6">
+              <Link to="/what-we-make" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                See our portfolio →
+              </Link>
+            </div>
           </div>
         </section>
 
