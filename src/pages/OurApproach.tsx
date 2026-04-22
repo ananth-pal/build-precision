@@ -22,6 +22,8 @@ type Credential = {
   note: string;
   logo?: string;
   status?: string;
+  /** Multiplier to compensate for logos with heavy internal whitespace. Default 1. */
+  logoScale?: number;
 };
 
 const standards: Credential[] = [
@@ -30,6 +32,7 @@ const standards: Credential[] = [
     fullName: "Quality Management System",
     note: "Certified by Intertek (UKAS-accredited).",
     logo: logoIso9001,
+    logoScale: 1.8,
   },
   {
     label: "ISO 14001:2026",
@@ -63,6 +66,7 @@ const memberships: Credential[] = [
     fullName: "Federation of Indian Export Organisations",
     note: "Registered Manufacturer Exporter.",
     logo: logoFieo,
+    logoScale: 1.8,
   },
   {
     label: "FPSI",
@@ -87,6 +91,7 @@ function CredentialCard({ item }: { item: Credential }) {
             src={item.logo}
             alt={`${item.label} logo`}
             className="max-h-full max-w-full object-contain"
+            style={item.logoScale ? { transform: `scale(${item.logoScale})` } : undefined}
             loading="lazy"
           />
         ) : (
