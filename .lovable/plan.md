@@ -1,26 +1,48 @@
 
 
-## Update Portfolio page (`/what-we-make`)
+## Add "The Pentagon Standard" values table to Working with Pentagon page
 
-Three changes to `src/pages/WhatWeMake.tsx`:
+Add a new section to `src/pages/OurApproach.tsx` between the existing "How we engage" steps grid and the "Standards & Certifications" block.
 
-### 1. Remove "Work We Are Suited To" section
-Delete the entire section (heading, intro paragraph, bulleted list of fit characteristics, and closing paragraph) along with the divider above it. Also remove the now-unused `fitCharacteristics` constant at the top of the file.
+### Section structure
 
-### 2. Remove "Industrial Machinery" from End Markets
-Drop the third entry in the `endMarkets` array. The remaining two cards ("Off-Highway, Commercial Vehicles, and Agriculture" and "Automotive") will still render in the existing 2-column grid.
+**Heading:** "The Pentagon Standard: Our Value System" (centered, primary/red color, matching the page's existing typographic scale — `text-2xl` or `text-3xl`, semibold).
 
-### 3. Add an "Emerging / Exploratory Markets" sub-block under End Markets
-Below the existing 2-column End Markets grid, add a small visually-secondary block listing four new markets at reduced prominence:
+**Table:** 8 value pillars arranged as a 4-column × 2-row grid on desktop, collapsing to 2 columns on tablet and 1 column on mobile.
 
-- **Medical**
-- **Robotics**
-- **Aerospace**
-- **Defence**
+Each cell renders as a card with two parts:
+- **Header bar** — red background (`bg-primary`), white text, centered pillar name
+- **Body** — white background, bordered, containing:
+  - A bold sub-headline (e.g. "Engineering for Efficiency")
+  - A short descriptive paragraph (muted text)
+  - An italic tagline (muted, smaller)
 
-Layout: a single short intro line ("Active enquiry and early-stage development in:") followed by a 2- or 4-column grid of small cards. Each card contains only the market name as a small heading — no body copy. Styling: smaller text (`text-sm`), muted, lighter border, less padding than the main market cards. This visually signals these are emerging/exploratory rather than established production programs, while keeping them on the page so OEMs in those sectors see Pentagon as a candidate.
+**Closing line below the grid:** centered, muted — "We are a team focused on long-term partnerships through scalability, predictability, and accountability."
+
+### Content (8 pillars, exactly as in reference, with the two requested edits applied)
+
+| Pillar (header) | Sub-headline | Body | Tagline |
+|---|---|---|---|
+| Design-to-Deployment (DFM) Support | Engineering for Efficiency | From legacy drawings to production in months, we provide early manufacturability feedback. | *We bridge the gap between design and production.* |
+| Capacity-Ahead Investment | Ready to Scale | We invest in machinery and infrastructure before demand increases. | *Your growth is never bottlenecked.* |
+| Systemic Traceability | Accountability You Can Trust | Every assembly has serial tracking with full audit trail. | *From raw material to final validation.* |
+| Continuous Improvement (Kaizen) | Evolution as Standard | Continuous learning, waste reduction, and process improvement. | *We refine processes constantly.* |
+| High-mix Specialisation | Agility for Complexity | Managing 100+ product types with precision. | *We thrive in complexity.* |
+| Long-Term Partnerships | Extension of Your Factory | Aligned with your long-term growth plans. | *We become strategic partners.* |
+| Supply Chain Resilience | Zero Disruption | Strong vendor network. | *Ensuring timely delivery always.* |
+| Proven Reliability | Decades of Performance | 65-year legacy of the Sellvinds Group in delivering critical assemblies and components. | *Trusted by global brands.* |
+
+**Edits applied vs. uploaded reference:**
+1. Proven Reliability body changed to "65-year legacy of the Sellvinds Group in delivering critical assemblies and components."
+2. Supply Chain Resilience body — "with Kanban system" removed.
+
+### Styling
+
+- Reuse existing tokens: `bg-primary` / `text-primary-foreground` for headers, `border-border`, `bg-card`, `text-muted-foreground`. No new colors.
+- Card borders unify into a single bordered table look on desktop using a wrapping container with `border border-border rounded-lg overflow-hidden` and grid gap of `gap-px bg-border` so internal hairlines show through (matches the reference table appearance).
+- Section uses a top divider (`border-t border-border pt-8`) to separate from the steps grid above, mirroring existing section dividers on the page.
 
 ### Untouched
-- Hero, "What We Make" product families grid, "Closing invitation" section, header, footer.
-- All other pages, theme tokens, and components.
+- Hero, How we engage steps, Standards & Certifications, Memberships, ESG, header, footer.
+- All other pages and components.
 
