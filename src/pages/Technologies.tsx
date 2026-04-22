@@ -14,7 +14,7 @@ import {
 const cards = [
   {
     icon: Cog,
-    title: "Machine Tools: Non-Gears",
+    title: "Machine Tools: Components",
     desc: "General machining, from raw or near-net-shape input through finished part.",
     details: [
       "CNC horizontal machining centres — Makino",
@@ -47,7 +47,7 @@ const cards = [
   },
   {
     icon: Wrench,
-    title: "Assembly and Test",
+    title: "Assembly and Testing",
     desc: "Clean-room assembly of hydraulic valves, gear pumps, PTO gearboxes, and engine balancers, with automated testing for hydraulic units.",
     details: [
       "Automatic pump-testing cycle via Siemens PLC",
