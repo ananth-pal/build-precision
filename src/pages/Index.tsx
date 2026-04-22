@@ -101,7 +101,7 @@ export default function Home() {
               Precision machining, gear cutting, and assembly for OEM programmes
             </h1>
             <p className="text-lg text-background/80 max-w-2xl mb-8">
-              Based in Chennai, India. Supplying OEM programmes across off-highway, commercial vehicles, automotive, industrial machinery, and agriculture — some for over 25 years.
+              With 45 years of engineering experience, we are a family-run precision contract manufacturer in Chennai, India, delivering validated, traceable components backed by a 26-year track record of global export reliability. Our work spans in-house tooling, CNC machining, clean-room assembly, and automated validation.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/capabilities" className="inline-flex items-center px-6 py-3 border-2 border-background/40 text-background font-medium rounded hover:bg-background/10 transition-colors">
