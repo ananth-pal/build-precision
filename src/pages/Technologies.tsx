@@ -39,7 +39,7 @@ const cards = [
       "Gear shaver — Red Ring, up to 200 mm dia",
       "Vertical broaching machine — 10 ton",
       "Gear tooth rounding and chamfering",
-      "CNC bore grinder with HF spindle & diaphragm clutch",
+      "CNC bore grinder with HF spindle & diaphragm chuck",
       "CNC angular wheelhead grinder with Marposs gauging & flagging",
       "Cylindrical grinders",
       "Gear profile and PCD tester — Osaka GC 3H",
