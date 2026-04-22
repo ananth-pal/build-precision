@@ -137,33 +137,22 @@ export default function WhatWeMake() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <hr className="border-border" />
-        </div>
-
-        {/* Work We Are Suited To */}
-        <section className="section-padding">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Work We Are Suited To</h2>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              The work we are best suited to shares a set of characteristics more than an industry:
-            </p>
-            <ul className="space-y-4 mb-6 list-disc pl-5">
-              {fitCharacteristics.map((c) => (
-                <li key={c.lead} className="leading-relaxed text-foreground">
-                  <span className="font-semibold">{c.lead}</span>
-                  <span className="text-muted-foreground">{c.rest}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-muted-foreground leading-relaxed">
-              If a part or assembly in your supply chain matches most of these characteristics, the
-              end industry is not the qualifier — the part is. We welcome enquiries regardless of
-              sector.
-            </p>
+            <div className="mt-12">
+              <p className="text-sm text-muted-foreground mb-4">
+                Active enquiry and early-stage development in:
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {emergingMarkets.map((name) => (
+                  <div
+                    key={name}
+                    className="border border-border rounded-md px-4 py-3 text-sm text-muted-foreground"
+                  >
+                    {name}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
