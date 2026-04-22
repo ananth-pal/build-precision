@@ -1,48 +1,38 @@
 
 
-## Add "The Pentagon Standard" values table to Working with Pentagon page
+## Strengthen the "Expanding into" line on the homepage
 
-Add a new section to `src/pages/OurApproach.tsx` between the existing "How we engage" steps grid and the "Standards & Certifications" block.
+The current line on the Markets we serve section reads as italic + muted, which makes it look like a soft afterthought rather than a forward-looking statement. I'll restructure it as a distinct callout block so it carries visual weight while staying minimal and on-brand.
 
-### Section structure
+### Change
 
-**Heading:** "The Pentagon Standard: Our Value System" (centered, primary/red color, matching the page's existing typographic scale — `text-2xl` or `text-3xl`, semibold).
+In `src/pages/Index.tsx` (around line 177), replace the single italic `<p>` with a bordered callout:
 
-**Table:** 8 value pillars arranged as a 4-column × 2-row grid on desktop, collapsing to 2 columns on tablet and 1 column on mobile.
+- A left border accent in `border-primary` (4px) on a subtle `bg-muted/40` background, padded, with rounded corners on the right side.
+- A small uppercase eyebrow label "Expanding into" in `text-xs uppercase tracking-wider text-primary font-semibold`.
+- The list of sectors as bold inline tags or a comma-separated bold phrase: **Medical · Aerospace · Defence · Robotics** in `text-foreground font-semibold`.
+- The supporting sentence below in normal `text-sm text-muted-foreground` (not italic) explaining how Pentagon's existing capabilities transfer.
 
-Each cell renders as a card with two parts:
-- **Header bar** — red background (`bg-primary`), white text, centered pillar name
-- **Body** — white background, bordered, containing:
-  - A bold sub-headline (e.g. "Engineering for Efficiency")
-  - A short descriptive paragraph (muted text)
-  - An italic tagline (muted, smaller)
+### Result (visual structure)
 
-**Closing line below the grid:** centered, muted — "We are a team focused on long-term partnerships through scalability, predictability, and accountability."
+```text
+┌▌ EXPANDING INTO
+│
+│  Medical · Aerospace · Defence · Robotics
+│
+│  Pentagon's precision machining, gear cutting, traceability,
+│  and in-house tooling transfer directly to these sectors as
+│  qualified programmes emerge.
+└
+```
 
-### Content (8 pillars, exactly as in reference, with the two requested edits applied)
-
-| Pillar (header) | Sub-headline | Body | Tagline |
-|---|---|---|---|
-| Design-to-Deployment (DFM) Support | Engineering for Efficiency | From legacy drawings to production in months, we provide early manufacturability feedback. | *We bridge the gap between design and production.* |
-| Capacity-Ahead Investment | Ready to Scale | We invest in machinery and infrastructure before demand increases. | *Your growth is never bottlenecked.* |
-| Systemic Traceability | Accountability You Can Trust | Every assembly has serial tracking with full audit trail. | *From raw material to final validation.* |
-| Continuous Improvement (Kaizen) | Evolution as Standard | Continuous learning, waste reduction, and process improvement. | *We refine processes constantly.* |
-| High-mix Specialisation | Agility for Complexity | Managing 100+ product types with precision. | *We thrive in complexity.* |
-| Long-Term Partnerships | Extension of Your Factory | Aligned with your long-term growth plans. | *We become strategic partners.* |
-| Supply Chain Resilience | Zero Disruption | Strong vendor network. | *Ensuring timely delivery always.* |
-| Proven Reliability | Decades of Performance | 65-year legacy of the Sellvinds Group in delivering critical assemblies and components. | *Trusted by global brands.* |
-
-**Edits applied vs. uploaded reference:**
-1. Proven Reliability body changed to "65-year legacy of the Sellvinds Group in delivering critical assemblies and components."
-2. Supply Chain Resilience body — "with Kanban system" removed.
-
-### Styling
-
-- Reuse existing tokens: `bg-primary` / `text-primary-foreground` for headers, `border-border`, `bg-card`, `text-muted-foreground`. No new colors.
-- Card borders unify into a single bordered table look on desktop using a wrapping container with `border border-border rounded-lg overflow-hidden` and grid gap of `gap-px bg-border` so internal hairlines show through (matches the reference table appearance).
-- Section uses a top divider (`border-t border-border pt-8`) to separate from the steps grid above, mirroring existing section dividers on the page.
+### Styling tokens used
+- `border-l-4 border-primary` accent
+- `bg-muted/40` subtle fill
+- `rounded-r-md p-5`
+- `text-foreground font-semibold` for sector list (no italics)
+- `text-muted-foreground` for the explanatory line (no italics)
 
 ### Untouched
-- Hero, How we engage steps, Standards & Certifications, Memberships, ESG, header, footer.
-- All other pages and components.
+- Surrounding markets grid, "See our portfolio →" link, all other sections and pages.
 
