@@ -16,6 +16,57 @@ const steps = [
   { num: "05", title: "Ramp and Sustain", desc: "Engineering change management, order handling, buffer stock, and ongoing quality reporting." },
 ];
 
+const valuePillars = [
+  {
+    pillar: "Design-to-Deployment (DFM) Support",
+    sub: "Engineering for Efficiency",
+    body: "From legacy drawings to production in months, we provide early manufacturability feedback.",
+    tagline: "We bridge the gap between design and production.",
+  },
+  {
+    pillar: "Capacity-Ahead Investment",
+    sub: "Ready to Scale",
+    body: "We invest in machinery and infrastructure before demand increases.",
+    tagline: "Your growth is never bottlenecked.",
+  },
+  {
+    pillar: "Systemic Traceability",
+    sub: "Accountability You Can Trust",
+    body: "Every assembly has serial tracking with full audit trail.",
+    tagline: "From raw material to final validation.",
+  },
+  {
+    pillar: "Continuous Improvement (Kaizen)",
+    sub: "Evolution as Standard",
+    body: "Continuous learning, waste reduction, and process improvement.",
+    tagline: "We refine processes constantly.",
+  },
+  {
+    pillar: "High-mix Specialisation",
+    sub: "Agility for Complexity",
+    body: "Managing 100+ product types with precision.",
+    tagline: "We thrive in complexity.",
+  },
+  {
+    pillar: "Long-Term Partnerships",
+    sub: "Extension of Your Factory",
+    body: "Aligned with your long-term growth plans.",
+    tagline: "We become strategic partners.",
+  },
+  {
+    pillar: "Supply Chain Resilience",
+    sub: "Zero Disruption",
+    body: "Strong vendor network.",
+    tagline: "Ensuring timely delivery always.",
+  },
+  {
+    pillar: "Proven Reliability",
+    sub: "Decades of Performance",
+    body: "65-year legacy of the Sellvinds Group in delivering critical assemblies and components.",
+    tagline: "Trusted by global brands.",
+  },
+];
+
 type Credential = {
   label: string;
   fullName?: string;
@@ -133,6 +184,32 @@ export default function WorkingWithPentagon() {
                   <p className="text-sm text-muted-foreground">{s.desc}</p>
                 </div>
               ))}
+            </div>
+
+            {/* The Pentagon Standard: Our Value System */}
+            <div className="border-t border-border pt-8 mb-16">
+              <h2 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-8">
+                The Pentagon Standard: Our Value System
+              </h2>
+              <div className="border border-border rounded-lg overflow-hidden">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+                  {valuePillars.map((v) => (
+                    <div key={v.pillar} className="bg-card flex flex-col">
+                      <div className="bg-primary text-primary-foreground text-center px-4 py-3 text-sm font-semibold min-h-[3.5rem] flex items-center justify-center">
+                        {v.pillar}
+                      </div>
+                      <div className="p-5 flex-1 flex flex-col">
+                        <div className="font-semibold text-foreground text-sm mb-2">{v.sub}</div>
+                        <p className="text-sm text-muted-foreground mb-3 flex-1">{v.body}</p>
+                        <p className="text-xs text-muted-foreground italic">{v.tagline}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-6 max-w-3xl mx-auto">
+                We are a team focused on long-term partnerships through scalability, predictability, and accountability.
+              </p>
             </div>
 
             {/* Standards & Certifications */}
