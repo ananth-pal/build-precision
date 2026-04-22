@@ -139,17 +139,22 @@ export default function Home() {
               Operations are split across two plants in Ambattur Industrial Estate, Chennai. Plant 1 houses machining, assembly, testing, and administration. Plant 2 is a dedicated gear-cutting division. Total footprint is 43,200 sq. ft., of which 20,000 sq. ft. is currently built-up, with the balance ready for expansion as customer programmes grow. Both plants are ISO 9001:2015 certified.
             </p>
 
-            <p className="text-muted-foreground leading-relaxed max-w-4xl">
-              Our strength lies in DFM feedback and coordinating with multinational teams to optimise manufacturability and support efficient scaling from development to mass production. We believe in flexible manufacturing suited to a wide variety of precision components delivered in small-medium volumes. Our consistent on-time delivery record reflects disciplined planning, process control and long-term accountability.
-            </p>
-
-            <p className="text-muted-foreground leading-relaxed max-w-4xl">
-              Our deep engineering knowledge, lean workforce, efficient production methods and global export reliability make us trustworthy partners to global OEMs that seek outsourcing opportunities in today’s geopolitical climate (a China plus one era).
-            </p>
-
             {/* Paragraph 3 — full width */}
             <p className="text-muted-foreground leading-relaxed max-w-4xl">
               Pentagon is now in its second generation of management, with the third generation joining the business. Line managers and senior staff have, in many cases, spent over two decades with the company.
+            </p>
+          </div>
+        </section>
+
+        {/* What Makes Pentagon Different */}
+        <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16 bg-secondary">
+          <div className="max-w-7xl mx-auto space-y-6">
+            <h2 className="text-2xl lg:text-3xl font-bold">What makes Pentagon different</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              Our strength lies in DFM feedback and coordinating with multinational teams to optimise manufacturability and support efficient scaling from development to mass production. We believe in flexible manufacturing suited to a wide variety of precision components delivered in small-medium volumes. Our consistent on-time delivery record reflects disciplined planning, process control and long-term accountability.
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              Our deep engineering knowledge, lean workforce, efficient production methods and global export reliability make us trustworthy partners to global OEMs that seek outsourcing opportunities in today’s geopolitical climate (a China plus one era).
             </p>
           </div>
         </section>
