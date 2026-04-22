@@ -50,9 +50,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Capability Section (V1/V2 toggle) */}
-        <HomeCapabilitySection />
-
         {/* Differentiator Block */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-7xl mx-auto space-y-6">
