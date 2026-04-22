@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -5,37 +6,104 @@ import productsDisplay from "@/assets/products-display.jpg";
 import hydraulicValve from "@/assets/hydraulic-valve.jpg";
 
 const families = [
-  { title: "Hydraulic Valves & Gear Pumps", desc: "High-pressure hydraulic sub-assemblies; developed and supplied to a multinational hydraulics OEM for 26+ years.", image: hydraulicValve, imageAlt: "Hydraulic valve assembly" },
-  { title: "Power Take-Off (PTO) Gearboxes", desc: "75+ variants — cable-operated, pneumatic, hydraulic, and hot-shift; wide range of transmission applications.", image: productsDisplay, imageAlt: "Pentagon PTO gearboxes product range" },
-  { title: "Engine Balancer Assemblies", desc: "Mid-engine balancer assemblies for a major Indian engine OEM; in production since 2008.", image: null, imageAlt: "" },
-  { title: "Precision Machined Components & Gears", desc: "Steel, cast iron, ductile iron, non-ferrous; spur/helical gears, splined shafts.", image: null, imageAlt: "" },
+  {
+    title: "Hydraulic Valves & Gear Pumps",
+    desc: "High-pressure hydraulic sub-assemblies for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
+    image: hydraulicValve,
+    imageAlt: "Hydraulic valve assembly",
+  },
+  {
+    title: "Power Take-Off (PTO) Gearboxes",
+    desc: "Over 75 PTO variants developed to date — cable-operated, pneumatic, hydraulic, and hot-shift — for commercial-vehicle transmission applications.",
+    image: productsDisplay,
+    imageAlt: "Pentagon PTO gearboxes product range",
+  },
+  {
+    title: "Engine Balancer Assemblies",
+    desc: "Mid-engine balancer assemblies supplied to one of India's leading engine manufacturers. In continuous production since 2008.",
+    image: null,
+    imageAlt: "",
+  },
+  {
+    title: "Precision Machined Components & Gears",
+    desc: "Machined parts, gears, and splined shafts supplied to OEM customers on ongoing production programs. Materials include steel, cast iron, ductile iron, and non-ferrous alloys. Gear scope covers spur and helical gears (hobbed and shaved) and splined shafts.",
+    image: null,
+    imageAlt: "",
+  },
 ];
 
-const industries = [
-  { title: "Hydraulics", image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop", desc: "Precision-engineered components for high-pressure hydraulic systems, powering critical fluid-power applications across sectors." },
-  { title: "Industrial Machinery", image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&h=300&fit=crop", desc: "Robust assemblies and machined parts designed for heavy-duty industrial equipment and automation systems." },
-  { title: "Robotics", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop", desc: "High-precision gears and drive components enabling accurate, repeatable motion in robotic platforms." },
-  { title: "Aerospace", image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=400&h=300&fit=crop", desc: "Mission-critical parts manufactured to exacting tolerances for aerospace propulsion and actuation systems." },
-  { title: "Defence", image: "https://images.unsplash.com/photo-1518365050014-70fe7232897f?w=400&h=300&fit=crop", desc: "Precision components for ground-support equipment, transport platforms, and auxiliary systems serving public-sector and strategic programmes." },
+const endMarketsCurrent = [
+  "Off-Highway and Commercial Vehicles",
+  "Automotive",
+  "Industrial Machinery",
+  "Agriculture",
+];
+
+const endMarketsTarget = [
+  "Medical",
+  "Robotics",
+  "Aerospace",
+  "Defence",
+];
+
+const fitCharacteristics = [
+  {
+    lead: "High feature density per part",
+    rest: " — housings, blocks, or shafts with many machined features held to tight tolerance.",
+  },
+  {
+    lead: "Gears, splines, or precision bores integrated into housings",
+    rest: " that must also seal, align, or transmit load.",
+  },
+  {
+    lead: "Mixed-component assemblies",
+    rest: " combining machined parts with hydraulic, pneumatic, or electrical sub-systems.",
+  },
+  {
+    lead: "Serial traceability, inspection documentation, and repeatable production",
+    rest: " over long run durations.",
+  },
 ];
 
 export default function WhatWeMake() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Portfolio" subtitle="Precision-engineered products serving critical industries worldwide." />
+      <PageHero
+        title="Portfolio"
+        subtitle="Assemblies, gears, and precision machined parts currently in OEM-supply production."
+      />
       <main className="flex-1">
-        <section className="section-padding">
+        {/* Credibility band */}
+        <section className="px-6 md:px-12 pt-16 pb-8">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Pentagon supplies precision-machined parts, gears, and tested assemblies to OEM
+              customers on long-running production programs. More than 100 product types have been
+              developed and shipped to date. Several programs have been in continuous production for
+              over two decades.
+            </p>
+          </div>
+        </section>
+
+        {/* What We Make */}
+        <section className="section-padding pt-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl font-bold mb-8">What We Make</h2>
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="grid md:grid-cols-2 gap-8">
               {families.map((f) => (
                 <div key={f.title} className="capability-card overflow-hidden">
                   {f.image ? (
-                    <img src={f.image} alt={f.imageAlt} className="rounded-md object-cover w-full h-48 mb-4" />
+                    <img
+                      src={f.image}
+                      alt={f.imageAlt}
+                      className="rounded-md object-cover w-full h-48 mb-4"
+                    />
                   ) : (
                     <div className="rounded-md bg-muted w-full h-48 mb-4 flex items-center justify-center">
-                      <span className="text-xs text-muted-foreground">[PLACEHOLDER — product photo]</span>
+                      <span className="text-xs text-muted-foreground">
+                        [PLACEHOLDER — product photo]
+                      </span>
                     </div>
                   )}
                   <h3 className="text-lg font-semibold mb-3">{f.title}</h3>
@@ -43,19 +111,85 @@ export default function WhatWeMake() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
 
-            <h2 className="text-2xl font-bold mb-8">Industries We Serve</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {industries.map((ind) => (
-                <div key={ind.title} className="rounded-lg border border-border overflow-hidden">
-                  <img src={ind.image} alt={ind.title} className="w-full h-40 object-cover" />
-                  <div className="p-4">
-                    <h3 className="text-sm font-semibold mb-2 text-foreground">{ind.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{ind.desc}</p>
-                  </div>
-                </div>
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <hr className="border-border" />
+        </div>
+
+        {/* End Markets */}
+        <section className="section-padding">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">End Markets</h2>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Pentagon's products currently serve the following end markets:
+            </p>
+            <ul className="space-y-2 mb-10 text-foreground">
+              {endMarketsCurrent.map((m) => (
+                <li key={m} className="leading-relaxed">{m}</li>
               ))}
-            </div>
+            </ul>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Target markets for future development:
+            </p>
+            <ul className="space-y-2 text-foreground">
+              {endMarketsTarget.map((m) => (
+                <li key={m} className="leading-relaxed">{m}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <hr className="border-border" />
+        </div>
+
+        {/* Work We Are Suited To */}
+        <section className="section-padding">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Work We Are Suited To</h2>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              The work we are best suited to shares a set of characteristics more than an industry:
+            </p>
+            <ul className="space-y-4 mb-6 list-disc pl-5">
+              {fitCharacteristics.map((c) => (
+                <li key={c.lead} className="leading-relaxed text-foreground">
+                  <span className="font-semibold">{c.lead}</span>
+                  <span className="text-muted-foreground">{c.rest}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-muted-foreground leading-relaxed">
+              If a part or assembly in your supply chain matches most of these characteristics, the
+              end industry is not the qualifier — the part is. We welcome enquiries regardless of
+              sector.
+            </p>
+          </div>
+        </section>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <hr className="border-border" />
+        </div>
+
+        {/* Closing invitation */}
+        <section className="section-padding">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <p className="text-muted-foreground leading-relaxed">
+              Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
+              fits the work above, we would be glad to see a drawing.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              For the machines and measurement equipment that support these programs, see{" "}
+              <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
+                Means of Production
+              </Link>
+              . For a fuller account of what we do and how, see{" "}
+              <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
+                Capabilities
+              </Link>
+              .
+            </p>
           </div>
         </section>
       </main>
