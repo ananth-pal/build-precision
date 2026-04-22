@@ -87,7 +87,7 @@ const cards = [
   },
   {
     icon: Network,
-    title: "Sourcing and Outside Processes",
+    title: "Sourcing and External Processes",
     desc: "Long-standing vendor network for castings, forgings, heat treatment, and non-critical machined components.",
     details: [
       "Castings and forgings — long-standing certified vendors in India and abroad",
