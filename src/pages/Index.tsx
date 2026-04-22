@@ -67,6 +67,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Capability Section (V1/V2 toggle) */}
+        <HomeCapabilitySection />
+        
         {/* Facility Video Placeholder */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16 bg-secondary">
           <div className="max-w-7xl mx-auto">
