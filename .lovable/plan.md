@@ -1,27 +1,26 @@
 
 
-## Add partnership invitation to Home page
+## Update Portfolio page (`/what-we-make`)
 
-Place the new copy as a closing call-to-action band at the bottom of the home page, directly above the stats strip. It works there because the page has just walked the reader through capability, scale, philosophy, markets, and current activity — by that point the reader either bounces or wants to act. A short invitation with a single clear next step ("send your drawing") is the right close.
+Three changes to `src/pages/WhatWeMake.tsx`:
 
-### Copy
+### 1. Remove "Work We Are Suited To" section
+Delete the entire section (heading, intro paragraph, bulleted list of fit characteristics, and closing paragraph) along with the divider above it. Also remove the now-unused `fitCharacteristics` constant at the top of the file.
 
-> Are you looking for a reliable manufacturing partner that is committed to a longstanding relationship? Send us your drawing and we can get started.
+### 2. Remove "Industrial Machinery" from End Markets
+Drop the third entry in the `endMarkets` array. The remaining two cards ("Off-Highway, Commercial Vehicles, and Agriculture" and "Automotive") will still render in the existing 2-column grid.
 
-### Placement
+### 3. Add an "Emerging / Exploratory Markets" sub-block under End Markets
+Below the existing 2-column End Markets grid, add a small visually-secondary block listing four new markets at reduced prominence:
 
-`src/pages/Index.tsx` — insert a new `<section>` between the existing "Currently underway" section and the "Stats" section.
+- **Medical**
+- **Robotics**
+- **Aerospace**
+- **Defence**
 
-### Design
+Layout: a single short intro line ("Active enquiry and early-stage development in:") followed by a 2- or 4-column grid of small cards. Each card contains only the market name as a small heading — no body copy. Styling: smaller text (`text-sm`), muted, lighter border, less padding than the main market cards. This visually signals these are emerging/exploratory rather than established production programs, while keeping them on the page so OEMs in those sectors see Pentagon as a candidate.
 
-- Full-width band, `bg-secondary` (matches the alternating section rhythm — Currently underway is already `bg-secondary`, so use plain white background here to break the repetition, with a top border).
-- Centred content, `max-w-3xl mx-auto`, generous vertical padding (`py-16 lg:py-20`).
-- Single short heading: **"Start a conversation"** (h2, same size as other section headings).
-- The invitation copy as one paragraph below the heading, `text-muted-foreground`, `leading-relaxed`.
-- One CTA button only: **"Request a Quote"** linking to `/contact`, styled to match the primary CTA already used in the hero (`bg-primary text-primary-foreground`). No secondary button — the section's whole job is to funnel to contact.
-
-### What stays untouched
-
-- Hero, capability section, scale and heritage, what makes Pentagon different, markets we serve, currently underway, stats, header, footer.
-- No theme tokens, no new components, no images.
+### Untouched
+- Hero, "What We Make" product families grid, "Closing invitation" section, header, footer.
+- All other pages, theme tokens, and components.
 
