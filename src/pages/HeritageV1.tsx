@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -276,7 +276,18 @@ function SellvindsRow({
           </span>
         </div>
         {isExpanded ? (
-          <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{entry.body}</p>
+          <div className="mt-1">
+            <p className="text-muted-foreground text-sm leading-relaxed">{entry.body}</p>
+            {!expandedAll && (
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline"
+              >
+                Collapse <ChevronUp size={12} />
+              </button>
+            )}
+          </div>
         ) : (
           <div className="mt-1">
             <p className="text-muted-foreground text-sm leading-relaxed">{entry.summary}</p>
