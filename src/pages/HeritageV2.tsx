@@ -32,9 +32,13 @@ const eras: Era[] = [
         body: "After planning and setting up HMT's Special Purpose Machine Division, leaves as Deputy General Manager and moves to Madras. Co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies.",
         extra: (
           <p className="text-foreground text-sm mt-2 leading-relaxed">
-            PROTEL is the first company of what becomes The Sellvinds Group —{" "}
-            <a href="#sellvinds-group" className="text-primary hover:underline font-medium">
-              see the group's other companies below ↓
+            Alongside PROTEL, several other companies are founded in affiliation
+            to The Sellvinds Group —{" "}
+            <a
+              href="#sellvinds-group"
+              className="text-primary hover:underline font-medium"
+            >
+              see the group's affiliations below ↓
             </a>
             .
           </p>
