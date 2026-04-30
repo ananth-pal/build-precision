@@ -281,7 +281,7 @@ export default function HeritageV4() {
 
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-              Heritage of Pentagon as part of the Sellvinds Group
+              Sellvinds Group's Heritage
             </h2>
 
             <div className="relative">
