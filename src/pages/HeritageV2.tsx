@@ -137,7 +137,7 @@ const groupCompanies = [
     name: "PROTEL",
     longName: "Productivity Elements Pvt. Ltd.",
     years: "1965 →",
-    body: "One of India's first small-scale machine tool companies. Founding company of The Sellvinds Group; co-founded by Ramanathan Palaniappan after his eleven years at HMT.",
+    body: "One of India's first small-scale machine tool companies. Co-founded by Ramanathan Palaniappan after his eleven years at HMT. After planning and setting up HMT's Special Purpose Machine Division, he left as Deputy General Manager and moved to Madras to start PROTEL with ex-HMT colleagues.",
   },
   {
     name: "SRP Tools Ltd. (Ramanathan Palaniappan served as Technical Director)",
