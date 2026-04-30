@@ -279,7 +279,7 @@ function SellvindsRow({
                   {entry.label}
                 </span>
                 <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
-                  AFFILIATED TO SELLVINDS GROUP
+                  SELLVINDS GROUP
                 </span>
               </div>
               <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
