@@ -58,26 +58,7 @@ export default function Leadership() {
       <PageHero title="Leadership" subtitle="Technically credentialed and directly engaged — not absentee." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          {/* Founder profile */}
-          <section className="max-w-3xl mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-              Ramanathan Palaniappan, Founder
-            </h2>
-            <div className="space-y-4 text-muted-foreground text-sm leading-relaxed mt-6">
-              <p>
-                Ramanathan Palaniappan is the founder of Pentagon Machines and Services Pvt. Ltd. and the broader Sellvinds Group of companies. He graduated top of his class in Mechanical Engineering from Annamalai University in 1954 and joined Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice.
-              </p>
-              <p>
-                During his eleven years at HMT, he led delegations to machine-building firms in Europe and signed collaboration agreements on HMT's behalf, including a six-month assignment at Renault, France, where he led a team of fifteen engineers studying Renault's special-purpose machine division. Before leaving as Deputy General Manager in 1965, he planned and set up HMT's Special Purpose Machine Division.
-              </p>
-              <p>
-                In 1965 he co-founded Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies, and went on to found Pentagon Machines and Services Pvt. Ltd. as a custom machine-tool manufacturer. He also helped establish SRP Tools Ltd. (Ramanathan Palaniappan served as Technical Director) as Technical Director, where he coordinated the company's collaboration agreements with Mitsubishi for the manufacture of hobs, broaches, shaping cutters, and shaving cutters. SRP grew under his technical leadership into India's largest gear-cutting-tool company.
-              </p>
-              <p>
-                Beyond the Sellvinds Group, Ramanathan Palaniappan has served as a Director on the boards of Chettinad Cements Ltd. and on the Indian Advisory Board of Bank of America Ltd. He has been a distinguished member of the Syndicate, Senate, and Board of Selection of Annamalai University, his alma mater.
-              </p>
-            </div>
-          </section>
+          {/* Founder profile removed — info merged into bio dropdown below */}
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {leaders.map((l) => <LeaderCard key={l.name} leader={l} />)}
