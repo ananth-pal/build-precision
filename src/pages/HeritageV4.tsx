@@ -12,6 +12,7 @@ type Entry = {
   source: Source;
   summary?: string;
   body: string;
+  badge?: string;
 };
 type Era = {
   number: string;
@@ -27,6 +28,7 @@ const sellvindsEntries: Entry[] = [
     label: "1965–2005",
     sortYear: 1965,
     source: "sellvinds",
+    badge: "AFFILIATED TO SELLVINDS GROUP",
     summary:
       "SRP Tools Ltd set up with Mitsubishi collaboration; grows into India's largest gear-cutting-tool company.",
     body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
@@ -253,7 +255,7 @@ function SellvindsRow({ entry, index }: { entry: Entry; index: number }) {
             {entry.label}
           </span>
           <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
-            SELLVINDS GROUP
+            {entry.badge ?? "SELLVINDS GROUP"}
           </span>
         </div>
         <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
