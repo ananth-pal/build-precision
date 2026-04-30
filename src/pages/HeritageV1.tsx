@@ -4,8 +4,6 @@ import { ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import HeritageVersionSwitcher from "@/components/HeritageVersionSwitcher";
 import plantExterior from "@/assets/plant-exterior.jpg";
 
@@ -304,8 +302,7 @@ function SellvindsRow({
 }
 
 export default function HeritageV1() {
-  const [showSellvinds, setShowSellvinds] = useState(false);
-  const eras = buildMergedEras(showSellvinds);
+  const eras = buildMergedEras(false);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -318,21 +315,14 @@ export default function HeritageV1() {
       <HeritageVersionSwitcher />
       <main className="flex-1 section-padding">
         <div className="max-w-5xl mx-auto">
-          {/* Toggle */}
-          <div className="mb-12 md:mb-16 flex items-center justify-between gap-4 border border-border rounded-md px-5 py-4 bg-muted/30">
-            <div>
-              <Label htmlFor="sellvinds-toggle" className="text-sm font-semibold text-foreground cursor-pointer">
-                Show Sellvinds Group entries
-              </Label>
-              <p className="text-xs text-muted-foreground mt-1">
-                When off, group entries appear as one-line summaries inside the timeline. When on, they expand in full alongside Pentagon entries.
-              </p>
+          {/* Sellvinds Group information callout */}
+          <div className="mb-12 md:mb-16 border-l-4 border-primary bg-muted/40 rounded-r-md p-5">
+            <div className="text-xs uppercase tracking-wider text-primary font-semibold">
+              Sellvinds Group information
             </div>
-            <Switch
-              id="sellvinds-toggle"
-              checked={showSellvinds}
-              onCheckedChange={setShowSellvinds}
-            />
+            <p className="text-foreground text-sm mt-2 leading-relaxed">
+              Entries from sister companies in The Sellvinds Group are interleaved chronologically below. They appear as collapsible cards — click any one to read the full entry.
+            </p>
           </div>
 
           <section>
@@ -365,7 +355,7 @@ export default function HeritageV1() {
                           key={entry.label + i}
                           entry={entry}
                           index={i}
-                          expandedAll={showSellvinds}
+                          expandedAll={false}
                         />
                       )
                     )}
