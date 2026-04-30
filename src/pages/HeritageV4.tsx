@@ -164,7 +164,7 @@ const pentagonEras: Era[] = [
         label: "2008 onward",
         sortYear: 2009,
         source: "pentagon",
-        body: "43,200 sq ft across two plants in Ambattur, Chennai (20,000 sq ft built-up, balance ready for development). More than 100 product types exported. ISO 14001 and ISO 45001 certifications in progress.",
+        body: "43,200 sq ft across two plants in Ambattur, Chennai (20,000 sq ft built-up, balance ready for development). More than 100 product types being exported. ISO 14001 and ISO 45001 certifications in progress.",
       },
       {
         label: "Product range widens",
@@ -203,7 +203,7 @@ const pentagonEras: Era[] = [
         label: "Today",
         sortYear: 2026,
         source: "pentagon",
-        body: "43,200 sq ft across two plants in Ambattur, Chennai (20,000 sq ft built-up, balance ready for development). Approximately 80 employees. More than 100 product types exported. ISO 14001 and ISO 45001 certifications in progress.",
+        body: "43,200 sq ft across two plants in Ambattur, Chennai (20,000 sq ft built-up, balance ready for development). Approximately 80 employees. More than 100 product types being exported. ISO 14001 and ISO 45001 certifications in progress.",
       },
     ],
   },
