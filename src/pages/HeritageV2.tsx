@@ -234,10 +234,10 @@ export default function HeritageV2() {
             </h2>
             <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8 max-w-3xl">
               <p>
-                The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools, manufactured autoparts, and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+                The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
               </p>
               <p>
-                This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work.
+                This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Employees? Ex-employees association + managers within Pentagon remain.
               </p>
             </div>
 
