@@ -41,9 +41,9 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/about/heritage" element={<Heritage />} />
           <Route path="/about/heritage-v1" element={<HeritageV1 />} />
-          <Route path="/about/heritage-v2" element={<HeritageV2 />} />
+          <Route path="/about/heritage-v2" element={<HeritageV4 />} />
           <Route path="/about/heritage-v3" element={<HeritageV3 />} />
-          <Route path="/about/heritage-v4" element={<HeritageV4 />} />
+          <Route path="/about/heritage-v4" element={<HeritageV2 />} />
           <Route path="/about/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
