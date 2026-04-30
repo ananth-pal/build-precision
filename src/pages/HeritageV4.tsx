@@ -239,10 +239,8 @@ function PentagonRow({ entry, index }: { entry: Entry; index: number }) {
   );
 }
 
-function SellvindsDisclosure({ entry, index }: { entry: Entry; index: number }) {
-  const [open, setOpen] = useState(false);
+function SellvindsRow({ entry, index }: { entry: Entry; index: number }) {
   const isLeft = index % 2 === 0;
-
   return (
     <div
       className={`relative flex items-start gap-8 ${
@@ -250,43 +248,19 @@ function SellvindsDisclosure({ entry, index }: { entry: Entry; index: number }) 
       }`}
     >
       <div className="hidden md:block flex-1" />
-      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-primary bg-background -translate-x-1.5 mt-1.5 z-10" />
+      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-primary bg-background -translate-x-1.5 mt-1.5" />
       <div className="ml-12 md:ml-0 flex-1">
-        <div className="border border-border rounded-md bg-muted/20 hover:border-primary/40 transition-colors">
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            className="w-full text-left px-4 py-3 flex items-start gap-3"
-          >
-            <div className="flex-1 min-w-0">
-              <div className="flex items-baseline gap-2 flex-wrap">
-                <span className="text-foreground font-semibold text-sm">
-                  {entry.label}
-                </span>
-                <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
-                  Sellvinds Group
-                </span>
-              </div>
-              <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                {entry.summary}
-              </p>
-            </div>
-            <ChevronDown
-              size={16}
-              className={`mt-1 text-muted-foreground shrink-0 transition-transform ${
-                open ? "rotate-180" : ""
-              }`}
-            />
-          </button>
-          {open && (
-            <div className="px-4 pb-4 pt-0 border-t border-border">
-              <p className="text-muted-foreground text-sm leading-relaxed mt-3">
-                {entry.body}
-              </p>
-            </div>
-          )}
+        <div className="flex items-baseline gap-2 flex-wrap">
+          <span className="text-foreground font-semibold text-sm">
+            {entry.label}
+          </span>
+          <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
+            Sellvinds Group
+          </span>
         </div>
+        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+          {entry.body}
+        </p>
       </div>
     </div>
   );

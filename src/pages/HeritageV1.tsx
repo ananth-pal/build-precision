@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -265,41 +265,39 @@ function SellvindsRow({
       }`}
     >
       <div className="hidden md:block flex-1" />
-      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-primary bg-background -translate-x-1.5 mt-1.5" />
+      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-primary bg-background -translate-x-1.5 mt-1.5 z-10" />
       <div className="ml-12 md:ml-0 flex-1">
-        <div className="flex items-baseline gap-2 flex-wrap">
-          <div className="text-muted-foreground font-semibold text-sm">
-            {entry.label}
-          </div>
-          <span className="text-[10px] uppercase tracking-wider text-muted-foreground/70 border border-border rounded px-1.5 py-0.5">
-            Sellvinds Group
-          </span>
-        </div>
-        {isExpanded ? (
-          <div className="mt-1">
-            <p className="text-muted-foreground text-sm leading-relaxed">{entry.body}</p>
+        <div className="border border-border rounded-md bg-muted/20 hover:border-primary/40 transition-colors">
+          <button
+            type="button"
+            onClick={() => !expandedAll && setOpen((v) => !v)}
+            aria-expanded={isExpanded}
+            disabled={expandedAll}
+            className="w-full text-left px-4 py-3 flex items-start gap-3 disabled:cursor-default"
+          >
+            <div className="flex-1 min-w-0">
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <span className="text-foreground font-semibold text-sm">
+                  {entry.label}
+                </span>
+                <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
+                  Sellvinds Group
+                </span>
+              </div>
+              <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                {isExpanded ? entry.body : entry.summary}
+              </p>
+            </div>
             {!expandedAll && (
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline"
-              >
-                Collapse <ChevronUp size={12} />
-              </button>
+              <ChevronDown
+                size={16}
+                className={`mt-1 text-muted-foreground shrink-0 transition-transform ${
+                  isExpanded ? "rotate-180" : ""
+                }`}
+              />
             )}
-          </div>
-        ) : (
-          <div className="mt-1">
-            <p className="text-muted-foreground text-sm leading-relaxed">{entry.summary}</p>
-            <button
-              type="button"
-              onClick={() => setOpen(true)}
-              className="mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline"
-            >
-              Expand <ChevronDown size={12} />
-            </button>
-          </div>
-        )}
+          </button>
+        </div>
       </div>
     </div>
   );
