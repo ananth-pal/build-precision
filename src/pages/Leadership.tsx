@@ -9,7 +9,7 @@ const leaders = [
     name: "Ramanathan Palaniappan",
     title: "Founder Chairman (Retired)",
     shortBio: "A pioneer in India's machine tool industry. Rose to Deputy General Manager at Hindustan Machine Tools Ltd. (HMT) before founding PROTEL — one of India's first small-scale machine tool companies — in 1965.",
-    fullBio: "A mechanical engineer from Annamalai University, he joined HMT in 1954 and left as Deputy General Manager in 1965. While at HMT, he led several delegations to machine building companies around the world. He served on the boards of Chettinad Cements Ltd. and SRP Tools Ltd. (Ramanathan Palaniappan served as Technical Director), as a member of the Indian Planning Commission's Machine Tool Subcommittee, on the Bank of America's India Advisory Board, and as a consultant to the United Nations (ESCAP-UNIDO). He is also an acclaimed Tamil author and recipient of state honours for his contributions to Tamil literature.",
+    fullBio: "A mechanical engineer from Annamalai University, he joined HMT in 1954 and left as Deputy General Manager in 1965. While at HMT, he led several delegations to machine building companies around the world. He served on the boards of Chettinad Cements Ltd. and SRP Tools Ltd. (Ramanathan Palaniappan served as Technical Director), as a member of the Indian Planning Commission's Machine Tool Subcommittee, on the Bank of America's India Advisory Board, and as a consultant to the United Nations (ESCAP-UNIDO). He has also been a distinguished member of the Syndicate, Senate, and Board of Selection of Annamalai University, his alma mater. He is also an acclaimed Tamil author and recipient of state honours for his contributions to Tamil literature.",
   },
   {
     name: "Natarajan Palaniappan",
