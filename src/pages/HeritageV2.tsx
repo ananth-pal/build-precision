@@ -136,7 +136,7 @@ const groupCompanies = [
     body: "One of India's first small-scale machine tool companies. Founding company of The Sellvinds Group; co-founded by Ramanathan Palaniappan after his eleven years at HMT.",
   },
   {
-    name: "SRP Tools Ltd.",
+    name: "SRP Tools Ltd. - Listed company where Ramanathan Palaniappan served as Technical Director",
     longName: null,
     years: "1965–2005",
     body: "Manufactured hobs, broaches, shaping cutters, and shaving cutters under collaboration agreements with Mitsubishi. Grew into India's largest gear-cutting-tool company. Sold back to Mitsubishi in 2005.",
@@ -238,7 +238,7 @@ export default function HeritageV2() {
             </div>
 
             <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12 mb-6">
-              Companies in the group
+              Companies affiliated to the group
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {groupCompanies.map((c) => (
