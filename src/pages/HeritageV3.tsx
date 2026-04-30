@@ -48,7 +48,7 @@ const eras: Era[] = [
       },
       {
         label: "1965",
-        body: "After planning and setting up HMT's Special Purpose Machine Division, leaves as Deputy General Manager and moves to Madras. Co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies.",
+        body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras. He co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies.",
       },
     ],
   },
