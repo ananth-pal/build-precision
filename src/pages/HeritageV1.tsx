@@ -279,7 +279,7 @@ function SellvindsRow({
                   {entry.label}
                 </span>
                 <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
-                  Sellvinds Group
+                  AFFILIATED TO SELLVINDS GROUP
                 </span>
               </div>
               <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
@@ -321,7 +321,7 @@ export default function HeritageV1() {
               Sellvinds Group information
             </div>
             <p className="text-foreground text-sm mt-2 leading-relaxed">
-              Entries from sister companies in The Sellvinds Group are interleaved chronologically below. They appear as collapsible cards — click any one to read the full entry.
+              Entries from sister companies and companies affiliated to the Sellvinds Group are interleaved chronologically below. They appear as collapsible cards — click any one to read the full entry.
             </p>
           </div>
 
