@@ -143,7 +143,7 @@ const groupCompanies = [
     name: "SRP Tools Ltd. (Ramanathan Palaniappan served as Technical Director)",
     longName: null,
     years: "1965–2005",
-    body: "In addition to running PROTEL, Ramanathan Palaniappan also helped set up India's largest Gear Cutting Tool Company SRP Tools Ltd as Technical Director to support promotors who came from a commercial background. He coordinated collaboration agreements with Mitsibushi to manufacture hobs, broaches, shaping cutters, and shaving cutters. He was technical director of SRP until the company was sold back to Mitsubishi in 2005.",
+    body: "In addition to running PROTEL, Ramanathan Palaniappan also helped set up India's largest Gear Cutting Tool Company SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinated collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters. He was technical director of SRP until the company was sold back to Mitsubishi in 2005.",
   },
   {
     name: "Sellvinds",
