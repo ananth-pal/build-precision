@@ -278,15 +278,6 @@ export default function HeritageV4() {
       <HeritageVersionSwitcher />
       <main className="flex-1 section-padding">
         <div className="max-w-5xl mx-auto">
-          {/* Sellvinds Group information callout */}
-          <div className="mb-12 md:mb-16 border-l-4 border-primary bg-muted/40 rounded-r-md p-5">
-            <div className="text-xs uppercase tracking-wider text-primary font-semibold">
-              Sellvinds Group information
-            </div>
-            <p className="text-foreground text-sm mt-2 leading-relaxed">
-              Entries from sister companies in The Sellvinds Group are interleaved chronologically below. They appear as collapsible cards — click any one to read the full entry.
-            </p>
-          </div>
 
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
