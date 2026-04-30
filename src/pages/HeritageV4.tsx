@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import HeritageVersionSwitcher from "@/components/HeritageVersionSwitcher";
 import plantExterior from "@/assets/plant-exterior.jpg";
 
@@ -14,7 +12,7 @@ type Entry = {
   label: string;
   sortYear: number;
   source: Source;
-  summary?: string; // one-line summary used when collapsed (sellvinds only)
+  summary?: string;
   body: string;
 };
 type Era = {
@@ -211,9 +209,7 @@ const pentagonEras: Era[] = [
   },
 ];
 
-// Slot Sellvinds entries into the era whose [rangeStart, rangeEnd] contains sortYear,
-// then sort each era's entries chronologically.
-function buildMergedEras(showSellvinds: boolean): Era[] {
+function buildMergedEras(): Era[] {
   const merged = pentagonEras.map((era) => ({ ...era, entries: [...era.entries] }));
   for (const sv of sellvindsEntries) {
     const era = merged.find((e) => sv.sortYear >= e.rangeStart && sv.sortYear <= e.rangeEnd);
@@ -222,8 +218,6 @@ function buildMergedEras(showSellvinds: boolean): Era[] {
   for (const era of merged) {
     era.entries.sort((a, b) => a.sortYear - b.sortYear);
   }
-  // showSellvinds doesn't change membership — collapsed rows remain visible as one-liners
-  void showSellvinds;
   return merged;
 }
 
@@ -245,18 +239,9 @@ function PentagonRow({ entry, index }: { entry: Entry; index: number }) {
   );
 }
 
-function SellvindsRow({
-  entry,
-  index,
-  expandedAll,
-}: {
-  entry: Entry;
-  index: number;
-  expandedAll: boolean;
-}) {
+function SellvindsDisclosure({ entry, index }: { entry: Entry; index: number }) {
   const [open, setOpen] = useState(false);
   const isLeft = index % 2 === 0;
-  const isExpanded = expandedAll || open;
 
   return (
     <div
@@ -265,49 +250,50 @@ function SellvindsRow({
       }`}
     >
       <div className="hidden md:block flex-1" />
-      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-primary bg-background -translate-x-1.5 mt-1.5" />
+      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-primary bg-background -translate-x-1.5 mt-1.5 z-10" />
       <div className="ml-12 md:ml-0 flex-1">
-        <div className="flex items-baseline gap-2 flex-wrap">
-          <div className="text-muted-foreground font-semibold text-sm">
-            {entry.label}
-          </div>
-          <span className="text-[10px] uppercase tracking-wider text-muted-foreground/70 border border-border rounded px-1.5 py-0.5">
-            Sellvinds Group
-          </span>
+        <div className="border border-border rounded-md bg-muted/20 hover:border-primary/40 transition-colors">
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            className="w-full text-left px-4 py-3 flex items-start gap-3"
+          >
+            <div className="flex-1 min-w-0">
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <span className="text-foreground font-semibold text-sm">
+                  {entry.label}
+                </span>
+                <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
+                  Sellvinds Group
+                </span>
+              </div>
+              <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                {entry.summary}
+              </p>
+            </div>
+            <ChevronDown
+              size={16}
+              className={`mt-1 text-muted-foreground shrink-0 transition-transform ${
+                open ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          {open && (
+            <div className="px-4 pb-4 pt-0 border-t border-border">
+              <p className="text-muted-foreground text-sm leading-relaxed mt-3">
+                {entry.body}
+              </p>
+            </div>
+          )}
         </div>
-        {isExpanded ? (
-          <div className="mt-1">
-            <p className="text-muted-foreground text-sm leading-relaxed">{entry.body}</p>
-            {!expandedAll && (
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline"
-              >
-                Collapse <ChevronUp size={12} />
-              </button>
-            )}
-          </div>
-        ) : (
-          <div className="mt-1">
-            <p className="text-muted-foreground text-sm leading-relaxed">{entry.summary}</p>
-            <button
-              type="button"
-              onClick={() => setOpen(true)}
-              className="mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline"
-            >
-              Expand <ChevronDown size={12} />
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
 }
 
-export default function HeritageV1() {
-  const [showSellvinds, setShowSellvinds] = useState(false);
-  const eras = buildMergedEras(showSellvinds);
+export default function HeritageV4() {
+  const eras = buildMergedEras();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -320,21 +306,14 @@ export default function HeritageV1() {
       <HeritageVersionSwitcher />
       <main className="flex-1 section-padding">
         <div className="max-w-5xl mx-auto">
-          {/* Toggle */}
-          <div className="mb-12 md:mb-16 flex items-center justify-between gap-4 border border-border rounded-md px-5 py-4 bg-muted/30">
-            <div>
-              <Label htmlFor="sellvinds-toggle" className="text-sm font-semibold text-foreground cursor-pointer">
-                Show Sellvinds Group entries
-              </Label>
-              <p className="text-xs text-muted-foreground mt-1">
-                When off, group entries appear as one-line summaries inside the timeline. When on, they expand in full alongside Pentagon entries.
-              </p>
+          {/* Sellvinds Group information callout */}
+          <div className="mb-12 md:mb-16 border-l-4 border-primary bg-muted/40 rounded-r-md p-5">
+            <div className="text-xs uppercase tracking-wider text-primary font-semibold">
+              Sellvinds Group information
             </div>
-            <Switch
-              id="sellvinds-toggle"
-              checked={showSellvinds}
-              onCheckedChange={setShowSellvinds}
-            />
+            <p className="text-foreground text-sm mt-2 leading-relaxed">
+              Entries from sister companies in The Sellvinds Group are interleaved chronologically below. They appear as collapsible cards — click any one to read the full entry.
+            </p>
           </div>
 
           <section>
@@ -363,12 +342,7 @@ export default function HeritageV1() {
                       entry.source === "pentagon" ? (
                         <PentagonRow key={entry.label + i} entry={entry} index={i} />
                       ) : (
-                        <SellvindsRow
-                          key={entry.label + i}
-                          entry={entry}
-                          index={i}
-                          expandedAll={showSellvinds}
-                        />
+                        <SellvindsDisclosure key={entry.label + i} entry={entry} index={i} />
                       )
                     )}
                   </div>
