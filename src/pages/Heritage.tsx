@@ -1,6 +1,6 @@
-import HeritageV4 from "./HeritageV4";
+import HeritageV1 from "./HeritageV1";
 
-// The canonical /about/heritage route renders v4 (the chosen design).
+// The canonical /about/heritage route renders v1 (the current working design).
 export default function Heritage() {
-  return <HeritageV4 />;
+  return <HeritageV1 />;
 }

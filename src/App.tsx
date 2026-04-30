@@ -13,6 +13,10 @@ import WhatWeMake from "./pages/WhatWeMake";
 import WorkingWithPentagon from "./pages/OurApproach";
 import About from "./pages/About";
 import Heritage from "./pages/Heritage";
+import HeritageV1 from "./pages/HeritageV1";
+import HeritageV2 from "./pages/HeritageV2";
+import HeritageV3 from "./pages/HeritageV3";
+import HeritageV4 from "./pages/HeritageV4";
 import Leadership from "./pages/Leadership";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -36,6 +40,10 @@ const App = () => (
           <Route path="/working-with-pentagon" element={<WorkingWithPentagon />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/heritage" element={<Heritage />} />
+          <Route path="/about/heritage-v1" element={<HeritageV1 />} />
+          <Route path="/about/heritage-v2" element={<HeritageV4 />} />
+          <Route path="/about/heritage-v3" element={<HeritageV2 />} />
+          <Route path="/about/heritage-v4" element={<HeritageV3 />} />
           <Route path="/about/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

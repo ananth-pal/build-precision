@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -10,9 +12,9 @@ type Entry = {
   label: string;
   sortYear: number;
   source: Source;
-  summary?: string;
+  summary?: string; // one-line summary used when collapsed (sellvinds only)
   body: string;
-  badge?: string;
+  badge?: string; // optional override for the group badge label
 };
 type Era = {
   number: string;
@@ -209,7 +211,9 @@ const pentagonEras: Era[] = [
   },
 ];
 
-function buildMergedEras(): Era[] {
+// Slot Sellvinds entries into the era whose [rangeStart, rangeEnd] contains sortYear,
+// then sort each era's entries chronologically.
+function buildMergedEras(showSellvinds: boolean): Era[] {
   const merged = pentagonEras.map((era) => ({ ...era, entries: [...era.entries] }));
   for (const sv of sellvindsEntries) {
     const era = merged.find((e) => sv.sortYear >= e.rangeStart && sv.sortYear <= e.rangeEnd);
@@ -218,6 +222,8 @@ function buildMergedEras(): Era[] {
   for (const era of merged) {
     era.entries.sort((a, b) => a.sortYear - b.sortYear);
   }
+  // showSellvinds doesn't change membership — collapsed rows remain visible as one-liners
+  void showSellvinds;
   return merged;
 }
 
@@ -239,8 +245,19 @@ function PentagonRow({ entry, index }: { entry: Entry; index: number }) {
   );
 }
 
-function SellvindsRow({ entry, index }: { entry: Entry; index: number }) {
+function SellvindsRow({
+  entry,
+  index,
+  expandedAll,
+}: {
+  entry: Entry;
+  index: number;
+  expandedAll: boolean;
+}) {
+  const [open, setOpen] = useState(false);
   const isLeft = index % 2 === 0;
+  const isExpanded = expandedAll || open;
+
   return (
     <div
       className={`relative flex items-start gap-8 ${
@@ -248,26 +265,46 @@ function SellvindsRow({ entry, index }: { entry: Entry; index: number }) {
       }`}
     >
       <div className="hidden md:block flex-1" />
-      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-primary bg-background -translate-x-1.5 mt-1.5" />
+      <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-primary bg-background -translate-x-1.5 mt-1.5 z-10" />
       <div className="ml-12 md:ml-0 flex-1">
-        <div className="flex items-baseline gap-2 flex-wrap">
-          <span className="text-foreground font-semibold text-sm">
-            {entry.label}
-          </span>
-          <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
-            {entry.badge ?? "SELLVINDS GROUP"}
-          </span>
+        <div className="border border-border rounded-md bg-muted/20 hover:border-primary/40 transition-colors">
+          <button
+            type="button"
+            onClick={() => !expandedAll && setOpen((v) => !v)}
+            aria-expanded={isExpanded}
+            disabled={expandedAll}
+            className="w-full text-left px-4 py-3 flex items-start gap-3 disabled:cursor-default"
+          >
+            <div className="flex-1 min-w-0">
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <span className="text-foreground font-semibold text-sm">
+                  {entry.label}
+                </span>
+                <span className="text-[10px] uppercase tracking-wider text-primary border border-primary/40 rounded px-1.5 py-0.5">
+                  {entry.badge ?? "SELLVINDS GROUP"}
+                </span>
+              </div>
+              <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                {isExpanded ? entry.body : entry.summary}
+              </p>
+            </div>
+            {!expandedAll && (
+              <ChevronDown
+                size={16}
+                className={`mt-1 text-muted-foreground shrink-0 transition-transform ${
+                  isExpanded ? "rotate-180" : ""
+                }`}
+              />
+            )}
+          </button>
         </div>
-        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-          {entry.body}
-        </p>
       </div>
     </div>
   );
 }
 
-export default function HeritageV4() {
-  const eras = buildMergedEras();
+export default function HeritageV1() {
+  const eras = buildMergedEras(false);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -280,10 +317,19 @@ export default function HeritageV4() {
       <HeritageVersionSwitcher />
       <main className="flex-1 section-padding">
         <div className="max-w-5xl mx-auto">
+          {/* Sellvinds Group information callout */}
+          <div className="mb-12 md:mb-16 border-l-4 border-primary bg-muted/40 rounded-r-md p-5">
+            <div className="text-xs uppercase tracking-wider text-primary font-semibold">
+              Sellvinds Group information
+            </div>
+            <p className="text-foreground text-sm mt-2 leading-relaxed">
+              Entries from sister companies and companies affiliated to the Sellvinds Group are interleaved chronologically below. They appear as collapsible cards — click any one to read the full entry.
+            </p>
+          </div>
 
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-              Sellvinds Group's Heritage
+              Heritage of Pentagon as part of the Sellvinds Group
             </h2>
 
             <div className="relative">
@@ -307,7 +353,12 @@ export default function HeritageV4() {
                       entry.source === "pentagon" ? (
                         <PentagonRow key={entry.label + i} entry={entry} index={i} />
                       ) : (
-                        <SellvindsRow key={entry.label + i} entry={entry} index={i} />
+                        <SellvindsRow
+                          key={entry.label + i}
+                          entry={entry}
+                          index={i}
+                          expandedAll={false}
+                        />
                       )
                     )}
                   </div>
