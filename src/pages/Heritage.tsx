@@ -177,6 +177,7 @@ export default function Heritage() {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
       <PageHero title="Heritage" subtitle="Deep engineering roots — not a recent market entrant." backgroundImage={plantExterior} />
+      <HeritageVersionSwitcher />
       <main className="flex-1 section-padding">
         <div className="max-w-5xl mx-auto">
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
