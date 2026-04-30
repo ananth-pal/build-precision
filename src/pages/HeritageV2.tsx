@@ -143,7 +143,7 @@ const groupCompanies = [
     name: "SRP Tools Ltd. (Ramanathan Palaniappan served as Technical Director)",
     longName: null,
     years: "1965–2005",
-    body: "In addition to running PROTEL, Ramanathan Palaniappan also helped set up India's largest Gear Cutting Tool Company SRP Tools Ltd as Technical Director to support promotors who came from a commercial background. He coordinated collaboration agreements with Mitsibushi to manufacture hobs, broaches, shaping cutters, and shaving cutters. He was technical director of SRP until the company was sold back to Mitsubishi in 2005.",
+    body: "In addition to running PROTEL, Ramanathan Palaniappan also helped set up India's largest Gear Cutting Tool Company SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinated collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters. He was technical director of SRP until the company was sold back to Mitsubishi in 2005.",
   },
   {
     name: "Sellvinds",
@@ -234,10 +234,10 @@ export default function HeritageV2() {
             </h2>
             <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8 max-w-3xl">
               <p>
-                The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools, manufactured autoparts, and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+                The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
               </p>
               <p>
-                This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work.
+                This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Employees? Ex-employees association + managers within Pentagon remain.
               </p>
             </div>
 

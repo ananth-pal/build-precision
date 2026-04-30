@@ -31,7 +31,7 @@ const sellvindsEntries: Entry[] = [
     badge: "AFFILIATED TO SELLVINDS GROUP",
     summary:
       "SRP Tools Ltd set up with Mitsubishi collaboration; grows into India's largest gear-cutting-tool company.",
-    body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
+    body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
   },
   {
     label: "Early 1970s",
@@ -55,7 +55,7 @@ const sellvindsEntries: Entry[] = [
     source: "sellvinds",
     summary:
       "CAFOMA Engine Components Ltd commissioned at SIPCOT Irungattukottai for Simpson & Co. cylinder heads.",
-    body: "CAFOMA Engine Components Ltd is set up as a greenfield venture in SIPCOT Irungattukottai to machine fully-finished cylinder heads for Simpson & Co. The company is owned and run by P. Ramanathan and his sons Arun Ramanathan and Pranav Ramanathan.",
+    body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
   },
 ];
 
