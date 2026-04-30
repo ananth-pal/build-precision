@@ -357,7 +357,7 @@ export default function HeritageV1() {
                           key={entry.label + i}
                           entry={entry}
                           index={i}
-                          expandedAll={showSellvinds}
+                          expandedAll={false}
                         />
                       )
                     )}
