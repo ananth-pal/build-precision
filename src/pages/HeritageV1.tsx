@@ -6,6 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import HeritageVersionSwitcher from "@/components/HeritageVersionSwitcher";
 import plantExterior from "@/assets/plant-exterior.jpg";
 
 type Source = "pentagon" | "sellvinds";
@@ -305,6 +306,7 @@ export default function HeritageV1() {
         subtitle="Deep engineering roots — not a recent market entrant."
         backgroundImage={plantExterior}
       />
+      <HeritageVersionSwitcher />
       <main className="flex-1 section-padding">
         <div className="max-w-5xl mx-auto">
           {/* Toggle */}
