@@ -99,7 +99,7 @@ const eras: Era[] = [
       },
       {
         label: "2008 onward",
-        body: "A second plant is commissioned 5 km from the main facility, dedicated to gear cutting: CNC hobbing, shaving, broaching, shaping, CNC bore and angular wheelhead grinding, and gear profile / PCD testing.",
+        body: "43,200 sq ft across two plants in Ambattur, Chennai (20,000 sq ft built-up, balance ready for development). More than 100 product types exported. ISO 14001 and ISO 45001 certifications in progress.",
       },
       {
         label: "Product range widens",
