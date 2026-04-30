@@ -5,14 +5,31 @@ import PageHero from "@/components/PageHero";
 import plantExterior from "@/assets/plant-exterior.jpg";
 
 type Entry = { label: string; body: string };
-type SubTrack = { title: string; entries: Entry[] };
 type Era = {
   number: string;
   range: string;
   title: string;
-  entries?: Entry[];
-  subTracks?: SubTrack[];
+  entries: Entry[];
 };
+
+const groupMilestones: Entry[] = [
+  {
+    label: "Early 1970s",
+    body: "Sellvinds is set up to manufacture autoparts. Indian OEMs including TELCO (Tata Motors), HMT Tractors, and Greaves Cotton bring tricky components to Sellvinds for development. A separate plant is set up to assemble and supply engine lubricating-oil pumps for OEMs — totally run by women, an industry first.",
+  },
+  {
+    label: "1965–2005",
+    body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director, the promoters lacking an engineering background themselves. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
+  },
+  {
+    label: "1983",
+    body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
+  },
+  {
+    label: "2007",
+    body: "CAFOMA Engine Components Ltd is set up as a greenfield venture in SIPCOT Irungattukottai to machine fully-finished cylinder heads for Simpson & Co. The company is owned and run by P. Ramanathan and his sons Arun Ramanathan and Pranav Ramanathan.",
+  },
+];
 
 const eras: Era[] = [
   {
@@ -37,49 +54,23 @@ const eras: Era[] = [
   {
     number: "Era 2",
     range: "1970s–1998",
-    title: "A group takes shape, and Pentagon as its machine-tool builder",
-    subTracks: [
+    title: "Pentagon as a machine-tool builder",
+    entries: [
       {
-        title: "The Sellvinds Group",
-        entries: [
-          {
-            label: "Early 1970s",
-            body: "Sellvinds is set up to manufacture autoparts. Indian OEMs including TELCO (Tata Motors), HMT Tractors, and Greaves Cotton bring tricky components to Sellvinds for development. A separate plant is set up to assemble and supply engine lubricating-oil pumps for OEMs — totally run by women, an industry first.",
-          },
-          {
-            label: "1960s–2005",
-            body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director, the promoters lacking an engineering background themselves. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
-          },
-          {
-            label: "1983",
-            body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
-          },
-          {
-            label: "2007",
-            body: "CAFOMA Engine Components Ltd is set up as a greenfield venture in SIPCOT Irungattukottai to machine fully-finished cylinder heads for Simpson & Co. The company is owned and run by P. Ramanathan and his sons Arun Ramanathan and Pranav Ramanathan.",
-          },
-        ],
+        label: "1970s",
+        body: "With SRP making gear-cutting tools and PROTEL making broaching machines, a gap remains for tool-resharpening machines. Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer, focused on special-purpose machines, gear shaping cutter and broach resharpening machines, and hob inspection equipment.",
       },
       {
-        title: "Pentagon as a machine-tool builder",
-        entries: [
-          {
-            label: "1970s",
-            body: "With SRP making gear-cutting tools and PROTEL making broaching machines, a gap remains for tool-resharpening machines. Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer, focused on special-purpose machines, gear shaping cutter and broach resharpening machines, and hob inspection equipment.",
-          },
-          {
-            label: "1970s–1990s",
-            body: "Machines are built for most of India's leading automotive and engineering OEMs, including Ashok Leyland, Bajaj Auto, Escorts, Hindustan Motors, Ind-Suzuki (TVS), Lakshmi Machine Works, Heavy Vehicles Factory, T72 Tank Factory, Greaves Cotton, SRP Tools, Nutrine Confectionery, and Wrigley India.",
-          },
-          {
-            label: "1990",
-            body: "Natarajan Palaniappan, Ramanathan's younger son, joins after two years of hands-on training at KAREYN Precision Machines, Dehradun, under Ananth Ram Iyer (the first Indian General Manager of HMT), and takes over day-to-day management of the machine-tool business.",
-          },
-          {
-            label: "Throughout the era",
-            body: "Pentagon builds dedicated machining lines for tractor transmission housings, cylinder heads, cylinder blocks, crankshafts, engine timing cases and covers, alongside lines for the confectionery and packaging industries. Many of these machines are built for group companies manufacturing crankshafts, cylinder heads, and timing cases.",
-          },
-        ],
+        label: "1970s–1990s",
+        body: "Machines are built for most of India's leading automotive and engineering OEMs, including Ashok Leyland, Bajaj Auto, Escorts, Hindustan Motors, Ind-Suzuki (TVS), Lakshmi Machine Works, Heavy Vehicles Factory, T72 Tank Factory, Greaves Cotton, SRP Tools, Nutrine Confectionery, and Wrigley India.",
+      },
+      {
+        label: "1990",
+        body: "Natarajan Palaniappan, Ramanathan's younger son, joins after two years of hands-on training at KAREYN Precision Machines, Dehradun, under Ananth Ram Iyer (the first Indian General Manager of HMT), and takes over day-to-day management of the machine-tool business.",
+      },
+      {
+        label: "Throughout the era",
+        body: "Pentagon builds dedicated machining lines for tractor transmission housings, cylinder heads, cylinder blocks, crankshafts, engine timing cases and covers, alongside lines for the confectionery and packaging industries. Many of these machines are built for group companies manufacturing crankshafts, cylinder heads, and timing cases.",
       },
     ],
   },
@@ -166,6 +157,20 @@ function EntryRow({ entry, index }: { entry: Entry; index: number }) {
   );
 }
 
+function MiniEntryRow({ entry }: { entry: Entry }) {
+  return (
+    <div className="relative flex items-start">
+      <div className="absolute left-4 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-1.5" />
+      <div className="ml-12 flex-1">
+        <div className="text-primary font-bold text-base">{entry.label}</div>
+        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+          {entry.body}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function Heritage() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -173,80 +178,68 @@ export default function Heritage() {
       <PageHero title="Heritage" subtitle="Deep engineering roots — not a recent market entrant." backgroundImage={plantExterior} />
       <main className="flex-1 section-padding">
         <div className="max-w-5xl mx-auto">
-          {/* Top intro */}
-          <div className="max-w-3xl mb-16 md:mb-20">
-            <p className="text-foreground text-base leading-relaxed">
-              Pentagon is part of{" "}
-              <a href="#sellvinds-group" className="text-primary hover:underline">
-                The Sellvinds Group
-              </a>
-              , a Chennai-based industrial group with deep roots in precision automotive manufacturing. Its sister-company activities appear throughout this timeline.
-            </p>
-          </div>
-
-          {/* Timeline */}
-          <div className="relative mb-16">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
-            {eras.map((era) => (
-              <section key={era.number}>
-                {/* Era divider */}
-                <div className="relative py-12 md:py-20 md:flex md:justify-center">
-                  <div className="relative z-10 ml-12 md:ml-0 md:text-center bg-background md:px-6">
-                    <div className="text-primary text-sm md:text-base font-semibold tracking-wide">
-                      {era.number} · {era.range}
-                    </div>
-                    <h2 className="mt-2 text-2xl md:text-3xl font-bold text-foreground">
-                      {era.title}
-                    </h2>
-                  </div>
-                </div>
-
-                {era.entries && (
-                  <div className="space-y-12">
-                    {era.entries.map((entry, i) => (
-                      <EntryRow key={entry.label + i} entry={entry} index={i} />
-                    ))}
-                  </div>
-                )}
-
-                {era.subTracks && (
-                  <div className="space-y-8">
-                    {era.subTracks.map((sub) => (
-                      <div key={sub.title}>
-                        {/* Sub-track header */}
-                        <div className="relative py-8 md:py-12 md:flex md:justify-center">
-                          <div className="relative z-10 ml-12 md:ml-0 md:text-center bg-background md:px-6 border-t border-border pt-6">
-                            <h3 className="text-xl md:text-2xl font-medium text-foreground">
-                              {sub.title}
-                            </h3>
-                          </div>
-                        </div>
-                        <div className="space-y-12">
-                          {sub.entries.map((entry, i) => (
-                            <EntryRow key={entry.label + i} entry={entry} index={i} />
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </section>
-            ))}
-          </div>
-
-          {/* Sellvinds Group section */}
-          <section id="sellvinds-group" className="mt-24 md:mt-32 max-w-3xl scroll-mt-24">
-            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-6">
-              Pentagon and the Sellvinds Group
+          {/* Section 1 — Pentagon as part of The Sellvinds Group */}
+          <section className="max-w-3xl mb-24 md:mb-32">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Pentagon as part of The Sellvinds Group
             </h2>
-            <div className="space-y-5 text-muted-foreground text-sm leading-relaxed">
+            <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
               <p>
                 The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools, manufactured autoparts, and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
               </p>
               <p>
                 This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work.
               </p>
+            </div>
+
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+              Group milestones
+            </h3>
+
+            <div className="relative mt-6">
+              <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
+              <div className="space-y-8 md:space-y-8">
+                {groupMilestones.map((entry, i) => (
+                  <MiniEntryRow key={entry.label + i} entry={entry} />
+                ))}
+              </div>
+            </div>
+
+            <p className="text-foreground text-base md:text-lg mt-12 leading-relaxed">
+              Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today.
+            </p>
+          </section>
+
+          {/* Section 2 — Pentagon's heritage */}
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+              Pentagon's heritage
+            </h2>
+
+            <div className="relative">
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+
+              {eras.map((era) => (
+                <section key={era.number}>
+                  {/* Era divider */}
+                  <div className="relative py-12 md:py-20 md:flex md:justify-center">
+                    <div className="relative z-10 ml-12 md:ml-0 md:text-center bg-background md:px-6">
+                      <div className="text-primary text-sm md:text-base font-semibold tracking-wide">
+                        {era.number} · {era.range}
+                      </div>
+                      <h3 className="mt-2 text-2xl md:text-3xl font-bold text-foreground">
+                        {era.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="space-y-12">
+                    {era.entries.map((entry, i) => (
+                      <EntryRow key={entry.label + i} entry={entry} index={i} />
+                    ))}
+                  </div>
+                </section>
+              ))}
             </div>
           </section>
 
