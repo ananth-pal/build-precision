@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -316,7 +314,7 @@ export default function HeritageV4() {
                       entry.source === "pentagon" ? (
                         <PentagonRow key={entry.label + i} entry={entry} index={i} />
                       ) : (
-                        <SellvindsDisclosure key={entry.label + i} entry={entry} index={i} />
+                        <SellvindsRow key={entry.label + i} entry={entry} index={i} />
                       )
                     )}
                   </div>
