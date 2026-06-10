@@ -93,11 +93,13 @@ export default function WhatWeMake() {
               {families.map((f) => (
                 <div key={f.title} className="capability-card overflow-hidden">
                   {f.image ? (
-                    <img
-                      src={f.image}
-                      alt={f.imageAlt}
-                      className="rounded-md object-cover w-full h-48 mb-4"
-                    />
+                    <ImageLightbox src={f.image} alt={f.imageAlt}>
+                      <img
+                        src={f.image}
+                        alt={f.imageAlt}
+                        className="rounded-md object-cover w-full h-48 mb-4"
+                      />
+                    </ImageLightbox>
                   ) : (
                     <div className="rounded-md bg-muted w-full h-48 mb-4 flex items-center justify-center">
                       <span className="text-xs text-muted-foreground">
