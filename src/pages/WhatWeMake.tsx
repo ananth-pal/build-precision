@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import ImageLightbox from "@/components/ImageLightbox";
 import productsDisplay from "@/assets/products-display.jpg";
 import hydraulicValve from "@/assets/hydraulic-valve.jpg";
 import gearPumpsAsset from "@/assets/gear-pumps.jpeg.asset.json";
@@ -92,11 +93,13 @@ export default function WhatWeMake() {
               {families.map((f) => (
                 <div key={f.title} className="capability-card overflow-hidden">
                   {f.image ? (
-                    <img
-                      src={f.image}
-                      alt={f.imageAlt}
-                      className="rounded-md object-cover w-full h-48 mb-4"
-                    />
+                    <ImageLightbox src={f.image} alt={f.imageAlt}>
+                      <img
+                        src={f.image}
+                        alt={f.imageAlt}
+                        className="rounded-md object-cover w-full h-48 mb-4"
+                      />
+                    </ImageLightbox>
                   ) : (
                     <div className="rounded-md bg-muted w-full h-48 mb-4 flex items-center justify-center">
                       <span className="text-xs text-muted-foreground">
