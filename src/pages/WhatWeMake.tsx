@@ -4,13 +4,20 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import productsDisplay from "@/assets/products-display.jpg";
 import hydraulicValve from "@/assets/hydraulic-valve.jpg";
+import gearPumpsAsset from "@/assets/gear-pumps.jpeg.asset.json";
 
 const families = [
   {
-    title: "Hydraulic Valves & Gear Pumps",
-    desc: "High-pressure hydraulic sub-assemblies for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
+    title: "Hydraulic Valves",
+    desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
     image: hydraulicValve,
     imageAlt: "Hydraulic valve assembly",
+  },
+  {
+    title: "Gear Pumps",
+    desc: "High-pressure gear pumps developed and supplied to a multinational hydraulics OEM for mobile and industrial fluid-power applications.",
+    image: gearPumpsAsset.url,
+    imageAlt: "Pentagon gear pumps batch",
   },
   {
     title: "Power Take-Off (PTO) Gearboxes",
@@ -31,6 +38,7 @@ const families = [
     imageAlt: "",
   },
 ];
+
 
 const endMarkets = [
   {
