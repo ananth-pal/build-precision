@@ -197,24 +197,6 @@ export default function WhatWeMake() {
           </>
         ) : (
           <>
-            {/* Selected Work gallery (collapsible) */}
-            <section className="px-6 md:px-12 pb-8">
-              <div className="max-w-7xl mx-auto">
-                <button
-                  type="button"
-                  onClick={() => setShowSelected((v) => !v)}
-                  aria-expanded={showSelected}
-                  className="flex items-center gap-2 mb-6 text-2xl font-bold text-foreground hover:text-primary transition-colors"
-                >
-                  <span>Selected Work</span>
-                  <ChevronDown
-                    className={`h-5 w-5 transition-transform ${showSelected ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {showSelected && <SelectedWorkGallery items={selectedWork} />}
-              </div>
-            </section>
-
             {/* What We Make */}
             <section className="section-padding pt-8">
               <div className="max-w-7xl mx-auto">
