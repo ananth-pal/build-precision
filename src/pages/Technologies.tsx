@@ -84,6 +84,8 @@ const cards: Card[] = [
     icon: Ruler,
     title: "Measurement and Metrology",
     desc: "CMM, surface roughness, height gauging, and dedicated gauges, with calibration cycled in-house and via external agencies.",
+    image: zeissCmmAsset.url,
+    dialogImage: calibrationProbeAsset.url,
     details: [
       "CNC scanning CMM — Zeiss",
       "Surface roughness tester, nanometre resolution — Zeiss",
