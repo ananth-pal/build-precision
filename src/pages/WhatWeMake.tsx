@@ -112,6 +112,18 @@ const endMarkets = [
 
 const emergingMarkets = ["Medical", "Robotics", "Aerospace", "Defence"];
 
+const selectedWork: GalleryItem[] = [
+  { src: gearPumps1.url, caption: "Gear Pumps", spanClass: "md:col-span-2 md:row-span-2" },
+  { src: ptoShafts1.url, caption: "PTO Shafts" },
+  { src: gears1.url, caption: "Gears" },
+  { src: couplers1.url, caption: "Couplers" },
+  { src: balancers3.url, caption: "Engine Balancers" },
+  { src: valveSpools1.url, caption: "Valve Spools" },
+  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes" },
+  { src: hydraulicValve, caption: "Hydraulic Valve" },
+];
+
+
 export default function WhatWeMake() {
   return (
     <div className="min-h-screen flex flex-col">
