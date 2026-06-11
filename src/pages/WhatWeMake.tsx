@@ -6,6 +6,8 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWorkGallery";
 import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 import gearPumps6 from "@/assets/portfolio/Gear_Pumps_1.jpeg.asset.json";
 import balancers1 from "@/assets/portfolio/Balancers_1.jpeg.asset.json";
@@ -117,39 +119,23 @@ export default function WhatWeMake() {
         subtitle="Assemblies, gears, and precision machined parts currently in OEM-supply production."
       />
       <main className="flex-1">
-        {/* View toggle */}
-        <section className="px-6 md:px-12 pt-8">
-          <div className="max-w-7xl mx-auto flex justify-center">
-            <div className="inline-flex border border-border" role="tablist" aria-label="Portfolio view">
-              <button
-                type="button"
-                role="tab"
-                aria-selected={view === "full"}
-                onClick={() => setView("full")}
-                className={`px-4 py-2 text-sm font-medium transition-colors ${
-                  view === "full"
-                    ? "text-foreground border-b-2 border-primary"
-                    : "text-muted-foreground hover:text-foreground border-b-2 border-transparent"
-                }`}
-              >
-                Full Portfolio
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={view === "selected"}
-                onClick={() => setView("selected")}
-                className={`px-4 py-2 text-sm font-medium transition-colors border-l border-border ${
-                  view === "selected"
-                    ? "text-foreground border-b-2 border-primary"
-                    : "text-muted-foreground hover:text-foreground border-b-2 border-transparent"
-                }`}
-              >
-                Selected Work Only
-              </button>
+        {/* View toggle — small switch in the corner */}
+        <section className="px-6 md:px-12 pt-6">
+          <div className="max-w-7xl mx-auto flex justify-end">
+            <div className="inline-flex items-center gap-2">
+              <Label htmlFor="view-toggle" className="text-xs text-muted-foreground cursor-pointer">
+                {view === "full" ? "v1 · Full" : "v2 · Selected"}
+              </Label>
+              <Switch
+                id="view-toggle"
+                checked={view === "selected"}
+                onCheckedChange={(c) => setView(c ? "selected" : "full")}
+                aria-label="Toggle between full portfolio and selected work only"
+              />
             </div>
           </div>
         </section>
+
 
         {/* Credibility band */}
         <section className="px-6 md:px-12 pt-12 pb-8">
@@ -172,6 +158,17 @@ export default function WhatWeMake() {
               </div>
             </section>
 
+            <section className="section-padding pt-4">
+              <div className="max-w-3xl mx-auto">
+                <p className="text-muted-foreground leading-relaxed">
+                  Aside from our work in <span className="font-semibold text-foreground">off-highway, commercial vehicles and agriculture</span> and{" "}
+                  <span className="font-semibold text-foreground">automotive</span>, we are also expanding into{" "}
+                  {emergingMarkets.slice(0, -1).join(", ")}, and {emergingMarkets[emergingMarkets.length - 1]} —
+                  with active enquiry and early-stage development underway.
+                </p>
+              </div>
+            </section>
+
             <div className="max-w-7xl mx-auto px-6 md:px-12">
               <hr className="border-border" />
             </div>
@@ -179,6 +176,7 @@ export default function WhatWeMake() {
             <section className="section-padding">
               <div className="max-w-3xl mx-auto space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
+
                   Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
                   fits the work above, we would be glad to see a drawing.
                 </p>
