@@ -10,8 +10,24 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
+import gearGrinderAsset from "@/assets/technologies/gear-grinder.jpg.asset.json";
+import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
+import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
+import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
+import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
 
-const cards = [
+type Card = {
+  icon: typeof Cog;
+  title: string;
+  desc: string;
+  details: string[];
+  image?: string;
+  video?: string;
+  dialogImage?: string;
+};
+
+const cards: Card[] = [
   {
     icon: Cog,
     title: "Machine Tools: Components",
