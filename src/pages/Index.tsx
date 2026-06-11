@@ -61,21 +61,18 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-muted">
-          {/* Rotating still images (placeholders until photography supplied) */}
+          {/* Rotating hero imagery */}
           <div className="absolute inset-0">
-            {heroSlides.map((label, i) => (
+            {heroSlides.map((src, i) => (
               <div
                 key={i}
-                className="absolute inset-0 flex items-center justify-center text-center px-8 bg-muted"
+                className="absolute inset-0 bg-center bg-cover"
                 style={{
+                  backgroundImage: `url(${src})`,
                   opacity: i === activeSlide ? 1 : 0,
                   transition: "opacity 1200ms ease-in-out",
                 }}
-              >
-                <span className="text-xs uppercase tracking-wider text-muted-foreground max-w-md">
-                  {label}
-                </span>
-              </div>
+              />
             ))}
           </div>
           {/* Darkened overlay (~40%) for legibility */}
