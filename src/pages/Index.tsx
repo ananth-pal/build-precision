@@ -106,39 +106,36 @@ export default function Home() {
 
         {/* Scale and heritage */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-          <div className="max-w-7xl mx-auto space-y-10">
+          <div className="max-w-7xl mx-auto space-y-6">
             <h2 className="text-2xl lg:text-3xl font-bold">Who We Are</h2>
 
-            {/* Paragraph 1 + compact photo to the right */}
-            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
-              <p className="text-muted-foreground leading-relaxed lg:col-span-2">
-                Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. These strong foundational roots enable us to design and manufacture all our own jigs, fixtures, and gauges in-house, along with a strong maintenance team that can strip, rebuild, and customise machine tools from first principles.
-              </p>
-              <div className="overflow-hidden border border-border rounded">
+            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-stretch">
+              <div className="lg:col-span-2 space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. These strong foundational roots enable us to design and manufacture all our own jigs, fixtures, and gauges in-house, along with a strong maintenance team that can strip, rebuild, and customise machine tools from first principles.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Operations are split across two plants in Ambattur Industrial Estate, Chennai. Plant 1 houses machining, assembly, testing, and administration. Plant 2 is a dedicated gear-cutting division. Total footprint is 43,200 sq. ft., of which 20,000 sq. ft. is currently built-up, with the balance ready for expansion as customer programmes grow. Both plants are ISO 9001:2015 certified.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Pentagon is now in its second generation of management, with the third generation joining the business. Line managers and senior staff have, in many cases, spent over two decades with the company.
+                </p>
+                <Link to="/about" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                  Learn more about us →
+                </Link>
+              </div>
+              <div className="overflow-hidden border border-border rounded h-full">
                 <img
                   src={zollerAsset.url}
                   alt="In-house Zoller tool presetter at Pentagon's Plant 1"
                   loading="lazy"
-                  className="w-full h-full object-cover min-h-[140px]"
+                  className="w-full h-full object-cover min-h-[200px]"
                 />
               </div>
             </div>
-
-            {/* Paragraph 2 — full width */}
-            <p className="text-muted-foreground leading-relaxed max-w-4xl">
-              Operations are split across two plants in Ambattur Industrial Estate, Chennai. Plant 1 houses machining, assembly, testing, and administration. Plant 2 is a dedicated gear-cutting division. Total footprint is 43,200 sq. ft., of which 20,000 sq. ft. is currently built-up, with the balance ready for expansion as customer programmes grow. Both plants are ISO 9001:2015 certified.
-            </p>
-
-            {/* Paragraph 3 — full width */}
-            <p className="text-muted-foreground leading-relaxed max-w-4xl">
-              Pentagon is now in its second generation of management, with the third generation joining the business. Line managers and senior staff have, in many cases, spent over two decades with the company.
-            </p>
-
-            <Link to="/about" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
-              Learn more about us →
-            </Link>
           </div>
         </section>
+
 
         {/* What Makes Pentagon Different */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">

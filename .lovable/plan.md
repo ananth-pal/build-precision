@@ -1,36 +1,16 @@
-## Placement plan for all uploaded media (updated)
+Fix the "Who We Are" section on the Home page so paragraph spacing matches the rest of the page and the Zoller photo no longer breaks up the text flow.
 
-Per the editorial boundary: equipment/process imagery stays in **Means of Production** (Technologies page); finished-part imagery stays in **Capabilities/Portfolio**. White margins cropped before upload where present.
+**Problems**
+1. The section container uses `space-y-10` (40px), while sibling sections like "What makes us different" use `space-y-6` (24px). Gaps look inconsistent on desktop.
+2. The Zoller photo sits inside a 3-column grid alongside paragraph 1 only. Paragraphs 2 and 3 then drop to full width, so the image visually interrupts the paragraph flow and leaves the text feeling broken into two blocks.
 
-### Asset-by-asset
+**Fix (in `src/pages/Index.tsx`, "Who We Are" section only)**
+- Change the outer container from `space-y-10` to `space-y-6` to match other sections.
+- Restructure the layout so all three paragraphs read as one continuous column on the left, with the Zoller image as a single sibling column on the right that spans the full text height:
+  - Wrap the section content in a `grid lg:grid-cols-3 gap-8 lg:gap-12 items-start` layout.
+  - Left column (`lg:col-span-2`): the heading, all three paragraphs (stacked with `space-y-6`), and the "Learn more about us →" link.
+  - Right column: the existing Zoller `img` in its bordered wrapper, made to fill the column height (e.g. `h-full` with `object-cover`), so it sits beside the full paragraph stack instead of only paragraph 1.
+- On mobile (`<lg`), the grid collapses to a single column and the image appears after the paragraphs, preserving readability.
 
-**Equipment shots → `Technologies.tsx` ("Means of Production")**
-
-| Asset | Placement |
-|---|---|
-| `A3A9226` — gear hobber, sculpted head | **Full-bleed hero background** on Technologies page (`PageHero backgroundImage`). |
-| `A3A9234` — gear grinder w/ coolant | Inline 16:9 image atop **"Machine Tools: Gears"** card. |
-| `Zeiss Scanning CMM` | Inline 16:9 image atop **"Measurement and Metrology"** card. |
-| `Callibration probe` — red fixture + probe | Inside the expanded **Measurement** details dialog. |
-| `Zoller Tool Presetter` | Inline 16:9 image atop **"Tooling and Supporting Processes"** card. |
-| `Drill loop - Makino a51.mov` | Muted autoplay-loop `<video>` atop **"Machine Tools: Components"** card. |
-
-**Output shot**
-
-| Asset | Placement |
-|---|---|
-| `Gear stock` — racked finished gears | Hero background on **`CapGearCutting.tsx`**. (No portfolio change for now.) |
-
-### Implementation steps
-
-1. Crop true-white borders from the 5 images that have them (CMM, Zoller, probe, A3A9234, gear stock) via ImageMagick, then upload all 7 assets via `lovable-assets` from `/mnt/user-uploads/` to `src/assets/technologies/*.asset.json` and `src/assets/capabilities/gear-stock.jpg.asset.json`.
-2. `Technologies.tsx`: add `backgroundImage` to `PageHero`; extend each card definition with optional `image` (or `video` for the Makino clip) rendered as `w-full aspect-video object-cover rounded-md mb-4` above the icon.
-3. `CapGearCutting.tsx`: add `backgroundImage` to its `PageHero`.
-4. No changes to Capabilities text, About, Home, WhatWeMake, or any other page.
-
-### Notes
-
-- Zeiss CMM and Zoller shots show a Pentagon-shirted operator; consistent with the engineer-to-engineer tone. Flag if you'd prefer no faces.
-- If the `.mov` doesn't play reliably across browsers, I'll transcode to `.mp4` (H.264) before upload.
-
-Confirm and I'll implement.
+**Result**
+Paragraph rhythm in "Who We Are" matches the `space-y-6` cadence used elsewhere on the Home page, and the Zoller photo sits alongside the full paragraph stack instead of splitting it.
