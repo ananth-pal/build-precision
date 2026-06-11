@@ -10,9 +10,11 @@ export interface CarouselImage {
 
 interface ImageCarouselProps {
   images: CarouselImage[];
+  /** When true, remove fixed 16/10 plate + gray letterbox; image displays full width at native ratio. */
+  tight?: boolean;
 }
 
-export default function ImageCarousel({ images }: ImageCarouselProps) {
+export default function ImageCarousel({ images, tight = false }: ImageCarouselProps) {
   const [idx, setIdx] = React.useState(0);
   const [lightboxIdx, setLightboxIdx] = React.useState(0);
   const [open, setOpen] = React.useState(false);
@@ -34,7 +36,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   const current = images[idx];
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className={tight ? "w-full" : "max-w-5xl mx-auto"}>
       <Dialog
         open={open}
         onOpenChange={(o) => {
@@ -47,13 +49,17 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           <DialogTrigger asChild>
             <button
               type="button"
-              className="relative block w-full aspect-[16/10] overflow-hidden cursor-zoom-in bg-[hsl(var(--section-alt))] ring-1 ring-border shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]"
+              className={
+                tight
+                  ? "relative block w-full overflow-hidden cursor-zoom-in"
+                  : "relative block w-full aspect-[16/10] overflow-hidden cursor-zoom-in bg-[hsl(var(--section-alt))] ring-1 ring-border shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]"
+              }
               aria-label={`Expand ${current.caption}`}
             >
               <img
                 src={current.src}
                 alt={current.alt ?? current.caption}
-                className="w-full h-full object-contain"
+                className={tight ? "block w-full h-auto" : "w-full h-full object-contain"}
               />
             </button>
           </DialogTrigger>
