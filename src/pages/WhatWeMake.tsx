@@ -139,8 +139,8 @@ export default function WhatWeMake() {
 
         {/* Credibility band */}
         <section className="px-6 md:px-12 pt-12 pb-8">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+          <div className="max-w-7xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
               Pentagon supplies precision-machined parts, gears, and tested assemblies to OEM
               customers on long-running production programs. More than 100 product types have been
               developed and shipped to date. Several programs have been in continuous production for
