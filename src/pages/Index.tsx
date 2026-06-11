@@ -114,10 +114,13 @@ export default function Home() {
               <p className="text-muted-foreground leading-relaxed lg:col-span-2">
                 Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. These strong foundational roots enable us to design and manufacture all our own jigs, fixtures, and gauges in-house, along with a strong maintenance team that can strip, rebuild, and customise machine tools from first principles.
               </p>
-              <div className="bg-muted border border-border rounded flex items-center justify-center text-center px-4 py-6 min-h-[140px]">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                  [Plant 1 machine shop or in-house tooling — to be supplied]
-                </span>
+              <div className="overflow-hidden border border-border rounded">
+                <img
+                  src={zollerAsset.url}
+                  alt="In-house Zoller tool presetter at Pentagon's Plant 1"
+                  loading="lazy"
+                  className="w-full h-full object-cover min-h-[140px]"
+                />
               </div>
             </div>
 
