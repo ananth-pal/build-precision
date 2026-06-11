@@ -34,7 +34,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   const current = images[idx];
 
   return (
-    <div>
+    <div className="max-w-3xl">
       <Dialog
         open={open}
         onOpenChange={(o) => {
@@ -47,7 +47,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           <DialogTrigger asChild>
             <button
               type="button"
-              className="relative block w-full aspect-[4/3] overflow-hidden cursor-zoom-in bg-[hsl(var(--section-alt))] ring-1 ring-border shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]"
+              className="relative block w-full aspect-[16/10] overflow-hidden cursor-zoom-in bg-[hsl(var(--section-alt))] ring-1 ring-border shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]"
               aria-label={`Expand ${current.caption}`}
             >
               <img

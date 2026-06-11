@@ -7,24 +7,14 @@ import PageHero from "@/components/PageHero";
 import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWorkGallery";
 import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
 import productsDisplay from "@/assets/products-display.jpg";
-import hydraulicValve from "@/assets/hydraulic-valve.jpg";
-import gearPumps1 from "@/assets/gear-pumps.jpeg.asset.json";
-import gearPumps2 from "@/assets/portfolio/Gear_Pumps_2.jpeg.asset.json";
-import gearPumps3 from "@/assets/portfolio/Gear_Pumps_3.jpeg.asset.json";
-import gearPumps4 from "@/assets/portfolio/Gear_Pumps_4.jpeg.asset.json";
-import gearPumps5 from "@/assets/portfolio/Gear_Pumps_5.jpeg.asset.json";
 import gearPumps6 from "@/assets/portfolio/Gear_Pumps_1.jpeg.asset.json";
 import balancers1 from "@/assets/portfolio/Balancers_1.jpeg.asset.json";
 import balancers2 from "@/assets/portfolio/Balancers_2.jpeg.asset.json";
-import balancers3 from "@/assets/portfolio/Balancers_3.jpeg.asset.json";
-import couplers1 from "@/assets/portfolio/Couplers_1.jpeg.asset.json";
 import couplers2 from "@/assets/portfolio/Couplers_2.jpeg.asset.json";
-import gears1 from "@/assets/portfolio/Gears_1.jpeg.asset.json";
 import gears2 from "@/assets/portfolio/Gears_2.jpeg.asset.json";
-import valveSpools1 from "@/assets/portfolio/Valve_spools_1.jpeg.asset.json";
-import valveSpools2 from "@/assets/portfolio/Valve_spools_2.jpeg.asset.json";
 import gearPumpComponents1 from "@/assets/portfolio/Gear_pump_components_1.jpeg.asset.json";
 import ptoShafts1 from "@/assets/portfolio/PTO_Shafts_1.jpeg.asset.json";
+import valveSpools1 from "@/assets/portfolio/Valve_spools_1.jpeg.asset.json";
 import deepRidgeExtraPTOs1 from "@/assets/portfolio/Deep_ridge_extra_PTOs_1.jpeg.asset.json";
 import basePTOs1 from "@/assets/portfolio/Base_PTOs_1.jpeg.asset.json";
 import valves1 from "@/assets/portfolio/Valves_1.jpeg.asset.json";
@@ -49,7 +39,6 @@ const families: Family[] = [
     title: "Engine Balancer Assemblies",
     desc: "Mid-engine balancer assemblies supplied to one of India's leading engine manufacturers. In continuous production since 2008.",
     images: [
-      { src: balancers3.url, caption: "Balancers" },
       { src: balancers1.url, caption: "Balancers" },
       { src: balancers2.url, caption: "Balancers" },
     ],
@@ -59,11 +48,6 @@ const families: Family[] = [
     desc: "High-pressure gear pumps developed and supplied to a multinational hydraulics OEM for mobile and industrial fluid-power applications.",
     images: [
       { src: gearPumps6.url, caption: "Gear Pumps" },
-      { src: gearPumps2.url, caption: "Gear Pumps" },
-      { src: gearPumps3.url, caption: "Gear Pumps" },
-      { src: gearPumps4.url, caption: "Gear Pumps" },
-      { src: gearPumps5.url, caption: "Gear Pumps" },
-      { src: gearPumps1.url, caption: "Gear Pumps" },
     ],
   },
   {
@@ -71,21 +55,17 @@ const families: Family[] = [
     desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
     images: [
       { src: valves1.url, caption: "Valves" },
-      { src: hydraulicValve, caption: "Hydraulic valve" },
     ],
   },
   {
     title: "Precision Machined Components & Gears",
     desc: "Machined parts, gears, and splined shafts supplied to OEM customers on ongoing production programs. Materials include steel, cast iron, ductile iron, and non-ferrous alloys. Gear scope covers spur and helical gears (hobbed and shaved) and splined shafts.",
     images: [
-      { src: couplers1.url, caption: "Couplers" },
       { src: couplers2.url, caption: "Couplers" },
       { src: gearPumpComponents1.url, caption: "Gear pump components" },
-      { src: gears1.url, caption: "Gears" },
       { src: gears2.url, caption: "Gears" },
       { src: ptoShafts1.url, caption: "PTO Shafts" },
       { src: valveSpools1.url, caption: "Valve spools" },
-      { src: valveSpools2.url, caption: "Valve spools" },
     ],
   },
 ];
@@ -116,18 +96,20 @@ const emergingMarkets = ["Medical", "Robotics", "Aerospace", "Defence"];
 
 const selectedWork: GalleryItem[] = [
   { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes", spanClass: "md:col-span-2 md:row-span-2" },
-  { src: balancers3.url, caption: "Engine Balancers" },
+  { src: balancers1.url, caption: "Engine Balancers" },
   { src: basePTOs1.url, caption: "Base PTOs" },
   { src: gearPumps6.url, caption: "Gear Pumps" },
-  { src: hydraulicValve, caption: "Hydraulic Valve" },
-  { src: valves1.url, caption: "Valves" },
-  { src: balancers1.url, caption: "Engine Balancers" },
-  { src: gearPumps3.url, caption: "Gear Pumps" },
+  { src: valves1.url, caption: "Hydraulic Valves" },
+  { src: gearPumpComponents1.url, caption: "Gear Pump Components" },
+  { src: balancers2.url, caption: "Engine Balancers" },
+  { src: ptoShafts1.url, caption: "PTO Shafts" },
 ];
 
 
 export default function WhatWeMake() {
   const [showSelected, setShowSelected] = useState(false);
+  const [view, setView] = useState<"full" | "selected">("full");
+
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -136,8 +118,42 @@ export default function WhatWeMake() {
         subtitle="Assemblies, gears, and precision machined parts currently in OEM-supply production."
       />
       <main className="flex-1">
+        {/* View toggle */}
+        <section className="px-6 md:px-12 pt-8">
+          <div className="max-w-7xl mx-auto flex justify-center">
+            <div className="inline-flex border border-border" role="tablist" aria-label="Portfolio view">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={view === "full"}
+                onClick={() => setView("full")}
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                  view === "full"
+                    ? "text-foreground border-b-2 border-primary"
+                    : "text-muted-foreground hover:text-foreground border-b-2 border-transparent"
+                }`}
+              >
+                Full Portfolio
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={view === "selected"}
+                onClick={() => setView("selected")}
+                className={`px-4 py-2 text-sm font-medium transition-colors border-l border-border ${
+                  view === "selected"
+                    ? "text-foreground border-b-2 border-primary"
+                    : "text-muted-foreground hover:text-foreground border-b-2 border-transparent"
+                }`}
+              >
+                Selected Work Only
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* Credibility band */}
-        <section className="px-6 md:px-12 pt-16 pb-8">
+        <section className="px-6 md:px-12 pt-12 pb-8">
           <div className="max-w-3xl mx-auto">
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               Pentagon supplies precision-machined parts, gears, and tested assemblies to OEM
@@ -148,127 +164,163 @@ export default function WhatWeMake() {
           </div>
         </section>
 
-        {/* Selected Work gallery (collapsible) */}
-        <section className="px-6 md:px-12 pb-8">
-          <div className="max-w-7xl mx-auto">
-            <button
-              type="button"
-              onClick={() => setShowSelected((v) => !v)}
-              aria-expanded={showSelected}
-              className="flex items-center gap-2 mb-6 text-2xl font-bold text-foreground hover:text-primary transition-colors"
-            >
-              <span>Selected Work</span>
-              <ChevronDown
-                className={`h-5 w-5 transition-transform ${showSelected ? "rotate-180" : ""}`}
-              />
-            </button>
-            {showSelected && <SelectedWorkGallery items={selectedWork} />}
-          </div>
-        </section>
-
-
-        {/* What We Make */}
-        <section className="section-padding pt-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8">What We Make</h2>
-            <div className="grid grid-cols-1 gap-12">
-              {families.map((f) => (
-                <div key={f.title} className="overflow-hidden">
-                  <div className="pb-6 max-w-3xl">
-                    <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-                  </div>
-                  {f.images.length > 0 ? (
-                    <ImageCarousel images={f.images} />
-                  ) : (
-                    <div className="bg-muted w-full aspect-[4/3] flex items-center justify-center">
-                      <span className="text-xs text-muted-foreground">
-                        [PLACEHOLDER — product photo]
-                      </span>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <hr className="border-border" />
-        </div>
-
-        {/* End Markets */}
-        <section className="section-padding">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">End Markets</h2>
-            <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
-              Pentagon's products end up in the following markets. Each market block describes what
-              we supply, what makes those parts demanding, and which capabilities drive fit.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              {endMarkets.map((m) => (
-                <div key={m.name}>
-                  <h3 className="text-lg font-semibold mb-4">{m.name}</h3>
-                  <div className="space-y-3 leading-relaxed">
-                    <p>
-                      <span className="font-medium text-foreground">Pentagon supplies: </span>
-                      <span className="text-muted-foreground">{m.supplied}</span>
-                    </p>
-                    <p>
-                      <span className="font-medium text-foreground">What makes it demanding: </span>
-                      <span className="text-muted-foreground">{m.demanding}</span>
-                    </p>
-                    <p>
-                      <span className="font-medium text-foreground">Relevant capabilities: </span>
-                      <span className="text-muted-foreground">{m.capabilities}</span>
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12">
-              <p className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
-                Active enquiry and early-stage development in:
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {emergingMarkets.map((name) => (
-                  <div
-                    key={name}
-                    className="border border-border rounded-md px-4 py-3 text-sm font-semibold text-foreground"
-                  >
-                    {name}
-                  </div>
-                ))}
+        {view === "selected" ? (
+          <>
+            <section className="px-6 md:px-12 pb-8">
+              <div className="max-w-7xl mx-auto">
+                <h2 className="text-2xl font-bold mb-6">Selected Work</h2>
+                <SelectedWorkGallery items={selectedWork} />
               </div>
+            </section>
+
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+              <hr className="border-border" />
             </div>
-          </div>
-        </section>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <hr className="border-border" />
-        </div>
+            <section className="section-padding">
+              <div className="max-w-3xl mx-auto space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
+                  fits the work above, we would be glad to see a drawing.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  For the machines and measurement equipment that support these programs, see{" "}
+                  <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
+                    Means of Production
+                  </Link>
+                  . For a fuller account of what we do and how, see{" "}
+                  <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
+                    Capabilities
+                  </Link>
+                  .
+                </p>
+              </div>
+            </section>
+          </>
+        ) : (
+          <>
+            {/* Selected Work gallery (collapsible) */}
+            <section className="px-6 md:px-12 pb-8">
+              <div className="max-w-7xl mx-auto">
+                <button
+                  type="button"
+                  onClick={() => setShowSelected((v) => !v)}
+                  aria-expanded={showSelected}
+                  className="flex items-center gap-2 mb-6 text-2xl font-bold text-foreground hover:text-primary transition-colors"
+                >
+                  <span>Selected Work</span>
+                  <ChevronDown
+                    className={`h-5 w-5 transition-transform ${showSelected ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {showSelected && <SelectedWorkGallery items={selectedWork} />}
+              </div>
+            </section>
 
-        {/* Closing invitation */}
-        <section className="section-padding">
-          <div className="max-w-3xl mx-auto space-y-4">
-            <p className="text-muted-foreground leading-relaxed">
-              Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
-              fits the work above, we would be glad to see a drawing.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              For the machines and measurement equipment that support these programs, see{" "}
-              <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
-                Means of Production
-              </Link>
-              . For a fuller account of what we do and how, see{" "}
-              <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
-                Capabilities
-              </Link>
-              .
-            </p>
-          </div>
-        </section>
+            {/* What We Make */}
+            <section className="section-padding pt-8">
+              <div className="max-w-7xl mx-auto">
+                <h2 className="text-2xl font-bold mb-8">What We Make</h2>
+                <div className="grid grid-cols-1 gap-12">
+                  {families.map((f) => (
+                    <div key={f.title} className="overflow-hidden">
+                      <div className="pb-6 max-w-3xl">
+                        <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                      </div>
+                      {f.images.length > 0 ? (
+                        <ImageCarousel images={f.images} />
+                      ) : (
+                        <div className="bg-muted w-full aspect-[16/10] max-w-3xl flex items-center justify-center">
+                          <span className="text-xs text-muted-foreground">
+                            [PLACEHOLDER — product photo]
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+              <hr className="border-border" />
+            </div>
+
+            {/* End Markets */}
+            <section className="section-padding">
+              <div className="max-w-7xl mx-auto">
+                <h2 className="text-2xl font-bold mb-6">End Markets</h2>
+                <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
+                  Pentagon's products end up in the following markets. Each market block describes what
+                  we supply, what makes those parts demanding, and which capabilities drive fit.
+                </p>
+                <div className="grid md:grid-cols-2 gap-8">
+                  {endMarkets.map((m) => (
+                    <div key={m.name}>
+                      <h3 className="text-lg font-semibold mb-4">{m.name}</h3>
+                      <div className="space-y-3 leading-relaxed">
+                        <p>
+                          <span className="font-medium text-foreground">Pentagon supplies: </span>
+                          <span className="text-muted-foreground">{m.supplied}</span>
+                        </p>
+                        <p>
+                          <span className="font-medium text-foreground">What makes it demanding: </span>
+                          <span className="text-muted-foreground">{m.demanding}</span>
+                        </p>
+                        <p>
+                          <span className="font-medium text-foreground">Relevant capabilities: </span>
+                          <span className="text-muted-foreground">{m.capabilities}</span>
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-12">
+                  <p className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
+                    Active enquiry and early-stage development in:
+                  </p>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {emergingMarkets.map((name) => (
+                      <div
+                        key={name}
+                        className="border border-border rounded-md px-4 py-3 text-sm font-semibold text-foreground"
+                      >
+                        {name}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+              <hr className="border-border" />
+            </div>
+
+            {/* Closing invitation */}
+            <section className="section-padding">
+              <div className="max-w-3xl mx-auto space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
+                  fits the work above, we would be glad to see a drawing.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  For the machines and measurement equipment that support these programs, see{" "}
+                  <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
+                    Means of Production
+                  </Link>
+                  . For a fuller account of what we do and how, see{" "}
+                  <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
+                    Capabilities
+                  </Link>
+                  .
+                </p>
+              </div>
+            </section>
+          </>
+        )}
       </main>
       <SiteFooter />
     </div>
