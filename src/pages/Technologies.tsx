@@ -145,6 +145,23 @@ export default function Technologies() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {cards.map((c) => (
                 <div key={c.title} className="capability-card flex flex-col">
+                  {c.video ? (
+                    <video
+                      src={c.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
+                    />
+                  ) : c.image ? (
+                    <img
+                      src={c.image}
+                      alt={c.title}
+                      loading="lazy"
+                      className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
+                    />
+                  ) : null}
                   <c.icon className="text-primary mb-4" size={28} />
                   <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{c.desc}</p>
@@ -159,6 +176,14 @@ export default function Technologies() {
                         <DialogTitle>{c.title}</DialogTitle>
                         <DialogDescription>{c.desc}</DialogDescription>
                       </DialogHeader>
+                      {c.dialogImage && (
+                        <img
+                          src={c.dialogImage}
+                          alt={`${c.title} detail`}
+                          loading="lazy"
+                          className="w-full aspect-video object-cover rounded-md mt-2"
+                        />
+                      )}
                       <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed mt-2">
                         {c.details.map((d) => (
                           <li key={d}>{d}</li>
