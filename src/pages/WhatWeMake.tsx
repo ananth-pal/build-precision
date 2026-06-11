@@ -108,7 +108,7 @@ const selectedWork: GalleryItem[] = [
 
 
 export default function WhatWeMake() {
-  const [showSelected, setShowSelected] = useState(false);
+  
   const [view, setView] = useState<"full" | "selected">("full");
 
   return (
