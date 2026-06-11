@@ -1,40 +1,49 @@
-## Plan: Make portfolio photos pop (all 6 changes)
+## Portfolio page updates
 
-Apply every option discussed. We'll review on screen and trim what doesn't land.
+All edits in `src/pages/WhatWeMake.tsx` plus a small tweak to `src/components/ImageCarousel.tsx` and `src/components/SelectedWorkGallery.tsx`.
 
-### 1. Break the card frame (bleed)
-In `WhatWeMake.tsx`, for image families remove the surrounding card padding around the image only. The image will sit edge-to-edge inside the card; the text block below keeps its padding. Implementation: drop `capability-card`'s default padding for these cards and re-apply padding only to the title/description container.
+### 1. Remove specific photos
 
-### 2. Make them bigger
-- Replace fixed `h-56` with `aspect-[4/3]` on `ImageCarousel`'s preview box so the image scales with column width.
-- On desktop, switch the image-family cards from `md:grid-cols-2` to a single-column stack (`grid-cols-1`) inside the "What We Make" section so each photo gets the full content width (~1100px max). PTO Gearboxes and Hydraulic Valves stack the same way for consistency.
+**Hydraulic Valves** — drop the original `hydraulic-valve.jpg` (keep only `valves1`). Also remove from `selectedWork`.
 
-### 3. Hero treatment (plate + shadow)
-- Background plate behind the image: `bg-[hsl(var(--section-alt))]` (existing token, warm off-white) so parts pop against a non-white field.
-- Soft framed-print shadow on the image container: `shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]` plus a 1px hairline border (`ring-1 ring-border`).
-- Keep `object-contain` — nothing gets cropped.
+**Gear Pumps** — drop photos 2–6 (keep only `gearPumps6` which is now position 1). Remove unused imports.
 
-### 4. Hero shot + thumbnail strip
-Replace the carousel's current arrow-only navigation with: large hero image up top + a horizontal row of small thumbnails (~64px tall) below. Clicking a thumbnail swaps the hero. Active thumbnail gets a 2px primary-red ring. Arrow buttons remain on the hero for keyboard/touch users but become secondary.
+**Precision Machined Components & Gears** — current order is Couplers_1, Couplers_2, Gear_pump_components_1, Gears_1, Gears_2, PTO_Shafts_1, Valve_spools_1, Valve_spools_2. Remove positions 1, 4, 8 → drop **Couplers_1, Gears_1, Valve_spools_2**.
 
-### 5. "Selected work" gallery above the cards
-Add a new section directly under the page intro paragraph, before "What We Make":
-- Heading: "Selected Work"
-- 6–8 of the strongest shots in a masonry/asymmetric grid (e.g., 3-col on desktop with one tall feature tile, 2-col tablet, 1-col mobile).
-- Each tile clickable → opens existing lightbox.
-- Picks (initial): Gear_Pumps_1, PTO_Shafts_1, Gears_1, Couplers_1, Balancers_3, Valve_spools_1, Deep_ridge_extra_PTOs_1, hydraulicValve.
+**Engine Balancers** — remove `balancers3` from the carousel. Since the prior change moved balancers3 to position 1, the carousel becomes `balancers1, balancers2`. Also swap `balancers3` for `balancers1` in `selectedWork`.
 
-### 6. Polish
-- Move caption + counter from below the image to a small overlay at the bottom-left of the image: `bg-black/55 text-white text-xs px-2.5 py-1 rounded`.
-- Bump arrow icons from `h-4` to `h-6`, always visible (not hover-dependent), larger hit area (`p-2.5`).
+Delete the now-unused `.asset.json` pointer files for: Gear_Pumps_2–5, Gears_1, Couplers_1, Valve_spools_2, Balancers_3, and the `hydraulic-valve.jpg` image (via assets--delete_asset for .asset.json files; `rm` for the raw jpg).
+
+### 2. Slightly smaller image previews
+
+- `ImageCarousel` hero: change container from `aspect-[4/3]` to `aspect-[16/10]` and wrap in `max-w-3xl` so the active image is visibly smaller.
+- `SelectedWorkGallery` grid: reduce `md:auto-rows-[180px]` to `md:auto-rows-[150px]`.
+
+### 3. Portfolio hero banner
+
+No image — keep the existing clean `PageHero` text-only banner. No change needed.
+
+### 4. v1 / v2 toggle
+
+Add a small segmented toggle at the very top of `<main>` (above the credibility band):
+
+```text
+[ Full Portfolio ] [ Selected Work Only ]
+```
+
+- `view` state: `"full" | "selected"` (default `"full"`).
+- **v1 (full)** — current page exactly as-is.
+- **v2 (selected)** — render only: credibility band → Selected Work gallery (always expanded, no collapse chevron in this view) → closing CTA paragraph with links to Capabilities / Means of Production. Hide What We Make carousels and End Markets.
+- Toggle styled minimally (border, near-black text, red underline on active) per the project's visual rules. No animations.
+
+### Out of scope
+
+- No copy changes to existing sections.
+- No new images uploaded.
 
 ### Files touched
-- `src/components/ImageCarousel.tsx` — aspect ratio, hero+thumbnails layout, overlay caption, larger arrows, plate/shadow on container.
-- `src/pages/WhatWeMake.tsx` — single-column stack for image families, remove card padding around images, add "Selected Work" gallery section.
-- New: `src/components/SelectedWorkGallery.tsx` — masonry/asymmetric grid component using existing `ImageLightbox`.
 
-### Notes / flags
-- **Memory conflict:** Core rule says "No carousels." We already had carousels from earlier; #4 keeps a hero+thumbnail pattern (still carousel-ish) plus #5 adds a gallery. After review, if the gallery covers the need we can drop the carousels entirely and make the category cards text-only with a single representative thumbnail — flag this once we see it on screen.
-- No content/copy changes. No backend changes. No new image assets.
-
-Confirm to implement.
+- `src/pages/WhatWeMake.tsx` (main work)
+- `src/components/ImageCarousel.tsx` (aspect ratio + max width)
+- `src/components/SelectedWorkGallery.tsx` (row height)
+- Delete: 5 portfolio `.asset.json` pointers + `src/assets/hydraulic-valve.jpg`
