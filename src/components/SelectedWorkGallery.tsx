@@ -13,7 +13,7 @@ interface Props {
 
 export default function SelectedWorkGallery({ items }: Props) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 md:auto-rows-[180px]">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 md:auto-rows-[150px]">
       {items.map((item, i) => (
         <ImageLightbox key={i} src={item.src} alt={item.caption}>
           <button
