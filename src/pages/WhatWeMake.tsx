@@ -6,6 +6,8 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWorkGallery";
 import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 import gearPumps6 from "@/assets/portfolio/Gear_Pumps_1.jpeg.asset.json";
 import balancers1 from "@/assets/portfolio/Balancers_1.jpeg.asset.json";
