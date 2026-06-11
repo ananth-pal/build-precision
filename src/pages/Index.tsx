@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
+import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
+import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
+import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
+import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
 
-const heroSlides = [
-  "[Photograph 1: finished PTO gearbox or assembly — to be supplied]",
-  "[Photograph 2: rack of gears or Plant 2 gear-cutting floor — to be supplied]",
-  "[Photograph 3: CMM inspection or Plant 1 machining centre — to be supplied]",
-];
+const heroSlides = [gearHobberAsset.url, gearStockAsset.url, zeissCmmAsset.url];
 
 const stats = [
   { number: "45+", label: "Years manufacturing heritage" },
