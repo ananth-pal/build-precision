@@ -119,39 +119,23 @@ export default function WhatWeMake() {
         subtitle="Assemblies, gears, and precision machined parts currently in OEM-supply production."
       />
       <main className="flex-1">
-        {/* View toggle */}
-        <section className="px-6 md:px-12 pt-8">
-          <div className="max-w-7xl mx-auto flex justify-center">
-            <div className="inline-flex border border-border" role="tablist" aria-label="Portfolio view">
-              <button
-                type="button"
-                role="tab"
-                aria-selected={view === "full"}
-                onClick={() => setView("full")}
-                className={`px-4 py-2 text-sm font-medium transition-colors ${
-                  view === "full"
-                    ? "text-foreground border-b-2 border-primary"
-                    : "text-muted-foreground hover:text-foreground border-b-2 border-transparent"
-                }`}
-              >
-                Full Portfolio
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={view === "selected"}
-                onClick={() => setView("selected")}
-                className={`px-4 py-2 text-sm font-medium transition-colors border-l border-border ${
-                  view === "selected"
-                    ? "text-foreground border-b-2 border-primary"
-                    : "text-muted-foreground hover:text-foreground border-b-2 border-transparent"
-                }`}
-              >
-                Selected Work Only
-              </button>
+        {/* View toggle — small switch in the corner */}
+        <section className="px-6 md:px-12 pt-6">
+          <div className="max-w-7xl mx-auto flex justify-end">
+            <div className="inline-flex items-center gap-2">
+              <Label htmlFor="view-toggle" className="text-xs text-muted-foreground cursor-pointer">
+                {view === "full" ? "v1 · Full" : "v2 · Selected"}
+              </Label>
+              <Switch
+                id="view-toggle"
+                checked={view === "selected"}
+                onCheckedChange={(c) => setView(c ? "selected" : "full")}
+                aria-label="Toggle between full portfolio and selected work only"
+              />
             </div>
           </div>
         </section>
+
 
         {/* Credibility band */}
         <section className="px-6 md:px-12 pt-12 pb-8">
