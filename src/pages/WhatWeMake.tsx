@@ -38,8 +38,8 @@ const families: Family[] = [
     title: "Hydraulic Valves",
     desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
     images: [
-      { src: hydraulicValve, caption: "Hydraulic valve" },
       { src: valves1.url, caption: "Valves" },
+      { src: hydraulicValve, caption: "Hydraulic valve" },
     ],
   },
   {
@@ -58,8 +58,8 @@ const families: Family[] = [
     title: "Power Take-Off (PTO) Gearboxes",
     desc: "Over 75 PTO variants developed to date — cable-operated, pneumatic, hydraulic, and hot-shift — for commercial-vehicle transmission applications.",
     images: [
-      { src: productsDisplay, caption: "PTO gearboxes" },
       { src: deepRidgeExtraPTOs1.url, caption: "Deep ridge + extra PTOs" },
+      { src: productsDisplay, caption: "PTO gearboxes" },
       { src: basePTOs1.url, caption: "Base PTOs" },
     ],
   },
@@ -160,6 +160,10 @@ export default function WhatWeMake() {
             <div className="grid grid-cols-1 gap-12">
               {families.map((f) => (
                 <div key={f.title} className="overflow-hidden">
+                  <div className="pb-6 max-w-3xl">
+                    <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                  </div>
                   {f.images.length > 0 ? (
                     <ImageCarousel images={f.images} />
                   ) : (
@@ -169,10 +173,6 @@ export default function WhatWeMake() {
                       </span>
                     </div>
                   )}
-                  <div className="pt-6 max-w-3xl">
-                    <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-                  </div>
                 </div>
               ))}
             </div>
