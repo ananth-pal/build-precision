@@ -159,8 +159,8 @@ export default function WhatWeMake() {
             </section>
 
             <section className="section-padding pt-4">
-              <div className="max-w-3xl mx-auto">
-                <p className="text-muted-foreground leading-relaxed">
+              <div className="max-w-7xl mx-auto">
+                <p className="text-muted-foreground leading-relaxed max-w-3xl">
                   Aside from our work in <span className="font-semibold text-foreground">off-highway, commercial vehicles and agriculture</span> and{" "}
                   <span className="font-semibold text-foreground">automotive</span>, we are also expanding into{" "}
                   {emergingMarkets.slice(0, -1).join(", ")}, and {emergingMarkets[emergingMarkets.length - 1]} —
