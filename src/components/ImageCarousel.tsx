@@ -34,7 +34,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   const current = images[idx];
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-5xl mx-auto">
       <Dialog
         open={open}
         onOpenChange={(o) => {
