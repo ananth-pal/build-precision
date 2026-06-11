@@ -198,19 +198,19 @@ export default function WhatWeMake() {
         ) : (
           <>
             {/* What We Make */}
-            <section className={`pt-8 pb-16 lg:pb-24 ${guttersOn ? "px-4 sm:px-6 lg:px-8" : ""}`}>
-              <div className={`${guttersOn ? "max-w-7xl mx-auto" : ""}`}>
+            <section className="pt-8 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8">
+              <div className="max-w-7xl mx-auto">
                 <div className="flex items-center justify-between mb-8">
                   <h2 className="text-2xl font-bold">What We Make</h2>
                   <div className="inline-flex items-center gap-2">
                     <Label htmlFor="gutter-toggle" className="text-xs text-muted-foreground cursor-pointer">
-                      Gutters
+                      Image plate
                     </Label>
                     <Switch
                       id="gutter-toggle"
                       checked={guttersOn}
                       onCheckedChange={setGuttersOn}
-                      aria-label="Toggle side gutters"
+                      aria-label="Toggle image gray plate"
                     />
                   </div>
                 </div>
