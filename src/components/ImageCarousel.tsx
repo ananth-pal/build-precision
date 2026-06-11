@@ -10,15 +10,10 @@ export interface CarouselImage {
 
 interface ImageCarouselProps {
   images: CarouselImage[];
-  /** Height class for the preview box. */
-  previewHeightClass?: string;
 }
 
-export default function ImageCarousel({
-  images,
-  previewHeightClass = "h-56",
-}: ImageCarouselProps) {
-  const [previewIdx, setPreviewIdx] = React.useState(0);
+export default function ImageCarousel({ images }: ImageCarouselProps) {
+  const [idx, setIdx] = React.useState(0);
   const [lightboxIdx, setLightboxIdx] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const multi = images.length > 1;
@@ -36,22 +31,23 @@ export default function ImageCarousel({
     return () => window.removeEventListener("keydown", onKey);
   }, [open, images.length]);
 
-  const current = images[previewIdx];
+  const current = images[idx];
 
   return (
-    <div className="mb-4">
+    <div>
       <Dialog
         open={open}
         onOpenChange={(o) => {
           setOpen(o);
-          if (o) setLightboxIdx(previewIdx);
+          if (o) setLightboxIdx(idx);
         }}
       >
+        {/* Hero image with plate, shadow, and overlay caption */}
         <div className="relative">
           <DialogTrigger asChild>
             <button
               type="button"
-              className={`relative block w-full ${previewHeightClass} rounded-md bg-muted overflow-hidden cursor-zoom-in`}
+              className="relative block w-full aspect-[4/3] overflow-hidden cursor-zoom-in bg-[hsl(var(--section-alt))] ring-1 ring-border shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]"
               aria-label={`Expand ${current.caption}`}
             >
               <img
@@ -61,51 +57,69 @@ export default function ImageCarousel({
               />
             </button>
           </DialogTrigger>
+
           {multi && (
             <>
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setPreviewIdx(prev);
+                  setIdx(prev);
                 }}
                 aria-label="Previous image"
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5"
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/55 hover:bg-black/75 text-white rounded-full p-2.5"
               >
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="h-6 w-6" />
               </button>
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setPreviewIdx(next);
+                  setIdx(next);
                 }}
                 aria-label="Next image"
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5"
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/55 hover:bg-black/75 text-white rounded-full p-2.5"
               >
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-6 w-6" />
               </button>
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
-                {images.map((_, i) => (
-                  <span
-                    key={i}
-                    className={`h-1.5 w-1.5 rounded-full ${
-                      i === previewIdx ? "bg-white" : "bg-white/50"
-                    }`}
-                  />
-                ))}
-              </div>
             </>
           )}
+
+          {/* Overlay caption bottom-left */}
+          <div className="absolute bottom-3 left-3 bg-black/55 text-white text-xs px-2.5 py-1 rounded">
+            {current.caption}
+            {multi && (
+              <span className="ml-2 opacity-70">
+                {idx + 1} / {images.length}
+              </span>
+            )}
+          </div>
         </div>
-        <p className="text-xs text-muted-foreground mt-2 text-center">
-          {current.caption}
-          {multi && (
-            <span className="ml-2 text-muted-foreground/70">
-              {previewIdx + 1} / {images.length}
-            </span>
-          )}
-        </p>
+
+        {/* Thumbnail strip */}
+        {multi && (
+          <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+            {images.map((img, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setIdx(i)}
+                aria-label={`Show ${img.caption}`}
+                className={`shrink-0 h-16 w-20 overflow-hidden bg-[hsl(var(--section-alt))] ${
+                  i === idx
+                    ? "ring-2 ring-primary"
+                    : "ring-1 ring-border hover:ring-foreground/30"
+                }`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt ?? img.caption}
+                  className="w-full h-full object-contain"
+                />
+              </button>
+            ))}
+          </div>
+        )}
 
         <DialogContent className="max-w-[95vw] max-h-[95vh] w-auto h-auto p-0 border-0 bg-transparent shadow-none translate-x-0 translate-y-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [&>button]:bg-black/50 [&>button]:rounded-full [&>button]:text-white [&>button]:h-8 [&>button]:w-8 [&>button]:p-1 [&>button]:right-3 [&>button]:top-3 [&>button]:ring-white [&>button]:ring-offset-0">
           <div className="relative flex items-center justify-center">

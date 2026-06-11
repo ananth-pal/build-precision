@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWorkGallery";
 import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
 import productsDisplay from "@/assets/products-display.jpg";
 import hydraulicValve from "@/assets/hydraulic-valve.jpg";
@@ -111,6 +112,18 @@ const endMarkets = [
 
 const emergingMarkets = ["Medical", "Robotics", "Aerospace", "Defence"];
 
+const selectedWork: GalleryItem[] = [
+  { src: gearPumps1.url, caption: "Gear Pumps", spanClass: "md:col-span-2 md:row-span-2" },
+  { src: ptoShafts1.url, caption: "PTO Shafts" },
+  { src: gears1.url, caption: "Gears" },
+  { src: couplers1.url, caption: "Couplers" },
+  { src: balancers3.url, caption: "Engine Balancers" },
+  { src: valveSpools1.url, caption: "Valve Spools" },
+  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes" },
+  { src: hydraulicValve, caption: "Hydraulic Valve" },
+];
+
+
 export default function WhatWeMake() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -132,24 +145,34 @@ export default function WhatWeMake() {
           </div>
         </section>
 
+        {/* Selected Work gallery */}
+        <section className="px-6 md:px-12 pb-8">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Selected Work</h2>
+            <SelectedWorkGallery items={selectedWork} />
+          </div>
+        </section>
+
         {/* What We Make */}
         <section className="section-padding pt-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl font-bold mb-8">What We Make</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-12">
               {families.map((f) => (
-                <div key={f.title} className="capability-card overflow-hidden">
+                <div key={f.title} className="overflow-hidden">
                   {f.images.length > 0 ? (
                     <ImageCarousel images={f.images} />
                   ) : (
-                    <div className="rounded-md bg-muted w-full h-56 mb-4 flex items-center justify-center">
+                    <div className="bg-muted w-full aspect-[4/3] flex items-center justify-center">
                       <span className="text-xs text-muted-foreground">
                         [PLACEHOLDER — product photo]
                       </span>
                     </div>
                   )}
-                  <h3 className="text-lg font-semibold mb-3">{f.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                  <div className="pt-6 max-w-3xl">
+                    <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
