@@ -115,16 +115,10 @@ export default function WhatWeMake() {
             <div className="grid md:grid-cols-2 gap-8">
               {families.map((f) => (
                 <div key={f.title} className="capability-card overflow-hidden">
-                  {f.image ? (
-                    <ImageLightbox src={f.image} alt={f.imageAlt}>
-                      <img
-                        src={f.image}
-                        alt={f.imageAlt}
-                        className="rounded-md object-cover w-full h-48 mb-4"
-                      />
-                    </ImageLightbox>
+                  {f.images.length > 0 ? (
+                    <ImageCarousel images={f.images} />
                   ) : (
-                    <div className="rounded-md bg-muted w-full h-48 mb-4 flex items-center justify-center">
+                    <div className="rounded-md bg-muted w-full h-56 mb-4 flex items-center justify-center">
                       <span className="text-xs text-muted-foreground">
                         [PLACEHOLDER — product photo]
                       </span>
