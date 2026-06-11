@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
+import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
+import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
+import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
+import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
 
-const heroSlides = [
-  "[Photograph 1: finished PTO gearbox or assembly — to be supplied]",
-  "[Photograph 2: rack of gears or Plant 2 gear-cutting floor — to be supplied]",
-  "[Photograph 3: CMM inspection or Plant 1 machining centre — to be supplied]",
-];
+const heroSlides = [gearHobberAsset.url, gearStockAsset.url, zeissCmmAsset.url];
 
 const stats = [
   { number: "45+", label: "Years manufacturing heritage" },
@@ -61,21 +61,18 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-muted">
-          {/* Rotating still images (placeholders until photography supplied) */}
+          {/* Rotating hero imagery */}
           <div className="absolute inset-0">
-            {heroSlides.map((label, i) => (
+            {heroSlides.map((src, i) => (
               <div
                 key={i}
-                className="absolute inset-0 flex items-center justify-center text-center px-8 bg-muted"
+                className="absolute inset-0 bg-center bg-cover"
                 style={{
+                  backgroundImage: `url(${src})`,
                   opacity: i === activeSlide ? 1 : 0,
                   transition: "opacity 1200ms ease-in-out",
                 }}
-              >
-                <span className="text-xs uppercase tracking-wider text-muted-foreground max-w-md">
-                  {label}
-                </span>
-              </div>
+              />
             ))}
           </div>
           {/* Darkened overlay (~40%) for legibility */}
@@ -117,10 +114,13 @@ export default function Home() {
               <p className="text-muted-foreground leading-relaxed lg:col-span-2">
                 Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. These strong foundational roots enable us to design and manufacture all our own jigs, fixtures, and gauges in-house, along with a strong maintenance team that can strip, rebuild, and customise machine tools from first principles.
               </p>
-              <div className="bg-muted border border-border rounded flex items-center justify-center text-center px-4 py-6 min-h-[140px]">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                  [Plant 1 machine shop or in-house tooling — to be supplied]
-                </span>
+              <div className="overflow-hidden border border-border rounded">
+                <img
+                  src={zollerAsset.url}
+                  alt="In-house Zoller tool presetter at Pentagon's Plant 1"
+                  loading="lazy"
+                  className="w-full h-full object-cover min-h-[140px]"
+                />
               </div>
             </div>
 
