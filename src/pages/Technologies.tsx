@@ -10,12 +10,29 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
+import gearGrinderAsset from "@/assets/technologies/gear-grinder.jpg.asset.json";
+import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
+import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
+import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
+import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
 
-const cards = [
+type Card = {
+  icon: typeof Cog;
+  title: string;
+  desc: string;
+  details: string[];
+  image?: string;
+  video?: string;
+  dialogImage?: string;
+};
+
+const cards: Card[] = [
   {
     icon: Cog,
     title: "Machine Tools: Components",
     desc: "General machining, from raw or near-net-shape input through finished part.",
+    video: drillLoopAsset.url,
     details: [
       "CNC horizontal machining centres — Makino",
       "CNC vertical machining centres",
@@ -33,6 +50,7 @@ const cards = [
     icon: Settings,
     title: "Machine Tools: Gears",
     desc: "A dedicated plant covering the route from blank preparation through finished teeth.",
+    image: gearGrinderAsset.url,
     details: [
       "CNC gear hobbers — Cooper Pfauter, up to 6 module",
       "Gear shapers — Lorenz, up to 4 module",
@@ -66,6 +84,8 @@ const cards = [
     icon: Ruler,
     title: "Measurement and Metrology",
     desc: "CMM, surface roughness, height gauging, and dedicated gauges, with calibration cycled in-house and via external agencies.",
+    image: zeissCmmAsset.url,
+    dialogImage: calibrationProbeAsset.url,
     details: [
       "CNC scanning CMM — Zeiss",
       "Surface roughness tester, nanometre resolution — Zeiss",
@@ -78,6 +98,7 @@ const cards = [
     icon: Hammer,
     title: "Tooling and Supporting Processes",
     desc: "In-house jig, fixture, and gauge design and manufacture, plus deburring, washing, and painting.",
+    image: zollerAsset.url,
     details: [
       "Jig, fixture, and receiver gauge design and manufacture (manual and hydraulic)",
       "Wide range of cutting tools and tool holders with Zoller CNC tool presetter",
@@ -105,6 +126,7 @@ export default function Technologies() {
       <PageHero
         title="Means of Production"
         subtitle="Equipment, measurement, and supporting systems across two Pentagon facilities in Chennai."
+        backgroundImage={gearHobberAsset.url}
       />
       <main className="flex-1">
         <section className="section-padding">
@@ -123,6 +145,23 @@ export default function Technologies() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {cards.map((c) => (
                 <div key={c.title} className="capability-card flex flex-col">
+                  {c.video ? (
+                    <video
+                      src={c.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
+                    />
+                  ) : c.image ? (
+                    <img
+                      src={c.image}
+                      alt={c.title}
+                      loading="lazy"
+                      className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
+                    />
+                  ) : null}
                   <c.icon className="text-primary mb-4" size={28} />
                   <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{c.desc}</p>
@@ -137,6 +176,14 @@ export default function Technologies() {
                         <DialogTitle>{c.title}</DialogTitle>
                         <DialogDescription>{c.desc}</DialogDescription>
                       </DialogHeader>
+                      {c.dialogImage && (
+                        <img
+                          src={c.dialogImage}
+                          alt={`${c.title} detail`}
+                          loading="lazy"
+                          className="w-full aspect-video object-cover rounded-md mt-2"
+                        />
+                      )}
                       <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed mt-2">
                         {c.details.map((d) => (
                           <li key={d}>{d}</li>

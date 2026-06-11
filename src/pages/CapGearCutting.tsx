@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
 
 export default function GearCutting() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own assemblies." />
+      <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own assemblies." backgroundImage={gearStockAsset.url} />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           <div className="bg-card border border-border rounded-lg p-8 shadow-sm mb-8">
