@@ -31,7 +31,6 @@ const families: Family[] = [
     desc: "Over 75 PTO variants developed to date — cable-operated, pneumatic, hydraulic, and hot-shift — for commercial-vehicle transmission applications.",
     images: [
       { src: deepRidgeExtraPTOs1.url, caption: "Deep Reach + extra PTOs" },
-      { src: productsDisplay, caption: "PTO gearboxes" },
       { src: basePTOs1.url, caption: "Base PTOs" },
     ],
   },
