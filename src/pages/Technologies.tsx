@@ -32,6 +32,7 @@ const cards: Card[] = [
     icon: Cog,
     title: "Machine Tools: Components",
     desc: "General machining, from raw or near-net-shape input through finished part.",
+    video: drillLoopAsset.url,
     details: [
       "CNC horizontal machining centres — Makino",
       "CNC vertical machining centres",
