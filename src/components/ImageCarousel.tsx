@@ -105,7 +105,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                 type="button"
                 onClick={() => setIdx(i)}
                 aria-label={`Show ${img.caption}`}
-                className={`shrink-0 h-16 w-20 overflow-hidden bg-[hsl(var(--section-alt))] ${
+                className={`shrink-0 h-16 w-20 overflow-hidden bg-muted ${
                   i === idx
                     ? "ring-2 ring-primary"
                     : "ring-1 ring-border hover:ring-foreground/30"
@@ -114,7 +114,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                 <img
                   src={img.src}
                   alt={img.alt ?? img.caption}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </button>
             ))}
