@@ -1,36 +1,40 @@
-## Plan: Multi-image carousels with lightbox on Portfolio page
+## Plan: Make portfolio photos pop (all 6 changes)
 
-### 1. Upload all 10 images as CDN assets
-Use `lovable-assets create` on each `/mnt/user-uploads/*.jpeg` file at original resolution (no resizing, no recompression). Pointer JSON written to `src/assets/portfolio/<name>.jpeg.asset.json`. I will confirm in the final summary that no resolution change occurred.
+Apply every option discussed. We'll review on screen and trim what doesn't land.
 
-Files uploaded this round:
-- Couplers_1, Couplers_2
-- Gears_1, Gears_2
-- Valve_spools_2
-- Gear_Pumps_2, Gear_Pumps_3, Gear_Pumps_4, Gear_Pumps_5
-- Balancers_3
+### 1. Break the card frame (bleed)
+In `WhatWeMake.tsx`, for image families remove the surrounding card padding around the image only. The image will sit edge-to-edge inside the card; the text block below keeps its padding. Implementation: drop `capability-card`'s default padding for these cards and re-apply padding only to the title/description container.
 
-### 2. Build a new `ImageCarousel` component
-Replaces the single-image `<img>` + `ImageLightbox` pattern on cards that have multiple photos. Behavior:
-- **Preview box (on card):** fixed height ~h-56, `object-contain` on a neutral background so no product is cropped. Left/right chevron buttons overlay the image; clicking advances/rewinds. Small dot indicator + caption below.
-- **Click image → opens lightbox** (reuse `ImageLightbox` styling). Lightbox shows the same carousel at near-fullscreen (`max-w-[95vw] max-h-[90vh]`, `object-contain`), with its own left/right arrows, keyboard arrow-key support, and caption.
-- Single-image cards keep the simple `ImageLightbox` wrap (no arrows needed).
-- Captions = filename with the numeric suffix and underscores stripped (e.g. `Gear_Pumps_2` → "Gear Pumps", `Valve_spools_2` → "Valve spools").
+### 2. Make them bigger
+- Replace fixed `h-56` with `aspect-[4/3]` on `ImageCarousel`'s preview box so the image scales with column width.
+- On desktop, switch the image-family cards from `md:grid-cols-2` to a single-column stack (`grid-cols-1`) inside the "What We Make" section so each photo gets the full content width (~1100px max). PTO Gearboxes and Hydraulic Valves stack the same way for consistency.
 
-### 3. Update `src/pages/WhatWeMake.tsx` category → images mapping
+### 3. Hero treatment (plate + shadow)
+- Background plate behind the image: `bg-[hsl(var(--section-alt))]` (existing token, warm off-white) so parts pop against a non-white field.
+- Soft framed-print shadow on the image container: `shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]` plus a 1px hairline border (`ring-1 ring-border`).
+- Keep `object-contain` — nothing gets cropped.
 
-| Card | Images this round |
-|---|---|
-| Hydraulic Valves | existing `hydraulicValve` (unchanged) |
-| Gear Pumps | existing `gear-pumps` + Gear_Pumps_2/3/4/5 → carousel (5) |
-| PTO Gearboxes | existing `products-display` (unchanged for now; more may come in part 2) |
-| Engine Balancer Assemblies | Balancers_3 → single image (more may come in part 2) |
-| Precision Machined Components & Gears | Couplers_1, Couplers_2, Gears_1, Gears_2, Valve_spools_2 → carousel (5, captions per file) |
+### 4. Hero shot + thumbnail strip
+Replace the carousel's current arrow-only navigation with: large hero image up top + a horizontal row of small thumbnails (~64px tall) below. Clicking a thumbnail swaps the hero. Active thumbnail gets a 2px primary-red ring. Arrow buttons remain on the hero for keyboard/touch users but become secondary.
 
-`families` array becomes `{ title, desc, images: [{ src, caption }] }`. Card renders carousel when `images.length > 1`, single lightbox image otherwise, placeholder when empty.
+### 5. "Selected work" gallery above the cards
+Add a new section directly under the page intro paragraph, before "What We Make":
+- Heading: "Selected Work"
+- 6–8 of the strongest shots in a masonry/asymmetric grid (e.g., 3-col on desktop with one tall feature tile, 2-col tablet, 1-col mobile).
+- Each tile clickable → opens existing lightbox.
+- Picks (initial): Gear_Pumps_1, PTO_Shafts_1, Gears_1, Couplers_1, Balancers_3, Valve_spools_1, Deep_ridge_extra_PTOs_1, hydraulicValve.
 
-### 4. Notes
-- Part 2 (next 9 photos) will extend the same arrays — no further structural changes needed.
-- Resolution: assets uploaded as-is; `<img>` uses `object-contain` so the browser scales without quality loss on click-to-expand.
+### 6. Polish
+- Move caption + counter from below the image to a small overlay at the bottom-left of the image: `bg-black/55 text-white text-xs px-2.5 py-1 rounded`.
+- Bump arrow icons from `h-4` to `h-6`, always visible (not hover-dependent), larger hit area (`p-2.5`).
 
-Confirm and I'll implement.
+### Files touched
+- `src/components/ImageCarousel.tsx` — aspect ratio, hero+thumbnails layout, overlay caption, larger arrows, plate/shadow on container.
+- `src/pages/WhatWeMake.tsx` — single-column stack for image families, remove card padding around images, add "Selected Work" gallery section.
+- New: `src/components/SelectedWorkGallery.tsx` — masonry/asymmetric grid component using existing `ImageLightbox`.
+
+### Notes / flags
+- **Memory conflict:** Core rule says "No carousels." We already had carousels from earlier; #4 keeps a hero+thumbnail pattern (still carousel-ish) plus #5 adds a gallery. After review, if the gallery covers the need we can drop the carousels entirely and make the category cards text-only with a single representative thumbnail — flag this once we see it on screen.
+- No content/copy changes. No backend changes. No new image assets.
+
+Confirm to implement.
