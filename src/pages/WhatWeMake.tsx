@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -35,30 +37,10 @@ type Family = {
 
 const families: Family[] = [
   {
-    title: "Hydraulic Valves",
-    desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
-    images: [
-      { src: valves1.url, caption: "Valves" },
-      { src: hydraulicValve, caption: "Hydraulic valve" },
-    ],
-  },
-  {
-    title: "Gear Pumps",
-    desc: "High-pressure gear pumps developed and supplied to a multinational hydraulics OEM for mobile and industrial fluid-power applications.",
-    images: [
-      { src: gearPumps1.url, caption: "Gear Pumps" },
-      { src: gearPumps2.url, caption: "Gear Pumps" },
-      { src: gearPumps3.url, caption: "Gear Pumps" },
-      { src: gearPumps4.url, caption: "Gear Pumps" },
-      { src: gearPumps5.url, caption: "Gear Pumps" },
-      { src: gearPumps6.url, caption: "Gear Pumps" },
-    ],
-  },
-  {
     title: "Power Take-Off (PTO) Gearboxes",
     desc: "Over 75 PTO variants developed to date — cable-operated, pneumatic, hydraulic, and hot-shift — for commercial-vehicle transmission applications.",
     images: [
-      { src: deepRidgeExtraPTOs1.url, caption: "Deep ridge + extra PTOs" },
+      { src: deepRidgeExtraPTOs1.url, caption: "Deep Reach + extra PTOs" },
       { src: productsDisplay, caption: "PTO gearboxes" },
       { src: basePTOs1.url, caption: "Base PTOs" },
     ],
@@ -67,9 +49,29 @@ const families: Family[] = [
     title: "Engine Balancer Assemblies",
     desc: "Mid-engine balancer assemblies supplied to one of India's leading engine manufacturers. In continuous production since 2008.",
     images: [
+      { src: balancers3.url, caption: "Balancers" },
       { src: balancers1.url, caption: "Balancers" },
       { src: balancers2.url, caption: "Balancers" },
-      { src: balancers3.url, caption: "Balancers" },
+    ],
+  },
+  {
+    title: "Gear Pumps",
+    desc: "High-pressure gear pumps developed and supplied to a multinational hydraulics OEM for mobile and industrial fluid-power applications.",
+    images: [
+      { src: gearPumps6.url, caption: "Gear Pumps" },
+      { src: gearPumps2.url, caption: "Gear Pumps" },
+      { src: gearPumps3.url, caption: "Gear Pumps" },
+      { src: gearPumps4.url, caption: "Gear Pumps" },
+      { src: gearPumps5.url, caption: "Gear Pumps" },
+      { src: gearPumps1.url, caption: "Gear Pumps" },
+    ],
+  },
+  {
+    title: "Hydraulic Valves",
+    desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
+    images: [
+      { src: valves1.url, caption: "Valves" },
+      { src: hydraulicValve, caption: "Hydraulic valve" },
     ],
   },
   {
@@ -113,18 +115,19 @@ const endMarkets = [
 const emergingMarkets = ["Medical", "Robotics", "Aerospace", "Defence"];
 
 const selectedWork: GalleryItem[] = [
-  { src: gearPumps1.url, caption: "Gear Pumps", spanClass: "md:col-span-2 md:row-span-2" },
-  { src: ptoShafts1.url, caption: "PTO Shafts" },
-  { src: gears1.url, caption: "Gears" },
-  { src: couplers1.url, caption: "Couplers" },
+  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes", spanClass: "md:col-span-2 md:row-span-2" },
   { src: balancers3.url, caption: "Engine Balancers" },
-  { src: valveSpools1.url, caption: "Valve Spools" },
-  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes" },
+  { src: basePTOs1.url, caption: "Base PTOs" },
+  { src: gearPumps6.url, caption: "Gear Pumps" },
   { src: hydraulicValve, caption: "Hydraulic Valve" },
+  { src: valves1.url, caption: "Valves" },
+  { src: balancers1.url, caption: "Engine Balancers" },
+  { src: gearPumps3.url, caption: "Gear Pumps" },
 ];
 
 
 export default function WhatWeMake() {
+  const [showSelected, setShowSelected] = useState(false);
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -145,13 +148,24 @@ export default function WhatWeMake() {
           </div>
         </section>
 
-        {/* Selected Work gallery */}
+        {/* Selected Work gallery (collapsible) */}
         <section className="px-6 md:px-12 pb-8">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Selected Work</h2>
-            <SelectedWorkGallery items={selectedWork} />
+            <button
+              type="button"
+              onClick={() => setShowSelected((v) => !v)}
+              aria-expanded={showSelected}
+              className="flex items-center gap-2 mb-6 text-2xl font-bold text-foreground hover:text-primary transition-colors"
+            >
+              <span>Selected Work</span>
+              <ChevronDown
+                className={`h-5 w-5 transition-transform ${showSelected ? "rotate-180" : ""}`}
+              />
+            </button>
+            {showSelected && <SelectedWorkGallery items={selectedWork} />}
           </div>
         </section>
+
 
         {/* What We Make */}
         <section className="section-padding pt-8">
