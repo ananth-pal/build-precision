@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWorkGallery";
 import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
-import productsDisplay from "@/assets/products-display.jpg";
+
 import gearPumps6 from "@/assets/portfolio/Gear_Pumps_1.jpeg.asset.json";
 import balancers1 from "@/assets/portfolio/Balancers_1.jpeg.asset.json";
 import balancers2 from "@/assets/portfolio/Balancers_2.jpeg.asset.json";
@@ -31,7 +31,6 @@ const families: Family[] = [
     desc: "Over 75 PTO variants developed to date — cable-operated, pneumatic, hydraulic, and hot-shift — for commercial-vehicle transmission applications.",
     images: [
       { src: deepRidgeExtraPTOs1.url, caption: "Deep Reach + extra PTOs" },
-      { src: productsDisplay, caption: "PTO gearboxes" },
       { src: basePTOs1.url, caption: "Base PTOs" },
     ],
   },
