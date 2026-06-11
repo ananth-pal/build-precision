@@ -10,12 +10,21 @@ import gearPumps2 from "@/assets/portfolio/Gear_Pumps_2.jpeg.asset.json";
 import gearPumps3 from "@/assets/portfolio/Gear_Pumps_3.jpeg.asset.json";
 import gearPumps4 from "@/assets/portfolio/Gear_Pumps_4.jpeg.asset.json";
 import gearPumps5 from "@/assets/portfolio/Gear_Pumps_5.jpeg.asset.json";
+import gearPumps6 from "@/assets/portfolio/Gear_Pumps_1.jpeg.asset.json";
+import balancers1 from "@/assets/portfolio/Balancers_1.jpeg.asset.json";
+import balancers2 from "@/assets/portfolio/Balancers_2.jpeg.asset.json";
 import balancers3 from "@/assets/portfolio/Balancers_3.jpeg.asset.json";
 import couplers1 from "@/assets/portfolio/Couplers_1.jpeg.asset.json";
 import couplers2 from "@/assets/portfolio/Couplers_2.jpeg.asset.json";
 import gears1 from "@/assets/portfolio/Gears_1.jpeg.asset.json";
 import gears2 from "@/assets/portfolio/Gears_2.jpeg.asset.json";
+import valveSpools1 from "@/assets/portfolio/Valve_spools_1.jpeg.asset.json";
 import valveSpools2 from "@/assets/portfolio/Valve_spools_2.jpeg.asset.json";
+import gearPumpComponents1 from "@/assets/portfolio/Gear_pump_components_1.jpeg.asset.json";
+import ptoShafts1 from "@/assets/portfolio/PTO_Shafts_1.jpeg.asset.json";
+import deepRidgeExtraPTOs1 from "@/assets/portfolio/Deep_ridge_extra_PTOs_1.jpeg.asset.json";
+import basePTOs1 from "@/assets/portfolio/Base_PTOs_1.jpeg.asset.json";
+import valves1 from "@/assets/portfolio/Valves_1.jpeg.asset.json";
 
 type Family = {
   title: string;
@@ -27,7 +36,10 @@ const families: Family[] = [
   {
     title: "Hydraulic Valves",
     desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
-    images: [{ src: hydraulicValve, caption: "Hydraulic valve" }],
+    images: [
+      { src: hydraulicValve, caption: "Hydraulic valve" },
+      { src: valves1.url, caption: "Valves" },
+    ],
   },
   {
     title: "Gear Pumps",
@@ -38,17 +50,26 @@ const families: Family[] = [
       { src: gearPumps3.url, caption: "Gear Pumps" },
       { src: gearPumps4.url, caption: "Gear Pumps" },
       { src: gearPumps5.url, caption: "Gear Pumps" },
+      { src: gearPumps6.url, caption: "Gear Pumps" },
     ],
   },
   {
     title: "Power Take-Off (PTO) Gearboxes",
     desc: "Over 75 PTO variants developed to date — cable-operated, pneumatic, hydraulic, and hot-shift — for commercial-vehicle transmission applications.",
-    images: [{ src: productsDisplay, caption: "PTO gearboxes" }],
+    images: [
+      { src: productsDisplay, caption: "PTO gearboxes" },
+      { src: deepRidgeExtraPTOs1.url, caption: "Deep ridge + extra PTOs" },
+      { src: basePTOs1.url, caption: "Base PTOs" },
+    ],
   },
   {
     title: "Engine Balancer Assemblies",
     desc: "Mid-engine balancer assemblies supplied to one of India's leading engine manufacturers. In continuous production since 2008.",
-    images: [{ src: balancers3.url, caption: "Balancers" }],
+    images: [
+      { src: balancers1.url, caption: "Balancers" },
+      { src: balancers2.url, caption: "Balancers" },
+      { src: balancers3.url, caption: "Balancers" },
+    ],
   },
   {
     title: "Precision Machined Components & Gears",
@@ -56,8 +77,11 @@ const families: Family[] = [
     images: [
       { src: couplers1.url, caption: "Couplers" },
       { src: couplers2.url, caption: "Couplers" },
+      { src: gearPumpComponents1.url, caption: "Gear pump components" },
       { src: gears1.url, caption: "Gears" },
       { src: gears2.url, caption: "Gears" },
+      { src: ptoShafts1.url, caption: "PTO Shafts" },
+      { src: valveSpools1.url, caption: "Valve spools" },
       { src: valveSpools2.url, caption: "Valve spools" },
     ],
   },
