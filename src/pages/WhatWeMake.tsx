@@ -37,30 +37,10 @@ type Family = {
 
 const families: Family[] = [
   {
-    title: "Hydraulic Valves",
-    desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
-    images: [
-      { src: valves1.url, caption: "Valves" },
-      { src: hydraulicValve, caption: "Hydraulic valve" },
-    ],
-  },
-  {
-    title: "Gear Pumps",
-    desc: "High-pressure gear pumps developed and supplied to a multinational hydraulics OEM for mobile and industrial fluid-power applications.",
-    images: [
-      { src: gearPumps1.url, caption: "Gear Pumps" },
-      { src: gearPumps2.url, caption: "Gear Pumps" },
-      { src: gearPumps3.url, caption: "Gear Pumps" },
-      { src: gearPumps4.url, caption: "Gear Pumps" },
-      { src: gearPumps5.url, caption: "Gear Pumps" },
-      { src: gearPumps6.url, caption: "Gear Pumps" },
-    ],
-  },
-  {
     title: "Power Take-Off (PTO) Gearboxes",
     desc: "Over 75 PTO variants developed to date — cable-operated, pneumatic, hydraulic, and hot-shift — for commercial-vehicle transmission applications.",
     images: [
-      { src: deepRidgeExtraPTOs1.url, caption: "Deep ridge + extra PTOs" },
+      { src: deepRidgeExtraPTOs1.url, caption: "Deep Reach + extra PTOs" },
       { src: productsDisplay, caption: "PTO gearboxes" },
       { src: basePTOs1.url, caption: "Base PTOs" },
     ],
@@ -69,9 +49,29 @@ const families: Family[] = [
     title: "Engine Balancer Assemblies",
     desc: "Mid-engine balancer assemblies supplied to one of India's leading engine manufacturers. In continuous production since 2008.",
     images: [
+      { src: balancers3.url, caption: "Balancers" },
       { src: balancers1.url, caption: "Balancers" },
       { src: balancers2.url, caption: "Balancers" },
-      { src: balancers3.url, caption: "Balancers" },
+    ],
+  },
+  {
+    title: "Gear Pumps",
+    desc: "High-pressure gear pumps developed and supplied to a multinational hydraulics OEM for mobile and industrial fluid-power applications.",
+    images: [
+      { src: gearPumps6.url, caption: "Gear Pumps" },
+      { src: gearPumps2.url, caption: "Gear Pumps" },
+      { src: gearPumps3.url, caption: "Gear Pumps" },
+      { src: gearPumps4.url, caption: "Gear Pumps" },
+      { src: gearPumps5.url, caption: "Gear Pumps" },
+      { src: gearPumps1.url, caption: "Gear Pumps" },
+    ],
+  },
+  {
+    title: "Hydraulic Valves",
+    desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
+    images: [
+      { src: valves1.url, caption: "Valves" },
+      { src: hydraulicValve, caption: "Hydraulic valve" },
     ],
   },
   {
