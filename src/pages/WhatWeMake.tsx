@@ -127,6 +127,7 @@ const selectedWork: GalleryItem[] = [
 
 
 export default function WhatWeMake() {
+  const [showSelected, setShowSelected] = useState(false);
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
