@@ -26,7 +26,7 @@ export default function SelectedWorkGallery({ items }: Props) {
             <img
               src={item.src}
               alt={item.caption}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-[1.02]"
             />
             <div className="absolute bottom-2 left-2 bg-black/55 text-white text-xs px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">
               {item.caption}
