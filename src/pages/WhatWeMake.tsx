@@ -222,7 +222,7 @@ export default function WhatWeMake() {
                         <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
                       </div>
                       {f.images.length > 0 ? (
-                        <ImageCarousel images={f.images} />
+                        <ImageCarousel images={f.images} tight={!guttersOn} />
                       ) : (
                         <div className="bg-muted w-full aspect-[16/10] max-w-3xl flex items-center justify-center">
                           <span className="text-xs text-muted-foreground">
