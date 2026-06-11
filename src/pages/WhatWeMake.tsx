@@ -110,6 +110,7 @@ const selectedWork: GalleryItem[] = [
 export default function WhatWeMake() {
   const [view, setView] = useState<"full" | "selected">("full");
   const [guttersOn, setGuttersOn] = useState(true);
+  const [endMarketsCompact, setEndMarketsCompact] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col">
