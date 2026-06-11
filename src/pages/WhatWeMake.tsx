@@ -115,14 +115,14 @@ const endMarkets = [
 const emergingMarkets = ["Medical", "Robotics", "Aerospace", "Defence"];
 
 const selectedWork: GalleryItem[] = [
-  { src: gearPumps1.url, caption: "Gear Pumps", spanClass: "md:col-span-2 md:row-span-2" },
-  { src: ptoShafts1.url, caption: "PTO Shafts" },
-  { src: gears1.url, caption: "Gears" },
-  { src: couplers1.url, caption: "Couplers" },
+  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes", spanClass: "md:col-span-2 md:row-span-2" },
   { src: balancers3.url, caption: "Engine Balancers" },
-  { src: valveSpools1.url, caption: "Valve Spools" },
-  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes" },
+  { src: basePTOs1.url, caption: "Base PTOs" },
+  { src: gearPumps6.url, caption: "Gear Pumps" },
   { src: hydraulicValve, caption: "Hydraulic Valve" },
+  { src: valves1.url, caption: "Valves" },
+  { src: balancers1.url, caption: "Engine Balancers" },
+  { src: gearPumps3.url, caption: "Gear Pumps" },
 ];
 
 
