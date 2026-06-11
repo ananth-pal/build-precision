@@ -2,41 +2,64 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import ImageLightbox from "@/components/ImageLightbox";
+import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
 import productsDisplay from "@/assets/products-display.jpg";
 import hydraulicValve from "@/assets/hydraulic-valve.jpg";
-import gearPumpsAsset from "@/assets/gear-pumps.jpeg.asset.json";
+import gearPumps1 from "@/assets/gear-pumps.jpeg.asset.json";
+import gearPumps2 from "@/assets/portfolio/Gear_Pumps_2.jpeg.asset.json";
+import gearPumps3 from "@/assets/portfolio/Gear_Pumps_3.jpeg.asset.json";
+import gearPumps4 from "@/assets/portfolio/Gear_Pumps_4.jpeg.asset.json";
+import gearPumps5 from "@/assets/portfolio/Gear_Pumps_5.jpeg.asset.json";
+import balancers3 from "@/assets/portfolio/Balancers_3.jpeg.asset.json";
+import couplers1 from "@/assets/portfolio/Couplers_1.jpeg.asset.json";
+import couplers2 from "@/assets/portfolio/Couplers_2.jpeg.asset.json";
+import gears1 from "@/assets/portfolio/Gears_1.jpeg.asset.json";
+import gears2 from "@/assets/portfolio/Gears_2.jpeg.asset.json";
+import valveSpools2 from "@/assets/portfolio/Valve_spools_2.jpeg.asset.json";
 
-const families = [
+type Family = {
+  title: string;
+  desc: string;
+  images: CarouselImage[];
+};
+
+const families: Family[] = [
   {
     title: "Hydraulic Valves",
     desc: "High-pressure hydraulic spool valves for mobile and industrial fluid-power applications. Developed and supplied to a multinational hydraulics OEM for over 26 years.",
-    image: hydraulicValve,
-    imageAlt: "Hydraulic valve assembly",
+    images: [{ src: hydraulicValve, caption: "Hydraulic valve" }],
   },
   {
     title: "Gear Pumps",
     desc: "High-pressure gear pumps developed and supplied to a multinational hydraulics OEM for mobile and industrial fluid-power applications.",
-    image: gearPumpsAsset.url,
-    imageAlt: "Pentagon gear pumps batch",
+    images: [
+      { src: gearPumps1.url, caption: "Gear Pumps" },
+      { src: gearPumps2.url, caption: "Gear Pumps" },
+      { src: gearPumps3.url, caption: "Gear Pumps" },
+      { src: gearPumps4.url, caption: "Gear Pumps" },
+      { src: gearPumps5.url, caption: "Gear Pumps" },
+    ],
   },
   {
     title: "Power Take-Off (PTO) Gearboxes",
     desc: "Over 75 PTO variants developed to date — cable-operated, pneumatic, hydraulic, and hot-shift — for commercial-vehicle transmission applications.",
-    image: productsDisplay,
-    imageAlt: "Pentagon PTO gearboxes product range",
+    images: [{ src: productsDisplay, caption: "PTO gearboxes" }],
   },
   {
     title: "Engine Balancer Assemblies",
     desc: "Mid-engine balancer assemblies supplied to one of India's leading engine manufacturers. In continuous production since 2008.",
-    image: null,
-    imageAlt: "",
+    images: [{ src: balancers3.url, caption: "Balancers" }],
   },
   {
     title: "Precision Machined Components & Gears",
     desc: "Machined parts, gears, and splined shafts supplied to OEM customers on ongoing production programs. Materials include steel, cast iron, ductile iron, and non-ferrous alloys. Gear scope covers spur and helical gears (hobbed and shaved) and splined shafts.",
-    image: null,
-    imageAlt: "",
+    images: [
+      { src: couplers1.url, caption: "Couplers" },
+      { src: couplers2.url, caption: "Couplers" },
+      { src: gears1.url, caption: "Gears" },
+      { src: gears2.url, caption: "Gears" },
+      { src: valveSpools2.url, caption: "Valve spools" },
+    ],
   },
 ];
 
@@ -92,16 +115,10 @@ export default function WhatWeMake() {
             <div className="grid md:grid-cols-2 gap-8">
               {families.map((f) => (
                 <div key={f.title} className="capability-card overflow-hidden">
-                  {f.image ? (
-                    <ImageLightbox src={f.image} alt={f.imageAlt}>
-                      <img
-                        src={f.image}
-                        alt={f.imageAlt}
-                        className="rounded-md object-cover w-full h-48 mb-4"
-                      />
-                    </ImageLightbox>
+                  {f.images.length > 0 ? (
+                    <ImageCarousel images={f.images} />
                   ) : (
-                    <div className="rounded-md bg-muted w-full h-48 mb-4 flex items-center justify-center">
+                    <div className="rounded-md bg-muted w-full h-56 mb-4 flex items-center justify-center">
                       <span className="text-xs text-muted-foreground">
                         [PLACEHOLDER — product photo]
                       </span>
