@@ -158,6 +158,17 @@ export default function WhatWeMake() {
               </div>
             </section>
 
+            <section className="section-padding pt-4">
+              <div className="max-w-3xl mx-auto">
+                <p className="text-muted-foreground leading-relaxed">
+                  Aside from our work in <span className="font-semibold text-foreground">off-highway, commercial vehicles and agriculture</span> and{" "}
+                  <span className="font-semibold text-foreground">automotive</span>, we are also expanding into{" "}
+                  {emergingMarkets.slice(0, -1).join(", ")}, and {emergingMarkets[emergingMarkets.length - 1]} —
+                  with active enquiry and early-stage development underway.
+                </p>
+              </div>
+            </section>
+
             <div className="max-w-7xl mx-auto px-6 md:px-12">
               <hr className="border-border" />
             </div>
@@ -165,6 +176,7 @@ export default function WhatWeMake() {
             <section className="section-padding">
               <div className="max-w-3xl mx-auto space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
+
                   Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
                   fits the work above, we would be glad to see a drawing.
                 </p>
