@@ -18,7 +18,7 @@ export default function SelectedWorkGallery({ items }: Props) {
         <ImageLightbox key={i} src={item.src} alt={item.caption}>
           <button
             type="button"
-            className={`group relative block w-full h-full overflow-hidden bg-[hsl(var(--section-alt))] ring-1 ring-border shadow-[0_15px_40px_-20px_hsl(220_20%_10%/0.25)] cursor-zoom-in ${
+            className={`group relative block w-full h-full overflow-hidden bg-muted ring-1 ring-border shadow-[0_15px_40px_-20px_hsl(220_20%_10%/0.25)] cursor-zoom-in ${
               item.spanClass ?? "h-56 md:h-auto md:row-span-1"
             }`}
             aria-label={`Expand ${item.caption}`}
@@ -26,7 +26,7 @@ export default function SelectedWorkGallery({ items }: Props) {
             <img
               src={item.src}
               alt={item.caption}
-              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             />
             <div className="absolute bottom-2 left-2 bg-black/55 text-white text-xs px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">
               {item.caption}
