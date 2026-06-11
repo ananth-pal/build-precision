@@ -243,50 +243,96 @@ export default function WhatWeMake() {
             {/* End Markets */}
             <section className="section-padding">
               <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl font-bold mb-6">End Markets</h2>
-                <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
-                  Pentagon's products end up in the following markets. Each market block describes what
-                  we supply, what makes those parts demanding, and which capabilities drive fit.
-                </p>
-                <div className="grid md:grid-cols-2 gap-8">
-                  {endMarkets.map((m) => (
-                    <div key={m.name}>
-                      <h3 className="text-lg font-semibold mb-4">{m.name}</h3>
-                      <div className="space-y-3 leading-relaxed">
-                        <p>
-                          <span className="font-medium text-foreground">Pentagon supplies: </span>
-                          <span className="text-muted-foreground">{m.supplied}</span>
-                        </p>
-                        <p>
-                          <span className="font-medium text-foreground">What makes it demanding: </span>
-                          <span className="text-muted-foreground">{m.demanding}</span>
-                        </p>
-                        <p>
-                          <span className="font-medium text-foreground">Relevant capabilities: </span>
-                          <span className="text-muted-foreground">{m.capabilities}</span>
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-12">
-                  <p className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
-                    Active enquiry and early-stage development in:
-                  </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    {emergingMarkets.map((name) => (
-                      <div
-                        key={name}
-                        className="border border-border rounded-md px-4 py-3 text-sm font-semibold text-foreground"
-                      >
-                        {name}
-                      </div>
-                    ))}
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-2xl font-bold">End Markets</h2>
+                  <div className="inline-flex items-center gap-2">
+                    <Label htmlFor="endmarkets-toggle" className="text-xs text-muted-foreground cursor-pointer">
+                      {endMarketsCompact ? "v2 · Compact" : "v1 · Detailed"}
+                    </Label>
+                    <Switch
+                      id="endmarkets-toggle"
+                      checked={endMarketsCompact}
+                      onCheckedChange={setEndMarketsCompact}
+                      aria-label="Toggle end markets view"
+                    />
                   </div>
                 </div>
+
+                {endMarketsCompact ? (
+                  <>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {endMarkets.map((m) => (
+                        <div
+                          key={m.name}
+                          className="border border-border rounded-md px-4 py-3 text-sm font-semibold text-foreground"
+                        >
+                          {m.name}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-12">
+                      <h2 className="text-2xl font-bold mb-6">Active enquiry and early-stage development in:</h2>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        {emergingMarkets.map((name) => (
+                          <div
+                            key={name}
+                            className="border border-border rounded-md px-4 py-3 text-sm font-semibold text-foreground"
+                          >
+                            {name}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
+                      Pentagon's products end up in the following markets. Each market block describes what
+                      we supply, what makes those parts demanding, and which capabilities drive fit.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-8">
+                      {endMarkets.map((m) => (
+                        <div key={m.name}>
+                          <h3 className="text-lg font-semibold mb-4">{m.name}</h3>
+                          <div className="space-y-3 leading-relaxed">
+                            <p>
+                              <span className="font-medium text-foreground">Pentagon supplies: </span>
+                              <span className="text-muted-foreground">{m.supplied}</span>
+                            </p>
+                            <p>
+                              <span className="font-medium text-foreground">What makes it demanding: </span>
+                              <span className="text-muted-foreground">{m.demanding}</span>
+                            </p>
+                            <p>
+                              <span className="font-medium text-foreground">Relevant capabilities: </span>
+                              <span className="text-muted-foreground">{m.capabilities}</span>
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-12">
+                      <p className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
+                        Active enquiry and early-stage development in:
+                      </p>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        {emergingMarkets.map((name) => (
+                          <div
+                            key={name}
+                            className="border border-border rounded-md px-4 py-3 text-sm font-semibold text-foreground"
+                          >
+                            {name}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </section>
+
 
             <div className="max-w-7xl mx-auto px-6 md:px-12">
               <hr className="border-border" />
