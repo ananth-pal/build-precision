@@ -139,8 +139,8 @@ export default function WhatWeMake() {
 
         {/* Credibility band */}
         <section className="px-6 md:px-12 pt-12 pb-8">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+          <div className="max-w-7xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
               Pentagon supplies precision-machined parts, gears, and tested assemblies to OEM
               customers on long-running production programs. More than 100 product types have been
               developed and shipped to date. Several programs have been in continuous production for
@@ -159,8 +159,8 @@ export default function WhatWeMake() {
             </section>
 
             <section className="section-padding pt-4">
-              <div className="max-w-3xl mx-auto">
-                <p className="text-muted-foreground leading-relaxed">
+              <div className="max-w-7xl mx-auto">
+                <p className="text-muted-foreground leading-relaxed max-w-3xl">
                   Aside from our work in <span className="font-semibold text-foreground">off-highway, commercial vehicles and agriculture</span> and{" "}
                   <span className="font-semibold text-foreground">automotive</span>, we are also expanding into{" "}
                   {emergingMarkets.slice(0, -1).join(", ")}, and {emergingMarkets[emergingMarkets.length - 1]} —
@@ -174,23 +174,24 @@ export default function WhatWeMake() {
             </div>
 
             <section className="section-padding">
-              <div className="max-w-3xl mx-auto space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-
-                  Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
-                  fits the work above, we would be glad to see a drawing.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  For the machines and measurement equipment that support these programs, see{" "}
-                  <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
-                    Means of Production
-                  </Link>
-                  . For a fuller account of what we do and how, see{" "}
-                  <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
-                    Capabilities
-                  </Link>
-                  .
-                </p>
+              <div className="max-w-7xl mx-auto">
+                <div className="max-w-3xl space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
+                    fits the work above, we would be glad to see a drawing.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    For the machines and measurement equipment that support these programs, see{" "}
+                    <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
+                      Means of Production
+                    </Link>
+                    . For a fuller account of what we do and how, see{" "}
+                    <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
+                      Capabilities
+                    </Link>
+                    .
+                  </p>
+                </div>
               </div>
             </section>
           </>
@@ -298,22 +299,24 @@ export default function WhatWeMake() {
 
             {/* Closing invitation */}
             <section className="section-padding">
-              <div className="max-w-3xl mx-auto space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
-                  fits the work above, we would be glad to see a drawing.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  For the machines and measurement equipment that support these programs, see{" "}
-                  <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
-                    Means of Production
-                  </Link>
-                  . For a fuller account of what we do and how, see{" "}
-                  <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
-                    Capabilities
-                  </Link>
-                  .
-                </p>
+              <div className="max-w-7xl mx-auto">
+                <div className="max-w-3xl space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
+                    fits the work above, we would be glad to see a drawing.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    For the machines and measurement equipment that support these programs, see{" "}
+                    <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
+                      Means of Production
+                    </Link>
+                    . For a fuller account of what we do and how, see{" "}
+                    <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
+                      Capabilities
+                    </Link>
+                    .
+                  </p>
+                </div>
               </div>
             </section>
           </>
