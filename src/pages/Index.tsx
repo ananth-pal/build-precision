@@ -124,14 +124,15 @@ export default function Home() {
                   Learn more about us →
                 </Link>
               </div>
-              <div className="overflow-hidden border border-border rounded h-full">
+              <div className="overflow-hidden border border-border rounded bg-muted flex items-center justify-center self-start">
                 <img
                   src={zollerAsset.url}
                   alt="In-house Zoller tool presetter at Pentagon's Plant 1"
                   loading="lazy"
-                  className="w-full h-full object-cover min-h-[200px]"
+                  className="w-full h-auto object-contain"
                 />
               </div>
+
             </div>
           </div>
         </section>
