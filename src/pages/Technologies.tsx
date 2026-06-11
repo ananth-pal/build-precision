@@ -50,6 +50,7 @@ const cards: Card[] = [
     icon: Settings,
     title: "Machine Tools: Gears",
     desc: "A dedicated plant covering the route from blank preparation through finished teeth.",
+    image: gearGrinderAsset.url,
     details: [
       "CNC gear hobbers — Cooper Pfauter, up to 6 module",
       "Gear shapers — Lorenz, up to 4 module",
