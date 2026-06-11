@@ -299,22 +299,24 @@ export default function WhatWeMake() {
 
             {/* Closing invitation */}
             <section className="section-padding">
-              <div className="max-w-3xl mx-auto space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
-                  fits the work above, we would be glad to see a drawing.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  For the machines and measurement equipment that support these programs, see{" "}
-                  <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
-                    Means of Production
-                  </Link>
-                  . For a fuller account of what we do and how, see{" "}
-                  <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
-                    Capabilities
-                  </Link>
-                  .
-                </p>
+              <div className="max-w-7xl mx-auto">
+                <div className="max-w-3xl space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
+                    fits the work above, we would be glad to see a drawing.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    For the machines and measurement equipment that support these programs, see{" "}
+                    <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
+                      Means of Production
+                    </Link>
+                    . For a fuller account of what we do and how, see{" "}
+                    <Link to="/capabilities" className="text-primary underline underline-offset-4 hover:no-underline">
+                      Capabilities
+                    </Link>
+                    .
+                  </p>
+                </div>
               </div>
             </section>
           </>
