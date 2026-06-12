@@ -200,6 +200,24 @@ export default function Technologies() {
           </div>
         </section>
 
+        <section className="px-4 sm:px-6 lg:px-8 py-12 border-t border-border">
+          <div className="max-w-4xl mx-auto text-center space-y-4">
+            <h2 className="text-xl sm:text-2xl font-bold">Detailed Machine List</h2>
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              Full equipment register with makes, models, and capacities — available on request to qualified enquiries.
+            </p>
+            <div>
+              <button
+                type="button"
+                onClick={() => setRequestOpen(true)}
+                className="download-btn"
+              >
+                <FileText size={16} /> Request Detailed Machine List
+              </button>
+            </div>
+          </div>
+        </section>
+
         <section className="section-padding bg-secondary">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">New Processes and Equipment</h2>
@@ -210,6 +228,7 @@ export default function Technologies() {
         </section>
       </main>
       <SiteFooter />
+      <RequestMachineListDialog open={requestOpen} onOpenChange={setRequestOpen} />
     </div>
   );
 }
