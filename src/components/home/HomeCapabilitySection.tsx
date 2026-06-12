@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ProgrammesInProduction from "./ProgrammesInProduction";
 import makinoImg from "@/assets/home/makino-a51nx.jpg.asset.json";
+import capabilitiesLoop from "@/assets/home/capabilities-loop.mp4.asset.json";
 
 export default function HomeCapabilitySection() {
   return (
