@@ -220,15 +220,7 @@ export default function Home() {
             <h2 className="text-2xl lg:text-3xl font-bold mb-8">Markets we serve</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
               {markets.map((m) => (
-                <div key={m.label} className="space-y-3">
-                  <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6">
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {m.placeholder}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-semibold">{m.label}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{m.body}</p>
-                </div>
+                <MarketCard key={m.label} label={m.label} body={m.body} images={m.images} />
               ))}
             </div>
             {/* Expanding into callout */}
