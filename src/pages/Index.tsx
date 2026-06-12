@@ -239,16 +239,37 @@ export default function Home() {
                 </button>
               </div>
               <div className="border-l-4 border-primary bg-muted/40 rounded-r-md overflow-hidden grid grid-cols-1 sm:grid-cols-2">
-                <div className="p-5">
-                  <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
-                    Expanding into
+                <div className="p-6 lg:p-8 flex flex-col justify-between gap-6">
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">
+                      <span className="text-primary">Exploratory</span> · Targeted next sectors
+                    </div>
+                    <h3 className="text-xl lg:text-2xl font-bold leading-tight mb-3">
+                      Bringing Pentagon's precision discipline to new regulated sectors.
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Not yet in production for these markets — capabilities transfer directly as qualified programmes emerge.
+                    </p>
                   </div>
-                  <p className="text-foreground font-semibold mb-2">
-                    Medical · Aerospace · Defence · Robotics
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Pentagon's precision machining, gear cutting, traceability, and in-house tooling transfer directly to these sectors as qualified programmes emerge.
-                  </p>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+                    {[
+                      { name: "Medical", note: "Implant-grade finishes" },
+                      { name: "Aerospace", note: "AS9100-track tolerances" },
+                      { name: "Defence", note: "Traceable lots, ITAR-aware" },
+                      { name: "Robotics", note: "Precision gears & actuators" },
+                    ].map((s) => (
+                      <div key={s.name} className="border-t border-border pt-2">
+                        <div className="text-sm font-semibold text-foreground">{s.name}</div>
+                        <div className="text-xs text-muted-foreground leading-snug">{s.note}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    to="/contact"
+                    className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+                  >
+                    Discuss a programme →
+                  </Link>
                 </div>
                 {showExpandingImage && (
                   <div className="aspect-[4/3] border-l border-border bg-muted">
@@ -261,6 +282,7 @@ export default function Home() {
                   </div>
                 )}
               </div>
+
             </div>
             <div className="mt-6">
               <Link to="/what-we-make" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">

@@ -1,36 +1,45 @@
-# Home banner: full media rotation
+# Improve the "Expanding into" callout
 
 ## Goal
-Show every Means of Production / Capabilities image plus the `drill-loop.mp4` video in the home hero rotation so we can preview how they read. Reposition each so the key technical detail stays visible behind the headline + overlay.
+Keep the image roughly its current size (half the card, ~4:3) but make the text side feel substantial and well-composed. Frame the section clearly as forward-looking so it generates interest without overstating current capability.
 
-## Slides to include (7 total)
-1. `technologies/gear-hobber.jpg` — focal: cutter / workpiece engagement
-2. `technologies/gear-grinder.jpg` — focal: grinding wheel on gear
-3. `technologies/zeiss-cmm.jpg` — focal: probe head over part
-4. `technologies/zoller-presetter.jpg` — focal: tool in spindle
-5. `technologies/calibration-probe.jpg` — focal: probe tip
-6. `capabilities/gear-stock.jpg` — focal: gear teeth stack
-7. `technologies/drill-loop.mp4` — muted, autoplay, loop, playsInline (rendered as `<video>` instead of background-image)
+## Changes in `src/pages/Index.tsx` (Expanding into block only)
 
-Portfolio product shots are excluded per your direction.
+### 1. Stronger framing label
+Replace the small "Expanding into" eyebrow with a two-part header:
+- Eyebrow: `EXPLORATORY · Targeted next sectors` (uppercase, tracked, muted)
+- Make it explicit these are pipeline sectors, not current production — protects against misrepresentation.
 
-## Changes (single file: `src/pages/Index.tsx`)
-- Replace the `heroSlides` string[] with a typed array:
-  ```ts
-  type Slide = { src: string; kind: "image" | "video"; pos: string; label: string };
-  ```
-  `pos` is a CSS `object-position` / `background-position` value (e.g. `"center 35%"`, `"60% center"`). Defaults to `"center"` where the key detail is already centered; I'll set bespoke values for hobber, grinder, presetter, and gear-stock where the subject sits off-center.
-- Render each slide:
-  - Images: keep current `<div>` with `backgroundImage` + `backgroundPosition: slide.pos`.
-  - Video: render `<video src={src} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: pos, opacity }} />`.
-- Bump rotation interval from 5s → 6s so the video has time to read.
-- Leave the dark gradient overlay, headline, CTAs, and everything below the hero untouched.
+### 2. Larger, weighted headline
+Promote the headline from `font-semibold` body text to a proper sub-heading:
+- `text-xl lg:text-2xl font-bold leading-tight`
+- Copy: "Bringing Pentagon's precision discipline to new regulated sectors."
 
-## Verification
-- Confirm build passes.
-- Open `/` in preview at the current 740px viewport and at 1366px, watch one full rotation, and screenshot mid-cycle to confirm each focal point sits behind/around the headline rather than being cropped out.
-- If any focal point still reads poorly, tweak that slide's `pos` value only (no other changes).
+### 3. Replace the single sector run-on with a 2×2 mini-grid
+Instead of `Medical · Aerospace · Defence · Robotics` as one line, render four compact tiles inside the text column:
+
+```text
++------------------+------------------+
+| Medical          | Aerospace        |
+| Implant-grade    | AS9100-track     |
+| finishes         | tolerances       |
++------------------+------------------+
+| Defence          | Robotics         |
+| Traceable lots,  | Precision gears  |
+| ITAR-aware       | & actuators      |
++------------------+------------------+
+```
+- Each tile: sector name (semibold) + one short qualifier line (xs, muted) explaining why our existing capability transfers. Keeps it honest (capability-led, not claim-led).
+
+### 4. Supporting paragraph + soft CTA
+- Shorter lead-in sentence above the grid.
+- Below grid: a quiet inline link "Discuss a programme →" pointing to `/contact` (or existing quote route) to convert intent.
+
+### 5. Layout tweaks
+- Keep `grid-cols-1 sm:grid-cols-2` and the `aspect-[4/3]` image (size unchanged).
+- Increase text-column padding to `p-6 lg:p-8` and use `flex flex-col justify-between` so content fills the height alongside the image instead of clustering at the top.
+- Keep the `border-l-4 border-primary` accent and the existing Show/Hide image toggle.
 
 ## Out of scope
-- Portfolio product shots.
-- Any change to copy, layout, the V1/V2 "Who We Are" toggle, or sections below the hero.
+- No changes to markets grid, image asset, toggle behavior, or other sections.
+- No new routes or business-logic changes.
