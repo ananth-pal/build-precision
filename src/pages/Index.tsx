@@ -47,6 +47,7 @@ const currentlyUnderway = [
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [whoVariant, setWhoVariant] = useState<"v1" | "v2">("v1");
 
   useEffect(() => {
     const id = window.setInterval(() => {
