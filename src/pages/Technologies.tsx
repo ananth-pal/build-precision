@@ -198,10 +198,7 @@ export default function Technologies() {
               ))}
             </div>
 
-            <div className="mt-12 pt-8 border-t border-border text-center">
-              <p className="text-sm text-muted-foreground max-w-2xl mx-auto mb-4">
-                Full machine list with makes, models, and capacities — available on request to qualified enquiries.
-              </p>
+            <div className="mt-8">
               <button
                 type="button"
                 onClick={() => setRequestOpen(true)}
