@@ -122,6 +122,7 @@ const cards: Card[] = [
 ];
 
 export default function Technologies() {
+  const [requestOpen, setRequestOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
