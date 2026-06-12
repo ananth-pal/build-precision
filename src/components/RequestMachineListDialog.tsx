@@ -89,7 +89,7 @@ export default function RequestMachineListDialog({ open, onOpenChange }: Props) 
         <DialogHeader>
           <DialogTitle>Request Detailed Machine List</DialogTitle>
           <DialogDescription>
-            Provide a few details and we will send the full equipment register, including makes, models, and capacities.
+            Provide a few details and we will send the full machine list, including makes, models, and capacities.
           </DialogDescription>
         </DialogHeader>
 
