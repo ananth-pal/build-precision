@@ -4,11 +4,23 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
 import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
+import gearGrinderAsset from "@/assets/technologies/gear-grinder.jpg.asset.json";
 import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
 import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
+import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
+import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
 
-const heroSlides = [gearHobberAsset.url, gearStockAsset.url, zeissCmmAsset.url];
+type HeroSlide = { src: string; kind: "image" | "video"; pos: string };
+const heroSlides: HeroSlide[] = [
+  { src: gearHobberAsset.url, kind: "image", pos: "center 40%" },
+  { src: gearGrinderAsset.url, kind: "image", pos: "60% center" },
+  { src: zeissCmmAsset.url, kind: "image", pos: "center" },
+  { src: zollerAsset.url, kind: "image", pos: "center 35%" },
+  { src: calibrationProbeAsset.url, kind: "image", pos: "center" },
+  { src: gearStockAsset.url, kind: "image", pos: "center 60%" },
+  { src: drillLoopAsset.url, kind: "video", pos: "center" },
+];
 
 const stats = [
   { number: "45+", label: "Years manufacturing heritage" },
@@ -52,7 +64,7 @@ export default function Home() {
   useEffect(() => {
     const id = window.setInterval(() => {
       setActiveSlide((i) => (i + 1) % heroSlides.length);
-    }, 5000);
+    }, 6000);
     return () => window.clearInterval(id);
   }, []);
 
@@ -64,17 +76,38 @@ export default function Home() {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-muted">
           {/* Rotating hero imagery */}
           <div className="absolute inset-0">
-            {heroSlides.map((src, i) => (
-              <div
-                key={i}
-                className="absolute inset-0 bg-center bg-cover"
-                style={{
-                  backgroundImage: `url(${src})`,
-                  opacity: i === activeSlide ? 1 : 0,
-                  transition: "opacity 1200ms ease-in-out",
-                }}
-              />
-            ))}
+            {heroSlides.map((slide, i) => {
+              const active = i === activeSlide;
+              const common = {
+                opacity: active ? 1 : 0,
+                transition: "opacity 1200ms ease-in-out",
+              } as const;
+              if (slide.kind === "video") {
+                return (
+                  <video
+                    key={i}
+                    src={slide.src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ ...common, objectPosition: slide.pos }}
+                  />
+                );
+              }
+              return (
+                <div
+                  key={i}
+                  className="absolute inset-0 bg-cover"
+                  style={{
+                    ...common,
+                    backgroundImage: `url(${slide.src})`,
+                    backgroundPosition: slide.pos,
+                  }}
+                />
+              );
+            })}
           </div>
           {/* Darkened overlay (~40%) for legibility */}
           <div
