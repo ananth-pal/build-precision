@@ -265,10 +265,10 @@ export default function Home() {
                     ))}
                   </div>
                   <Link
-                    to="/contact"
+                    to="/technologies"
                     className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
                   >
-                    Discuss a programme →
+                    See how new processes and equipment are handled →
                   </Link>
                 </div>
                 {showExpandingImage && (
