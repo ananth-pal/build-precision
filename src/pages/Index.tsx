@@ -47,6 +47,7 @@ const currentlyUnderway = [
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [whoVariant, setWhoVariant] = useState<"v1" | "v2">("v1");
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -107,10 +108,30 @@ export default function Home() {
         {/* Scale and heritage */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-7xl mx-auto space-y-6">
-            <h2 className="text-2xl lg:text-3xl font-bold">Who We Are</h2>
+            <div className="flex items-center justify-between gap-4 flex-wrap">
+              <h2 className="text-2xl lg:text-3xl font-bold">Who We Are</h2>
+              <div className="inline-flex border border-border rounded overflow-hidden text-xs font-medium">
+                <button
+                  type="button"
+                  onClick={() => setWhoVariant("v1")}
+                  className={`px-3 py-1.5 transition-colors ${whoVariant === "v1" ? "bg-foreground text-background" : "bg-background text-muted-foreground hover:text-foreground"}`}
+                  aria-pressed={whoVariant === "v1"}
+                >
+                  V1
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setWhoVariant("v2")}
+                  className={`px-3 py-1.5 border-l border-border transition-colors ${whoVariant === "v2" ? "bg-foreground text-background" : "bg-background text-muted-foreground hover:text-foreground"}`}
+                  aria-pressed={whoVariant === "v2"}
+                >
+                  V2
+                </button>
+              </div>
+            </div>
 
-            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-stretch">
-              <div className="lg:col-span-2 space-y-6">
+            <div className={`grid ${whoVariant === "v2" ? "lg:grid-cols-5" : "lg:grid-cols-3"} gap-8 lg:gap-12 items-stretch`}>
+              <div className={whoVariant === "v2" ? "lg:col-span-3 space-y-6" : "lg:col-span-2 space-y-6"}>
                 <p className="text-muted-foreground leading-relaxed">
                   Pentagon was established as a custom machine tool builder in the 1970s, supplying purpose-built machines to India's leading automotive OEMs. These strong foundational roots enable us to design and manufacture all our own jigs, fixtures, and gauges in-house, along with a strong maintenance team that can strip, rebuild, and customise machine tools from first principles.
                 </p>
@@ -124,7 +145,7 @@ export default function Home() {
                   Learn more about us →
                 </Link>
               </div>
-              <div className="overflow-hidden border border-border rounded bg-muted flex items-center justify-center self-start">
+              <div className={`overflow-hidden border border-border rounded bg-muted flex items-center justify-center self-start ${whoVariant === "v2" ? "lg:col-span-2" : ""}`}>
                 <img
                   src={zollerAsset.url}
                   alt="In-house Zoller tool presetter at Pentagon's Plant 1"
