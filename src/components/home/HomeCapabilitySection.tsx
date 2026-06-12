@@ -11,6 +11,14 @@ export default function HomeCapabilitySection() {
         <div className="space-y-8">
           <div className="grid md:grid-cols-2 gap-6">
             <article className="capability-card space-y-3">
+              <video
+                src={capabilitiesLoop.url}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full aspect-[16/10] object-cover rounded-md mb-2"
+              />
               <h3 className="text-xl font-semibold">Capabilities</h3>
               <p className="font-semibold text-foreground text-sm">
                 Machining, Gear cutting, Assembly
