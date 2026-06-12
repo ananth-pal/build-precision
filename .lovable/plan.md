@@ -1,45 +1,18 @@
-# Improve the "Expanding into" callout
+# Fix invisible header logo
 
-## Goal
-Keep the image roughly its current size (half the card, ~4:3) but make the text side feel substantial and well-composed. Frame the section clearly as forward-looking so it generates interest without overstating current capability.
+## Diagnosis
+`src/components/SiteHeader.tsx` imports `@/assets/logo.jpg` correctly and renders it at `h-8 lg:h-10`. The file exists and is a valid JPEG, so the `<img>` *is* rendering — but the current `logo.jpg` is the dark-on-black variant of the Pentagon mark. Against the header's near-white background it reads as a faint dark rectangle with no legible text, which is why it looks like "not appearing."
 
-## Changes in `src/pages/Index.tsx` (Expanding into block only)
+The version just attached (`Pentagon Logo CDR 18.jpg`) is the correct red wordmark on a white background, which will read properly on the header.
 
-### 1. Stronger framing label
-Replace the small "Expanding into" eyebrow with a two-part header:
-- Eyebrow: `EXPLORATORY · Targeted next sectors` (uppercase, tracked, muted)
-- Make it explicit these are pipeline sectors, not current production — protects against misrepresentation.
+## Fix
+Replace the asset, keep the import path stable so no component code changes.
 
-### 2. Larger, weighted headline
-Promote the headline from `font-semibold` body text to a proper sub-heading:
-- `text-xl lg:text-2xl font-bold leading-tight`
-- Copy: "Bringing Pentagon's precision discipline to new regulated sectors."
+1. Copy the uploaded file from `/mnt/user-uploads/Pentagon_Logo_CDR_18.jpg` over `src/assets/logo.jpg` (same path, same `.jpg` extension — `SiteHeader.tsx` and any other importers keep working untouched).
+2. No code changes to `SiteHeader.tsx`. `alt`, sizing, and link target stay as-is.
+3. Verify in preview that the red wordmark renders cleanly at `h-8` / `h-10`.
 
-### 3. Replace the single sector run-on with a 2×2 mini-grid
-Instead of `Medical · Aerospace · Defence · Robotics` as one line, render four compact tiles inside the text column:
-
-```text
-+------------------+------------------+
-| Medical          | Aerospace        |
-| Implant-grade    | AS9100-track     |
-| finishes         | tolerances       |
-+------------------+------------------+
-| Defence          | Robotics         |
-| Traceable lots,  | Precision gears  |
-| ITAR-aware       | & actuators      |
-+------------------+------------------+
-```
-- Each tile: sector name (semibold) + one short qualifier line (xs, muted) explaining why our existing capability transfers. Keeps it honest (capability-led, not claim-led).
-
-### 4. Supporting paragraph + soft CTA
-- Shorter lead-in sentence above the grid.
-- Below grid: a quiet inline link "Discuss a programme →" pointing to `/contact` (or existing quote route) to convert intent.
-
-### 5. Layout tweaks
-- Keep `grid-cols-1 sm:grid-cols-2` and the `aspect-[4/3]` image (size unchanged).
-- Increase text-column padding to `p-6 lg:p-8` and use `flex flex-col justify-between` so content fills the height alongside the image instead of clustering at the top.
-- Keep the `border-l-4 border-primary` accent and the existing Show/Hide image toggle.
-
-## Out of scope
-- No changes to markets grid, image asset, toggle behavior, or other sections.
-- No new routes or business-logic changes.
+## Notes / non-goals
+- Not migrating to a CDN `.asset.json` pointer in this change — matching the existing in-repo `.jpg` convention to keep the diff minimal. Can do that separately if you want.
+- Not adjusting header height, padding, or logo sizing. If the new wordmark feels too wide once swapped, we can tune `h-8 lg:h-10` in a follow-up.
+- Not touching the favicon or any other logo usages elsewhere on the site.
