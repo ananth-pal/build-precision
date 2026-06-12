@@ -1,4 +1,6 @@
-import { Cog, Settings, Wrench, Ruler, Hammer, Network } from "lucide-react";
+import { useState } from "react";
+import { Cog, Settings, Wrench, Ruler, Hammer, Network, FileText } from "lucide-react";
+import RequestMachineListDialog from "@/components/RequestMachineListDialog";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
