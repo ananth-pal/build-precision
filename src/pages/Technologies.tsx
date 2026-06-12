@@ -197,16 +197,11 @@ export default function Technologies() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section className="px-4 sm:px-6 lg:px-8 py-12 border-t border-border">
-          <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold">Detailed Machine List</h2>
-            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-              Full equipment register with makes, models, and capacities — available on request to qualified enquiries.
-            </p>
-            <div>
+            <div className="mt-12 pt-8 border-t border-border text-center">
+              <p className="text-sm text-muted-foreground max-w-2xl mx-auto mb-4">
+                Full machine list with makes, models, and capacities — available on request to qualified enquiries.
+              </p>
               <button
                 type="button"
                 onClick={() => setRequestOpen(true)}
