@@ -4,11 +4,23 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
 import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
+import gearGrinderAsset from "@/assets/technologies/gear-grinder.jpg.asset.json";
 import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
 import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
+import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
+import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
 
-const heroSlides = [gearHobberAsset.url, gearStockAsset.url, zeissCmmAsset.url];
+type HeroSlide = { src: string; kind: "image" | "video"; pos: string };
+const heroSlides: HeroSlide[] = [
+  { src: gearHobberAsset.url, kind: "image", pos: "center 40%" },
+  { src: gearGrinderAsset.url, kind: "image", pos: "60% center" },
+  { src: zeissCmmAsset.url, kind: "image", pos: "center" },
+  { src: zollerAsset.url, kind: "image", pos: "center 35%" },
+  { src: calibrationProbeAsset.url, kind: "image", pos: "center" },
+  { src: gearStockAsset.url, kind: "image", pos: "center 60%" },
+  { src: drillLoopAsset.url, kind: "video", pos: "center" },
+];
 
 const stats = [
   { number: "45+", label: "Years manufacturing heritage" },

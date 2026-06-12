@@ -1,16 +1,36 @@
-Fix the "Who We Are" section on the Home page so paragraph spacing matches the rest of the page and the Zoller photo no longer breaks up the text flow.
+# Home banner: full media rotation
 
-**Problems**
-1. The section container uses `space-y-10` (40px), while sibling sections like "What makes us different" use `space-y-6` (24px). Gaps look inconsistent on desktop.
-2. The Zoller photo sits inside a 3-column grid alongside paragraph 1 only. Paragraphs 2 and 3 then drop to full width, so the image visually interrupts the paragraph flow and leaves the text feeling broken into two blocks.
+## Goal
+Show every Means of Production / Capabilities image plus the `drill-loop.mp4` video in the home hero rotation so we can preview how they read. Reposition each so the key technical detail stays visible behind the headline + overlay.
 
-**Fix (in `src/pages/Index.tsx`, "Who We Are" section only)**
-- Change the outer container from `space-y-10` to `space-y-6` to match other sections.
-- Restructure the layout so all three paragraphs read as one continuous column on the left, with the Zoller image as a single sibling column on the right that spans the full text height:
-  - Wrap the section content in a `grid lg:grid-cols-3 gap-8 lg:gap-12 items-start` layout.
-  - Left column (`lg:col-span-2`): the heading, all three paragraphs (stacked with `space-y-6`), and the "Learn more about us →" link.
-  - Right column: the existing Zoller `img` in its bordered wrapper, made to fill the column height (e.g. `h-full` with `object-cover`), so it sits beside the full paragraph stack instead of only paragraph 1.
-- On mobile (`<lg`), the grid collapses to a single column and the image appears after the paragraphs, preserving readability.
+## Slides to include (7 total)
+1. `technologies/gear-hobber.jpg` — focal: cutter / workpiece engagement
+2. `technologies/gear-grinder.jpg` — focal: grinding wheel on gear
+3. `technologies/zeiss-cmm.jpg` — focal: probe head over part
+4. `technologies/zoller-presetter.jpg` — focal: tool in spindle
+5. `technologies/calibration-probe.jpg` — focal: probe tip
+6. `capabilities/gear-stock.jpg` — focal: gear teeth stack
+7. `technologies/drill-loop.mp4` — muted, autoplay, loop, playsInline (rendered as `<video>` instead of background-image)
 
-**Result**
-Paragraph rhythm in "Who We Are" matches the `space-y-6` cadence used elsewhere on the Home page, and the Zoller photo sits alongside the full paragraph stack instead of splitting it.
+Portfolio product shots are excluded per your direction.
+
+## Changes (single file: `src/pages/Index.tsx`)
+- Replace the `heroSlides` string[] with a typed array:
+  ```ts
+  type Slide = { src: string; kind: "image" | "video"; pos: string; label: string };
+  ```
+  `pos` is a CSS `object-position` / `background-position` value (e.g. `"center 35%"`, `"60% center"`). Defaults to `"center"` where the key detail is already centered; I'll set bespoke values for hobber, grinder, presetter, and gear-stock where the subject sits off-center.
+- Render each slide:
+  - Images: keep current `<div>` with `backgroundImage` + `backgroundPosition: slide.pos`.
+  - Video: render `<video src={src} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: pos, opacity }} />`.
+- Bump rotation interval from 5s → 6s so the video has time to read.
+- Leave the dark gradient overlay, headline, CTAs, and everything below the hero untouched.
+
+## Verification
+- Confirm build passes.
+- Open `/` in preview at the current 740px viewport and at 1366px, watch one full rotation, and screenshot mid-cycle to confirm each focal point sits behind/around the headline rather than being cropped out.
+- If any focal point still reads poorly, tweak that slide's `pos` value only (no other changes).
+
+## Out of scope
+- Portfolio product shots.
+- Any change to copy, layout, the V1/V2 "Who We Are" toggle, or sections below the hero.
