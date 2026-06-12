@@ -35,6 +35,7 @@ import auto2 from "@/assets/markets/automotive_trial_2.jpg.asset.json";
 import oh1 from "@/assets/markets/off_highway_trial_1.jpg.asset.json";
 import oh2 from "@/assets/markets/off_highway_trial_2.jpg.asset.json";
 import oh3 from "@/assets/markets/off_highway_trial_3.jpg.asset.json";
+import roboticsImg from "@/assets/markets/robotics_trial_1.jpg.asset.json";
 
 const markets = [
   {
@@ -67,6 +68,7 @@ const currentlyUnderway = [
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [whoVariant, setWhoVariant] = useState<"v1" | "v2">("v1");
+  const [showExpandingImage, setShowExpandingImage] = useState(true);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -225,16 +227,40 @@ export default function Home() {
               ))}
             </div>
             {/* Expanding into callout */}
-            <div className="mt-8 max-w-4xl border-l-4 border-primary bg-muted/40 rounded-r-md p-5">
-              <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
-                Expanding into
+            <div className="mt-8 max-w-4xl">
+              <div className="flex justify-end mb-2">
+                <button
+                  type="button"
+                  onClick={() => setShowExpandingImage((v) => !v)}
+                  className="text-xs px-3 py-1 border border-border rounded hover:bg-muted transition-colors"
+                  aria-pressed={showExpandingImage}
+                >
+                  {showExpandingImage ? "Hide image" : "Show image"}
+                </button>
               </div>
-              <p className="text-foreground font-semibold mb-2">
-                Medical · Aerospace · Defence · Robotics
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Pentagon's precision machining, gear cutting, traceability, and in-house tooling transfer directly to these sectors as qualified programmes emerge.
-              </p>
+              <div className="border-l-4 border-primary bg-muted/40 rounded-r-md overflow-hidden grid grid-cols-1 sm:grid-cols-[1fr_auto]">
+                <div className="p-5">
+                  <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                    Expanding into
+                  </div>
+                  <p className="text-foreground font-semibold mb-2">
+                    Medical · Aerospace · Defence · Robotics
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Pentagon's precision machining, gear cutting, traceability, and in-house tooling transfer directly to these sectors as qualified programmes emerge.
+                  </p>
+                </div>
+                {showExpandingImage && (
+                  <div className="sm:w-64 sm:h-auto h-48 border-l border-border bg-muted">
+                    <img
+                      src={roboticsImg.url}
+                      alt="Collaborative robotic arm handling components on an assembly line"
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+              </div>
             </div>
             <div className="mt-6">
               <Link to="/what-we-make" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
