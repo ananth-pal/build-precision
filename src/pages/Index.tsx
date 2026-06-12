@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
+import MarketCard from "@/components/home/MarketCard";
 import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
 import gearGrinderAsset from "@/assets/technologies/gear-grinder.jpg.asset.json";
 import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
@@ -29,16 +30,22 @@ const stats = [
   { number: "75+", label: "Variants, one product family, one partner" },
 ];
 
+import auto1 from "@/assets/markets/automotive_trial_1.jpg.asset.json";
+import auto2 from "@/assets/markets/automotive_trial_2.jpg.asset.json";
+import oh1 from "@/assets/markets/off_highway_trial_1.jpg.asset.json";
+import oh2 from "@/assets/markets/off_highway_trial_2.jpg.asset.json";
+import oh3 from "@/assets/markets/off_highway_trial_3.jpg.asset.json";
+
 const markets = [
   {
     label: "Off-highway, commercial vehicles, and agriculture",
     body: "Power take-off gearboxes, housings, transmission components, and engine balancer assemblies for trucks, construction equipment, material handling, and tractor engine manufacturers.",
-    placeholder: "[Photograph of commercial truck, construction equipment, tractor, or similar off-highway application — to be supplied]",
+    images: [oh1.url, oh2.url, oh3.url],
   },
   {
     label: "Automotive",
     body: "Engine components and balancer assemblies produced in repeat production for Indian automotive OEMs.",
-    placeholder: "[Photograph of engine assembly, automotive powertrain component, or finished Pentagon automotive part — to be supplied]",
+    images: [auto1.url, auto2.url],
   },
 ];
 
@@ -214,15 +221,7 @@ export default function Home() {
             <h2 className="text-2xl lg:text-3xl font-bold mb-8">Markets we serve</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
               {markets.map((m) => (
-                <div key={m.label} className="space-y-3">
-                  <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6">
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {m.placeholder}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-semibold">{m.label}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{m.body}</p>
-                </div>
+                <MarketCard key={m.label} label={m.label} body={m.body} images={m.images} />
               ))}
             </div>
             {/* Expanding into callout */}
