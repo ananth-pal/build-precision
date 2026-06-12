@@ -227,7 +227,7 @@ export default function Home() {
               ))}
             </div>
             {/* Expanding into callout */}
-            <div className="mt-8 max-w-4xl">
+            <div className="mt-8">
               <div className="flex justify-end mb-2">
                 <button
                   type="button"
@@ -238,7 +238,7 @@ export default function Home() {
                   {showExpandingImage ? "Hide image" : "Show image"}
                 </button>
               </div>
-              <div className="border-l-4 border-primary bg-muted/40 rounded-r-md overflow-hidden grid grid-cols-1 sm:grid-cols-[1fr_auto]">
+              <div className="border-l-4 border-primary bg-muted/40 rounded-r-md overflow-hidden grid grid-cols-1 sm:grid-cols-2">
                 <div className="p-5">
                   <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
                     Expanding into
@@ -251,7 +251,7 @@ export default function Home() {
                   </p>
                 </div>
                 {showExpandingImage && (
-                  <div className="sm:w-64 sm:h-auto h-48 border-l border-border bg-muted">
+                  <div className="aspect-[4/3] border-l border-border bg-muted">
                     <img
                       src={roboticsImg.url}
                       alt="Collaborative robotic arm handling components on an assembly line"
