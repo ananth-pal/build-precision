@@ -64,7 +64,7 @@ export default function Home() {
   useEffect(() => {
     const id = window.setInterval(() => {
       setActiveSlide((i) => (i + 1) % heroSlides.length);
-    }, 5000);
+    }, 6000);
     return () => window.clearInterval(id);
   }, []);
 
