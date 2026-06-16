@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 export default function CapAssembly() {
   return (
@@ -10,9 +11,18 @@ export default function CapAssembly() {
       <PageHero
         title="Assembly"
         subtitle={"Our assembly capability stands out not through labor cost alone, but through a production system built on lean management, disciplined assembly methods, and accumulated operator skill. Standard operating procedures, operator certification, and control plans ensure that critical steps are defined, executed consistently, and checked at the appropriate stage of assembly.\n\nAssemblies ship as complete modules ready to install and perform in the field. This reduces integration risk, shortens manufacturing timelines, and lowers total landed cost."}
+        heroNote="Cleanroom assembly — operators in a row at stations, with the AC unit in frame to read as a controlled environment. This hero has no background image today; add one."
       />
       <main className="flex-1 section-padding">
         <div className="max-w-6xl mx-auto space-y-10">
+
+          {/* Product-family row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <ImagePlaceholder ratio="aspect-[4/3]" caption="PTO gearbox assembly" />
+            <ImagePlaceholder ratio="aspect-[4/3]" caption="Hydraulic valve assembly" />
+            <ImagePlaceholder ratio="aspect-[4/3]" caption="Gear pump assembly" />
+            <ImagePlaceholder ratio="aspect-[4/3]" caption="Engine balancer assembly" />
+          </div>
 
           {/* Types of Assemblies & Batch Sizes */}
           <div className="grid md:grid-cols-2 gap-6">
@@ -31,11 +41,17 @@ export default function CapAssembly() {
           </div>
 
           {/* Inspection and Tests */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h3 className="text-lg font-semibold mb-4">Inspection and Testing</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              Inspection and functional test plans are defined according to the function of the assembly and the customer requirement. Depending on the product, this may include dimensional verification, torque checks, leak or pressure testing, continuity checks, or functional testing. A sampling plan is used for inspection as needed. Test benches can be adapted to the application where needed. Calibration is maintained in line with the Quality Management System, and digital test records form part of the delivered package.
-            </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Inspection and Testing</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Inspection and functional test plans are defined according to the function of the assembly and the customer requirement. Depending on the product, this may include dimensional verification, torque checks, leak or pressure testing, continuity checks, or functional testing. A sampling plan is used for inspection as needed. Test benches can be adapted to the application where needed. Calibration is maintained in line with the Quality Management System, and digital test records form part of the delivered package.
+              </p>
+            </div>
+            <ImagePlaceholder
+              ratio="aspect-[4/3]"
+              caption="Assembly/pump test bench in operation — digital test-record screen visible"
+            />
           </div>
 
           {/* Sourcing & Logistics */}

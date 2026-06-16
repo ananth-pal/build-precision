@@ -6,9 +6,10 @@ interface PageHeroProps {
   subtitle?: string;
   backgroundImage?: string;
   children?: ReactNode;
+  heroNote?: string;
 }
 
-export default function PageHero({ title, subtitle, backgroundImage, children }: PageHeroProps) {
+export default function PageHero({ title, subtitle, backgroundImage, children, heroNote }: PageHeroProps) {
   return (
     <section
       className="relative min-h-[35vh] flex items-center overflow-hidden"
@@ -24,6 +25,11 @@ export default function PageHero({ title, subtitle, backgroundImage, children }:
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background mb-4">{title}</h1>
         {subtitle && <p className="text-base text-background/90 max-w-4xl leading-relaxed tracking-wide whitespace-pre-line">{subtitle}</p>}
         {children}
+        {heroNote && (
+          <p className="mt-6 inline-block text-xs text-background/85 bg-black/30 border border-dashed border-background/40 rounded px-2 py-1">
+            HERO IMAGE — {heroNote}
+          </p>
+        )}
       </div>
     </section>
   );
