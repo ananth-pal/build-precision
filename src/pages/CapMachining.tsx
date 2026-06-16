@@ -8,7 +8,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import heroCnc from "@/assets/hero-cnc.jpg";
+
 
 const qualityRows: [string, string][] = [
   ["Calibration", "Traceable to national standards, performed in-house and with external specialists where needed"],
@@ -41,7 +41,7 @@ export default function Machining() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Machining" subtitle="Technically demanding machined components and housings. Suited to parts where process definition and repeat consistency are required." backgroundImage={heroCnc} heroNote="Makino with door open showing fixture and part — not a generic CNC stock image." />
+      <PageHero title="Machining" subtitle="Technically demanding machined components and housings. Suited to parts where process definition and repeat consistency are required." />
       <main className="flex-1 section-padding">
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="grid md:grid-cols-2 gap-6">

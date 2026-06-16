@@ -11,7 +11,6 @@ export default function CapAssembly() {
       <PageHero
         title="Assembly"
         subtitle={"Our assembly capability stands out not through labor cost alone, but through a production system built on lean management, disciplined assembly methods, and accumulated operator skill. Standard operating procedures, operator certification, and control plans ensure that critical steps are defined, executed consistently, and checked at the appropriate stage of assembly.\n\nAssemblies ship as complete modules ready to install and perform in the field. This reduces integration risk, shortens manufacturing timelines, and lowers total landed cost."}
-        heroNote="Cleanroom assembly — operators in a row at stations, with the AC unit in frame to read as a controlled environment. This hero has no background image today; add one."
       />
       <main className="flex-1 section-padding">
         <div className="max-w-6xl mx-auto space-y-10">

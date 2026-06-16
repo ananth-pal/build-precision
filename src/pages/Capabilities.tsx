@@ -4,7 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
+
 
 const caps = [
   { icon: Cog, title: "Machining", desc: "Precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys. Fixtures and gauges designed in-house by a team with a machine-tool-building background.", path: "/capabilities/machining", image: "Makino machining centre, door open — fixture and machined part in view" },
@@ -16,7 +16,7 @@ export default function Capabilities() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Capabilities" subtitle="Machining, gear cutting, and assembly — from material in to tested module out" backgroundImage={gearStockAsset.url} heroNote="Wide machining-floor establishing shot, or Makino with fixture and part. Company-wide orientation — NOT gears (gears belong on the Gear Cutting hero)." />
+      <PageHero title="Capabilities" subtitle="Machining, gear cutting, and assembly — from material in to tested module out" />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           <p className="text-muted-foreground leading-relaxed max-w-3xl mb-12 whitespace-pre-line">
