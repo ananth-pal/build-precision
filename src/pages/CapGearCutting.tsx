@@ -4,13 +4,13 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
+
 
 export default function GearCutting() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own assemblies." backgroundImage={gearStockAsset.url} heroNote="This page's own image — CNC hobbing in cut, or angular wheelhead grinding. Do not keep sharing gear-stock with the Capabilities landing." />
+      <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own assemblies." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 mb-8">
