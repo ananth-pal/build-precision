@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
@@ -40,7 +41,7 @@ export default function Machining() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Machining" subtitle="Technically demanding machined components and housings. Suited to parts where process definition and repeat consistency are required." backgroundImage={heroCnc} />
+      <PageHero title="Machining" subtitle="Technically demanding machined components and housings. Suited to parts where process definition and repeat consistency are required." backgroundImage={heroCnc} heroNote="Makino with door open showing fixture and part — not a generic CNC stock image." />
       <main className="flex-1 section-padding">
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
@@ -118,6 +119,11 @@ export default function Machining() {
 
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+              <ImagePlaceholder
+                ratio="aspect-[4/3]"
+                caption="Raw blank beside finished part — casting/forging/bar next to the machined component"
+                className="mb-4"
+              />
               <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 Materials
                 <button
@@ -172,6 +178,12 @@ export default function Machining() {
               )}
             </div>
           </div>
+
+          <ImagePlaceholder
+            ratio="aspect-[21/9]"
+            caption="Machining in action — spindle engaging the part, chips or coolant visible. Wide establishing shot."
+            className="my-2"
+          />
 
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See the equipment and processes behind this capability <ArrowRight size={14} />
