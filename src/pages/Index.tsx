@@ -298,12 +298,7 @@ export default function Home() {
             <h2 className="text-2xl lg:text-3xl font-bold mb-8">Currently underway</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {currentlyUnderway.map((item) => (
-                <div key={item.title} className="space-y-3 flex flex-col">
-                  <div className="aspect-[4/3] bg-muted border border-border rounded flex items-center justify-center text-center px-6">
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {item.placeholder ?? "[Photograph of Pentagon quality or documentation process — to be supplied]"}
-                    </span>
-                  </div>
+                <div key={item.title} className="border-l-4 border-primary pl-6 py-2 space-y-3">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
                   <p className="text-xs italic text-muted-foreground">{item.status}</p>
