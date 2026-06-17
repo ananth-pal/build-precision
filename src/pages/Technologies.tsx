@@ -4,6 +4,7 @@ import RequestMachineListDialog from "@/components/RequestMachineListDialog";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import {
   Dialog,
   DialogContent,
@@ -27,6 +28,7 @@ type Card = {
   image?: string;
   video?: string;
   dialogImage?: string;
+  caption?: string;
 };
 
 const cards: Card[] = [
@@ -70,6 +72,7 @@ const cards: Card[] = [
     icon: Wrench,
     title: "Assembly and Testing",
     desc: "Clean-room assembly of hydraulic valves, gear pumps, PTO gearboxes, and engine balancers, with automated testing for hydraulic units.",
+    caption: "Clean-room assembly station with hydraulic pump test bench",
     details: [
       "Automatic pump-testing cycle via Siemens PLC",
       "50 HP AC induction motor with closed-loop RPM control via Siemens vector drive",
@@ -112,6 +115,7 @@ const cards: Card[] = [
     icon: Network,
     title: "Sourcing and External Processes",
     desc: "Long-standing vendor network for castings, forgings, heat treatment, and non-critical machined components.",
+    caption: "Incoming forgings and castings at incoming inspection",
     details: [
       "Castings and forgings — long-standing certified vendors in India and abroad",
       "Heat treatment — IATF 16949 certified specialist vendor with automated sealed-quench furnace facility",
@@ -164,7 +168,13 @@ export default function Technologies() {
                       loading="lazy"
                       className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
                     />
-                  ) : null}
+                  ) : (
+                    <ImagePlaceholder
+                      ratio="aspect-video"
+                      caption={c.caption || c.title}
+                      className="mb-4"
+                    />
+                  )}
                   <c.icon className="text-primary mb-4" size={28} />
                   <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{c.desc}</p>
