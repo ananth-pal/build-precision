@@ -3,6 +3,7 @@ import { ArrowRight, Download } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import plantExterior from "@/assets/plant-exterior.jpg";
 
 export default function About() {
   return (
@@ -14,6 +15,9 @@ export default function About() {
           <p className="text-muted-foreground leading-relaxed">
             Pentagon Machines and Services Pvt. Ltd. is a precision contract manufacturing company headquartered in Chennai, India. With over 45 years of experience, Pentagon has been a long-term manufacturing partner to a leading multinational organisation in Australia and a prominent Indian automotive OEM.
           </p>
+
+          <img src={plantExterior} alt="Plant 1 exterior" className="w-full h-auto rounded-md" />
+
 
           {/* Our Facilities */}
           <div className="pt-8">
