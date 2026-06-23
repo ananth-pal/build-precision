@@ -19,7 +19,7 @@ import ptoShafts1 from "@/assets/portfolio/Shafts.png.asset.json";
 import valveSpools1 from "@/assets/portfolio/Valve_spools.png.asset.json";
 import deepRidgeExtraPTOs1 from "@/assets/portfolio/PTOs_1.png.asset.json";
 import basePTOs1 from "@/assets/portfolio/PTOs_2.png.asset.json";
-import valves1 from "@/assets/portfolio/Valves_1.jpeg.asset.json";
+import valves1 from "@/assets/portfolio/Valves.png.asset.json";
 
 type Family = {
   title: string;
