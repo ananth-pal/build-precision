@@ -29,12 +29,14 @@ type Card = {
   video?: string;
   dialogImage?: string;
   caption?: string;
+  id?: string;
 };
 
 const cards: Card[] = [
   {
     icon: Cog,
     title: "Machine Tools: Components",
+    id: "machine-tools",
     desc: "General machining, from raw or near-net-shape input through finished part.",
     video: drillLoopAsset.url,
     details: [
@@ -88,6 +90,7 @@ const cards: Card[] = [
   {
     icon: Ruler,
     title: "Measurement and Metrology",
+    id: "measurement-metrology",
     desc: "CMM, surface roughness, height gauging, and dedicated gauges, with calibration cycled in-house and via external agencies.",
     image: zeissCmmAsset.url,
     dialogImage: calibrationProbeAsset.url,
@@ -151,7 +154,7 @@ export default function Technologies() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {cards.map((c) => (
-                <div key={c.title} className="capability-card flex flex-col">
+                <div key={c.title} id={c.id} className="capability-card flex flex-col scroll-mt-24">
                   {c.video ? (
                     <video
                       src={c.video}
@@ -220,7 +223,7 @@ export default function Technologies() {
           </div>
         </section>
 
-        <section className="section-padding bg-secondary">
+        <section id="new-processes" className="section-padding bg-secondary scroll-mt-24">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">New Processes and Equipment</h2>
             <p className="text-muted-foreground leading-relaxed max-w-3xl">
