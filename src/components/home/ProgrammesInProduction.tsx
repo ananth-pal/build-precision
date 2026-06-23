@@ -25,7 +25,7 @@ export default function ProgrammesInProduction() {
             src={balancerImg.url}
             alt="Engine balancer assemblies"
             loading="lazy"
-            className="w-full aspect-[16/10] object-contain rounded-md mb-2 bg-muted"
+            className="w-full aspect-[16/10] object-cover rounded-md mb-2 bg-muted"
           />
           <h3 className="text-xl font-semibold">Engine balancer assemblies for an Indian OEM engine manufacturer</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
