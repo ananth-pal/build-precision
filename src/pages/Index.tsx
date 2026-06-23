@@ -39,13 +39,13 @@ import roboticsImg from "@/assets/markets/robotics_trial_1.jpg.asset.json";
 
 const markets = [
   {
-    label: "Off-highway, commercial vehicles, and agriculture",
-    body: "Power take-off gearboxes, housings, transmission components, and engine balancer assemblies for trucks, construction equipment, material handling, and tractor engine manufacturers.",
+    label: "Off-highway Commercial Vehicles",
+    body: "Power take-off gearboxes, housings, transmission components, and engine balancer assemblies for trucks, construction equipment, and material handling.",
     images: [oh1.url, oh2.url, oh3.url],
   },
   {
-    label: "Automotive",
-    body: "Engine components and balancer assemblies produced in repeat production for Indian automotive OEMs.",
+    label: "Automotive and Agriculture",
+    body: "Power take-off gearboxes, housings, and transmission components for trucks, construction equipment, material handling, and tractor engine manufacturers.",
     images: [auto1.url, auto2.url],
   },
 ];
