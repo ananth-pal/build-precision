@@ -182,7 +182,7 @@ export default function Heritage() {
       <PageHero title="Heritage" subtitle="Deep engineering roots — not a recent market entrant." />
       
       <main className="flex-1 section-padding">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Opening paired lockup — mirrors the closing tagline */}
           <div className="mb-16 md:mb-20 flex flex-col items-center text-center">
             <div className="flex items-center gap-8 md:gap-12">
