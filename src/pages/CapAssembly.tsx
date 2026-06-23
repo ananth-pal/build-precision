@@ -15,12 +15,12 @@ export default function CapAssembly() {
       <main className="flex-1 section-padding">
         <div className="max-w-6xl mx-auto space-y-10">
 
-          {/* Product-family row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <ImagePlaceholder ratio="aspect-[4/3]" caption="PTO gearbox assembly" />
-            <ImagePlaceholder ratio="aspect-[4/3]" caption="Hydraulic valve assembly" />
-            <ImagePlaceholder ratio="aspect-[4/3]" caption="Gear pump assembly" />
-            <ImagePlaceholder ratio="aspect-[4/3]" caption="Engine balancer assembly" />
+          {/* Hero image */}
+          <div className="max-w-3xl mx-auto">
+            <ImagePlaceholder
+              ratio="aspect-[16/9]"
+              caption="Operator at clean-room assembly station — integrated electromechanical module mid-build with torque tooling and test bench in view"
+            />
           </div>
 
           {/* Types of Assemblies & Batch Sizes */}
