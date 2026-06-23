@@ -9,9 +9,9 @@ const navItems = [
     label: "Capabilities",
     path: "/capabilities",
     children: [
+      { label: "Assembly", path: "/capabilities/assembly" },
       { label: "Machining", path: "/capabilities/machining" },
       { label: "Gear Cutting", path: "/capabilities/gear-cutting" },
-      { label: "Assembly", path: "/capabilities/assembly" },
     ],
   },
   { label: "Means of Production", path: "/technologies" },
