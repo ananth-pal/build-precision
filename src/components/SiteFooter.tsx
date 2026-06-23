@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 
 export default function SiteFooter() {
   return (
