@@ -53,14 +53,12 @@ const markets = [
 const currentlyUnderway = [
   {
     title: "Plant 2 gear-cutting facility refurbishment",
-    body: "Epoxy flooring and modernised services installation underway at the gear-cutting division.",
-    status: "Underway — completion target to be confirmed",
+    body: "Epoxy flooring and modernised services installation at the gear-cutting division.",
     placeholder: "[Photograph of Plant 2 gear-cutting floor or refurbishment work in progress — to be supplied]",
   },
   {
     title: "ISO 45001 and ISO 14001 certification",
-    body: "Occupational health and safety and environmental management system audits are in progress.",
-    status: "Audits in progress — certification targets to be confirmed",
+    body: "Occupational health and safety, and environmental management systems implementation are in progress.",
     placeholder: null,
   },
 ];
@@ -254,9 +252,9 @@ export default function Home() {
                   <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                     {[
                       { name: "Medical", note: "Implant-grade finishes" },
-                      { name: "Aerospace", note: "AS9100-track tolerances" },
-                      { name: "Defence", note: "Traceable lots, ITAR-aware" },
-                      { name: "Robotics", note: "Precision gears & actuators" },
+                      { name: "Aerospace", note: "AS9100-aligned quality systems" },
+                      { name: "Defence", note: "Traceable lots, controlled processes" },
+                      { name: "Robotics", note: "Precision gearboxes & actuators" },
                     ].map((s) => (
                       <div key={s.name} className="border-t border-border pt-2">
                         <div className="text-sm font-semibold text-foreground">{s.name}</div>
@@ -265,7 +263,7 @@ export default function Home() {
                     ))}
                   </div>
                   <Link
-                    to="/technologies"
+                    to="/technologies#new-processes"
                     className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
                   >
                     See how new processes and equipment are handled →
@@ -301,7 +299,6 @@ export default function Home() {
                 <div key={item.title} className="border-l-4 border-primary pl-6 py-2 space-y-3">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
-                  <p className="text-xs italic text-muted-foreground">{item.status}</p>
                 </div>
               ))}
             </div>

@@ -77,9 +77,6 @@ export default function HomeCapabilitySection() {
                 loading="lazy"
                 className="w-full aspect-[16/10] object-cover rounded-md mb-2"
               />
-              <p className="text-xs text-amber-700 dark:text-amber-500 italic">
-                ⚠ Placeholder — needs to be replaced with own image.
-              </p>
               <h3 className="text-xl font-semibold">Means of Production</h3>
               <p className="font-semibold text-foreground text-sm">
                 Two plants, best-in-class machines and tooling

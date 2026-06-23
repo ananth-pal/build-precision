@@ -13,7 +13,7 @@ export default function ProgrammesInProduction() {
             src={ptoImg.url}
             alt="Power Take-Off gearboxes in production"
             loading="lazy"
-            className="w-full aspect-[16/10] object-cover rounded-md mb-2"
+            className="w-full aspect-[16/10] object-contain rounded-md mb-2 bg-muted"
           />
           <h3 className="text-xl font-semibold">Transport Hydraulic Assemblies for global transmission brand</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
@@ -25,7 +25,7 @@ export default function ProgrammesInProduction() {
             src={balancerImg.url}
             alt="Engine balancer assemblies"
             loading="lazy"
-            className="w-full aspect-[16/10] object-cover rounded-md mb-2"
+            className="w-full aspect-[16/10] object-contain rounded-md mb-2 bg-muted"
           />
           <h3 className="text-xl font-semibold">Engine balancer assemblies for an Indian OEM engine manufacturer</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
@@ -34,7 +34,7 @@ export default function ProgrammesInProduction() {
         </article>
       </div>
       <div className="mt-6">
-        <Link to="/portfolio" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+        <Link to="/what-we-make" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
           See portfolio <ArrowRight size={14} />
         </Link>
       </div>
