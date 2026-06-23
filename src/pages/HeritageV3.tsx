@@ -172,6 +172,9 @@ function MiniEntryRow({ entry }: { entry: Entry }) {
   );
 }
 
+import pentagonLogo from "@/assets/brand/pentagon-wordmark.png.asset.json";
+import sellvindsLogo from "@/assets/brand/sellvinds-mark.png.asset.json"; // I noticed I might have named it sellvinds-mark above, let me check the file creation
+
 export default function Heritage() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -182,6 +185,7 @@ export default function Heritage() {
         <div className="max-w-5xl mx-auto">
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="max-w-3xl mb-24 md:mb-32">
+            <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-12 w-auto mb-8 opacity-90" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Pentagon as part of The Sellvinds Group
             </h2>
@@ -190,7 +194,7 @@ export default function Heritage() {
                 The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
               </p>
               <p>
-                This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Employees? Ex-employees association + managers within Pentagon remain.
+                This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
               </p>
             </div>
 
@@ -214,6 +218,7 @@ export default function Heritage() {
 
           {/* Section 2 — Pentagon's heritage */}
           <section>
+            <img src={pentagonLogo.url} alt="Pentagon Machines and Services" className="h-10 w-auto mb-6 opacity-90" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Pentagon's heritage
             </h2>
@@ -246,7 +251,12 @@ export default function Heritage() {
           </section>
 
           {/* Closing tagline */}
-          <div className="my-24 md:my-32 text-center">
+          <div className="my-24 md:my-32 text-center flex flex-col items-center">
+            <div className="flex items-center gap-8 mb-8">
+              <img src={sellvindsLogo.url} alt="Sellvinds" className="h-10 w-auto opacity-80" />
+              <div className="w-px h-8 bg-border" />
+              <img src={pentagonLogo.url} alt="Pentagon" className="h-8 w-auto opacity-80" />
+            </div>
             <p className="text-foreground text-lg md:text-xl">
               Pentagon is part of The Sellvinds Group – 72 years of manufacturing excellence.
             </p>
