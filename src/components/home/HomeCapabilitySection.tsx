@@ -32,6 +32,7 @@ export default function HomeCapabilitySection() {
                     muted
                     playsInline
                     className="w-full h-full object-cover"
+                    style={{ filter: "saturate(0.78) contrast(1.05) brightness(1.02)" }}
                   />
                 ) : (
                   <img
@@ -40,8 +41,14 @@ export default function HomeCapabilitySection() {
                     alt={current.alt}
                     loading="lazy"
                     className="w-full h-full object-cover"
+                    style={{ filter: "saturate(0.78) contrast(1.05) brightness(1.02)" }}
                   />
                 )}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 mix-blend-overlay"
+                  style={{ backgroundColor: "rgb(180, 195, 210)", opacity: 0.06 }}
+                />
                 <button
                   type="button"
                   onClick={prev}
@@ -71,12 +78,20 @@ export default function HomeCapabilitySection() {
               </Link>
             </article>
             <article className="capability-card space-y-3">
-              <img
-                src={makinoImg}
-                alt="Makino a51nx CNC horizontal machining centre"
-                loading="lazy"
-                className="w-full aspect-[16/10] object-cover rounded-md mb-2 bg-muted"
-              />
+              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-md mb-2 bg-muted">
+                <img
+                  src={makinoImg}
+                  alt="Makino a51nx CNC horizontal machining centre"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                  style={{ filter: "saturate(0.78) contrast(1.05) brightness(1.02)" }}
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 mix-blend-overlay"
+                  style={{ backgroundColor: "rgb(180, 195, 210)", opacity: 0.06 }}
+                />
+              </div>
 
               <h3 className="text-xl font-semibold">Means of Production</h3>
               <p className="font-semibold text-foreground text-sm">
