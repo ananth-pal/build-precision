@@ -37,7 +37,7 @@ export default function SiteHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src={logo} alt="Pentagon Machines and Services" className="h-8 lg:h-10" />
+            <img src={logo} alt="Pentagon Machines and Services" className="h-9 lg:h-11" />
           </Link>
 
           {/* Desktop nav */}
