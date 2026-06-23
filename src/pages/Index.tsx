@@ -203,17 +203,30 @@ export default function Home() {
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-7xl mx-auto space-y-6">
             <h2 className="text-2xl lg:text-3xl font-bold">What makes us different</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-4xl">
-              Our strength lies in DFM feedback and coordinating with multinational teams to optimise manufacturability and support efficient scaling from development to mass production. We believe in flexible manufacturing suited to a wide variety of precision components delivered in small-medium volumes. Our consistent on-time delivery record reflects disciplined planning, process control and long-term accountability.
-            </p>
-            <p className="text-muted-foreground leading-relaxed max-w-4xl">
-              Our deep engineering knowledge, lean workforce, efficient production methods and global export reliability make us trustworthy partners to global OEMs that seek outsourcing opportunities in today’s geopolitical climate.
-            </p>
-            <Link to="/working-with-pentagon" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
-              See our commitment →
-            </Link>
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
+              <div className="lg:col-span-3 space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  Our strength lies in DFM feedback and coordinating with multinational teams to optimise manufacturability and support efficient scaling from development to mass production. We believe in flexible manufacturing suited to a wide variety of precision components delivered in small-medium volumes. Our consistent on-time delivery record reflects disciplined planning, process control and long-term accountability.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our deep engineering knowledge, lean workforce, efficient production methods and global export reliability make us trustworthy partners to global OEMs that seek outsourcing opportunities in today's geopolitical climate.
+                </p>
+                <Link to="/working-with-pentagon" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                  See our commitment →
+                </Link>
+              </div>
+              <div className="lg:col-span-2 overflow-hidden border border-border rounded bg-muted flex items-center justify-center self-start">
+                <img
+                  src={zeissCmmAsset.url}
+                  alt="Zeiss coordinate measuring machine (CMM) in Pentagon's inspection room"
+                  loading="lazy"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
         </section>
+
 
         {/* Markets we serve */}
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
