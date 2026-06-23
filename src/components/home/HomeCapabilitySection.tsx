@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import ProgrammesInProduction from "./ProgrammesInProduction";
-import makinoImg from "@/assets/home/makino-a51nx.jpg.asset.json";
+import makinoImg from "@/assets/home/makino-a51nx-wide.jpg";
 import capabilitiesLoop from "@/assets/home/capabilities-loop.mp4.asset.json";
 import calibrationProbe from "@/assets/technologies/calibration-probe.jpg.asset.json";
 
