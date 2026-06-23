@@ -30,7 +30,7 @@ export default function About() {
               </div>
               <div className="capability-card">
                 <h3 className="text-lg font-semibold mb-2">Plant 2 — Gear Cutting Division</h3>
-                <p className="text-sm text-muted-foreground mb-2">Ambattur Industrial Estate, Chennai (approx. 5 km from Plant 1)</p>
+                <p className="text-sm text-muted-foreground mb-2">31 A/8, Ambattur Industrial Estate, Chennai (approx. 5 km from Plant 1)</p>
               </div>
             </div>
           </div>
