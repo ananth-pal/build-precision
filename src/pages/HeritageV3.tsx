@@ -211,9 +211,12 @@ export default function Heritage() {
               </div>
             </div>
 
-            <p className="text-foreground text-base md:text-lg mt-12 leading-relaxed">
-              Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today.
-            </p>
+            <div className="mt-12">
+              <div className="h-px w-10 bg-primary mb-4" />
+              <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
+                Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today.
+              </p>
+            </div>
           </section>
 
           {/* Section 2 — Pentagon's heritage */}
