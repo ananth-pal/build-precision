@@ -13,12 +13,12 @@ interface Props {
 
 export default function SelectedWorkGallery({ items }: Props) {
   return (
-    <div className="columns-1 sm:columns-2 md:columns-3 gap-3 md:gap-4 [column-fill:_balance]">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
       {items.map((item, i) => (
         <ImageLightbox key={i} src={item.src} alt={item.caption}>
           <button
             type="button"
-            className="group relative block w-full mb-3 md:mb-4 overflow-hidden ring-1 ring-border shadow-[0_15px_40px_-20px_hsl(220_20%_10%/0.25)] cursor-zoom-in break-inside-avoid"
+            className="group relative block w-full overflow-hidden ring-1 ring-border shadow-[0_15px_40px_-20px_hsl(220_20%_10%/0.25)] cursor-zoom-in"
             aria-label={`Expand ${item.caption}`}
           >
             <img
