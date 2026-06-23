@@ -96,8 +96,8 @@ const endMarkets = [
 const emergingMarkets = ["Medical", "Robotics", "Aerospace", "Defence"];
 
 const selectedWork: GalleryItem[] = [
-  // Assemblies first — PTOs, then balancers, then pumps & valves
-  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes", spanClass: "md:col-span-2 md:row-span-2" },
+  // Assemblies first — PTOs, balancers, pumps, valves
+  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes" },
   { src: basePTOs1.url, caption: "Base PTOs" },
   { src: balancers1.url, caption: "Engine Balancers" },
   { src: balancers2.url, caption: "Engine Balancers" },
