@@ -93,7 +93,7 @@ const endMarkets = [
   },
 ];
 
-const emergingMarkets = ["Medical", "Robotics", "Aerospace", "Defence"];
+const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
   // Assemblies first — PTOs, balancers, pumps, valves
