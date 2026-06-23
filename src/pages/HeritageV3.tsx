@@ -183,60 +183,56 @@ export default function Heritage() {
       
       <main className="flex-1 section-padding">
         <div className="max-w-5xl mx-auto">
+          {/* Opening paired lockup — mirrors the closing tagline */}
+          <div className="mb-16 md:mb-20 flex flex-col items-center text-center">
+            <div className="flex items-center gap-8 md:gap-12">
+              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-16 md:h-20 w-auto" />
+              <div className="w-px h-12 md:h-14 bg-border" />
+              <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-7 md:h-9 w-auto" />
+            </div>
+          </div>
+
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
-          <section className="mb-24 md:mb-32">
-            <div className="grid md:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-start">
-              <div className="max-w-3xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Pentagon as part of The Sellvinds Group
-                </h2>
-                <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
-                  <p>
-                    The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
-                  </p>
-                  <p>
-                    This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
-                  </p>
-                </div>
+          <section className="max-w-3xl mb-24 md:mb-32">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Pentagon as part of The Sellvinds Group
+            </h2>
+            <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
+              <p>
+                The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+              </p>
+              <p>
+                This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
+              </p>
+            </div>
 
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-                  Group milestones
-                </h3>
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+              Group milestones
+            </h3>
 
-                <div className="relative mt-6">
-                  <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
-                  <div className="space-y-8 md:space-y-8">
-                    {groupMilestones.map((entry, i) => (
-                      <MiniEntryRow key={entry.label + i} entry={entry} />
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-12">
-                  <div className="h-px w-10 bg-primary mb-4" />
-                  <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
-                    Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today.
-                  </p>
-                </div>
+            <div className="relative mt-6">
+              <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
+              <div className="space-y-8 md:space-y-8">
+                {groupMilestones.map((entry, i) => (
+                  <MiniEntryRow key={entry.label + i} entry={entry} />
+                ))}
               </div>
+            </div>
 
-              {/* Sellvinds mark — right margin */}
-              <div className="hidden md:block pt-2">
-                <img
-                  src={sellvindsLogo.url}
-                  alt="Sellvinds Group"
-                  className="h-28 lg:h-32 w-auto opacity-90"
-                />
-              </div>
+            <div className="mt-12">
+              <div className="h-px w-10 bg-primary mb-4" />
+              <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
+                Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today.
+              </p>
             </div>
           </section>
 
           {/* Section 2 — Pentagon's heritage */}
           <section>
-            <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-8 md:h-10 w-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Pentagon's heritage
             </h2>
+
 
             <div className="relative">
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
