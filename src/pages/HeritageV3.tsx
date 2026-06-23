@@ -186,9 +186,9 @@ export default function Heritage() {
           {/* Opening paired lockup — mirrors the closing tagline */}
           <div className="mb-16 md:mb-20 flex flex-col items-center text-center">
             <div className="flex items-center gap-8 md:gap-12">
-              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-16 md:h-20 w-auto" />
-              <div className="w-px h-12 md:h-14 bg-border" />
-              <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-7 md:h-9 w-auto" />
+              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-20 md:h-24 w-auto" />
+              <div className="w-px h-14 md:h-16 bg-border" />
+              <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-9 md:h-11 w-auto" />
             </div>
           </div>
 
@@ -264,9 +264,9 @@ export default function Heritage() {
           {/* Closing tagline — Sellvinds + Pentagon paired lockup */}
           <div className="my-24 md:my-32 text-center flex flex-col items-center">
             <div className="flex items-center gap-8 md:gap-12 mb-10">
-              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-16 md:h-20 w-auto" />
-              <div className="w-px h-12 md:h-14 bg-border" />
-              <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-7 md:h-9 w-auto" />
+              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-20 md:h-24 w-auto" />
+              <div className="w-px h-14 md:h-16 bg-border" />
+              <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-9 md:h-11 w-auto" />
             </div>
             <p className="text-foreground text-lg md:text-xl max-w-2xl">
               Pentagon is part of The Sellvinds Group — 72 years of manufacturing excellence.
