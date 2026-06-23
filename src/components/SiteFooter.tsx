@@ -46,7 +46,7 @@ export default function SiteFooter() {
               </div>
             </div>
             <div className="mt-6">
-              <a href="#" className="download-btn text-background border-background/30 hover:bg-background/10 hover:text-background text-xs">
+              <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" className="download-btn text-background border-background/30 hover:bg-background/10 hover:text-background text-xs">
                 Download Company Brochure
               </a>
             </div>
