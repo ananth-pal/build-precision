@@ -265,15 +265,15 @@ export default function Heritage() {
             </div>
           </section>
 
-          {/* Closing tagline */}
+          {/* Closing tagline — Sellvinds + Pentagon paired lockup */}
           <div className="my-24 md:my-32 text-center flex flex-col items-center">
-            <div className="flex items-center gap-8 mb-8">
-              <img src={sellvindsLogo.url} alt="Sellvinds" className="h-10 w-auto opacity-80" />
-              <div className="w-px h-8 bg-border" />
-              <img src={pentagonLogo.url} alt="Pentagon" className="h-8 w-auto opacity-80" />
+            <div className="flex items-center gap-8 md:gap-12 mb-10">
+              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-16 md:h-20 w-auto" />
+              <div className="w-px h-12 md:h-14 bg-border" />
+              <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-7 md:h-9 w-auto" />
             </div>
-            <p className="text-foreground text-lg md:text-xl">
-              Pentagon is part of The Sellvinds Group – 72 years of manufacturing excellence.
+            <p className="text-foreground text-lg md:text-xl max-w-2xl">
+              Pentagon is part of The Sellvinds Group — 72 years of manufacturing excellence.
             </p>
           </div>
 
