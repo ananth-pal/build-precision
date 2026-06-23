@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import ptoImg from "@/assets/portfolio/Deep_ridge_extra_PTOs_1.jpeg.asset.json";
-import balancerImg from "@/assets/portfolio/Balancers_1.jpeg.asset.json";
+import ptoImg from "@/assets/portfolio/PTOs_1.png.asset.json";
+import balancerImg from "@/assets/portfolio/Balancer_1.png.asset.json";
 
 export default function ProgrammesInProduction() {
   return (

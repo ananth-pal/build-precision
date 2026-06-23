@@ -9,16 +9,16 @@ import ImageCarousel, { type CarouselImage } from "@/components/ImageCarousel";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 
-import gearPumps6 from "@/assets/portfolio/Gear_Pumps_1.jpeg.asset.json";
-import balancers1 from "@/assets/portfolio/Balancers_1.jpeg.asset.json";
-import balancers2 from "@/assets/portfolio/Balancers_2.jpeg.asset.json";
-import couplers2 from "@/assets/portfolio/Couplers_2.jpeg.asset.json";
-import gears2 from "@/assets/portfolio/Gears_2.jpeg.asset.json";
-import gearPumpComponents1 from "@/assets/portfolio/Gear_pump_components_1.jpeg.asset.json";
-import ptoShafts1 from "@/assets/portfolio/PTO_Shafts_1.jpeg.asset.json";
-import valveSpools1 from "@/assets/portfolio/Valve_spools_1.jpeg.asset.json";
-import deepRidgeExtraPTOs1 from "@/assets/portfolio/Deep_ridge_extra_PTOs_1.jpeg.asset.json";
-import basePTOs1 from "@/assets/portfolio/Base_PTOs_1.jpeg.asset.json";
+import gearPumps6 from "@/assets/portfolio/Gear_pumps.png.asset.json";
+import balancers1 from "@/assets/portfolio/Balancer_1.png.asset.json";
+import balancers2 from "@/assets/portfolio/Balancer_2.png.asset.json";
+import couplers2 from "@/assets/portfolio/Couplers.png.asset.json";
+import gears2 from "@/assets/portfolio/Gears.png.asset.json";
+import gearPumpComponents1 from "@/assets/portfolio/Gear_pump_components.png.asset.json";
+import ptoShafts1 from "@/assets/portfolio/Shafts.png.asset.json";
+import valveSpools1 from "@/assets/portfolio/Valve_spools.png.asset.json";
+import deepRidgeExtraPTOs1 from "@/assets/portfolio/PTOs_1.png.asset.json";
+import basePTOs1 from "@/assets/portfolio/PTOs_2.png.asset.json";
 import valves1 from "@/assets/portfolio/Valves_1.jpeg.asset.json";
 
 type Family = {
