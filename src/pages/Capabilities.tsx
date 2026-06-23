@@ -8,7 +8,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 const caps = [
   { icon: Box, title: "Assembly", desc: "Integrated electromechanical assemblies up to 30 kg — built in a cleanroom, functionally tested, and serialised for traceability on every unit shipped.", path: "/capabilities/assembly", image: "Cleanroom assembly line — operators at stations, controlled environment" },
-  { icon: Cog, title: "Machining", desc: "Precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys. Fixtures and gauges designed in-house by a team with a machine-tool-building background.", path: "/capabilities/machining", image: "Makino machining centre, door open — fixture and machined part in view" },
+  { icon: Cog, title: "Machining", desc: "Precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys. Fixtures and gauges designed and manufactured in-house by a team with a machine-tool-building background.", path: "/capabilities/machining", image: "Makino machining centre, door open — fixture and machined part in view" },
   { icon: CircleDot, title: "Gear Cutting", desc: "Spur and helical gears, splined shafts, and transmission components, produced in a dedicated gear-cutting facility with in-house profile and lead inspection.", path: "/capabilities/gear-cutting", image: "CNC gear hobbing mid-cut, or a rack of finished machined gears" },
 ];
 
