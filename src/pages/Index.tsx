@@ -46,7 +46,7 @@ const markets = [
   {
     label: "Automotive and Agriculture",
     body: "Power take-off gearboxes, housings, and transmission components for trucks, construction equipment, material handling, and tractor engine manufacturers.",
-    images: [auto1.url, auto2.url],
+    images: [auto2.url, auto1.url],
   },
 ];
 
@@ -264,10 +264,10 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                     {[
-                      { name: "Medical", note: "Superfine finishes and miniature assemblies" },
-                      { name: "Aerospace", note: "In-house CMM and air-gauge inspection; complex geometries needing custom fixtures" },
                       { name: "Defence", note: "Certified vendor network existing for 30+ years" },
+                      { name: "Aerospace", note: "In-house CMM and air-gauge inspection; complex geometries needing custom fixtures" },
                       { name: "Robotics", note: "Precision gearboxes and actuators" },
+                      { name: "Medical", note: "Superfine finishes and miniature assemblies" },
                     ].map((s) => (
                       <div key={s.name} className="border-t border-border pt-2">
                         <div className="text-sm font-semibold text-foreground">{s.name}</div>
