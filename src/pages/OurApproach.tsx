@@ -248,7 +248,7 @@ export default function WorkingWithPentagon() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground mb-2">Industrial Responsibility</h4>
-                  <p className="text-sm text-muted-foreground">We ensure the safe and ethical disposal of all industrial waste, maintaining clean-room standards across our facilities (20,000 sq. ft. built-up on a 43,200 sq. ft. site).</p>
+                  <p className="text-sm text-muted-foreground">We ensure the safe and ethical disposal of all industrial waste, maintaining clean-room standards across our facilities.</p>
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground mb-2">Resource Efficiency</h4>
