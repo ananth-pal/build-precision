@@ -75,7 +75,7 @@ export default function HomeCapabilitySection() {
                 src={makinoImg.url}
                 alt="Makino a51nx CNC horizontal machining centre"
                 loading="lazy"
-                className="w-full aspect-[16/10] object-cover rounded-md mb-2"
+                className="w-full aspect-[16/10] object-contain bg-muted rounded-md mb-2"
               />
               <h3 className="text-xl font-semibold">Means of Production</h3>
               <p className="font-semibold text-foreground text-sm">
