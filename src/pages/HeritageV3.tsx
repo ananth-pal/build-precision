@@ -233,7 +233,7 @@ export default function Heritage() {
 
           {/* Section 2 — Pentagon's heritage */}
           <section>
-            <img src={pentagonLogo.url} alt="Pentagon Machines and Services" className="h-10 w-auto mb-6 opacity-90" />
+            <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-8 md:h-10 w-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Pentagon's heritage
             </h2>
