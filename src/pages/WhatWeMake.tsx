@@ -104,6 +104,9 @@ const selectedWork: GalleryItem[] = [
   { src: gearPumpComponents1.url, caption: "Gear Pump Components" },
   { src: balancers2.url, caption: "Engine Balancers" },
   { src: ptoShafts1.url, caption: "PTO Shafts" },
+  { src: couplers2.url, caption: "Couplers" },
+  { src: gears2.url, caption: "Gears" },
+  { src: valveSpools1.url, caption: "Valve spools" },
 ];
 
 
