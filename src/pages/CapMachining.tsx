@@ -119,11 +119,6 @@ export default function Machining() {
 
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <ImagePlaceholder
-                ratio="aspect-[4/3]"
-                caption="Raw blank beside finished part — casting/forging/bar next to the machined component"
-                className="mb-4"
-              />
               <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 Materials
                 <button
