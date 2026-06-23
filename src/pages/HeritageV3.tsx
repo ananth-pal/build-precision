@@ -128,7 +128,7 @@ const eras: Era[] = [
       },
       {
         label: "Next generation joins",
-        body: "Natarajan Palaniappan's sons join the company: Dr Varun Palaniappan (strategy and planning) and Ananth Palaniappan (project engineering).",
+        body: "Natarajan Palaniappan's sons join the company: Dr Varun Palaniappan (strategy and planning) and Ananth Palaniappan (project engineering) join the business after their education at Imperial College London and Cornell University.",
       },
       {
         label: "Today",
