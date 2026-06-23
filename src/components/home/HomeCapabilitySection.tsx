@@ -8,8 +8,8 @@ import calibrationProbe from "@/assets/technologies/calibration-probe.jpg.asset.
 
 export default function HomeCapabilitySection() {
   const slides = [
-    { type: "video" as const, src: capabilitiesLoop.url },
     { type: "image" as const, src: calibrationProbe.url, alt: "Calibration probe in use" },
+    { type: "video" as const, src: capabilitiesLoop.url },
   ];
   const [idx, setIdx] = useState(0);
   const prev = () => setIdx((i) => (i - 1 + slides.length) % slides.length);
