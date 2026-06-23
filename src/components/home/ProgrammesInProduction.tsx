@@ -13,7 +13,7 @@ export default function ProgrammesInProduction() {
             src={ptoImg.url}
             alt="Power Take-Off gearboxes in production"
             loading="lazy"
-            className="w-full aspect-[16/10] object-contain rounded-md mb-2 bg-muted"
+            className="w-full aspect-[16/10] object-cover rounded-md mb-2 bg-muted"
           />
           <h3 className="text-xl font-semibold">Transport Hydraulic Assemblies for global transmission brand</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
