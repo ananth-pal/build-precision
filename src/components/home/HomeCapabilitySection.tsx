@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import ProgrammesInProduction from "./ProgrammesInProduction";
-import makinoImg from "@/assets/home/makino-a51nx.jpg.asset.json";
+import makinoImg from "@/assets/home/makino-a51nx-wide.jpg";
 import capabilitiesLoop from "@/assets/home/capabilities-loop.mp4.asset.json";
 import calibrationProbe from "@/assets/technologies/calibration-probe.jpg.asset.json";
 
@@ -72,11 +72,12 @@ export default function HomeCapabilitySection() {
             </article>
             <article className="capability-card space-y-3">
               <img
-                src={makinoImg.url}
+                src={makinoImg}
                 alt="Makino a51nx CNC horizontal machining centre"
                 loading="lazy"
-                className="w-full aspect-[16/10] object-contain bg-muted rounded-md mb-2"
+                className="w-full aspect-[16/10] object-cover rounded-md mb-2 bg-muted"
               />
+
               <h3 className="text-xl font-semibold">Means of Production</h3>
               <p className="font-semibold text-foreground text-sm">
                 Two plants, best-in-class machines and tooling
