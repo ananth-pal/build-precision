@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 
 export default function SiteFooter() {
   return (
@@ -46,7 +47,7 @@ export default function SiteFooter() {
               </div>
             </div>
             <div className="mt-6">
-              <a href="#" className="download-btn text-background border-background/30 hover:bg-background/10 hover:text-background text-xs">
+              <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" className="download-btn text-background border-background/30 hover:bg-background/10 hover:text-background text-xs">
                 Download Company Brochure
               </a>
             </div>

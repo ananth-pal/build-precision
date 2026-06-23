@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import plantExterior from "@/assets/plant1-exterior.png.asset.json";
+import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 
 export default function About() {
   return (
@@ -53,7 +54,7 @@ export default function About() {
           </div>
 
           <div className="pt-8">
-            <a href="#" className="download-btn">
+            <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" className="download-btn">
               <Download size={16} /> Download Company Brochure
             </a>
           </div>
