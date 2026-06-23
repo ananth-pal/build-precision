@@ -1,14 +1,15 @@
-## Goal
-Export the About page's hero image as a downloadable PNG file the user can grab from `/mnt/documents/`.
+## Change
+In `src/pages/HeritageV3.tsx`, restyle the transitional sentence "Pentagon's own story unfolds alongside this wider group history…" so it clearly marks the hinge between the Sellvinds Group section and Pentagon's heritage timeline.
 
-## Source image
-`src/pages/About.tsx` uses `src/assets/plant-exterior.jpg` (bundled JPEG, not a CDN asset).
+## Treatment
+Replace the current plain paragraph (line 214–216) with a small composite block:
 
-## Steps
-1. Convert `src/assets/plant-exterior.jpg` → `/mnt/documents/plant-exterior.png` using ImageMagick (`magick convert`) via the sandbox shell.
-2. Emit a `<presentation-artifact>` tag so the user can preview/download it directly from chat.
+- A short 40px-wide red rule (`h-px w-10 bg-primary`) above the text — matches the existing accent used in `PageHero`.
+- The sentence rendered at `text-lg md:text-xl`, `font-semibold`, `text-foreground`, with relaxed leading.
+- Keep the existing `mt-12` top spacing; add `mb-4` between the rule and the text.
 
-No code changes to the project.
+No copy changes, no layout changes elsewhere, no new dependencies.
 
-## Note
-The file is a JPEG today, so converting to PNG just re-encodes it — quality won't improve beyond the original JPEG. If you'd rather have the original `.jpg`, say the word and I'll deliver that instead.
+## Out of scope
+- Section 2 heading and Pentagon logo stay as-is.
+- Group milestones timeline untouched.
