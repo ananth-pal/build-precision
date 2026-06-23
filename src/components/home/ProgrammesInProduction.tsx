@@ -17,7 +17,7 @@ export default function ProgrammesInProduction() {
           />
           <h3 className="text-xl font-semibold">Transport Hydraulic Assemblies for global transmission brand</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            26 years of development and ongoing supply to a long standing multinational OEM in Australia. High pressure hydraulic spool valves and gear Pumps. 75+ Power Take Off (PTO) gearbox variants — cable-operated, pneumatic, hydraulic, and hot-shift — built to run with Allison, Eaton, Hino, Isuzu, Mack, Mitsubishi, Volvo and ZF transmissions. Jigs and fixtures, housing machining, gear cutting, assembly, testing, and engineering change management handled through product lifecycle.
+            26 years of development and ongoing supply to a multinational OEM. High pressure hydraulic spool valves and gear Pumps. 75+ Power Take Off (PTO) gearbox variants — cable-operated, pneumatic, hydraulic, and hot-shift — built to run with Allison, Eaton, Hino, Isuzu, Mack, Mitsubishi, Volvo and ZF transmissions. Jigs and fixtures, housing machining, gear cutting, assembly, testing, and engineering change management handled through product lifecycle.
           </p>
         </article>
         <article className="capability-card space-y-3">
