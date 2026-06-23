@@ -173,7 +173,7 @@ function MiniEntryRow({ entry }: { entry: Entry }) {
 }
 
 import pentagonLogo from "@/assets/brand/pentagon-wordmark.png.asset.json";
-import sellvindsLogo from "@/assets/brand/sellvinds-group.png.asset.json"; // I noticed I might have named it sellvinds-mark above, let me check the file creation
+import sellvindsLogo from "@/assets/brand/sellvinds-mark.png.asset.json"; // I noticed I might have named it sellvinds-mark above, let me check the file creation
 
 export default function Heritage() {
   return (
