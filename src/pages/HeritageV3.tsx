@@ -251,7 +251,12 @@ export default function Heritage() {
           </section>
 
           {/* Closing tagline */}
-          <div className="my-24 md:my-32 text-center">
+          <div className="my-24 md:my-32 text-center flex flex-col items-center">
+            <div className="flex items-center gap-8 mb-8">
+              <img src={sellvindsLogo.url} alt="Sellvinds" className="h-10 w-auto opacity-80" />
+              <div className="w-px h-8 bg-border" />
+              <img src={pentagonLogo.url} alt="Pentagon" className="h-8 w-auto opacity-80" />
+            </div>
             <p className="text-foreground text-lg md:text-xl">
               Pentagon is part of The Sellvinds Group – 72 years of manufacturing excellence.
             </p>
