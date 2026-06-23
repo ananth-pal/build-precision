@@ -16,7 +16,7 @@ export default function About() {
             Pentagon Machines and Services Pvt. Ltd. is a precision contract manufacturing company headquartered in Chennai, India. With over 45 years of experience, Pentagon has been a long-term manufacturing partner to a leading multinational organisation in Australia and a prominent Indian automotive OEM.
           </p>
 
-          <img src={plantExterior} alt="Plant 1 exterior" className="w-full h-auto rounded-md" />
+          <img src={plantExterior.url} alt="Plant 1 exterior" className="w-full h-auto rounded-md" />
 
 
           {/* Our Facilities */}
