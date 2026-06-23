@@ -251,10 +251,10 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                     {[
-                      { name: "Medical", note: "Implant-grade finishes" },
-                      { name: "Aerospace", note: "AS9100-aligned quality systems" },
-                      { name: "Defence", note: "Traceable lots, controlled processes" },
-                      { name: "Robotics", note: "Precision gearboxes & actuators" },
+                      { name: "Medical", note: "Superfine finishes and miniature assemblies" },
+                      { name: "Aerospace", note: "In-house CMM and air-gauge inspection; complex geometries needing custom fixtures" },
+                      { name: "Defence", note: "Certified vendor network existing for 30+ years" },
+                      { name: "Robotics", note: "Precision gearboxes and actuators" },
                     ].map((s) => (
                       <div key={s.name} className="border-t border-border pt-2">
                         <div className="text-sm font-semibold text-foreground">{s.name}</div>
