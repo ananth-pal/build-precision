@@ -239,6 +239,7 @@ import pentagonLogo from "@/assets/brand/pentagon-logo.png.asset.json";
 import sellvindsLogo from "@/assets/brand/sellvinds-logo.png.asset.json";
 
 export default function Heritage() {
+  const [version, setVersion] = useState<"v1" | "v2">("v2");
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
