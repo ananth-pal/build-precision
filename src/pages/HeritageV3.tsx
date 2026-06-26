@@ -137,31 +137,10 @@ function EntryRow({ entry, index }: { entry: Entry; index: number }) {
   );
 }
 
-function MiniEntryRow({ entry }: { entry: Entry }) {
-  return (
-    <div className="relative flex items-start">
-      <div className="absolute left-4 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-1.5" />
-      <div className="ml-12 flex-1">
-        <div className="text-primary font-bold text-base">{entry.label}</div>
-        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-          {entry.body}
-        </p>
-      </div>
-    </div>
-  );
-}
+const founderFormation =
+  "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice in 1954. While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division. After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras.";
 
-// Founder lineage — reuses Era 1 prose; 1965 trimmed (PROTEL sentence moves to its profile)
-const founderLineage: Entry[] = [
-  eras[0].entries[0],
-  eras[0].entries[1],
-  {
-    label: "1965",
-    body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras.",
-  },
-];
-
-type Company = { name: string; year: string; caption?: string; body: string; image?: string };
+type Company = { name: string; year: string; caption?: string; body: string };
 
 const groupCompanies: Company[] = [
   {
@@ -183,10 +162,8 @@ const groupCompanies: Company[] = [
   {
     name: "Pentagon Machines and Services Pvt. Ltd.",
     year: "1970s",
-    image: "__PENTAGON__",
     body: "Founded as a custom machine-tool manufacturer and now a precision contract manufacturer. Its full history is traced in the timeline below.",
   },
-
   {
     name: "CAFOMA Autoparts Ltd",
     year: "1983",
@@ -225,30 +202,29 @@ function Thumb({ src, alt, label, kind }: { src?: string; alt: string; label?: s
   );
 }
 
-
-function CompanyRow({ company, logoSrc }: { company: Company; logoSrc?: string }) {
+function CompanyRow({ company }: { company: Company }) {
   return (
-    <div className="grid grid-cols-[1fr_auto] gap-6 items-start">
-      <div className="border-l-2 border-border pl-5">
-        <div className="flex items-baseline gap-3 flex-wrap">
-          <span className="text-primary font-bold text-base">{company.name}</span>
-          <span className="text-muted-foreground text-sm">{company.year}</span>
-        </div>
-        {company.caption && (
-          <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
-        )}
-        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
+    <div className="border-l-2 border-border pl-5">
+      <div className="flex items-baseline gap-3 flex-wrap">
+        <span className="text-primary font-bold text-base">{company.name}</span>
+        <span className="text-muted-foreground text-sm">{company.year}</span>
       </div>
-      <div className="w-24 md:w-32 shrink-0">
-        <Thumb src={logoSrc} alt={`${company.name} logo`} kind="logo" />
-      </div>
+      {company.caption && (
+        <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
+      )}
+      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
     </div>
   );
 }
 
-
 import pentagonLogo from "@/assets/brand/pentagon-logo.png.asset.json";
 import sellvindsLogo from "@/assets/brand/sellvinds-logo.png.asset.json";
+
+// Member logos for the family-of-companies lockup. Only include logos that exist;
+// missing assets are intentionally omitted rather than shown as placeholders.
+const memberLogos: { src: string; alt: string }[] = [
+  { src: pentagonLogo.url, alt: "Pentagon Machines and Services" },
+];
 
 export default function Heritage() {
   return (
@@ -260,42 +236,32 @@ export default function Heritage() {
         <div className="max-w-7xl mx-auto">
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
-            {/* Intro: paragraphs + Sellvinds logo aligned to them */}
-            <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-12 items-start">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Pentagon as part of The Sellvinds Group
-                </h2>
-                <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
-                  <p>
-                    The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
-                  </p>
-                  <p>
-                    This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
-                  </p>
-                </div>
-              </div>
-              <div className="w-32 md:w-40 shrink-0 md:mt-2">
-                <Thumb src={sellvindsLogo.url} alt="Sellvinds Group" kind="logo" label="Sellvinds Group" />
+            {/* Intro — full width, no logo */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Pentagon as part of The Sellvinds Group
+              </h2>
+              <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
+                <p>
+                  The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+                </p>
+                <p>
+                  This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
+                </p>
               </div>
             </div>
 
-            {/* Founder: timeline + portrait aligned beside it */}
+            {/* Founder — prose paragraph with optional small portrait beside it */}
             <div className="mt-12 grid md:grid-cols-[1fr_auto] gap-10 md:gap-12 items-start">
               <div>
                 <h3 className="text-lg md:text-xl font-semibold text-foreground">
-                  The founder
+                  A machine-tool engineer's formation
                 </h3>
-                <div className="relative mt-6">
-                  <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
-                  <div className="space-y-8">
-                    {founderLineage.map((entry, i) => (
-                      <MiniEntryRow key={entry.label + i} entry={entry} />
-                    ))}
-                  </div>
-                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed mt-6">
+                  {founderFormation}
+                </p>
               </div>
-              <div className="w-32 md:w-40 shrink-0 md:mt-10">
+              <div className="w-32 md:w-40 shrink-0 md:mt-2">
                 <Thumb alt="Ramanathan Palaniappan portrait" kind="photo" label="Ramanathan Palaniappan — founder" />
               </div>
             </div>
@@ -303,13 +269,31 @@ export default function Heritage() {
             <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
               Companies Affiliated with Sellvinds Group
             </h3>
-            <div className="space-y-8 mt-6">
+
+            {/* Family-of-companies lockup — Sellvinds (parent) anchoring member-company marks */}
+            <div className="mt-6 border border-border rounded-md p-6 md:p-8 flex flex-col items-center">
+              <img
+                src={sellvindsLogo.url}
+                alt="Sellvinds Group"
+                className="h-20 w-auto"
+              />
+              <div className="h-px w-16 bg-border my-6" />
+              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+                {memberLogos.map((m) => (
+                  <img
+                    key={m.alt}
+                    src={m.src}
+                    alt={m.alt}
+                    className="h-12 w-auto object-contain"
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Company profiles — text only */}
+            <div className="space-y-8 mt-10">
               {groupCompanies.map((company, i) => (
-                <CompanyRow
-                  key={company.name + i}
-                  company={company}
-                  logoSrc={company.image === "__PENTAGON__" ? pentagonLogo.url : undefined}
-                />
+                <CompanyRow key={company.name + i} company={company} />
               ))}
             </div>
 
@@ -320,8 +304,6 @@ export default function Heritage() {
               </p>
             </div>
           </section>
-
-
 
           {/* Section 2 — Pentagon's heritage */}
           <section>
