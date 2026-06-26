@@ -249,50 +249,19 @@ function CompanyRow({ company, logoSrc }: { company: Company; logoSrc?: string }
 import pentagonLogo from "@/assets/brand/pentagon-logo.png.asset.json";
 import sellvindsLogo from "@/assets/brand/sellvinds-logo.png.asset.json";
 
-type MediaItem = { label: string; src?: string; alt: string; kind: "logo" | "photo" };
-
-function MediaTile({ item }: { item: MediaItem }) {
-  return (
-    <figure className="flex flex-col items-center text-center">
-      <div className="w-full aspect-[4/3] flex items-center justify-center bg-muted/30 border border-border rounded-md p-4">
-        {item.src ? (
-          <img src={item.src} alt={item.alt} className="max-h-full max-w-full object-contain" />
-        ) : (
-          <span className="text-muted-foreground text-xs uppercase tracking-wide">
-            {item.kind === "photo" ? "Photo coming soon" : "Logo coming soon"}
-          </span>
-        )}
-      </div>
-      <figcaption className="mt-2 text-xs text-muted-foreground leading-snug">
-        {item.label}
-      </figcaption>
-    </figure>
-  );
-}
-
 export default function Heritage() {
-  const rightColumnMedia: MediaItem[] = [
-    { label: "Sellvinds Group", src: sellvindsLogo.url, alt: "Sellvinds Group", kind: "logo" },
-    { label: "Ramanathan Palaniappan — founder", kind: "photo", alt: "Founder portrait" },
-    { label: "Productivity Elements Pvt. Ltd. (PROTEL)", kind: "logo", alt: "PROTEL logo" },
-    { label: "SRP Tools Ltd", kind: "logo", alt: "SRP Tools logo" },
-    { label: "Sellvinds", kind: "logo", alt: "Sellvinds logo" },
-    { label: "Pentagon Machines and Services Pvt. Ltd.", src: pentagonLogo.url, alt: "Pentagon logo", kind: "logo" },
-    { label: "CAFOMA Autoparts Ltd", kind: "logo", alt: "CAFOMA Autoparts logo" },
-    { label: "CAFOMA Engine Components Pvt. Ltd", kind: "logo", alt: "CAFOMA Engine Components logo" },
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
       <PageHero title="Heritage" subtitle="Deep engineering roots — not a recent market entrant." />
 
       <main className="flex-1 section-padding">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
-            <div className="grid md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] gap-10 md:gap-16 items-start">
-              <div className="max-w-3xl">
+            {/* Intro: paragraphs + Sellvinds logo aligned to them */}
+            <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-12 items-start">
+              <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                   Pentagon as part of The Sellvinds Group
                 </h2>
@@ -304,8 +273,16 @@ export default function Heritage() {
                     This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
                   </p>
                 </div>
+              </div>
+              <div className="w-32 md:w-40 shrink-0 md:mt-2">
+                <Thumb src={sellvindsLogo.url} alt="Sellvinds Group" kind="logo" label="Sellvinds Group" />
+              </div>
+            </div>
 
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+            {/* Founder: timeline + portrait aligned beside it */}
+            <div className="mt-12 grid md:grid-cols-[1fr_auto] gap-10 md:gap-12 items-start">
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground">
                   The founder
                 </h3>
                 <div className="relative mt-6">
@@ -316,33 +293,33 @@ export default function Heritage() {
                     ))}
                   </div>
                 </div>
-
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-                  Companies Affiliated with Sellvinds Group
-                </h3>
-                <div className="space-y-8 mt-6">
-                  {groupCompanies.map((company, i) => (
-                    <CompanyRow key={company.name + i} company={company} />
-                  ))}
-                </div>
-
-                <div className="mt-12">
-                  <div className="h-px w-10 bg-primary mb-4" />
-                  <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
-                    Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the company's founding to today.
-                  </p>
-                </div>
               </div>
-
-              {/* Right column — Sellvinds + affiliated company visuals */}
-              <aside className="md:sticky md:top-24 md:self-start">
-                <div className="space-y-6">
-                  {rightColumnMedia.map((item) => (
-                    <MediaTile key={item.label} item={item} />
-                  ))}
-                </div>
-              </aside>
+              <div className="w-32 md:w-40 shrink-0 md:mt-10">
+                <Thumb alt="Ramanathan Palaniappan portrait" kind="photo" label="Ramanathan Palaniappan — founder" />
+              </div>
             </div>
+
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+              Companies Affiliated with Sellvinds Group
+            </h3>
+            <div className="space-y-8 mt-6">
+              {groupCompanies.map((company, i) => (
+                <CompanyRow
+                  key={company.name + i}
+                  company={company}
+                  logoSrc={company.image === "__PENTAGON__" ? pentagonLogo.url : undefined}
+                />
+              ))}
+            </div>
+
+            <div className="mt-12">
+              <div className="h-px w-10 bg-primary mb-4" />
+              <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
+                Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the company's founding to today.
+              </p>
+            </div>
+          </section>
+
           </section>
 
 
