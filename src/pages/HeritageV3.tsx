@@ -302,7 +302,7 @@ export default function Heritage() {
                 <img
                   src={sellvindsLogo.url}
                   alt="Sellvinds Group"
-                  className="h-32 md:h-40 w-auto shrink-0 mt-8 md:mt-20 justify-self-center md:justify-self-end md:mr-8 lg:mr-16"
+                  className="h-32 md:h-40 w-auto shrink-0 mt-8 md:mt-0 md:self-center justify-self-center md:justify-self-end md:mr-8 lg:mr-16"
                 />
               </div>
             ) : (
