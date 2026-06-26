@@ -236,6 +236,26 @@ export default function Heritage() {
         <div className="max-w-7xl mx-auto">
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
+            {/* Family-of-companies lockup — Sellvinds (parent) anchoring member-company marks */}
+            <div className="mb-16 flex flex-col items-center">
+              <img
+                src={sellvindsLogo.url}
+                alt="Sellvinds Group"
+                className="h-20 w-auto"
+              />
+              <div className="h-px w-16 bg-border my-6" />
+              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+                {memberLogos.map((m) => (
+                  <img
+                    key={m.alt}
+                    src={m.src}
+                    alt={m.alt}
+                    className="h-12 w-auto object-contain"
+                  />
+                ))}
+              </div>
+            </div>
+
             {/* Intro — full width, no logo */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -269,26 +289,6 @@ export default function Heritage() {
             <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
               Companies Affiliated with Sellvinds Group
             </h3>
-
-            {/* Family-of-companies lockup — Sellvinds (parent) anchoring member-company marks */}
-            <div className="mt-6 flex flex-col items-center">
-              <img
-                src={sellvindsLogo.url}
-                alt="Sellvinds Group"
-                className="h-20 w-auto"
-              />
-              <div className="h-px w-16 bg-border my-6" />
-              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-                {memberLogos.map((m) => (
-                  <img
-                    key={m.alt}
-                    src={m.src}
-                    alt={m.alt}
-                    className="h-12 w-auto object-contain"
-                  />
-                ))}
-              </div>
-            </div>
 
             {/* Company profiles — text only */}
             <div className="space-y-8 mt-10">
