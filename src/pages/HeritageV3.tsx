@@ -1,10 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-
-
 
 type Entry = { label: string; body: string };
 type Era = {
@@ -13,21 +10,6 @@ type Era = {
   title: string;
   entries: Entry[];
 };
-
-const groupMilestonesV1: Entry[] = [
-  {
-    label: "1965–2005",
-    body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
-  },
-  {
-    label: "Early 1970s",
-    body: "Sellvinds is set up to manufacture autoparts. Indian OEMs including TELCO (Tata Motors), HMT Tractors, and Greaves Cotton bring tricky components to Sellvinds for development. A separate plant is set up to assemble and supply engine lubricating-oil pumps for OEMs — totally run by women, an industry first.",
-  },
-  {
-    label: "1983",
-    body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
-  },
-];
 
 const eras: Era[] = [
   {
@@ -169,7 +151,7 @@ function MiniEntryRow({ entry }: { entry: Entry }) {
   );
 }
 
-// v2 founder lineage — reuses Era 1 prose; 1965 trimmed (PROTEL sentence moves to its profile)
+// Founder lineage — reuses Era 1 prose; 1965 trimmed (PROTEL sentence moves to its profile)
 const founderLineage: Entry[] = [
   eras[0].entries[0],
   eras[0].entries[1],
@@ -211,7 +193,7 @@ const groupCompanies: Company[] = [
   {
     name: "CAFOMA Engine Components Pvt. Ltd",
     year: "2007",
-    body: "[DRAFT — CONFIRM: CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture in 2007 to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.]",
+    body: "CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture in 2007 to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.",
   },
 ];
 
@@ -239,98 +221,73 @@ import pentagonLogo from "@/assets/brand/pentagon-logo.png.asset.json";
 import sellvindsLogo from "@/assets/brand/sellvinds-logo.png.asset.json";
 
 export default function Heritage() {
-  const [version, setVersion] = useState<"v1" | "v2">("v2");
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
       <PageHero title="Heritage" subtitle="Deep engineering roots — not a recent market entrant." />
-      
+
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          {/* TEMPORARY evaluation toggle — remove before launch once a version is chosen */}
-          <div className="flex justify-end mb-8">
-            <div className="inline-flex rounded-md border border-border overflow-hidden text-sm">
-              <button
-                onClick={() => setVersion("v1")}
-                className={`px-3 py-1.5 ${version === "v1" ? "bg-primary text-white" : "text-muted-foreground"}`}
-              >
-                v1
-              </button>
-              <button
-                onClick={() => setVersion("v2")}
-                className={`px-3 py-1.5 ${version === "v2" ? "bg-primary text-white" : "text-muted-foreground"}`}
-              >
-                v2
-              </button>
-            </div>
-          </div>
-
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
-          <section className="max-w-3xl mb-24 md:mb-32">
-            {/* Sellvinds Group affiliation mark — small, left-aligned, above the heading */}
-            <img
-              src={sellvindsLogo.url}
-              alt="Sellvinds Group"
-              className="h-10 md:h-12 w-auto mb-6"
-            />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Pentagon as part of The Sellvinds Group
-            </h2>
-            <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
-              <p>
-                The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
-              </p>
-              <p>
-                This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
-              </p>
+          <section className="mb-24 md:mb-32">
+            <div className="grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-10 md:gap-16 items-start">
+              <div className="max-w-3xl">
+                {/* Sellvinds Group affiliation mark — small, left-aligned, above the heading */}
+                <img
+                  src={sellvindsLogo.url}
+                  alt="Sellvinds Group"
+                  className="h-10 md:h-12 w-auto mb-6"
+                />
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                  Pentagon as part of The Sellvinds Group
+                </h2>
+                <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
+                  <p>
+                    The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+                  </p>
+                  <p>
+                    This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
+                  </p>
+                </div>
+              </div>
+              {/* Large Sellvinds Group lockup, right side */}
+              <div className="flex md:justify-end md:pt-2">
+                <img
+                  src={sellvindsLogo.url}
+                  alt="Sellvinds Group"
+                  className="h-40 md:h-56 lg:h-64 w-auto"
+                />
+              </div>
             </div>
 
-            {version === "v1" ? (
-              <>
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-                  Group milestones
-                </h3>
-                <div className="relative mt-6">
-                  <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
-                  <div className="space-y-8">
-                    {groupMilestonesV1.map((entry, i) => (
-                      <MiniEntryRow key={entry.label + i} entry={entry} />
-                    ))}
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-                  The founder
-                </h3>
-                <div className="relative mt-6">
-                  <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
-                  <div className="space-y-8">
-                    {founderLineage.map((entry, i) => (
-                      <MiniEntryRow key={entry.label + i} entry={entry} />
-                    ))}
-                  </div>
-                </div>
-
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-                  Group companies
-                </h3>
-                <div className="space-y-8 mt-6">
-                  {groupCompanies.map((company, i) => (
-                    <CompanyRow key={company.name + i} company={company} />
+            <div className="max-w-3xl">
+              <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                The founder
+              </h3>
+              <div className="relative mt-6">
+                <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
+                <div className="space-y-8">
+                  {founderLineage.map((entry, i) => (
+                    <MiniEntryRow key={entry.label + i} entry={entry} />
                   ))}
                 </div>
-              </>
-            )}
+              </div>
 
-            <div className="mt-12">
-              <div className="h-px w-10 bg-primary mb-4" />
-              <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
-                {version === "v1"
-                  ? "Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today."
-                  : "Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the company's founding to today."}
-              </p>
+              <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                Companies Affiliated with Sellvinds Group
+              </h3>
+              <div className="space-y-8 mt-6">
+                {groupCompanies.map((company, i) => (
+                  <CompanyRow key={company.name + i} company={company} />
+                ))}
+              </div>
+
+              <div className="mt-12">
+                <div className="h-px w-10 bg-primary mb-4" />
+                <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
+                  Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the company's founding to today.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -340,11 +297,10 @@ export default function Heritage() {
               Pentagon's heritage
             </h2>
 
-
             <div className="relative">
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
-              {(version === "v1" ? eras : erasV2).map((era) => (
+              {erasV2.map((era) => (
                 <section key={era.number}>
                   {/* Era divider */}
                   <div className="relative py-12 md:py-20 md:flex md:justify-center">
