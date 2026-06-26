@@ -271,7 +271,7 @@ export default function Heritage() {
             </h3>
 
             {/* Family-of-companies lockup — Sellvinds (parent) anchoring member-company marks */}
-            <div className="mt-6 border border-border rounded-md p-6 md:p-8 flex flex-col items-center">
+            <div className="mt-6 flex flex-col items-center">
               <img
                 src={sellvindsLogo.url}
                 alt="Sellvinds Group"
