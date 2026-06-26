@@ -62,7 +62,7 @@ const cards: Card[] = [
       "CNC gear hobbers — Cooper Pfauter, up to 6 module",
       "Gear shapers — Lorenz, up to 4 module",
       "Gear shaver — Red Ring, up to 200 mm dia",
-      "Vertical broaching machine — 10 ton",
+      "Vertical broaching machine — PROTEL, 10 ton",
       "Gear tooth rounding and chamfering\u00a0— Hay 20",
       "CNC bore grinder with HF spindle & diaphragm chuck\u00a0— PMT Voumard",
       "CNC angular wheelhead grinder with Marposs gauging & flagging",
