@@ -272,20 +272,16 @@ export default function Heritage() {
               </div>
             </div>
 
-            {/* Founder — prose paragraph with optional small portrait beside it */}
-            <div className="mt-12 grid md:grid-cols-[1fr_auto] gap-10 md:gap-12 items-start">
-              <div>
-                <h3 className="text-lg md:text-xl font-semibold text-foreground">
-                  A machine-tool engineer's formation
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mt-6">
-                  {founderFormation}
-                </p>
-              </div>
-              <div className="w-32 md:w-40 shrink-0 md:mt-2">
-                <Thumb alt="Ramanathan Palaniappan portrait" kind="photo" label="Ramanathan Palaniappan — founder" />
-              </div>
+            {/* Founder — prose paragraph */}
+            <div className="mt-12">
+              <h3 className="text-lg md:text-xl font-semibold text-foreground">
+                A machine-tool engineer's formation
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mt-6">
+                {founderFormation}
+              </p>
             </div>
+
 
             <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
               Companies Affiliated with Sellvinds Group
