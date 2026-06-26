@@ -105,7 +105,7 @@ const cards: Card[] = [
   {
     icon: Hammer,
     title: "Tooling and Supporting Processes",
-    desc: "In-house jig, fixture, and gauge design and manufacture, plus deburring, washing, and painting.",
+    desc: "Extensive range of tool holders and cutting tools with CNC Tool Presetter. In-house jig, fixture, and gauge design and manufacture, plus deburring, washing, and painting.",
     image: zollerAsset.url,
     details: [
       "Jig, fixture, and receiver gauge design and manufacture (manual and hydraulic)",
