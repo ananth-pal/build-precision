@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+
 
 type Entry = { label: string; body: string };
 type Era = {
@@ -228,6 +230,9 @@ const memberLogos: { src: string; alt: string }[] = [
 ];
 
 export default function Heritage() {
+  const [variant, setVariant] = useState<"v1" | "v2">("v1");
+  const isV2 = variant === "v2";
+
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -235,42 +240,87 @@ export default function Heritage() {
 
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
+          {/* Layout variant toggle */}
+          <div className="mb-10 flex items-center justify-end gap-3 text-xs">
+            <span className={!isV2 ? "text-foreground font-semibold" : "text-muted-foreground"}>V1</span>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={isV2}
+              onClick={() => setVariant(isV2 ? "v1" : "v2")}
+              className="relative inline-flex h-5 w-9 items-center rounded-full bg-muted border border-border transition-colors"
+            >
+              <span
+                className={`inline-block h-3.5 w-3.5 transform rounded-full bg-primary transition-transform ${
+                  isV2 ? "translate-x-5" : "translate-x-1"
+                }`}
+              />
+            </button>
+            <span className={isV2 ? "text-foreground font-semibold" : "text-muted-foreground"}>V2</span>
+          </div>
+
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
-            {/* Family-of-companies lockup — Sellvinds (parent) anchoring member-company marks */}
-            <div className="mb-16 flex flex-col items-center">
-              <img
-                src={sellvindsLogo.url}
-                alt="Sellvinds Group"
-                className="h-32 md:h-40 w-auto"
-              />
-              <div className="h-px w-16 bg-border my-6" />
-              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-                {memberLogos.map((m) => (
-                  <img
-                    key={m.alt}
-                    src={m.src}
-                    alt={m.alt}
-                    className="h-12 w-auto object-contain"
-                  />
-                ))}
+            {/* V1: family-of-companies lockup at top */}
+            {!isV2 && (
+              <div className="mb-16 flex flex-col items-center">
+                <img
+                  src={sellvindsLogo.url}
+                  alt="Sellvinds Group"
+                  className="h-32 md:h-40 w-auto"
+                />
+                <div className="h-px w-16 bg-border my-6" />
+                <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+                  {memberLogos.map((m) => (
+                    <img
+                      key={m.alt}
+                      src={m.src}
+                      alt={m.alt}
+                      className="h-12 w-auto object-contain"
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Intro — full width, no logo */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Pentagon as part of The Sellvinds Group
-              </h2>
-              <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
-                <p>
-                  The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
-                </p>
-                <p>
-                  This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
-                </p>
+            {/* Intro — V2 places Sellvinds logo to the right of the prose */}
+            {isV2 ? (
+              <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                    Pentagon as part of The Sellvinds Group
+                  </h2>
+                  <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
+                    <p>
+                      The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+                    </p>
+                    <p>
+                      This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src={sellvindsLogo.url}
+                  alt="Sellvinds Group"
+                  className="h-32 md:h-40 w-auto shrink-0 md:mt-2 justify-self-center md:justify-self-end"
+                />
               </div>
-            </div>
+            ) : (
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                  Pentagon as part of The Sellvinds Group
+                </h2>
+                <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
+                  <p>
+                    The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+                  </p>
+                  <p>
+                    This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
+                  </p>
+                </div>
+              </div>
+            )}
+
 
             {/* Founder — prose paragraph */}
             <div className="mt-12">
