@@ -242,7 +242,7 @@ export default function Heritage() {
               <img
                 src={sellvindsLogo.url}
                 alt="Sellvinds Group"
-                className="h-20 w-auto"
+                className="h-32 md:h-40 w-auto"
               />
               <div className="h-px w-16 bg-border my-6" />
               <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
