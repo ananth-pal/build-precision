@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -13,22 +14,18 @@ type Era = {
   entries: Entry[];
 };
 
-const groupMilestones: Entry[] = [
-  {
-    label: "Early 1970s",
-    body: "Sellvinds is set up to manufacture autoparts. Indian OEMs including TELCO (Tata Motors), HMT Tractors, and Greaves Cotton bring tricky components to Sellvinds for development. A separate plant is set up to assemble and supply engine lubricating-oil pumps for OEMs — totally run by women, an industry first.",
-  },
+const groupMilestonesV1: Entry[] = [
   {
     label: "1965–2005",
     body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
   },
   {
-    label: "1983",
-    body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
+    label: "Early 1970s",
+    body: "Sellvinds is set up to manufacture autoparts. Indian OEMs including TELCO (Tata Motors), HMT Tractors, and Greaves Cotton bring tricky components to Sellvinds for development. A separate plant is set up to assemble and supply engine lubricating-oil pumps for OEMs — totally run by women, an industry first.",
   },
   {
-    label: "2007",
-    body: "In addition to running PROTEL, Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
+    label: "1983",
+    body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
   },
 ];
 
@@ -172,10 +169,77 @@ function MiniEntryRow({ entry }: { entry: Entry }) {
   );
 }
 
+// v2 founder lineage — reuses Era 1 prose; 1965 trimmed (PROTEL sentence moves to its profile)
+const founderLineage: Entry[] = [
+  eras[0].entries[0],
+  eras[0].entries[1],
+  {
+    label: "1965",
+    body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras.",
+  },
+];
+
+type Company = { name: string; year: string; caption?: string; body: string };
+
+const groupCompanies: Company[] = [
+  {
+    name: "Productivity Elements Pvt. Ltd. (PROTEL)",
+    year: "1965",
+    body: "He co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies, making broaching machines.",
+  },
+  {
+    name: "SRP Tools Ltd",
+    year: "[CONFIRM founding year]",
+    caption: "Founder served as Technical Director — not a Sellvinds Group company.",
+    body: "Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
+  },
+  {
+    name: "Sellvinds",
+    year: "Early 1970s",
+    body: "Sellvinds is set up to manufacture autoparts. Indian OEMs including TELCO (Tata Motors), HMT Tractors, and Greaves Cotton bring tricky components to Sellvinds for development. A separate plant is set up to assemble and supply engine lubricating-oil pumps for OEMs — totally run by women, an industry first.",
+  },
+  {
+    name: "Pentagon Machines and Services Pvt. Ltd.",
+    year: "1970s",
+    body: "Founded as a custom machine-tool manufacturer and now a precision contract manufacturer. Its full history is traced in the timeline below.",
+  },
+  {
+    name: "CAFOMA Autoparts Ltd",
+    year: "1983",
+    body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
+  },
+  {
+    name: "CAFOMA Engine Components Pvt. Ltd",
+    year: "2007",
+    body: "[DRAFT — CONFIRM: CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture in 2007 to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.]",
+  },
+];
+
+const erasV2: Era[] = eras.slice(1).map((era, i) => ({
+  ...era,
+  number: `Era ${i + 1}`,
+}));
+
+function CompanyRow({ company }: { company: Company }) {
+  return (
+    <div className="border-l-2 border-border pl-5">
+      <div className="flex items-baseline gap-3 flex-wrap">
+        <span className="text-primary font-bold text-base">{company.name}</span>
+        <span className="text-muted-foreground text-sm">{company.year}</span>
+      </div>
+      {company.caption && (
+        <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
+      )}
+      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
+    </div>
+  );
+}
+
 import pentagonLogo from "@/assets/brand/pentagon-logo.png.asset.json";
 import sellvindsLogo from "@/assets/brand/sellvinds-logo.png.asset.json";
 
 export default function Heritage() {
+  const [version, setVersion] = useState<"v1" | "v2">("v2");
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -183,17 +247,32 @@ export default function Heritage() {
       
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          {/* Opening paired lockup — mirrors the closing tagline */}
-          <div className="mb-16 md:mb-20 flex flex-col items-center text-center">
-            <div className="flex items-center gap-8 md:gap-12">
-              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-20 md:h-24 w-auto" />
-              <div className="w-px h-14 md:h-16 bg-border" />
-              <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-9 md:h-11 w-auto" />
+          {/* TEMPORARY evaluation toggle — remove before launch once a version is chosen */}
+          <div className="flex justify-end mb-8">
+            <div className="inline-flex rounded-md border border-border overflow-hidden text-sm">
+              <button
+                onClick={() => setVersion("v1")}
+                className={`px-3 py-1.5 ${version === "v1" ? "bg-primary text-white" : "text-muted-foreground"}`}
+              >
+                v1
+              </button>
+              <button
+                onClick={() => setVersion("v2")}
+                className={`px-3 py-1.5 ${version === "v2" ? "bg-primary text-white" : "text-muted-foreground"}`}
+              >
+                v2
+              </button>
             </div>
           </div>
 
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="max-w-3xl mb-24 md:mb-32">
+            {/* Sellvinds Group affiliation mark — small, left-aligned, above the heading */}
+            <img
+              src={sellvindsLogo.url}
+              alt="Sellvinds Group"
+              className="h-10 md:h-12 w-auto mb-6"
+            />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Pentagon as part of The Sellvinds Group
             </h2>
@@ -206,23 +285,51 @@ export default function Heritage() {
               </p>
             </div>
 
-            <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-              Group milestones
-            </h3>
+            {version === "v1" ? (
+              <>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                  Group milestones
+                </h3>
+                <div className="relative mt-6">
+                  <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
+                  <div className="space-y-8">
+                    {groupMilestonesV1.map((entry, i) => (
+                      <MiniEntryRow key={entry.label + i} entry={entry} />
+                    ))}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                  The founder
+                </h3>
+                <div className="relative mt-6">
+                  <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
+                  <div className="space-y-8">
+                    {founderLineage.map((entry, i) => (
+                      <MiniEntryRow key={entry.label + i} entry={entry} />
+                    ))}
+                  </div>
+                </div>
 
-            <div className="relative mt-6">
-              <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
-              <div className="space-y-8 md:space-y-8">
-                {groupMilestones.map((entry, i) => (
-                  <MiniEntryRow key={entry.label + i} entry={entry} />
-                ))}
-              </div>
-            </div>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                  Group companies
+                </h3>
+                <div className="space-y-8 mt-6">
+                  {groupCompanies.map((company, i) => (
+                    <CompanyRow key={company.name + i} company={company} />
+                  ))}
+                </div>
+              </>
+            )}
 
             <div className="mt-12">
               <div className="h-px w-10 bg-primary mb-4" />
               <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
-                Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today.
+                {version === "v1"
+                  ? "Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today."
+                  : "Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the company's founding to today."}
               </p>
             </div>
           </section>
@@ -237,7 +344,7 @@ export default function Heritage() {
             <div className="relative">
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
-              {eras.map((era) => (
+              {(version === "v1" ? eras : erasV2).map((era) => (
                 <section key={era.number}>
                   {/* Era divider */}
                   <div className="relative py-12 md:py-20 md:flex md:justify-center">
