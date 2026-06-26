@@ -150,7 +150,7 @@ const groupCompanies: Company[] = [
   },
   {
     name: "SRP Tools Ltd",
-    year: "[CONFIRM founding year]",
+    year: "1964",
     caption: "Founder served as Technical Director — not a Sellvinds Group company.",
     body: "Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
   },
