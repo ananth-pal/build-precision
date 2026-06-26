@@ -320,7 +320,6 @@ export default function Heritage() {
             </div>
           </section>
 
-          </section>
 
 
           {/* Section 2 — Pentagon's heritage */}
