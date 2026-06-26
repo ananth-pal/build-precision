@@ -204,7 +204,7 @@ function Thumb({ src, alt, label, kind }: { src?: string; alt: string; label?: s
 
 function CompanyRow({ company }: { company: Company }) {
   return (
-    <div className="border-l-2 border-border pl-5">
+    <div>
       <div className="flex items-baseline gap-3 flex-wrap">
         <span className="text-primary font-bold text-base">{company.name}</span>
         <span className="text-muted-foreground text-sm">{company.year}</span>
