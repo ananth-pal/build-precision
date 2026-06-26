@@ -231,7 +231,7 @@ export default function Heritage() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Heritage" subtitle="Deep engineering roots — not a recent market entrant." />
+      <PageHero title="Heritage" subtitle="Deep engineering roots across machine building, engine components, and contract manufacturing" />
 
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
