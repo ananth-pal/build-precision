@@ -257,7 +257,7 @@ export default function Heritage() {
       <PageHero title="Heritage" subtitle="Deep engineering roots — not a recent market entrant." />
 
       <main className="flex-1 section-padding">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
             {/* Intro: paragraphs + Sellvinds logo aligned to them */}
