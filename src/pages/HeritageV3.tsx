@@ -183,8 +183,10 @@ const groupCompanies: Company[] = [
   {
     name: "Pentagon Machines and Services Pvt. Ltd.",
     year: "1970s",
+    image: "__PENTAGON__",
     body: "Founded as a custom machine-tool manufacturer and now a precision contract manufacturer. Its full history is traced in the timeline below.",
   },
+
   {
     name: "CAFOMA Autoparts Ltd",
     year: "1983",
