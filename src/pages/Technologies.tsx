@@ -58,6 +58,7 @@ const cards: Card[] = [
     desc: "A dedicated plant covering the route from blank preparation through finished teeth.",
     image: gearGrinderAsset.url,
     details: [
+      "CNC turning machines — Ace Micromatic",
       "CNC gear hobbers — Cooper Pfauter, up to 6 module",
       "Gear shapers — Lorenz, up to 4 module",
       "Gear shaver — Red Ring, up to 200 mm dia",
