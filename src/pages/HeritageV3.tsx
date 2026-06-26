@@ -218,7 +218,8 @@ function CompanyRow({ company }: { company: Company }) {
 }
 
 import pentagonLogo from "@/assets/brand/pentagon-logo.png.asset.json";
-import sellvindsLogo from "@/assets/brand/sellvinds-logo.png.asset.json";
+import sellvindsLogoSrc from "@/assets/brand/sellvinds-logo-cropped.png";
+const sellvindsLogo = { url: sellvindsLogoSrc };
 
 // Member logos for the family-of-companies lockup. Only include logos that exist;
 // missing assets are intentionally omitted rather than shown as placeholders.
