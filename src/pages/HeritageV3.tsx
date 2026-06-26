@@ -204,7 +204,7 @@ function Thumb({ src, alt, label, kind }: { src?: string; alt: string; label?: s
 
 function CompanyRow({ company }: { company: Company }) {
   return (
-    <div className="border-l-2 border-border pl-5">
+    <div>
       <div className="flex items-baseline gap-3 flex-wrap">
         <span className="text-primary font-bold text-base">{company.name}</span>
         <span className="text-muted-foreground text-sm">{company.year}</span>
@@ -271,7 +271,7 @@ export default function Heritage() {
             </h3>
 
             {/* Family-of-companies lockup — Sellvinds (parent) anchoring member-company marks */}
-            <div className="mt-6 border border-border rounded-md p-6 md:p-8 flex flex-col items-center">
+            <div className="mt-6 flex flex-col items-center">
               <img
                 src={sellvindsLogo.url}
                 alt="Sellvinds Group"
