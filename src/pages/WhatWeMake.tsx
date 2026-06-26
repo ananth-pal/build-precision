@@ -303,7 +303,7 @@ export default function WhatWeMake() {
                           <h3 className="text-lg font-semibold mb-4">{m.name}</h3>
                           <div className="space-y-3 leading-relaxed">
                             <p>
-                              <span className="font-medium text-foreground">Pentagon supplies: </span>
+                              <span className="font-medium text-foreground">Pentagon contract manufactures: </span>
                               <span className="text-muted-foreground">{m.supplied}</span>
                             </p>
                             <p>
