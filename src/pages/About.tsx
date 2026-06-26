@@ -36,7 +36,12 @@ export default function About() {
                 <p className="text-sm text-muted-foreground mb-2">31 A/8, Ambattur Industrial Estate, Chennai (approx. 5 km from Plant 1)</p>
               </div>
             </div>
+
+            <div className="mt-10">
+              <ChennaiLocatorMap />
+            </div>
           </div>
+
 
           <div className="grid md:grid-cols-2 gap-8 pt-8">
             <Link to="/about/heritage" className="capability-card group">
