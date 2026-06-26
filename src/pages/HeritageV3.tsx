@@ -207,7 +207,7 @@ const erasV2: Era[] = eras.slice(1).map((era, i) => ({
 function Thumb({ src, alt, label, kind }: { src?: string; alt: string; label?: string; kind: "logo" | "photo" }) {
   return (
     <figure className="flex flex-col items-center text-center w-full">
-      <div className="w-full aspect-[4/3] flex items-center justify-center bg-muted/30 border border-border rounded-md p-3">
+      <div className="w-full aspect-[4/3] flex items-center justify-center">
         {src ? (
           <img src={src} alt={alt} className="max-h-full max-w-full object-contain" />
         ) : (
@@ -224,6 +224,7 @@ function Thumb({ src, alt, label, kind }: { src?: string; alt: string; label?: s
     </figure>
   );
 }
+
 
 function CompanyRow({ company, logoSrc }: { company: Company; logoSrc?: string }) {
   return (
@@ -256,7 +257,7 @@ export default function Heritage() {
       <PageHero title="Heritage" subtitle="Deep engineering roots — not a recent market entrant." />
 
       <main className="flex-1 section-padding">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
             {/* Intro: paragraphs + Sellvinds logo aligned to them */}
