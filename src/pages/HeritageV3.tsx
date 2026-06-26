@@ -344,7 +344,7 @@ export default function Heritage() {
             <div className="relative">
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
-              {eras.map((era) => (
+              {(version === "v1" ? eras : erasV2).map((era) => (
                 <section key={era.number}>
                   {/* Era divider */}
                   <div className="relative py-12 md:py-20 md:flex md:justify-center">
