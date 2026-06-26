@@ -98,7 +98,7 @@ export default function HomeCapabilitySection() {
                 Two plants, best-in-class machines and tooling
               </p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                43,200 sq. ft. spread across two plants — 20,000 sq. ft. built-up, balance ready for expansion. Clean-room assembly with automated test rigs. CNC horizontal and vertical machining centres, CNC turning, cylindrical and surface grinding. A dedicated gear-cutting division with hobbing, shaving, shaping, broaching and profile testing. CMM and high-resolution surface metrology in-house.
+                20,000 sq. ft. built-up spread across two plants of area 43,200 sq. ft.— balance ready for expansion. Clean-room assembly with automated test rigs. CNC horizontal and vertical machining centres, CNC turning, cylindrical and surface grinding. A dedicated gear-cutting division with CNC hobbing, shaping, shaving, broaching, tooth chamfering, CNC cylindrical & bore grinding and gear profile testing. CMM and high-resolution surface metrology in-house.
               </p>
               <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
                 See means of production <ArrowRight size={14} />
