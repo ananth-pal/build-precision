@@ -204,20 +204,47 @@ const erasV2: Era[] = eras.slice(1).map((era, i) => ({
   number: `Era ${i + 1}`,
 }));
 
-function CompanyRow({ company }: { company: Company }) {
+function Thumb({ src, alt, label, kind }: { src?: string; alt: string; label?: string; kind: "logo" | "photo" }) {
   return (
-    <div className="border-l-2 border-border pl-5">
-      <div className="flex items-baseline gap-3 flex-wrap">
-        <span className="text-primary font-bold text-base">{company.name}</span>
-        <span className="text-muted-foreground text-sm">{company.year}</span>
+    <figure className="flex flex-col items-center text-center w-full">
+      <div className="w-full aspect-[4/3] flex items-center justify-center bg-muted/30 border border-border rounded-md p-3">
+        {src ? (
+          <img src={src} alt={alt} className="max-h-full max-w-full object-contain" />
+        ) : (
+          <span className="text-muted-foreground text-[10px] uppercase tracking-wide">
+            {kind === "photo" ? "Photo coming soon" : "Logo coming soon"}
+          </span>
+        )}
       </div>
-      {company.caption && (
-        <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
+      {label && (
+        <figcaption className="mt-1.5 text-[11px] text-muted-foreground leading-snug">
+          {label}
+        </figcaption>
       )}
-      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
+    </figure>
+  );
+}
+
+function CompanyRow({ company, logoSrc }: { company: Company; logoSrc?: string }) {
+  return (
+    <div className="grid grid-cols-[1fr_auto] gap-6 items-start">
+      <div className="border-l-2 border-border pl-5">
+        <div className="flex items-baseline gap-3 flex-wrap">
+          <span className="text-primary font-bold text-base">{company.name}</span>
+          <span className="text-muted-foreground text-sm">{company.year}</span>
+        </div>
+        {company.caption && (
+          <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
+        )}
+        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
+      </div>
+      <div className="w-24 md:w-32 shrink-0">
+        <Thumb src={logoSrc} alt={`${company.name} logo`} kind="logo" />
+      </div>
     </div>
   );
 }
+
 
 import pentagonLogo from "@/assets/brand/pentagon-logo.png.asset.json";
 import sellvindsLogo from "@/assets/brand/sellvinds-logo.png.asset.json";
