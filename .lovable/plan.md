@@ -1,18 +1,23 @@
-# Heritage page — remove decorative borders
+# Heritage page — promote Sellvinds lockup to top
 
-File: `src/pages/HeritageV3.tsx`. Scope limited to the affiliated-companies block in Section 1.
+File: `src/pages/HeritageV3.tsx`. Scope: Section 1 only.
 
-## Changes
+## Change
 
-1. **`CompanyRow`** — drop the left border + padding wrapper.
-   - Before: `<div className="border-l-2 border-border pl-5">`
-   - After: `<div>` (no border, no `pl-5`)
+Move the family-of-companies lockup (Sellvinds logo + thin divider + member-company logos row) so it renders **immediately under the hero, above the `Pentagon as part of The Sellvinds Group` H2**.
 
-2. **Family-of-companies lockup** — drop the framing box.
-   - Before: `<div className="mt-6 border border-border rounded-md p-6 md:p-8 flex flex-col items-center">`
-   - After: `<div className="mt-6 flex flex-col items-center">` (keep internal layout, divider, and logo sizes unchanged)
+### New order in Section 1
+1. Sellvinds + members lockup (centered, no border box — unchanged styling)
+2. `Pentagon as part of The Sellvinds Group` H2 + two intro paragraphs
+3. `A machine-tool engineer's formation` (founder prose + portrait)
+4. `Companies Affiliated with Sellvinds Group` heading
+5. Text-only company profiles
+6. Closing "Pentagon's own story unfolds…" line
+
+### Implementation
+- Cut the existing `<div className="mt-6 flex flex-col items-center">…</div>` block (Sellvinds img + divider + `memberLogos.map`) and the `Companies Affiliated with Sellvinds Group` H3 stays where it is (above the company profile list, not above the lockup).
+- Paste the lockup as the first child of the Section 1 `<section>`, with top spacing adjusted (e.g. `mb-12 flex flex-col items-center`) so it breathes above the H2.
 
 ## Out of scope
-- No copy changes.
-- Logo sizes, the Sellvinds anchor, the thin divider between Sellvinds and member marks, and the company-profile typography all stay as-is.
-- No other sections touched.
+- No copy, logo asset, sizing, or typography changes.
+- Sections 2, the closing paired lockup, the "72 years…" line, and the Leadership link are untouched.
