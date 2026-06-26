@@ -247,17 +247,32 @@ export default function Heritage() {
       
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          {/* Opening paired lockup — mirrors the closing tagline */}
-          <div className="mb-16 md:mb-20 flex flex-col items-center text-center">
-            <div className="flex items-center gap-8 md:gap-12">
-              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-20 md:h-24 w-auto" />
-              <div className="w-px h-14 md:h-16 bg-border" />
-              <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-9 md:h-11 w-auto" />
+          {/* TEMPORARY evaluation toggle — remove before launch once a version is chosen */}
+          <div className="flex justify-end mb-8">
+            <div className="inline-flex rounded-md border border-border overflow-hidden text-sm">
+              <button
+                onClick={() => setVersion("v1")}
+                className={`px-3 py-1.5 ${version === "v1" ? "bg-primary text-white" : "text-muted-foreground"}`}
+              >
+                v1
+              </button>
+              <button
+                onClick={() => setVersion("v2")}
+                className={`px-3 py-1.5 ${version === "v2" ? "bg-primary text-white" : "text-muted-foreground"}`}
+              >
+                v2
+              </button>
             </div>
           </div>
 
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="max-w-3xl mb-24 md:mb-32">
+            {/* Sellvinds Group affiliation mark — small, left-aligned, above the heading */}
+            <img
+              src={sellvindsLogo.url}
+              alt="Sellvinds Group"
+              className="h-10 md:h-12 w-auto mb-6"
+            />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Pentagon as part of The Sellvinds Group
             </h2>
@@ -270,23 +285,51 @@ export default function Heritage() {
               </p>
             </div>
 
-            <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-              Group milestones
-            </h3>
+            {version === "v1" ? (
+              <>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                  Group milestones
+                </h3>
+                <div className="relative mt-6">
+                  <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
+                  <div className="space-y-8">
+                    {groupMilestonesV1.map((entry, i) => (
+                      <MiniEntryRow key={entry.label + i} entry={entry} />
+                    ))}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                  The founder
+                </h3>
+                <div className="relative mt-6">
+                  <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
+                  <div className="space-y-8">
+                    {founderLineage.map((entry, i) => (
+                      <MiniEntryRow key={entry.label + i} entry={entry} />
+                    ))}
+                  </div>
+                </div>
 
-            <div className="relative mt-6">
-              <div className="absolute left-4 top-1.5 bottom-1.5 w-px bg-border -translate-x-px" />
-              <div className="space-y-8 md:space-y-8">
-                {groupMilestones.map((entry, i) => (
-                  <MiniEntryRow key={entry.label + i} entry={entry} />
-                ))}
-              </div>
-            </div>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                  Group companies
+                </h3>
+                <div className="space-y-8 mt-6">
+                  {groupCompanies.map((company, i) => (
+                    <CompanyRow key={company.name + i} company={company} />
+                  ))}
+                </div>
+              </>
+            )}
 
             <div className="mt-12">
               <div className="h-px w-10 bg-primary mb-4" />
               <p className="text-foreground text-lg md:text-xl font-semibold leading-relaxed">
-                Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today.
+                {version === "v1"
+                  ? "Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the founder's early years to today."
+                  : "Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the company's founding to today."}
               </p>
             </div>
           </section>
