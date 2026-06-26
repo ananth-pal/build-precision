@@ -23,13 +23,13 @@ const referenceCities: City[] = [
 
 export default function ChennaiLocatorMap() {
   return (
-    <figure className="w-full">
+    <figure className="w-full max-w-2xl mx-auto">
       <div className="w-full border border-border rounded-md bg-card overflow-hidden">
         <ComposableMap
           projection="geoMercator"
-          projectionConfig={{ scale: 520, center: [78, 18] }}
+          projectionConfig={{ scale: 360, center: [78, 18] }}
           width={900}
-          height={520}
+          height={340}
           style={{ width: "100%", height: "auto", display: "block" }}
         >
           <Geographies geography={worldData}>
