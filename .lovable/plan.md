@@ -1,18 +1,27 @@
-# Standardise page widths
+# Heritage page updates
 
-The About section is narrower than every other page. Bring it in line.
+All changes confined to `src/pages/HeritageV3.tsx`.
 
-## Changes
+## 1. Make v2 the default (and remove toggle)
+- Delete the `useState<"v1" | "v2">` and the temporary v1/v2 toggle UI block.
+- Delete the now-unused `groupMilestonesV1` data and the v1 branches in Section 1 and the eras render.
+- Use `founderLineage`, `groupCompanies`, and `erasV2` directly.
+- Keep the v2 closing sentence ("…from the company's founding to today.").
 
-**`src/pages/About.tsx`** (line 15)
-- `<div className="max-w-4xl mx-auto space-y-6">` → `<div className="max-w-7xl mx-auto space-y-6">`
+## 2. Rename the companies section
+- Change the `Group companies` heading to **Companies Affiliated with Sellvinds Group**.
 
-**`src/pages/HeritageV3.tsx`** (line 183)
-- `<div className="max-w-5xl mx-auto">` → `<div className="max-w-7xl mx-auto">`
+## 3. Add large Sellvinds logo at top-right of the page
+- In Section 1, wrap the existing intro (small Sellvinds mark + heading + paragraphs) and a new large Sellvinds logo in a two-column layout on `md+`:
+  - Left column: current content (small mark, h2, intro paragraphs) — unchanged.
+  - Right column: large `sellvindsLogo` image (e.g. `h-40 md:h-56 lg:h-64 w-auto`), right-aligned, vertically centered with the heading block.
+- On mobile the logo stacks above the heading (or is hidden if it crowds — default: stacks above).
+- Section structure below the intro (founder lineage, companies, eras) stays full-width as today.
 
-## Notes
+## 4. CAFOMA Engine Components
+- Remove the `[DRAFT — CONFIRM: …]` wrapper from the `groupCompanies` entry; keep the prose as written (founding year 2007, SIPCOT Industrial Park, Irungatukottai).
 
-- No other pages need changes — Capabilities, Technologies, WhatWeMake, Leadership, Contact, OurApproach, and Index all already use `max-w-7xl`.
-- Inside Heritage, the prose blocks already have their own narrower caps (`max-w-3xl`, `max-w-2xl`) on the text sections, the timeline rail, and the closing tagline, so widening the outer container won't stretch the reading column. The timeline's centred rail (`md:left-1/2`) will simply sit on the wider canvas.
-- About's content is short and mostly cards in a 2-col grid; widening the wrapper lets the grid breathe to match Leadership's layout.
-- No new component abstraction introduced — keeping the change minimal and reversible. If page-width drift becomes a recurring issue later, a shared `<PageContainer>` would be the next step.
+## Technical notes
+- Remove `useState` import if no longer used.
+- Keep `EntryRow`, `MiniEntryRow`, `CompanyRow`, `eras` (still used via `erasV2`), and the closing Sellvinds+Pentagon lockup unchanged.
+- No changes to `Heritage.tsx`, routing, or other files.
