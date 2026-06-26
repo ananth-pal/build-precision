@@ -161,7 +161,7 @@ const founderLineage: Entry[] = [
   },
 ];
 
-type Company = { name: string; year: string; caption?: string; body: string };
+type Company = { name: string; year: string; caption?: string; body: string; image?: string };
 
 const groupCompanies: Company[] = [
   {
