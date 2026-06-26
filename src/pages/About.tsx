@@ -3,8 +3,10 @@ import { ArrowRight, Download } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import ChennaiLocatorMap from "@/components/ChennaiLocatorMap";
 import plantExterior from "@/assets/plant1-exterior.png.asset.json";
 import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
+
 
 export default function About() {
   return (
@@ -34,7 +36,12 @@ export default function About() {
                 <p className="text-sm text-muted-foreground mb-2">31 A/8, Ambattur Industrial Estate, Chennai (approx. 5 km from Plant 1)</p>
               </div>
             </div>
+
+            <div className="mt-10">
+              <ChennaiLocatorMap />
+            </div>
           </div>
+
 
           <div className="grid md:grid-cols-2 gap-8 pt-8">
             <Link to="/about/heritage" className="capability-card group">
