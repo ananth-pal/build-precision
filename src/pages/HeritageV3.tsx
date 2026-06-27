@@ -388,55 +388,51 @@ export default function Heritage() {
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
                   Group milestones
                 </h3>
-                <div className="relative pl-8 md:pl-10">
-                  <div className="absolute left-2 md:left-3 top-2 bottom-2 w-px bg-border" />
-                  <ol className="space-y-7">
+                <div className="relative">
+                  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+                  <div className="space-y-6 md:space-y-8">
                     {earlyMilestones.map((entry, i) => {
                       const isPentagon = entry.body.startsWith("Pentagon Machines");
-                      const dot = (
-                        <span
-                          className="absolute -left-[1.4rem] md:-left-[1.7rem] top-1.5 w-2.5 h-2.5 rounded-full bg-primary/70"
-                          aria-hidden
-                        />
-                      );
-
-                      if (isPentagon) {
-                        return (
-                          <li key={entry.label + i} className="relative">
-                            {dot}
-                            <div className="text-primary font-bold text-sm">{entry.label}</div>
-                            <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                              Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
-                              <a
-                                href="#pentagon-milestones"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  const el = document.getElementById("pentagon-milestones");
-                                  if (!el) return;
-                                  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                                  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-                                }}
-                                className="group text-primary font-medium whitespace-nowrap hover:underline"
-                              >
-                                See Pentagon's full timeline{" "}
-                                <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
-                              </a>
-                            </p>
-                          </li>
-                        );
-                      }
-
+                      const isLeft = i % 2 === 0;
                       return (
-                        <li key={entry.label + i} className="relative">
-                          {dot}
-                          <div className="text-primary font-bold text-sm">{entry.label}</div>
-                          <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                            {entry.body}
-                          </p>
-                        </li>
+                        <div
+                          key={entry.label + i}
+                          className={`relative flex items-start gap-8 ${
+                            isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                          }`}
+                        >
+                          <div className="hidden md:block flex-1" />
+                          <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-1.5" />
+                          <div className="ml-12 md:ml-0 flex-1">
+                            <div className="text-primary font-bold text-base">{entry.label}</div>
+                            <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                              {isPentagon ? (
+                                <>
+                                  Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
+                                  <a
+                                    href="#pentagon-milestones"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      const el = document.getElementById("pentagon-milestones");
+                                      if (!el) return;
+                                      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                                      el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+                                    }}
+                                    className="group text-primary font-medium whitespace-nowrap hover:underline"
+                                  >
+                                    See Pentagon's full timeline{" "}
+                                    <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
+                                  </a>
+                                </>
+                              ) : (
+                                entry.body
+                              )}
+                            </p>
+                          </div>
+                        </div>
                       );
                     })}
-                  </ol>
+                  </div>
                 </div>
               </div>
             ) : (
