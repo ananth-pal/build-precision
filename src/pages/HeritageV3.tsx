@@ -268,7 +268,7 @@ const earlyMilestones: Entry[] = [
 ];
 
 export default function Heritage() {
-  const [variant, setVariant] = useState<"v1" | "v2" | "v3">("v1");
+  const [variant, setVariant] = useState<"v2" | "v3">("v2");
   const isV2 = variant === "v2";
   const isV3 = variant === "v3";
 
