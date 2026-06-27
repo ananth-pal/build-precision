@@ -232,6 +232,8 @@ const sellvindsLogo = { url: sellvindsLogoSrc };
 // missing assets are intentionally omitted rather than shown as placeholders.
 const memberLogos: { src: string; alt: string }[] = [
   { src: pentagonLogo.url, alt: "Pentagon Machines and Services" },
+  { src: cafomaAutopartsLogo, alt: "CAFOMA Autoparts Pvt. Ltd." },
+  { src: cafomaEngineLogo, alt: "CAFOMA Engine Components Private Limited" },
 ];
 
 export default function Heritage() {
@@ -390,14 +392,12 @@ export default function Heritage() {
             </div>
           </section>
 
-          {/* Closing tagline — Sellvinds parent lockup with group company logos */}
+          {/* Closing tagline — Sellvinds + Pentagon paired lockup */}
           <div className="my-24 md:my-32 text-center flex flex-col items-center">
-            <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-20 md:h-24 w-auto mb-8" />
-            <div className="h-px w-16 bg-border mb-8" />
-            <div className="flex flex-wrap items-center justify-center gap-x-10 md:gap-x-14 gap-y-6 mb-10">
+            <div className="flex items-center gap-8 md:gap-12 mb-10">
+              <img src={sellvindsLogo.url} alt="Sellvinds Group" className="h-20 md:h-24 w-auto" />
+              <div className="w-px h-14 md:h-16 bg-border" />
               <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-9 md:h-11 w-auto" />
-              <img src={cafomaAutopartsLogo} alt="CAFOMA Autoparts Pvt. Ltd." className="h-10 md:h-12 w-auto" />
-              <img src={cafomaEngineLogo} alt="CAFOMA Engine Components Private Limited" className="h-10 md:h-12 w-auto" />
             </div>
             <p className="text-foreground text-lg md:text-xl max-w-2xl">
               Pentagon is part of The Sellvinds Group — 72 years of manufacturing excellence.
