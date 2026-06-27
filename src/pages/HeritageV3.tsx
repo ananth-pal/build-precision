@@ -236,9 +236,46 @@ const memberLogos: { src: string; alt: string; scale?: number }[] = [
   { src: cafomaEngineLogo, alt: "CAFOMA Engine Components Private Limited", scale: 0.95 },
 ];
 
+const earlyMilestones: Entry[] = [
+  {
+    label: "1954",
+    body: "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice.",
+  },
+  {
+    label: "Late 1950s–early 1960s",
+    body: "While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division.",
+  },
+  {
+    label: "1964",
+    body: "Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005. (Not a Sellvinds Group company.)",
+  },
+  {
+    label: "1965",
+    body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras. He co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies, making broaching machines.",
+  },
+  {
+    label: "Early 1970s",
+    body: "Sellvinds is set up to manufacture autoparts. Indian OEMs including TELCO (Tata Motors), HMT Tractors, and Greaves Cotton bring tricky components to Sellvinds for development. A separate plant is set up to assemble and supply engine lubricating-oil pumps for OEMs — totally run by women, an industry first.",
+  },
+  {
+    label: "1970s",
+    body: "Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer. Its full history is traced in the timeline below.",
+  },
+  {
+    label: "1983",
+    body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
+  },
+  {
+    label: "2007",
+    body: "CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.",
+  },
+];
+
 export default function Heritage() {
-  const [variant, setVariant] = useState<"v1" | "v2">("v1");
+  const [variant, setVariant] = useState<"v1" | "v2" | "v3">("v1");
   const isV2 = variant === "v2";
+  const isV3 = variant === "v3";
+
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -248,28 +285,27 @@ export default function Heritage() {
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           {/* Layout variant toggle */}
-          <div className="mb-10 flex items-center justify-end gap-3 text-xs">
-            <span className={!isV2 ? "text-foreground font-semibold" : "text-muted-foreground"}>V1</span>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={isV2}
-              onClick={() => setVariant(isV2 ? "v1" : "v2")}
-              className="relative inline-flex h-5 w-9 items-center rounded-full bg-muted border border-border transition-colors"
-            >
-              <span
-                className={`inline-block h-3.5 w-3.5 transform rounded-full bg-primary transition-transform ${
-                  isV2 ? "translate-x-5" : "translate-x-1"
+          <div className="mb-10 flex items-center justify-end gap-1 text-xs">
+            {(["v1", "v2", "v3"] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                onClick={() => setVariant(v)}
+                className={`px-3 py-1.5 rounded-md border transition-colors ${
+                  variant === v
+                    ? "bg-primary text-primary-foreground border-primary font-semibold"
+                    : "bg-muted text-muted-foreground border-border hover:text-foreground"
                 }`}
-              />
-            </button>
-            <span className={isV2 ? "text-foreground font-semibold" : "text-muted-foreground"}>V2</span>
+              >
+                {v.toUpperCase()}
+              </button>
+            ))}
           </div>
 
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
-            {/* V1: family-of-companies lockup at top */}
-            {!isV2 && (
+            {/* V1 & V2: family-of-companies lockup at top */}
+            {!isV3 && (
               <div className="mb-16 flex justify-center">
                 <div className="flex items-center gap-8 md:gap-12">
                   <img
@@ -295,12 +331,10 @@ export default function Heritage() {
                   </div>
                 </div>
               </div>
-
             )}
 
-
-            {/* Intro — V2 places Sellvinds logo to the right of the prose */}
-            {isV2 ? (
+            {/* Intro — V3 places Sellvinds logo to the right of the prose */}
+            {isV3 ? (
               <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -337,28 +371,45 @@ export default function Heritage() {
               </div>
             )}
 
+            {/* V2: combined "Early group milestones" timeline */}
+            {isV2 ? (
+              <div className="mt-16">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
+                  Early group milestones
+                </h3>
+                <div className="relative">
+                  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+                  <div className="space-y-12">
+                    {earlyMilestones.map((entry, i) => (
+                      <EntryRow key={entry.label + i} entry={entry} index={i} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <>
+                {/* Founder — prose paragraph */}
+                <div className="mt-12">
+                  <h3 className="text-lg md:text-xl font-semibold text-foreground">
+                    A machine-tool engineer's formation
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mt-6">
+                    {founderFormation}
+                  </p>
+                </div>
 
-            {/* Founder — prose paragraph */}
-            <div className="mt-12">
-              <h3 className="text-lg md:text-xl font-semibold text-foreground">
-                A machine-tool engineer's formation
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mt-6">
-                {founderFormation}
-              </p>
-            </div>
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
+                  Companies Affiliated with Sellvinds Group
+                </h3>
 
-
-            <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-              Companies Affiliated with Sellvinds Group
-            </h3>
-
-            {/* Company profiles — text only */}
-            <div className="space-y-8 mt-10">
-              {groupCompanies.map((company, i) => (
-                <CompanyRow key={company.name + i} company={company} />
-              ))}
-            </div>
+                {/* Company profiles — text only */}
+                <div className="space-y-8 mt-10">
+                  {groupCompanies.map((company, i) => (
+                    <CompanyRow key={company.name + i} company={company} />
+                  ))}
+                </div>
+              </>
+            )}
 
             <div className="mt-12">
               <div className="h-px w-10 bg-primary mb-4" />
@@ -366,6 +417,7 @@ export default function Heritage() {
                 Pentagon's own story unfolds alongside this wider group history. The timeline below traces it from the company's founding to today.
               </p>
             </div>
+
           </section>
 
           {/* Section 2 — Pentagon's heritage */}
