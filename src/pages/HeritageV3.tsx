@@ -232,6 +232,8 @@ const sellvindsLogo = { url: sellvindsLogoSrc };
 // missing assets are intentionally omitted rather than shown as placeholders.
 const memberLogos: { src: string; alt: string }[] = [
   { src: pentagonLogo.url, alt: "Pentagon Machines and Services" },
+  { src: cafomaAutopartsLogo, alt: "CAFOMA Autoparts Pvt. Ltd." },
+  { src: cafomaEngineLogo, alt: "CAFOMA Engine Components Private Limited" },
 ];
 
 export default function Heritage() {
