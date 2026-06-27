@@ -238,20 +238,16 @@ const memberLogos: { src: string; alt: string; scale?: number }[] = [
 
 const earlyMilestones: Entry[] = [
   {
-    label: "1954",
-    body: "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice.",
-  },
-  {
-    label: "Late 1950s–early 1960s",
-    body: "While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division.",
+    label: "1954–1964",
+    body: "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice. While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division.",
   },
   {
     label: "1964",
-    body: "Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
+    body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras. He co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies, making broaching machines.",
   },
   {
     label: "1965",
-    body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras. He co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies, making broaching machines.",
+    body: "Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
   },
   {
     label: "Early 1970s",
