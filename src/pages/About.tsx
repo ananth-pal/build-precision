@@ -15,12 +15,11 @@ export default function About() {
       <PageHero title="About Pentagon" subtitle="A machine tool manufacturer turned precision contract manufacturer. 45+ years of engineering depth." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto space-y-6">
+          <img src={plantExterior.url} alt="Plant 1 exterior" className="w-full h-auto rounded-md" />
+
           <p className="text-muted-foreground leading-relaxed">
             Pentagon Machines and Services Pvt. Ltd. is a precision contract manufacturing company headquartered in Chennai, India. With over 45 years of experience, Pentagon has been a long-term manufacturing partner to a leading multinational organisation in Australia and a prominent Indian automotive OEM.
           </p>
-
-          <img src={plantExterior.url} alt="Plant 1 exterior" className="w-full h-auto rounded-md" />
-
 
           {/* Our Facilities */}
           <div className="pt-8">
@@ -36,12 +35,7 @@ export default function About() {
                 <p className="text-sm text-muted-foreground mb-2">31 A/8, Ambattur Industrial Estate, Chennai (approx. 5 km from Plant 1)</p>
               </div>
             </div>
-
-            <div className="mt-10">
-              <ChennaiLocatorMap />
-            </div>
           </div>
-
 
           <div className="grid md:grid-cols-2 gap-8 pt-8">
             <Link to="/about/heritage" className="capability-card group">
@@ -58,6 +52,10 @@ export default function About() {
                 Read more <ArrowRight size={14} />
               </span>
             </Link>
+          </div>
+
+          <div className="pt-8">
+            <ChennaiLocatorMap />
           </div>
 
           <div className="pt-8">
