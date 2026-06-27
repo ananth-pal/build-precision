@@ -288,6 +288,7 @@ export default function Heritage() {
                           src={m.src}
                           alt={m.alt}
                           className="max-h-full max-w-full object-contain"
+                          style={m.scale ? { transform: `scale(${m.scale})` } : undefined}
                         />
                       </div>
                     ))}
