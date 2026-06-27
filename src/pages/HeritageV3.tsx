@@ -211,15 +211,24 @@ function Thumb({ src, alt, label, kind }: { src?: string; alt: string; label?: s
 
 function CompanyRow({ company }: { company: Company }) {
   return (
-    <div>
-      <div className="flex items-baseline gap-3 flex-wrap">
-        <span className="text-primary font-bold text-base">{company.name}</span>
-        <span className="text-muted-foreground text-sm">{company.year}</span>
+    <div className="grid grid-cols-[1fr_auto] gap-6 items-start">
+      <div>
+        <div className="flex items-baseline gap-3 flex-wrap">
+          <span className="text-primary font-bold text-base">{company.name}</span>
+          <span className="text-muted-foreground text-sm">{company.year}</span>
+        </div>
+        {company.caption && (
+          <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
+        )}
+        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
       </div>
-      {company.caption && (
-        <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
+      {company.logo && (
+        <img
+          src={company.logo}
+          alt={`${company.name} logo`}
+          className="h-12 md:h-14 w-auto object-contain shrink-0"
+        />
       )}
-      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
     </div>
   );
 }
