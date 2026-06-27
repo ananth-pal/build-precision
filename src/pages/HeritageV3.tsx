@@ -238,20 +238,16 @@ const memberLogos: { src: string; alt: string; scale?: number }[] = [
 
 const earlyMilestones: Entry[] = [
   {
-    label: "1954",
-    body: "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice.",
-  },
-  {
-    label: "Late 1950s–early 1960s",
-    body: "While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division.",
+    label: "1954–1964",
+    body: "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice. While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division.",
   },
   {
     label: "1964",
-    body: "Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
+    body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras. He co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies, making broaching machines.",
   },
   {
     label: "1965",
-    body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras. He co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies, making broaching machines.",
+    body: "Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005.",
   },
   {
     label: "Early 1970s",
@@ -399,9 +395,7 @@ export default function Heritage() {
                       const isPentagon = entry.body.startsWith("Pentagon Machines");
                       const dot = (
                         <span
-                          className={`absolute -left-[1.4rem] md:-left-[1.7rem] top-1.5 w-2.5 h-2.5 rounded-full ${
-                            isPentagon ? "bg-primary ring-4 ring-primary/20" : "bg-primary/70"
-                          }`}
+                          className="absolute -left-[1.4rem] md:-left-[1.7rem] top-1.5 w-2.5 h-2.5 rounded-full bg-primary/70"
                           aria-hidden
                         />
                       );
@@ -410,26 +404,24 @@ export default function Heritage() {
                         return (
                           <li key={entry.label + i} className="relative">
                             {dot}
-                            <a
-                              href="#pentagon-milestones"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                const el = document.getElementById("pentagon-milestones");
-                                if (!el) return;
-                                const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                                el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-                              }}
-                              className="group block -mx-3 px-3 py-2 rounded-md border-l-2 border-primary bg-primary/5 hover:bg-primary/10 transition-colors"
-                            >
-                              <div className="text-primary font-bold text-sm">{entry.label}</div>
-                              <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                                Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
-                                <span className="text-primary font-medium whitespace-nowrap">
-                                  See Pentagon's full timeline{" "}
-                                  <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
-                                </span>
-                              </p>
-                            </a>
+                            <div className="text-primary font-bold text-sm">{entry.label}</div>
+                            <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                              Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
+                              <a
+                                href="#pentagon-milestones"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  const el = document.getElementById("pentagon-milestones");
+                                  if (!el) return;
+                                  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                                  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+                                }}
+                                className="group text-primary font-medium whitespace-nowrap hover:underline"
+                              >
+                                See Pentagon's full timeline{" "}
+                                <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
+                              </a>
+                            </p>
                           </li>
                         );
                       }
