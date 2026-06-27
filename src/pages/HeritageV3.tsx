@@ -230,10 +230,10 @@ const sellvindsLogo = { url: sellvindsLogoSrc };
 
 // Member logos for the family-of-companies lockup. Only include logos that exist;
 // missing assets are intentionally omitted rather than shown as placeholders.
-const memberLogos: { src: string; alt: string }[] = [
+const memberLogos: { src: string; alt: string; scale?: number }[] = [
   { src: pentagonLogo.url, alt: "Pentagon Machines and Services" },
   { src: cafomaAutopartsLogo, alt: "CAFOMA Autoparts Pvt. Ltd." },
-  { src: cafomaEngineLogo, alt: "CAFOMA Engine Components Private Limited" },
+  { src: cafomaEngineLogo, alt: "CAFOMA Engine Components Private Limited", scale: 0.95 },
 ];
 
 export default function Heritage() {
