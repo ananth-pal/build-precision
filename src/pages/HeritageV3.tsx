@@ -395,9 +395,7 @@ export default function Heritage() {
                       const isPentagon = entry.body.startsWith("Pentagon Machines");
                       const dot = (
                         <span
-                          className={`absolute -left-[1.4rem] md:-left-[1.7rem] top-1.5 w-2.5 h-2.5 rounded-full ${
-                            isPentagon ? "bg-primary ring-4 ring-primary/20" : "bg-primary/70"
-                          }`}
+                          className="absolute -left-[1.4rem] md:-left-[1.7rem] top-1.5 w-2.5 h-2.5 rounded-full bg-primary/70"
                           aria-hidden
                         />
                       );
@@ -406,26 +404,24 @@ export default function Heritage() {
                         return (
                           <li key={entry.label + i} className="relative">
                             {dot}
-                            <a
-                              href="#pentagon-milestones"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                const el = document.getElementById("pentagon-milestones");
-                                if (!el) return;
-                                const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                                el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-                              }}
-                              className="group block -mx-3 px-3 py-2 rounded-md border-l-2 border-primary bg-primary/5 hover:bg-primary/10 transition-colors"
-                            >
-                              <div className="text-primary font-bold text-sm">{entry.label}</div>
-                              <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                                Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
-                                <span className="text-primary font-medium whitespace-nowrap">
-                                  See Pentagon's full timeline{" "}
-                                  <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
-                                </span>
-                              </p>
-                            </a>
+                            <div className="text-primary font-bold text-sm">{entry.label}</div>
+                            <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                              Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
+                              <a
+                                href="#pentagon-milestones"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  const el = document.getElementById("pentagon-milestones");
+                                  if (!el) return;
+                                  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                                  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+                                }}
+                                className="group text-primary font-medium whitespace-nowrap hover:underline"
+                              >
+                                See Pentagon's full timeline{" "}
+                                <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
+                              </a>
+                            </p>
                           </li>
                         );
                       }
