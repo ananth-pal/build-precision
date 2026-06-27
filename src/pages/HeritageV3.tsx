@@ -178,7 +178,7 @@ const groupCompanies: Company[] = [
   {
     name: "CAFOMA Engine Components Pvt. Ltd",
     year: "2007",
-    body: "CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture in 2007 to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.",
+    body: "CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.",
     logo: cafomaEngineLogo,
   },
 ];
