@@ -16,9 +16,6 @@ const referenceCities: City[] = [
   { name: "New Delhi", coords: [77.2, 28.61], anchor: "end", dx: -6, dy: 4 },
   { name: "Mumbai", coords: [72.87, 19.07], anchor: "end", dx: -6, dy: 4 },
   { name: "Bengaluru", coords: [77.59, 12.97], anchor: "end", dx: -6, dy: 4 },
-  { name: "Colombo", coords: [79.85, 6.93], anchor: "start", dx: 6, dy: 10 },
-  { name: "Dubai", coords: [55.27, 25.2], anchor: "end", dx: -6, dy: 4 },
-  { name: "Singapore", coords: [103.82, 1.35], anchor: "start", dx: 6, dy: 4 },
 ];
 
 export default function ChennaiLocatorMap() {
