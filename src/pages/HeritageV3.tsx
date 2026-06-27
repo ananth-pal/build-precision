@@ -142,7 +142,10 @@ function EntryRow({ entry, index }: { entry: Entry; index: number }) {
 const founderFormation =
   "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice in 1954. While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division. After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras.";
 
-type Company = { name: string; year: string; caption?: string; body: string };
+import cafomaAutopartsLogo from "@/assets/brand/cafoma-autoparts-logo.png";
+import cafomaEngineLogo from "@/assets/brand/cafoma-engine-components-logo.png";
+
+type Company = { name: string; year: string; caption?: string; body: string; logo?: string };
 
 const groupCompanies: Company[] = [
   {
@@ -170,11 +173,13 @@ const groupCompanies: Company[] = [
     name: "CAFOMA Autoparts Ltd",
     year: "1983",
     body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
+    logo: cafomaAutopartsLogo,
   },
   {
     name: "CAFOMA Engine Components Pvt. Ltd",
     year: "2007",
     body: "CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture in 2007 to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.",
+    logo: cafomaEngineLogo,
   },
 ];
 
@@ -206,15 +211,24 @@ function Thumb({ src, alt, label, kind }: { src?: string; alt: string; label?: s
 
 function CompanyRow({ company }: { company: Company }) {
   return (
-    <div>
-      <div className="flex items-baseline gap-3 flex-wrap">
-        <span className="text-primary font-bold text-base">{company.name}</span>
-        <span className="text-muted-foreground text-sm">{company.year}</span>
+    <div className="grid grid-cols-[1fr_auto] gap-6 items-start">
+      <div>
+        <div className="flex items-baseline gap-3 flex-wrap">
+          <span className="text-primary font-bold text-base">{company.name}</span>
+          <span className="text-muted-foreground text-sm">{company.year}</span>
+        </div>
+        {company.caption && (
+          <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
+        )}
+        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
       </div>
-      {company.caption && (
-        <div className="text-muted-foreground text-xs italic mt-0.5">{company.caption}</div>
+      {company.logo && (
+        <img
+          src={company.logo}
+          alt={`${company.name} logo`}
+          className="h-12 md:h-14 w-auto object-contain shrink-0"
+        />
       )}
-      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{company.body}</p>
     </div>
   );
 }
