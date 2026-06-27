@@ -268,7 +268,7 @@ const earlyMilestones: Entry[] = [
 ];
 
 export default function Heritage() {
-  const [variant, setVariant] = useState<"v1" | "v2" | "v3">("v1");
+  const [variant, setVariant] = useState<"v2" | "v3">("v2");
   const isV2 = variant === "v2";
   const isV3 = variant === "v3";
 
@@ -282,7 +282,7 @@ export default function Heritage() {
         <div className="max-w-7xl mx-auto">
           {/* Layout variant toggle */}
           <div className="mb-10 flex items-center justify-end gap-1 text-xs">
-            {(["v1", "v2", "v3"] as const).map((v) => (
+            {(["v2", "v3"] as const).map((v) => (
               <button
                 key={v}
                 type="button"
@@ -300,8 +300,8 @@ export default function Heritage() {
 
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
-            {/* V1 & V2: family-of-companies lockup at top */}
-            {!isV3 && (
+            {/* V2: family-of-companies lockup at top */}
+            {isV2 && (
               <div className="mb-16 flex justify-center">
                 <div className="flex items-center gap-8 md:gap-12">
                   <img
@@ -310,35 +310,17 @@ export default function Heritage() {
                     className="h-24 md:h-28 w-auto shrink-0"
                   />
                   <div className="h-20 md:h-24 w-px bg-border" />
-                  {isV2 ? (
-                    <div className="flex items-center gap-6 md:gap-10">
-                      {memberLogos.map((m) => (
-                        <img
-                          key={m.alt}
-                          src={m.src}
-                          alt={m.alt}
-                          className="h-9 md:h-11 w-auto object-contain"
-                          style={m.scale ? { transform: `scale(${m.scale})`, transformOrigin: "center" } : undefined}
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="grid grid-cols-2 gap-x-6 md:gap-x-8 gap-y-3 items-center">
-                      {memberLogos.map((m) => (
-                        <div
-                          key={m.alt}
-                          className="h-9 md:h-11 w-36 md:w-44 flex items-center justify-center"
-                        >
-                          <img
-                            src={m.src}
-                            alt={m.alt}
-                            className="max-h-full max-w-full object-contain"
-                            style={m.scale ? { transform: `scale(${m.scale})` } : undefined}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex items-center gap-6 md:gap-10">
+                    {memberLogos.map((m) => (
+                      <img
+                        key={m.alt}
+                        src={m.src}
+                        alt={m.alt}
+                        className="h-9 md:h-11 w-auto object-contain"
+                        style={m.scale ? { transform: `scale(${m.scale})`, transformOrigin: "center" } : undefined}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
