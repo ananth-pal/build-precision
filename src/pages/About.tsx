@@ -15,7 +15,12 @@ export default function About() {
       <PageHero title="About Pentagon" subtitle="A machine tool manufacturer turned precision contract manufacturer. 45+ years of engineering depth." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto space-y-6">
-          <img src={plantExterior.url} alt="Plant 1 exterior" className="w-full h-auto rounded-md" />
+          <img
+            src={plantExterior.url}
+            alt="Plant 1 exterior"
+            loading="lazy"
+            className="w-full h-56 md:h-80 lg:h-[420px] object-cover rounded-md"
+          />
 
           <p className="text-muted-foreground leading-relaxed">
             Pentagon Machines and Services Pvt. Ltd. is a precision contract manufacturing company headquartered in Chennai, India. With over 45 years of experience, Pentagon has been a long-term manufacturing partner to a leading multinational organisation in Australia and a prominent Indian automotive OEM.
