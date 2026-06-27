@@ -271,25 +271,30 @@ export default function Heritage() {
             {/* V1: family-of-companies lockup at top */}
             {!isV2 && (
               <div className="mb-16 flex justify-center">
-                <div className="flex items-center gap-10 md:gap-14">
+                <div className="flex items-center gap-8 md:gap-12">
                   <img
                     src={sellvindsLogo.url}
                     alt="Sellvinds Group"
-                    className="h-32 md:h-40 w-auto shrink-0"
+                    className="h-24 md:h-28 w-auto shrink-0"
                   />
-                  <div className="h-24 md:h-32 w-px bg-border" />
-                  <div className="grid grid-cols-2 gap-x-8 md:gap-x-10 gap-y-4 items-center">
+                  <div className="h-20 md:h-24 w-px bg-border" />
+                  <div className="grid grid-cols-2 gap-x-6 md:gap-x-8 gap-y-3 items-center">
                     {memberLogos.map((m) => (
-                      <img
+                      <div
                         key={m.alt}
-                        src={m.src}
-                        alt={m.alt}
-                        className="h-14 md:h-[4.5rem] w-auto object-contain"
-                      />
+                        className="h-9 md:h-11 w-36 md:w-44 flex items-center justify-center"
+                      >
+                        <img
+                          src={m.src}
+                          alt={m.alt}
+                          className="max-h-full max-w-full object-contain"
+                        />
+                      </div>
                     ))}
                   </div>
                 </div>
               </div>
+
             )}
 
 
