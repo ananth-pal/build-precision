@@ -386,22 +386,69 @@ export default function Heritage() {
               </div>
             )}
 
-            {/* V2: combined "Early group milestones" timeline */}
+            {/* V2: combined group milestones — single left-aligned rail */}
             {isV2 ? (
               <div className="mt-16">
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
                   Group milestones
                 </h3>
-                <div className="relative">
-                  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-                  <div className="space-y-12">
-                    {earlyMilestones.map((entry, i) => (
-                      <EntryRow key={entry.label + i} entry={entry} index={i} />
-                    ))}
-                  </div>
+                <div className="relative pl-8 md:pl-10">
+                  <div className="absolute left-2 md:left-3 top-2 bottom-2 w-px bg-border" />
+                  <ol className="space-y-7">
+                    {earlyMilestones.map((entry, i) => {
+                      const isPentagon = entry.body.startsWith("Pentagon Machines");
+                      const dot = (
+                        <span
+                          className={`absolute -left-[1.4rem] md:-left-[1.7rem] top-1.5 w-2.5 h-2.5 rounded-full ${
+                            isPentagon ? "bg-primary ring-4 ring-primary/20" : "bg-primary/70"
+                          }`}
+                          aria-hidden
+                        />
+                      );
+
+                      if (isPentagon) {
+                        return (
+                          <li key={entry.label + i} className="relative">
+                            {dot}
+                            <a
+                              href="#pentagon-milestones"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                const el = document.getElementById("pentagon-milestones");
+                                if (!el) return;
+                                const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                                el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+                              }}
+                              className="group block -mx-3 px-3 py-2 rounded-md border-l-2 border-primary bg-primary/5 hover:bg-primary/10 transition-colors"
+                            >
+                              <div className="text-primary font-bold text-sm">{entry.label}</div>
+                              <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                                Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
+                                <span className="text-primary font-medium whitespace-nowrap">
+                                  See Pentagon's full timeline{" "}
+                                  <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
+                                </span>
+                              </p>
+                            </a>
+                          </li>
+                        );
+                      }
+
+                      return (
+                        <li key={entry.label + i} className="relative">
+                          {dot}
+                          <div className="text-primary font-bold text-sm">{entry.label}</div>
+                          <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                            {entry.body}
+                          </p>
+                        </li>
+                      );
+                    })}
+                  </ol>
                 </div>
               </div>
             ) : (
+
               <>
                 {/* Founder — prose paragraph */}
                 <div className="mt-12">
@@ -435,11 +482,12 @@ export default function Heritage() {
 
           </section>
 
-          {/* Section 2 — Pentagon's heritage */}
-          <section>
+          {/* Section 2 — Pentagon's milestones */}
+          <section id="pentagon-milestones" className="scroll-mt-24">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Pentagon's milestones
             </h2>
+
 
             <div className="relative">
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />

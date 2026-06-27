@@ -1,23 +1,37 @@
-# Heritage page — promote Sellvinds lockup to top
 
-File: `src/pages/HeritageV3.tsx`. Scope: Section 1 only.
+# Group milestones — left-aligned rail + Pentagon jump-link
 
-## Change
+Scope: V2 layout of `src/pages/HeritageV3.tsx`, "Group milestones" section only. Pentagon's milestones (Section 2) is untouched apart from receiving an `id` anchor.
 
-Move the family-of-companies lockup (Sellvinds logo + thin divider + member-company logos row) so it renders **immediately under the hero, above the `Pentagon as part of The Sellvinds Group` H2**.
+## Changes
 
-### New order in Section 1
-1. Sellvinds + members lockup (centered, no border box — unchanged styling)
-2. `Pentagon as part of The Sellvinds Group` H2 + two intro paragraphs
-3. `A machine-tool engineer's formation` (founder prose + portrait)
-4. `Companies Affiliated with Sellvinds Group` heading
-5. Text-only company profiles
-6. Closing "Pentagon's own story unfolds…" line
+### 1. Convert "Group milestones" to a single left-aligned rail
+Replace the zig-zag `EntryRow` usage (currently shared with Pentagon's milestones) with a dedicated, simpler component used only here:
 
-### Implementation
-- Cut the existing `<div className="mt-6 flex flex-col items-center">…</div>` block (Sellvinds img + divider + `memberLogos.map`) and the `Companies Affiliated with Sellvinds Group` H3 stays where it is (above the company profile list, not above the lockup).
-- Paste the lockup as the first child of the Section 1 `<section>`, with top spacing adjusted (e.g. `mb-12 flex flex-col items-center`) so it breathes above the H2.
+- One vertical rail on the left, with a small dot per entry.
+- Each row: date label on top in brand red, body paragraph below in muted text.
+- All entries stack down a single column on every breakpoint (no alternating sides).
+- Tighter vertical rhythm than the zig-zag so it reads as a quick index.
+
+This visually differentiates "Group milestones" (compact index of the wider family) from "Pentagon's milestones" (richer zig-zag deep-dive) below.
+
+### 2. Highlight the Pentagon (1970s) entry as a jump-link
+The Pentagon entry inside the rail becomes the visual "you are here / continue here" anchor:
+
+- Faint brand-tinted background and a slightly thicker left border on that row.
+- Body text rewritten to end with an inline link: "See Pentagon's full timeline ↓".
+- Whole row is a `<button>`/`<a>` that smooth-scrolls to Section 2.
+- Hover: background deepens slightly, arrow nudges down.
+
+### 3. Anchor target
+Add `id="pentagon-milestones"` to the Section 2 wrapper (and `scroll-margin-top` so the sticky header doesn't cover the heading on jump). No copy or layout change to Section 2 itself.
 
 ## Out of scope
-- No copy, logo asset, sizing, or typography changes.
-- Sections 2, the closing paired lockup, the "72 years…" line, and the Leadership link are untouched.
+- V1 and V3 layouts.
+- Pentagon's milestones content, ordering, or zig-zag styling.
+- Logos lockup, intro copy, company profiles, footer lockup.
+
+## Technical notes
+- New small component (e.g. `GroupMilestoneRow`) lives in `HeritageV3.tsx` next to `EntryRow`; `EntryRow` stays for Section 2.
+- Smooth scroll via `element.scrollIntoView({ behavior: "smooth", block: "start" })`; respect `prefers-reduced-motion` by falling back to instant jump.
+- Use existing semantic tokens (`text-primary`, `bg-primary/5`, `border-primary/40`, `text-muted-foreground`) — no hardcoded colors.
