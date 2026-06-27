@@ -390,7 +390,7 @@ export default function Heritage() {
             {isV2 ? (
               <div className="mt-16">
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
-                  Early group milestones
+                  Group milestones
                 </h3>
                 <div className="relative">
                   <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
