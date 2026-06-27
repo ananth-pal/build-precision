@@ -314,24 +314,39 @@ export default function Heritage() {
                     className="h-24 md:h-28 w-auto shrink-0"
                   />
                   <div className="h-20 md:h-24 w-px bg-border" />
-                  <div className="grid grid-cols-2 gap-x-6 md:gap-x-8 gap-y-3 items-center">
-                    {memberLogos.map((m) => (
-                      <div
-                        key={m.alt}
-                        className="h-9 md:h-11 w-36 md:w-44 flex items-center justify-center"
-                      >
+                  {isV2 ? (
+                    <div className="flex items-center gap-6 md:gap-10">
+                      {memberLogos.map((m) => (
                         <img
+                          key={m.alt}
                           src={m.src}
                           alt={m.alt}
-                          className="max-h-full max-w-full object-contain"
-                          style={m.scale ? { transform: `scale(${m.scale})` } : undefined}
+                          className="h-9 md:h-11 w-auto object-contain"
+                          style={m.scale ? { transform: `scale(${m.scale})`, transformOrigin: "center" } : undefined}
                         />
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-2 gap-x-6 md:gap-x-8 gap-y-3 items-center">
+                      {memberLogos.map((m) => (
+                        <div
+                          key={m.alt}
+                          className="h-9 md:h-11 w-36 md:w-44 flex items-center justify-center"
+                        >
+                          <img
+                            src={m.src}
+                            alt={m.alt}
+                            className="max-h-full max-w-full object-contain"
+                            style={m.scale ? { transform: `scale(${m.scale})` } : undefined}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             )}
+
 
             {/* Intro — V3 places Sellvinds logo to the right of the prose */}
             {isV3 ? (
