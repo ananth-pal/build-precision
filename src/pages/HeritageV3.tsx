@@ -236,9 +236,46 @@ const memberLogos: { src: string; alt: string; scale?: number }[] = [
   { src: cafomaEngineLogo, alt: "CAFOMA Engine Components Private Limited", scale: 0.95 },
 ];
 
+const earlyMilestones: Entry[] = [
+  {
+    label: "1954",
+    body: "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice.",
+  },
+  {
+    label: "Late 1950s–early 1960s",
+    body: "While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division.",
+  },
+  {
+    label: "1964",
+    body: "Ramanathan Palaniappan helps set up SRP Tools Ltd as Technical Director to support the promoters who had a commercial background. He coordinates collaboration agreements with Mitsubishi to manufacture hobs, broaches, shaping cutters, and shaving cutters, and SRP grows into India's largest gear-cutting-tool company. He remains Technical Director until SRP is sold back to Mitsubishi in 2005. (Not a Sellvinds Group company.)",
+  },
+  {
+    label: "1965",
+    body: "After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras. He co-founds Productivity Elements Pvt. Ltd. (PROTEL), one of India's first small-scale machine tool companies, making broaching machines.",
+  },
+  {
+    label: "Early 1970s",
+    body: "Sellvinds is set up to manufacture autoparts. Indian OEMs including TELCO (Tata Motors), HMT Tractors, and Greaves Cotton bring tricky components to Sellvinds for development. A separate plant is set up to assemble and supply engine lubricating-oil pumps for OEMs — totally run by women, an industry first.",
+  },
+  {
+    label: "1970s",
+    body: "Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer. Its full history is traced in the timeline below.",
+  },
+  {
+    label: "1983",
+    body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
+  },
+  {
+    label: "2007",
+    body: "CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.",
+  },
+];
+
 export default function Heritage() {
-  const [variant, setVariant] = useState<"v1" | "v2">("v1");
+  const [variant, setVariant] = useState<"v1" | "v2" | "v3">("v1");
   const isV2 = variant === "v2";
+  const isV3 = variant === "v3";
+
 
   return (
     <div className="min-h-screen flex flex-col">
