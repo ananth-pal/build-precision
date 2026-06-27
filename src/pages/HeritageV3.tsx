@@ -142,7 +142,10 @@ function EntryRow({ entry, index }: { entry: Entry; index: number }) {
 const founderFormation =
   "Ramanathan Palaniappan graduates top of his class in Mechanical Engineering from Annamalai University and joins Hindustan Machine Tools Ltd. (HMT), Bangalore, as a graduate apprentice in 1954. While at HMT, he leads delegations to machine-building firms in Europe and signs collaboration agreements on HMT's behalf. One assignment takes him to Renault, France, where he spends six months with a team of fifteen engineers studying the Renault special-purpose machine (SPM) division. After planning and setting up HMT's Special Purpose Machine Division, he leaves as Deputy General Manager and moves to Madras.";
 
-type Company = { name: string; year: string; caption?: string; body: string };
+import cafomaAutopartsLogo from "@/assets/brand/cafoma-autoparts-logo.png";
+import cafomaEngineLogo from "@/assets/brand/cafoma-engine-components-logo.png";
+
+type Company = { name: string; year: string; caption?: string; body: string; logo?: string };
 
 const groupCompanies: Company[] = [
   {
