@@ -438,7 +438,7 @@ export default function Heritage() {
           {/* Section 2 — Pentagon's heritage */}
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-              Pentagon's heritage
+              Pentagon's milestones
             </h2>
 
             <div className="relative">
