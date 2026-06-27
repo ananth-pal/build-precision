@@ -482,11 +482,12 @@ export default function Heritage() {
 
           </section>
 
-          {/* Section 2 — Pentagon's heritage */}
-          <section>
+          {/* Section 2 — Pentagon's milestones */}
+          <section id="pentagon-milestones" className="scroll-mt-24">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Pentagon's milestones
             </h2>
+
 
             <div className="relative">
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
