@@ -270,25 +270,28 @@ export default function Heritage() {
           <section className="mb-24 md:mb-32">
             {/* V1: family-of-companies lockup at top */}
             {!isV2 && (
-              <div className="mb-16 flex flex-col items-center">
-                <img
-                  src={sellvindsLogo.url}
-                  alt="Sellvinds Group"
-                  className="h-32 md:h-40 w-auto"
-                />
-                <div className="h-px w-16 bg-border my-6" />
-                <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-                  {memberLogos.map((m) => (
-                    <img
-                      key={m.alt}
-                      src={m.src}
-                      alt={m.alt}
-                      className="h-12 w-auto object-contain"
-                    />
-                  ))}
+              <div className="mb-16 flex justify-center">
+                <div className="flex items-center gap-10 md:gap-14">
+                  <img
+                    src={sellvindsLogo.url}
+                    alt="Sellvinds Group"
+                    className="h-32 md:h-40 w-auto shrink-0"
+                  />
+                  <div className="h-24 md:h-32 w-px bg-border" />
+                  <div className="grid grid-cols-2 gap-x-8 md:gap-x-10 gap-y-4 items-center">
+                    {memberLogos.map((m) => (
+                      <img
+                        key={m.alt}
+                        src={m.src}
+                        alt={m.alt}
+                        className="h-14 md:h-[4.5rem] w-auto object-contain"
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
+
 
             {/* Intro — V2 places Sellvinds logo to the right of the prose */}
             {isV2 ? (
