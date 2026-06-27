@@ -282,7 +282,7 @@ export default function Heritage() {
         <div className="max-w-7xl mx-auto">
           {/* Layout variant toggle */}
           <div className="mb-10 flex items-center justify-end gap-1 text-xs">
-            {(["v1", "v2", "v3"] as const).map((v) => (
+            {(["v2", "v3"] as const).map((v) => (
               <button
                 key={v}
                 type="button"
