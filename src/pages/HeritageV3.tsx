@@ -173,6 +173,13 @@ const groupCompanies: Company[] = [
     name: "CAFOMA Autoparts Ltd",
     year: "1983",
     body: "CAFOMA Autoparts Ltd is set up to machine fully-finished crankshafts. Working with customer-supplied forgings, CAFOMA supplies HMT Tractors, Simpson & Co., Greaves Cotton, and Tata Motors, producing 150,000 crankshafts a year by the 1990s. Tata Motors takes 24% equity in the company. CAFOMA Autoparts is sold to MM Forgings Ltd in 2021 on the founder's retirement and continues to operate as one of India's leading crankshaft manufacturers.",
+    logo: cafomaAutopartsLogo,
+  },
+  {
+    name: "CAFOMA Engine Components Pvt. Ltd",
+    year: "2007",
+    body: "CAFOMA Engine Components Pvt. Ltd is established as a greenfield venture in 2007 to machine fully-finished automotive cylinder heads, at SIPCOT Industrial Park, Irungatukottai, near Chennai.",
+    logo: cafomaEngineLogo,
   },
   {
     name: "CAFOMA Engine Components Pvt. Ltd",
