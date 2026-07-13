@@ -85,7 +85,7 @@ export default function WhatWeMake() {
                 Enquiries are welcome from OEMs across any sector. If a part in your bill of materials
                 fits the work above, we would be glad to see a drawing.
               </p>
-              <p class Name="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 For the machines and measurement equipment that support these programs, see{" "}
                 <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
                   Means of Production
