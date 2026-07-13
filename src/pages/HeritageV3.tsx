@@ -144,6 +144,7 @@ const founderFormation =
 
 import cafomaAutopartsLogo from "@/assets/brand/cafoma-autoparts-logo.png";
 import cafomaEngineLogo from "@/assets/brand/cafoma-engine-components-logo.png";
+import cafomaLogo from "@/assets/brand/cafoma-logo.png";
 
 type Company = { name: string; year: string; caption?: string; body: string; logo?: string };
 
