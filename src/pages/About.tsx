@@ -37,7 +37,7 @@ export default function About() {
               </div>
               <div className="capability-card">
                 <h3 className="text-lg font-semibold mb-2">Plant 2 — Gear Cutting Division</h3>
-                <p className="text-sm text-muted-foreground mb-2">31 A/8, Ambattur Industrial Estate, Chennai (approx. 5 km from Plant 1)</p>
+                <p className="text-sm text-muted-foreground mb-2">31 A/8, Ambattur Industrial Estate, Chennai (approx. 2 km from Plant 1)</p>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function About() {
             </Link>
             <Link to="/about/leadership" className="capability-card group">
               <h2 className="text-xl font-semibold mb-3">Leadership</h2>
-              <p className="text-sm text-muted-foreground mb-4">Technically credentialed, directly engaged — engineers trained at HMT, Cornell, and Imperial College London.</p>
+              <p className="text-sm text-muted-foreground mb-4">Technically credentialed, directly engaged — engineers trained at HMT, Cornell, and Imperial College London. All line managers have been with the company since our machine tool days&nbsp;—&nbsp;for 2 decades or more.</p>
               <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 Read more <ArrowRight size={14} />
               </span>
