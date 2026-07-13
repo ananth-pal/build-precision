@@ -86,13 +86,13 @@ const standards: Credential[] = [
     logoScale: 1.8,
   },
   {
-    label: "ISO 14001:2026",
+    label: "ISO 14001",
     fullName: "Environmental Management System",
     note: "Certification in progress.",
     status: "In progress",
   },
   {
-    label: "ISO 45001:2018",
+    label: "ISO 45001",
     fullName: "Occupational Health & Safety Management System",
     note: "Certification in progress.",
     status: "In progress",
