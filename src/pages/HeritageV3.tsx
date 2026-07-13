@@ -144,6 +144,7 @@ const founderFormation =
 
 import cafomaAutopartsLogo from "@/assets/brand/cafoma-autoparts-logo.png";
 import cafomaEngineLogo from "@/assets/brand/cafoma-engine-components-logo.png";
+import cafomaLogo from "@/assets/brand/cafoma-logo.png";
 
 type Company = { name: string; year: string; caption?: string; body: string; logo?: string };
 
@@ -303,27 +304,21 @@ export default function Heritage() {
             {/* V2: family-of-companies lockup at top */}
             {isV2 && (
               <div className="mb-16 flex justify-center">
-                <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:flex md:items-center md:gap-8 md:gap-12">
+                <div className="flex items-center gap-8 md:gap-12">
                   <img
                     src={sellvindsLogo.url}
                     alt="Sellvinds Group"
-                    className="h-20 md:h-28 w-auto object-contain justify-self-center"
+                    className="h-20 md:h-28 w-auto object-contain"
                   />
                   <img
                     src={pentagonLogo.url}
                     alt="Pentagon Machines and Services"
-                    className="h-8 md:h-11 w-auto object-contain justify-self-center"
+                    className="h-8 md:h-11 w-auto object-contain"
                   />
                   <img
-                    src={cafomaAutopartsLogo}
-                    alt="CAFOMA Autoparts Pvt. Ltd."
-                    className="h-8 md:h-11 w-auto object-contain justify-self-center"
-                  />
-                  <img
-                    src={cafomaEngineLogo}
-                    alt="CAFOMA Engine Components Private Limited"
-                    className="h-8 md:h-11 w-auto object-contain justify-self-center"
-                    style={{ transform: "scale(0.95)", transformOrigin: "center" }}
+                    src={cafomaLogo}
+                    alt="CAFOMA"
+                    className="h-8 md:h-11 w-auto object-contain"
                   />
                 </div>
               </div>
