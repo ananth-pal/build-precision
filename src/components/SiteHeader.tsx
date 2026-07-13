@@ -25,6 +25,7 @@ const navItems = [
       { label: "Leadership", path: "/about/leadership" },
     ],
   },
+  { label: "Careers", path: "/careers" },
 ];
 
 export default function SiteHeader() {

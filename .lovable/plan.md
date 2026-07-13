@@ -1,37 +1,23 @@
+## Careers page
 
-# Group milestones — left-aligned rail + Pentagon jump-link
+Add a new `/careers` page inviting trainees, freshers, and experienced applicants to share their details with Pentagon. Uses the same `enquiries@sellvindsgroup.com` mailbox as the Contact page — no new backend or email infrastructure needed.
 
-Scope: V2 layout of `src/pages/HeritageV3.tsx`, "Group milestones" section only. Pentagon's milestones (Section 2) is untouched apart from receiving an `id` anchor.
+### Page content (`src/pages/Careers.tsx`)
 
-## Changes
+- `PageHero` title: **"Careers at Pentagon"**, subtitle encouraging engineering trainees, ITI/diploma freshers, and experienced machinists to reach out even when no role is formally listed.
+- Short intro paragraph in the site's engineer-to-engineer tone: what kind of people thrive here (curious, hands-on, long-tenure culture — reflects existing "line managers 2 decades+" copy).
+- **Who we're looking for** — small list: Graduate/diploma engineering trainees (Mechanical/Production), ITI machinists & fitters, CNC operators & setters, Quality/metrology, Experienced hires across gear cutting, assembly, and machining.
+- **What we offer** — short list: structured on-the-job training under long-tenure line managers, exposure to precision hydraulics / gear cutting / assembly, medical cover for the full workforce, long-term career path.
+- **Apply** form (right column on desktop, stacked on mobile): Full name, Email, Phone, Highest qualification, Area of interest (select: Trainee/Fresher, CNC/Machining, Gear Cutting, Assembly, Quality, Other), Years of experience, Short note.
+  - **Resume attachment note**: browser `mailto:` cannot attach files, so the form uses `mailto:enquiries@sellvindsgroup.com` with subject `Career application — {name} ({area})` and a pre-filled body. A helper line above the submit button tells applicants to attach their CV to the email that opens.
+  - Fallback: a plain "Or email your CV directly to enquiries@sellvindsgroup.com" line with a `mailto:` link, matching Contact page styling.
 
-### 1. Convert "Group milestones" to a single left-aligned rail
-Replace the zig-zag `EntryRow` usage (currently shared with Pentagon's milestones) with a dedicated, simpler component used only here:
+### Navigation & footer wiring
 
-- One vertical rail on the left, with a small dot per entry.
-- Each row: date label on top in brand red, body paragraph below in muted text.
-- All entries stack down a single column on every breakpoint (no alternating sides).
-- Tighter vertical rhythm than the zig-zag so it reads as a quick index.
+- `src/components/SiteHeader.tsx`: add `{ label: "Careers", path: "/careers" }` to `navItems` (placed after About).
+- `src/components/SiteFooter.tsx`: add a "Careers" link alongside "Contact / RFQ".
+- `src/App.tsx`: add `<Route path="/careers" element={<Careers />} />` and the import.
 
-This visually differentiates "Group milestones" (compact index of the wider family) from "Pentagon's milestones" (richer zig-zag deep-dive) below.
+### Out of scope
 
-### 2. Highlight the Pentagon (1970s) entry as a jump-link
-The Pentagon entry inside the rail becomes the visual "you are here / continue here" anchor:
-
-- Faint brand-tinted background and a slightly thicker left border on that row.
-- Body text rewritten to end with an inline link: "See Pentagon's full timeline ↓".
-- Whole row is a `<button>`/`<a>` that smooth-scrolls to Section 2.
-- Hover: background deepens slightly, arrow nudges down.
-
-### 3. Anchor target
-Add `id="pentagon-milestones"` to the Section 2 wrapper (and `scroll-margin-top` so the sticky header doesn't cover the heading on jump). No copy or layout change to Section 2 itself.
-
-## Out of scope
-- V1 and V3 layouts.
-- Pentagon's milestones content, ordering, or zig-zag styling.
-- Logos lockup, intro copy, company profiles, footer lockup.
-
-## Technical notes
-- New small component (e.g. `GroupMilestoneRow`) lives in `HeritageV3.tsx` next to `EntryRow`; `EntryRow` stays for Section 2.
-- Smooth scroll via `element.scrollIntoView({ behavior: "smooth", block: "start" })`; respect `prefers-reduced-motion` by falling back to instant jump.
-- Use existing semantic tokens (`text-primary`, `bg-primary/5`, `border-primary/40`, `text-muted-foreground`) — no hardcoded colors.
+- No database table, edge function, or file upload backend. If the user later wants real resume uploads with storage, that's a follow-up (Lovable Cloud storage bucket + a `career_applications` table + a submission edge function).

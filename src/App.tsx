@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Heritage from "./pages/Heritage";
 import Leadership from "./pages/Leadership";
 import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/about/heritage-v4" element={<Navigate to="/about/heritage" replace />} />
           <Route path="/about/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
