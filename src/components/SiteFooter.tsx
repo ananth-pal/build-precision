@@ -22,6 +22,7 @@ export default function SiteFooter() {
                 { label: "Portfolio", path: "/what-we-make" },
                 { label: "Our Commitment", path: "/working-with-pentagon" },
                 { label: "About", path: "/about" },
+                { label: "Careers", path: "/careers" },
                 { label: "Contact / RFQ", path: "/contact" },
               ].map((l) => (
                 <Link key={l.path} to={l.path} className="block text-sm opacity-70 hover:opacity-100 transition-opacity">
