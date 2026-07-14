@@ -175,11 +175,11 @@ export default function Machining() {
             </div>
           </div>
 
-          <figure className="my-2 overflow-hidden rounded-lg border border-border">
+          <figure className="my-2 overflow-hidden rounded-lg border border-border bg-muted">
             <img
               src={airGauge.url}
               alt="Air gauges in the metrology area — operator checking bore dimensions against master rings"
-              className="w-full aspect-[21/9] object-cover"
+              className="w-full h-auto object-contain"
               loading="lazy"
             />
           </figure>
