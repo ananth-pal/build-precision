@@ -1,14 +1,20 @@
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Shuffle } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
 import gearShaperImg from "@/assets/capabilities/gear-shaper-lorenz.png.asset.json";
+import gearShaperAlt1 from "@/assets/capabilities/gear-shaper-alt-1.png.asset.json";
+import gearShaperAlt2 from "@/assets/capabilities/gear-shaper-alt-2.png.asset.json";
 
+const shaperImages = [gearShaperImg, gearShaperAlt1, gearShaperAlt2];
 
 export default function GearCutting() {
+  const [shaperIdx, setShaperIdx] = useState(0);
+  const current = shaperImages[shaperIdx];
+
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -28,8 +34,17 @@ export default function GearCutting() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
-              <img src={gearShaperImg.url} alt="Lorenz gear shaper on the floor" loading="lazy" className="w-full h-full object-cover" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-muted">
+              <img src={current.url} alt="Lorenz gear shaper on the floor" loading="lazy" className="w-full h-full object-cover" />
+              <button
+                type="button"
+                onClick={() => setShaperIdx((i) => (i + 1) % shaperImages.length)}
+                aria-label="Show next image"
+                className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 hover:bg-black/75 text-white text-xs font-medium px-3 py-1.5 backdrop-blur-sm transition"
+              >
+                <Shuffle className="w-3.5 h-3.5" />
+                {shaperIdx + 1}/{shaperImages.length}
+              </button>
             </div>
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Process</h3>
