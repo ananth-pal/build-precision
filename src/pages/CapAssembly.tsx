@@ -18,10 +18,11 @@ export default function CapAssembly() {
 
           {/* Hero image */}
           <div className="max-w-3xl mx-auto">
-            <ImagePlaceholder
-              ratio="aspect-[16/9]"
-              caption="Operator at clean-room assembly station — integrated electromechanical module mid-build with torque tooling and test bench in view"
-            />
+            <figure>
+              <div className="aspect-[16/9] overflow-hidden rounded-md bg-muted">
+                <img src={ptoAssembly.url} alt="PTO gearbox assembly on the workbench — operator fitting drive gear into housing" loading="lazy" className="w-full h-full object-cover" />
+              </div>
+            </figure>
           </div>
 
           {/* Types of Assemblies & Batch Sizes */}
