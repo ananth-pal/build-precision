@@ -27,7 +27,13 @@ export default function Capabilities() {
           <div className="grid md:grid-cols-3 gap-8">
             {caps.map((c) => (
               <Link key={c.title} to={c.path} className="capability-card group">
-                <ImagePlaceholder caption={c.image} ratio="aspect-video" className="mb-4" />
+                {c.imageSrc ? (
+                  <div className="mb-4 aspect-video overflow-hidden rounded-md bg-muted">
+                    <img src={c.imageSrc} alt={c.title} loading="lazy" className="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <ImagePlaceholder caption={c.image} ratio="aspect-video" className="mb-4" />
+                )}
                 <c.icon className="text-primary mb-4" size={32} />
                 <h2 className="text-xl font-semibold mb-3">{c.title}</h2>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">{c.desc}</p>
