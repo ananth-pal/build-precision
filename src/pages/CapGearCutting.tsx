@@ -22,8 +22,6 @@ export default function GearCutting() {
                 External and internal spur and helical gears up to around 6 module and 200 mm outside diameter are produced. Splined shafts, pinion shafts, and other transmission components are also manufactured. Tooth rounding and chamfering are standard, while crowning, tip relief, and similar profile modifications are included where the application calls for them.
               </p>
             </div>
-            <ImagePlaceholder
-              ratio="aspect-[4/3]"
             <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
               <img src={gearsImg.url} alt="Finished gears and splined shafts" loading="lazy" className="w-full h-full object-cover" />
             </div>
