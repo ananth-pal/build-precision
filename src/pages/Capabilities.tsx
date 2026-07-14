@@ -4,7 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine.jpeg.asset.json";
+import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine.jpg.asset.json";
 
 
 const caps = [

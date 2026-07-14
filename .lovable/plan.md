@@ -1,23 +1,20 @@
-## Careers page
+## Gear Cutting card image fix
 
-Add a new `/careers` page inviting trainees, freshers, and experienced applicants to share their details with Pentagon. Uses the same `enquiries@sellvindsgroup.com` mailbox as the Contact page — no new backend or email infrastructure needed.
+The photo is portrait; the card uses a landscape `aspect-video` frame, so `object-cover` crops the sides and pushes the tool/workpiece (top-right of the source) out of view.
 
-### Page content (`src/pages/Careers.tsx`)
+Two viable options:
 
-- `PageHero` title: **"Careers at Pentagon"**, subtitle encouraging engineering trainees, ITI/diploma freshers, and experienced machinists to reach out even when no role is formally listed.
-- Short intro paragraph in the site's engineer-to-engineer tone: what kind of people thrive here (curious, hands-on, long-tenure culture — reflects existing "line managers 2 decades+" copy).
-- **Who we're looking for** — small list: Graduate/diploma engineering trainees (Mechanical/Production), ITI machinists & fitters, CNC operators & setters, Quality/metrology, Experienced hires across gear cutting, assembly, and machining.
-- **What we offer** — short list: structured on-the-job training under long-tenure line managers, exposure to precision hydraulics / gear cutting / assembly, medical cover for the full workforce, long-term career path.
-- **Apply** form (right column on desktop, stacked on mobile): Full name, Email, Phone, Highest qualification, Area of interest (select: Trainee/Fresher, CNC/Machining, Gear Cutting, Assembly, Quality, Other), Years of experience, Short note.
-  - **Resume attachment note**: browser `mailto:` cannot attach files, so the form uses `mailto:enquiries@sellvindsgroup.com` with subject `Career application — {name} ({area})` and a pre-filled body. A helper line above the submit button tells applicants to attach their CV to the email that opens.
-  - Fallback: a plain "Or email your CV directly to enquiries@sellvindsgroup.com" line with a `mailto:` link, matching Contact page styling.
+### Option A — Keep landscape cards, reframe the photo (recommended)
+- Card grid stays visually consistent across all three capabilities (Assembly, Machining, Gear Cutting all landscape).
+- Reframe the gear-cutting image so the cutter and workpiece sit near the optical center.
+- Implementation: use `imagegen--edit_image` to crop/recompose the source into a 16:9 landscape frame centered on the tool + workpiece, save as a new asset, and swap the import in `src/pages/Capabilities.tsx`. No layout code changes.
 
-### Navigation & footer wiring
+### Option B — Switch all three cards to portrait
+- Change the card media frame from `aspect-video` to `aspect-[3/4]` (or `aspect-square`) for all cards, so the grid stays uniform.
+- Placeholder captions on Assembly/Machining still render fine.
+- Downside: taller cards push the icon/title/description further down, and portrait cards read less like a capability tile and more like a profile card. Only worth it if we plan to use portrait photography across the section going forward.
 
-- `src/components/SiteHeader.tsx`: add `{ label: "Careers", path: "/careers" }` to `navItems` (placed after About).
-- `src/components/SiteFooter.tsx`: add a "Careers" link alongside "Contact / RFQ".
-- `src/App.tsx`: add `<Route path="/careers" element={<Careers />} />` and the import.
+### Recommendation
+Go with Option A. Landscape tiles match the rest of the site's card rhythm; reframing a single image is a smaller, more reversible change than restyling the whole capability grid.
 
-### Out of scope
-
-- No database table, edge function, or file upload backend. If the user later wants real resume uploads with storage, that's a follow-up (Lovable Cloud storage bucket + a `career_applications` table + a submission edge function).
+If you approve, I will regenerate the gear-cutting image centered on the cutter and workpiece and wire the new asset into the Gear Cutting card only.
