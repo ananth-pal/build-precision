@@ -5,11 +5,10 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
-import gearShaperImg from "@/assets/capabilities/gear-shaper-lorenz.png.asset.json";
-import gearShaperAlt2 from "@/assets/capabilities/gear-shaper-alt-2.png.asset.json";
-import gearShaperAlt3 from "@/assets/capabilities/gear-shaper-alt-3.png.asset.json";
+import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
+import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
 
-const shaperImages = [gearShaperImg, gearShaperAlt2, gearShaperAlt3];
+const shaperImages = [shaperCloseup, shaperWide];
 
 export default function GearCutting() {
   const [shaperIdx, setShaperIdx] = useState(0);
