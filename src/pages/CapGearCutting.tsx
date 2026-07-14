@@ -4,6 +4,8 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import gearsImg from "@/assets/portfolio/Gears_2.jpeg.asset.json";
+import gearShaperImg from "@/assets/capabilities/gear-shaper-lorenz.png.asset.json";
 
 
 export default function GearCutting() {
@@ -20,17 +22,15 @@ export default function GearCutting() {
                 External and internal spur and helical gears up to around 6 module and 200 mm outside diameter are produced. Splined shafts, pinion shafts, and other transmission components are also manufactured. Tooth rounding and chamfering are standard, while crowning, tip relief, and similar profile modifications are included where the application calls for them.
               </p>
             </div>
-            <ImagePlaceholder
-              ratio="aspect-[4/3]"
-              caption="Finished gears and splined shafts — studio group, or rack of machined gears"
-            />
+            <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
+              <img src={gearsImg.url} alt="Finished gears and splined shafts" loading="lazy" className="w-full h-full object-cover" />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <ImagePlaceholder
-              ratio="aspect-[4/3]"
-              caption="Gear in cut on the hobber, or bore/reference-face grinding after heat treatment"
-            />
+            <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
+              <img src={gearShaperImg.url} alt="Lorenz gear shaper on the floor" loading="lazy" className="w-full h-full object-cover" />
+            </div>
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Process</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
