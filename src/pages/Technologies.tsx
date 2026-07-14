@@ -19,6 +19,7 @@ import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
 import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
+import castingsAsset from "@/assets/technologies/castings.jpg.asset.json";
 
 type Card = {
   icon: typeof Cog;
@@ -119,6 +120,7 @@ const cards: Card[] = [
     icon: Network,
     title: "Sourcing and External Processes",
     desc: "Long-standing vendor network for castings, forgings, heat treatment, and non-critical machined components.",
+    image: castingsAsset.url,
     caption: "Incoming forgings and castings at incoming inspection",
     details: [
       "Castings and forgings — long-standing certified vendors in India and abroad",
