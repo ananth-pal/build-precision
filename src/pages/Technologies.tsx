@@ -120,6 +120,7 @@ const cards: Card[] = [
     icon: Network,
     title: "Sourcing and External Processes",
     desc: "Long-standing vendor network for castings, forgings, heat treatment, and non-critical machined components.",
+    image: castingsAsset.url,
     caption: "Incoming forgings and castings at incoming inspection",
     details: [
       "Castings and forgings — long-standing certified vendors in India and abroad",
