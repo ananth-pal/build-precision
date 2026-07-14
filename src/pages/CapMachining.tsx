@@ -175,11 +175,14 @@ export default function Machining() {
             </div>
           </div>
 
-          <ImagePlaceholder
-            ratio="aspect-[21/9]"
-            caption="Machining in action — spindle engaging the part, chips or coolant visible. Wide establishing shot."
-            className="my-2"
-          />
+          <figure className="my-2 overflow-hidden rounded-lg border border-border">
+            <img
+              src={airGauge.url}
+              alt="Air gauges in the metrology area — operator checking bore dimensions against master rings"
+              className="w-full aspect-[21/9] object-cover"
+              loading="lazy"
+            />
+          </figure>
 
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See the equipment and processes behind this capability <ArrowRight size={14} />
