@@ -4,7 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import gearsImg from "@/assets/portfolio/Gears_2.jpeg.asset.json";
+import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
 import gearShaperImg from "@/assets/capabilities/gear-shaper-lorenz.png.asset.json";
 
 
