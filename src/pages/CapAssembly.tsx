@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Shuffle } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ptoAssembly from "@/assets/capabilities/pto-assembly.png.asset.json";
+import gearPump1 from "@/assets/capabilities/gear-pump-assembly-1.png.asset.json";
+import gearPump2 from "@/assets/capabilities/gear-pump-assembly-2.png.asset.json";
+
+const inspectionImages = [
+  { src: gearPump1.url, alt: "Gear pump housing clamped in bench vise during assembly inspection" },
+  { src: gearPump2.url, alt: "Assembled gear pump module with exposed drive gears on the workbench" },
+];
 
 export default function CapAssembly() {
   return (
