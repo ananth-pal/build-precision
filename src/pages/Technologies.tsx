@@ -172,6 +172,34 @@ export default function Technologies() {
                       playsInline
                       className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
                     />
+                  ) : c.images && c.images.length > 1 ? (
+                    (() => {
+                      const idx = imgIdx[c.title] ?? 0;
+                      const src = c.images[idx];
+                      return (
+                        <div className="relative mb-4">
+                          <img
+                            src={src}
+                            alt={c.title}
+                            loading="lazy"
+                            className="w-full aspect-video object-cover rounded-md bg-muted"
+                          />
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setImgIdx((s) => ({
+                                ...s,
+                                [c.title]: (idx + 1) % c.images!.length,
+                              }))
+                            }
+                            aria-label="Show next photo"
+                            className="absolute bottom-2 right-2 bg-background/80 hover:bg-background text-foreground rounded-md p-1.5 shadow border border-border"
+                          >
+                            <Shuffle size={14} />
+                          </button>
+                        </div>
+                      );
+                    })()
                   ) : c.image ? (
                     <img
                       src={c.image}
