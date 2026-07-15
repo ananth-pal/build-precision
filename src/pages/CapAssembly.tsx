@@ -4,21 +4,24 @@ import { Shuffle } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import ptoAssembly from "@/assets/capabilities/pto-assembly.png.asset.json";
-import gearPump1 from "@/assets/capabilities/gear-pump-assembly-1.png.asset.json";
-import gearPump2 from "@/assets/capabilities/gear-pump-assembly-2.png.asset.json";
-import airGaugeV2 from "@/assets/capabilities/air-gauge-v2.png.asset.json";
+import pto1 from "@/assets/capabilities/PTO_assembly_1_edit-2.png.asset.json";
+import pto2 from "@/assets/capabilities/PTO_assembly_2_edit-2.png.asset.json";
+import pto3 from "@/assets/capabilities/PTO_assembly_3_edit-2.png.asset.json";
+import gearPump5 from "@/assets/capabilities/Gear_pump_5_edit-2.png.asset.json";
+import gearPump1 from "@/assets/capabilities/Gear_pump_1_edited-3.png.asset.json";
+import airGauge from "@/assets/capabilities/Air_gauge_edit_1-3.png.asset.json";
 
-const inspectionImages = [
-  { src: gearPump1.url, alt: "Gear pump housing clamped in bench vise during assembly inspection" },
-  { src: gearPump2.url, alt: "Assembled gear pump module with exposed drive gears on the workbench" },
+const allImages = [
+  { src: pto1.url, alt: "PTO gearbox on assembly bench — operator fitting drive gear into housing with output shaft in view" },
+  { src: pto2.url, alt: "Operator using impact wrench on red PTO housing at torque station" },
+  { src: pto3.url, alt: "Cleanroom operator assembling gear stack into PTO housing at workbench" },
+  { src: gearPump5.url, alt: "Assembled gear pump module with exposed drive gears on workbench" },
+  { src: gearPump1.url, alt: "Pentagon operator torqueing gear pump housing clamped in bench vise" },
+  { src: airGauge.url, alt: "Air gauges in metrology area — operator checking bore dimensions on red housing against master rings" },
 ];
 
-const heroImages = [
-  { src: ptoAssembly.url, alt: "PTO gearbox assembly on the workbench — operator fitting drive gear into housing" },
-  { src: gearPump2.url, alt: "Assembled gear pump module with exposed drive gears on the workbench" },
-  { src: airGaugeV2.url, alt: "Air gauges in the metrology area — operator checking bore dimensions on a red housing against master rings" },
-];
+const heroImages = allImages;
+const inspectionImages = allImages;
 
 export default function CapAssembly() {
   const [idx, setIdx] = useState(0);
