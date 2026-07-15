@@ -35,10 +35,21 @@ export default function CapAssembly() {
 
           {/* Hero image */}
           <div className="max-w-3xl mx-auto">
-            <figure>
+            <figure className="relative">
               <div className="aspect-[16/9] overflow-hidden rounded-md bg-muted">
-                <img src={ptoAssembly.url} alt="PTO gearbox assembly on the workbench — operator fitting drive gear into housing" loading="lazy" className="w-full h-full object-cover" />
+                <img src={hero.src} alt={hero.alt} loading="lazy" className="w-full h-full object-cover" />
               </div>
+              {heroImages.length > 1 && (
+                <button
+                  type="button"
+                  onClick={() => setHeroIdx((i) => (i + 1) % heroImages.length)}
+                  className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-background/90 backdrop-blur px-2.5 py-1.5 text-xs font-medium text-foreground border border-border shadow-sm hover:bg-background transition"
+                  aria-label="Show next image"
+                >
+                  <Shuffle className="h-3.5 w-3.5" />
+                  {heroIdx + 1}/{heroImages.length}
+                </button>
+              )}
             </figure>
           </div>
 
