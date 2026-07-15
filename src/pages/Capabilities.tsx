@@ -6,6 +6,9 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
+import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
+import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
+import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
 import machiningImg from "@/assets/capabilities/pto-housing-fixture.png.asset.json";
 import machinedHousings from "@/assets/capabilities/machined-housings.png.asset.json";
 import fixtures from "@/assets/capabilities/fixtures.png.asset.json";
@@ -14,6 +17,7 @@ import assemblyAlt1 from "@/assets/capabilities/PTO_assembly_1_edit.png.asset.js
 import assemblyAlt2 from "@/assets/capabilities/PTO_assembly_2_edit.png.asset.json";
 import assemblyAlt3 from "@/assets/capabilities/PTO_assembly_3_edit.png.asset.json";
 import assemblyAlt4 from "@/assets/capabilities/Gear_pump_5_edit.png.asset.json";
+
 
 
 type Cap = {
@@ -55,7 +59,20 @@ const caps: Cap[] = [
       { src: airGauge.url, alt: "Air gauges in the metrology area — operator checking bore dimensions against master rings" },
     ],
   },
-  { icon: CircleDot, title: "Gear Cutting", desc: "Spur and helical gears, splined shafts, and transmission components, produced in a dedicated gear-cutting facility with in-house profile and lead inspection.", path: "/capabilities/gear-cutting", image: "Gear cutting machine mid-setup", imageSrc: gearCuttingImg.url },
+  {
+    icon: CircleDot,
+    title: "Gear Cutting",
+    desc: "Spur and helical gears, splined shafts, and transmission components, produced in a dedicated gear-cutting facility with in-house profile and lead inspection.",
+    path: "/capabilities/gear-cutting",
+    image: "Gear cutting machine mid-setup",
+    imageSrc: gearCuttingImg.url,
+    images: [
+      { src: gearCuttingImg.url, alt: "Gear cutting machine mid-setup" },
+      { src: gearsImg.url, alt: "Finished gears and splined shafts" },
+      { src: shaperCloseup.url, alt: "Lorenz gear shaper — close-up view" },
+      { src: shaperWide.url, alt: "Lorenz gear shaper on the shop floor" },
+    ],
+  },
 ];
 
 export default function Capabilities() {
