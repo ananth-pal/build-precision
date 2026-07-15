@@ -5,8 +5,10 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ananthPassport from "@/assets/leadership/ananth-passport.jpg.asset.json";
 import ananthNewsletter from "@/assets/leadership/ananth-newsletter.jpg.asset.json";
+import varunPhoto from "@/assets/leadership/varun.jpg.asset.json";
 
 const ananthPhotos = [ananthPassport.url, ananthNewsletter.url];
+const varunPhotos = [varunPhoto.url];
 
 const leaders = [
   {
@@ -26,6 +28,7 @@ const leaders = [
     title: "Manager — Strategy and Planning",
     shortBio: "BSc (Hons) in Surgical Design, Technology & Innovation from Imperial College London. Co-founded a medical imaging start-up at IIT Madras. Leads Pentagon's international growth.",
     fullBio: "A medical graduate from Plymouth University, UK, he completed training through the NHS Wales Academic Foundation Programme and has authored several scientific publications. He brings global perspective, innovation, and academic rigor to the organisation's strategic growth and expansion.",
+    photos: varunPhotos,
   },
   {
     name: "Ananth Palaniappan",
