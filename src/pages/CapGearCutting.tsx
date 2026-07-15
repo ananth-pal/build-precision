@@ -5,14 +5,21 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
+import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
 import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
 import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
 
 const shaperImages = [shaperCloseup, shaperWide];
+const gearsImages = [
+  { url: gearsImg.url, alt: "Finished gears and splined shafts" },
+  { url: gearCuttingImg.url, alt: "Gear cutting machine mid-setup" },
+];
 
 export default function GearCutting() {
   const [shaperIdx, setShaperIdx] = useState(0);
+  const [gearsIdx, setGearsIdx] = useState(0);
   const current = shaperImages[shaperIdx];
+  const currentGears = gearsImages[gearsIdx];
 
   return (
     <div className="min-h-screen flex flex-col">
