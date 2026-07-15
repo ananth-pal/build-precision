@@ -5,14 +5,21 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
+import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
 import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
 import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
 
 const shaperImages = [shaperCloseup, shaperWide];
+const gearsImages = [
+  { url: gearsImg.url, alt: "Finished gears and splined shafts" },
+  { url: gearCuttingImg.url, alt: "Gear cutting machine mid-setup" },
+];
 
 export default function GearCutting() {
   const [shaperIdx, setShaperIdx] = useState(0);
+  const [gearsIdx, setGearsIdx] = useState(0);
   const current = shaperImages[shaperIdx];
+  const currentGears = gearsImages[gearsIdx];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -27,8 +34,17 @@ export default function GearCutting() {
                 External and internal spur and helical gears up to around 6 module and 200 mm outside diameter are produced. Splined shafts, pinion shafts, and other transmission components are also manufactured. Tooth rounding and chamfering are standard, while crowning, tip relief, and similar profile modifications are included where the application calls for them.
               </p>
             </div>
-            <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
-              <img src={gearsImg.url} alt="Finished gears and splined shafts" loading="lazy" className="w-full h-full object-cover" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-muted">
+              <img src={currentGears.url} alt={currentGears.alt} loading="lazy" className="w-full h-full object-cover" />
+              <button
+                type="button"
+                onClick={() => setGearsIdx((i) => (i + 1) % gearsImages.length)}
+                aria-label="Show next image"
+                className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 hover:bg-black/75 text-white text-xs font-medium px-3 py-1.5 backdrop-blur-sm transition"
+              >
+                <Shuffle className="w-3.5 h-3.5" />
+                {gearsIdx + 1}/{gearsImages.length}
+              </button>
             </div>
           </div>
 
