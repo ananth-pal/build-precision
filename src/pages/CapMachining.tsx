@@ -187,11 +187,11 @@ export default function Machining() {
             </div>
           </div>
 
-          <figure className="relative my-2 overflow-hidden rounded-lg border border-border bg-muted">
+          <figure className="relative my-2 mx-auto w-full max-w-4xl aspect-[16/9] overflow-hidden rounded-lg border border-border bg-muted">
             <img
               src={currentImg.src}
               alt={currentImg.alt}
-              className="w-full h-auto object-contain"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
             {machiningImages.length > 1 && (
