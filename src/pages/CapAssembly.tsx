@@ -7,6 +7,7 @@ import PageHero from "@/components/PageHero";
 import ptoAssembly from "@/assets/capabilities/pto-assembly.png.asset.json";
 import gearPump1 from "@/assets/capabilities/gear-pump-assembly-1.png.asset.json";
 import gearPump2 from "@/assets/capabilities/gear-pump-assembly-2.png.asset.json";
+import airGaugeV2 from "@/assets/capabilities/air-gauge-v2.png.asset.json";
 
 const inspectionImages = [
   { src: gearPump1.url, alt: "Gear pump housing clamped in bench vise during assembly inspection" },
@@ -16,6 +17,7 @@ const inspectionImages = [
 const heroImages = [
   { src: ptoAssembly.url, alt: "PTO gearbox assembly on the workbench — operator fitting drive gear into housing" },
   { src: gearPump2.url, alt: "Assembled gear pump module with exposed drive gears on the workbench" },
+  { src: airGaugeV2.url, alt: "Air gauges in the metrology area — operator checking bore dimensions on a red housing against master rings" },
 ];
 
 export default function CapAssembly() {
