@@ -49,6 +49,8 @@ const materialsCapable = [
 export default function Machining() {
   
   const [materialsVersion, setMaterialsVersion] = useState<1 | 2>(1);
+  const [imgIdx, setImgIdx] = useState(0);
+  const currentImg = machiningImages[imgIdx];
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
