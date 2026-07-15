@@ -187,13 +187,24 @@ export default function Machining() {
             </div>
           </div>
 
-          <figure className="my-2 overflow-hidden rounded-lg border border-border bg-muted">
+          <figure className="relative my-2 overflow-hidden rounded-lg border border-border bg-muted">
             <img
-              src={airGauge.url}
-              alt="Air gauges in the metrology area — operator checking bore dimensions against master rings"
+              src={currentImg.src}
+              alt={currentImg.alt}
               className="w-full h-auto object-contain"
               loading="lazy"
             />
+            {machiningImages.length > 1 && (
+              <button
+                type="button"
+                onClick={() => setImgIdx((i) => (i + 1) % machiningImages.length)}
+                aria-label="Show next image"
+                className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-background/90 backdrop-blur px-2.5 py-1.5 text-xs font-medium text-foreground border border-border shadow-sm hover:bg-background transition"
+              >
+                <Shuffle className="h-3.5 w-3.5" />
+                {imgIdx + 1}/{machiningImages.length}
+              </button>
+            )}
           </figure>
 
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
