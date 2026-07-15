@@ -5,7 +5,6 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWorkGallery";
 
-import gearPumps6 from "@/assets/portfolio/Gear_pumps.png.asset.json";
 import balancers1 from "@/assets/portfolio/Balancer_1.png.asset.json";
 import balancers2 from "@/assets/portfolio/Balancer_2.png.asset.json";
 import couplers2 from "@/assets/portfolio/Couplers.png.asset.json";
@@ -13,19 +12,34 @@ import gears2 from "@/assets/portfolio/Gears.png.asset.json";
 import gearPumpComponents1 from "@/assets/portfolio/Gear_pump_components.png.asset.json";
 import ptoShafts1 from "@/assets/portfolio/Shafts.png.asset.json";
 import valveSpools1 from "@/assets/portfolio/Valve_spools.png.asset.json";
-import deepRidgeExtraPTOs1 from "@/assets/portfolio/PTOs_1.png.asset.json";
-import basePTOs1 from "@/assets/portfolio/PTOs_2.png.asset.json";
 import valves1 from "@/assets/portfolio/valves-new.png.asset.json";
+import pto1 from "@/assets/portfolio/PTO_1_cropped.png.asset.json";
+import ptoFinished1 from "@/assets/portfolio/PTO_finished_1_edit.png.asset.json";
+import ptoFinished2 from "@/assets/portfolio/PTO_finished_2_edit.png.asset.json";
+import ptoAssembly1 from "@/assets/portfolio/PTO_assembly_1_edit-4.png.asset.json";
+import ptoAssembly2 from "@/assets/portfolio/PTO_assembly_2_edit-4.png.asset.json";
+import ptoAssembly3 from "@/assets/portfolio/PTO_assembly_3_edit-4.png.asset.json";
+import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.png.asset.json";
+import gearPump1 from "@/assets/portfolio/Gear_pump_1_edited-5.png.asset.json";
+import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.png.asset.json";
+import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.png.asset.json";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
-  // Assemblies first — PTOs, balancers, pumps, valves
-  { src: deepRidgeExtraPTOs1.url, caption: "PTO Gearboxes" },
-  { src: basePTOs1.url, caption: "Base PTOs" },
+  // Assemblies — PTOs, pumps, balancers, valves
+  { src: pto1.url, caption: "PTO Gearbox" },
+  { src: ptoFinished1.url, caption: "PTO Gearboxes" },
+  { src: ptoFinished2.url, caption: "PTO Housings" },
+  { src: ptoAssembly1.url, caption: "PTO Assembly" },
+  { src: ptoAssembly2.url, caption: "PTO Assembly" },
+  { src: ptoAssembly3.url, caption: "PTO Assembly" },
+  { src: gearPump5.url, caption: "Gear Pump" },
+  { src: gearPump1.url, caption: "Gear Pump Housing" },
+  { src: machinedHousings.url, caption: "Machined Housings" },
+  { src: fixtures2.url, caption: "Fixtures" },
   { src: balancers1.url, caption: "Engine Balancers" },
   { src: balancers2.url, caption: "Engine Balancers" },
-  { src: gearPumps6.url, caption: "Gear Pumps" },
   { src: valves1.url, caption: "Hydraulic Valves" },
   // Components
   { src: gearPumpComponents1.url, caption: "Gear Pump Components" },

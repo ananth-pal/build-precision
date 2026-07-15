@@ -1,20 +1,30 @@
-## Gear Cutting card image fix
+## Portfolio update
 
-The photo is portrait; the card uses a landscape `aspect-video` frame, so `object-cover` crops the sides and pushes the tool/workpiece (top-right of the source) out of view.
+**Remove** these three entries from the Selected Work gallery in `src/pages/WhatWeMake.tsx`:
+- PTO Gearboxes (`PTOs_1.png`)
+- Base PTOs (`PTOs_2.png`)
+- Gear Pumps (`Gear_pumps.png`)
 
-Two viable options:
+**Add** the 10 newly uploaded photos as new gallery tiles, placed at the top of the assemblies group so they lead the page:
 
-### Option A — Keep landscape cards, reframe the photo (recommended)
-- Card grid stays visually consistent across all three capabilities (Assembly, Machining, Gear Cutting all landscape).
-- Reframe the gear-cutting image so the cutter and workpiece sit near the optical center.
-- Implementation: use `imagegen--edit_image` to crop/recompose the source into a 16:9 landscape frame centered on the tool + workpiece, save as a new asset, and swap the import in `src/pages/Capabilities.tsx`. No layout code changes.
+| File | Caption |
+|---|---|
+| `PTO_1_cropped.png` | PTO Gearbox |
+| `PTO_finished_1_edit.png` | PTO Gearboxes |
+| `PTO_finished_2_edit.png` | PTO Housings |
+| `PTO_assembly_1_edit-4.png` | PTO Assembly |
+| `PTO_assembly_2_edit-4.png` | PTO Assembly |
+| `PTO_assembly_3_edit-4.png` | PTO Assembly |
+| `Gear_pump_5_edit-4.png` | Gear Pump |
+| `Gear_pump_1_edited-5.png` | Gear Pump Housing |
+| `Machined_housings_1_edited-3.png` | Machined Housings |
+| `Fixtures_2_edited-2.png` | Fixtures |
 
-### Option B — Switch all three cards to portrait
-- Change the card media frame from `aspect-video` to `aspect-[3/4]` (or `aspect-square`) for all cards, so the grid stays uniform.
-- Placeholder captions on Assembly/Machining still render fine.
-- Downside: taller cards push the icon/title/description further down, and portrait cards read less like a capability tile and more like a profile card. Only worth it if we plan to use portrait photography across the section going forward.
+### Technical steps
+1. Upload each of the 10 files via `lovable-assets create --file /mnt/user-uploads/...` writing pointers to `src/assets/portfolio/<name>.asset.json`.
+2. Delete the three old asset pointers (`PTOs_1`, `PTOs_2`, `Gear_pumps`) with `lovable-assets delete`.
+3. Update `src/pages/WhatWeMake.tsx`: replace the three removed imports/entries with the 10 new imports, keeping the existing components (Balancers, Valves, and component shots) in order below.
 
-### Recommendation
-Go with Option A. Landscape tiles match the rest of the site's card rhythm; reframing a single image is a smaller, more reversible change than restyling the whole capability grid.
-
-If you approve, I will regenerate the gear-cutting image centered on the cutter and workpiece and wire the new asset into the Gear Cutting card only.
+### Open questions
+- Some of the new photos (Machined Housings, Fixtures) are components/tooling rather than finished assemblies — happy to include them in the Portfolio gallery, or would you prefer those two stay off this page? Default: include all 10 as listed.
+- Captions above are my suggestions; tell me if you want different wording.
