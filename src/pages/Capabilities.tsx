@@ -1,20 +1,49 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Cog, CircleDot, Box, ArrowRight } from "lucide-react";
+import { Cog, CircleDot, Box, ArrowRight, Shuffle } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
 import machiningImg from "@/assets/capabilities/pto-housing-fixture.png.asset.json";
+import assemblyAlt1 from "@/assets/capabilities/assembly-alt-pto-operator.jpg.asset.json";
+import assemblyAlt2 from "@/assets/capabilities/assembly-alt-pto-1.jpg.asset.json";
+import assemblyAlt3 from "@/assets/capabilities/assembly-alt-pto-2.jpg.asset.json";
+import assemblyAlt4 from "@/assets/capabilities/assembly-alt-gear-pump-4.jpg.asset.json";
 
 
-const caps = [
-  { icon: Box, title: "Assembly", desc: "Integrated electromechanical assemblies up to 30 kg — built in a cleanroom, functionally tested, and serialised for traceability on every unit shipped.", path: "/capabilities/assembly", image: "Cleanroom assembly line — operators at stations, controlled environment", imageSrc: null as string | null },
+type Cap = {
+  icon: typeof Box;
+  title: string;
+  desc: string;
+  path: string;
+  image: string;
+  imageSrc: string | null;
+  images?: { src: string; alt: string }[];
+};
+
+const caps: Cap[] = [
+  {
+    icon: Box,
+    title: "Assembly",
+    desc: "Integrated electromechanical assemblies up to 30 kg — built in a cleanroom, functionally tested, and serialised for traceability on every unit shipped.",
+    path: "/capabilities/assembly",
+    image: "Cleanroom assembly line — operators at stations, controlled environment",
+    imageSrc: null,
+    images: [
+      { src: assemblyAlt1.url, alt: "Operator at Pentagon PTO assembly station in cleanroom uniform" },
+      { src: assemblyAlt2.url, alt: "PTO gearbox on assembly bench showing input gear and output shaft" },
+      { src: assemblyAlt3.url, alt: "Torque-controlled fastening on PTO housing at assembly bench" },
+      { src: assemblyAlt4.url, alt: "Gear pump module during assembly" },
+    ],
+  },
   { icon: Cog, title: "Machining", desc: "Precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys. Fixtures and gauges designed and manufactured in-house by a team with a machine-tool-building background.", path: "/capabilities/machining", image: "PTO housing clamped in fixture on Makino machining centre — drill approaching workpiece", imageSrc: machiningImg.url },
   { icon: CircleDot, title: "Gear Cutting", desc: "Spur and helical gears, splined shafts, and transmission components, produced in a dedicated gear-cutting facility with in-house profile and lead inspection.", path: "/capabilities/gear-cutting", image: "Gear cutting machine mid-setup", imageSrc: gearCuttingImg.url },
 ];
 
 export default function Capabilities() {
+  const [imgIdx, setImgIdx] = useState<Record<string, number>>({});
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -26,23 +55,44 @@ export default function Capabilities() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {caps.map((c) => (
-              <Link key={c.title} to={c.path} className="capability-card group">
-                {c.imageSrc ? (
-                  <div className="mb-4 aspect-video overflow-hidden rounded-md bg-muted">
-                    <img src={c.imageSrc} alt={c.title} loading="lazy" className="w-full h-full object-cover" />
-                  </div>
-                ) : (
-                  <ImagePlaceholder caption={c.image} ratio="aspect-video" className="mb-4" />
-                )}
-                <c.icon className="text-primary mb-4" size={32} />
-                <h2 className="text-xl font-semibold mb-3">{c.title}</h2>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">{c.desc}</p>
-                <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Learn more <ArrowRight size={14} />
-                </span>
-              </Link>
-            ))}
+            {caps.map((c) => {
+              const idx = imgIdx[c.title] ?? 0;
+              const cycle = c.images && c.images.length > 1;
+              const current = cycle ? c.images![idx] : null;
+              return (
+                <Link key={c.title} to={c.path} className="capability-card group">
+                  {cycle && current ? (
+                    <div className="relative mb-4 aspect-video overflow-hidden rounded-md bg-muted">
+                      <img src={current.src} alt={current.alt} loading="lazy" className="w-full h-full object-cover" />
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setImgIdx((s) => ({ ...s, [c.title]: (idx + 1) % c.images!.length }));
+                        }}
+                        aria-label="Show next photo"
+                        className="absolute bottom-2 right-2 bg-background/80 hover:bg-background text-foreground rounded-md p-1.5 shadow border border-border"
+                      >
+                        <Shuffle size={14} />
+                      </button>
+                    </div>
+                  ) : c.imageSrc ? (
+                    <div className="mb-4 aspect-video overflow-hidden rounded-md bg-muted">
+                      <img src={c.imageSrc} alt={c.title} loading="lazy" className="w-full h-full object-cover" />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder caption={c.image} ratio="aspect-video" className="mb-4" />
+                  )}
+                  <c.icon className="text-primary mb-4" size={32} />
+                  <h2 className="text-xl font-semibold mb-3">{c.title}</h2>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">{c.desc}</p>
+                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more <ArrowRight size={14} />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </main>
