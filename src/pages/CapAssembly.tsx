@@ -1,11 +1,21 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Shuffle } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ptoAssembly from "@/assets/capabilities/pto-assembly.png.asset.json";
+import gearPump1 from "@/assets/capabilities/gear-pump-assembly-1.png.asset.json";
+import gearPump2 from "@/assets/capabilities/gear-pump-assembly-2.png.asset.json";
+
+const inspectionImages = [
+  { src: gearPump1.url, alt: "Gear pump housing clamped in bench vise during assembly inspection" },
+  { src: gearPump2.url, alt: "Assembled gear pump module with exposed drive gears on the workbench" },
+];
 
 export default function CapAssembly() {
+  const [idx, setIdx] = useState(0);
+  const current = inspectionImages[idx];
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -49,10 +59,22 @@ export default function CapAssembly() {
                 Inspection and functional test plans are defined according to the function of the assembly and the customer requirement. Depending on the product, this may include dimensional verification, torque checks, leak or pressure testing, continuity checks, or functional testing. A sampling plan is used for inspection as needed. Test benches can be adapted to the application where needed. Calibration is maintained in line with the Quality Management System, and digital test records form part of the delivered package.
               </p>
             </div>
-            <ImagePlaceholder
-              ratio="aspect-[4/3]"
-              caption="Assembly/pump test bench in operation — digital test-record screen visible"
-            />
+            <figure className="relative">
+              <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
+                <img src={current.src} alt={current.alt} loading="lazy" className="w-full h-full object-cover" />
+              </div>
+              {inspectionImages.length > 1 && (
+                <button
+                  type="button"
+                  onClick={() => setIdx((i) => (i + 1) % inspectionImages.length)}
+                  className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-background/90 backdrop-blur px-2.5 py-1.5 text-xs font-medium text-foreground border border-border shadow-sm hover:bg-background transition"
+                  aria-label="Show next image"
+                >
+                  <Shuffle className="h-3.5 w-3.5" />
+                  {idx + 1}/{inspectionImages.length}
+                </button>
+              )}
+            </figure>
           </div>
 
           {/* Sourcing & Logistics */}
