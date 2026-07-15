@@ -28,6 +28,7 @@ const leaders = [
     title: "Manager — Strategy and Planning",
     shortBio: "BSc (Hons) in Surgical Design, Technology & Innovation from Imperial College London. Co-founded a medical imaging start-up at IIT Madras. Leads Pentagon's international growth.",
     fullBio: "A medical graduate from Plymouth University, UK, he completed training through the NHS Wales Academic Foundation Programme and has authored several scientific publications. He brings global perspective, innovation, and academic rigor to the organisation's strategic growth and expansion.",
+    photos: varunPhotos,
   },
   {
     name: "Ananth Palaniappan",
