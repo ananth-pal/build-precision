@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Cog, Settings, Wrench, Ruler, Hammer, Network, FileText } from "lucide-react";
+import { Cog, Settings, Wrench, Ruler, Hammer, Network, FileText, Shuffle } from "lucide-react";
 import RequestMachineListDialog from "@/components/RequestMachineListDialog";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
