@@ -22,8 +22,11 @@ import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
 import castingsAsset from "@/assets/technologies/castings.jpg.asset.json";
 import castingsAlt1Asset from "@/assets/technologies/castings-alt-1.png.asset.json";
 import castingsAlt2Asset from "@/assets/technologies/castings-alt-2.png.asset.json";
-import gearPumpAssembledAsset from "@/assets/technologies/gear-pump-assembled.png.asset.json";
-import gearPumpViseAsset from "@/assets/technologies/gear-pump-vise.png.asset.json";
+import asmAlt1 from "@/assets/technologies/asm-alt-1.png.asset.json";
+import asmAlt2 from "@/assets/technologies/asm-alt-2.png.asset.json";
+import asmAlt3 from "@/assets/technologies/asm-alt-3.png.asset.json";
+import asmAlt4 from "@/assets/technologies/asm-alt-4.png.asset.json";
+import asmAlt5 from "@/assets/technologies/asm-alt-5.png.asset.json";
 
 type Card = {
   icon: typeof Cog;
