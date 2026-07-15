@@ -6,6 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import airGauge from "@/assets/capabilities/air-gauge.png.asset.json";
+import airGaugeV2 from "@/assets/capabilities/air-gauge-v2.png.asset.json";
 import ptoFixture from "@/assets/capabilities/pto-housing-fixture.png.asset.json";
 import machinedHousings from "@/assets/capabilities/machined-housings.png.asset.json";
 import fixtures from "@/assets/capabilities/fixtures.png.asset.json";
@@ -18,6 +19,7 @@ const machiningImages = [
   { src: machinedHousings.url, alt: "Row of machined PTO housings on the finished-goods rack, ready for inspection" },
   { src: fixtures.url, alt: "In-house workholding fixtures organised on shop-floor racks" },
   { src: airGauge.url, alt: "Air gauges in the metrology area — operator checking bore dimensions against master rings" },
+  { src: airGaugeV2.url, alt: "Air gauges in the metrology area — operator checking a red housing bore against master rings" },
 ];
 
 
