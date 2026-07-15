@@ -3,6 +3,10 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import ananthPassport from "@/assets/leadership/ananth-passport.jpg.asset.json";
+import ananthNewsletter from "@/assets/leadership/ananth-newsletter.jpg.asset.json";
+
+const ananthPhotos = [ananthPassport.url, ananthNewsletter.url];
 
 const leaders = [
   {
@@ -28,14 +32,28 @@ const leaders = [
     title: "Manager — Project Engineering",
     shortBio: "BS and MEng in Mechanical Engineering from Cornell University. Certified Six Sigma Black Belt. Oversees project engineering and leads expansion initiatives.",
     fullBio: "A graduate of King's College, Taunton, UK, where he received the Provost's Prize for Academic Excellence. Advanced training in SolidWorks. Spent three years at Optimus Technologies in Pittsburgh, contributing to bio-diesel engine retrofit and RFID automation projects. Now based in India, he oversees project engineering.",
+    photos: ananthPhotos,
   },
 ];
 
-function LeaderCard({ leader }: { leader: typeof leaders[0] }) {
+function LeaderCard({ leader }: { leader: typeof leaders[0] & { photos?: string[] } }) {
   const [expanded, setExpanded] = useState(false);
+  const [photoIdx, setPhotoIdx] = useState(0);
+  const photos = leader.photos;
   return (
     <div className="capability-card">
-      <div className="w-20 h-20 rounded-full bg-muted mb-4 flex items-center justify-center text-muted-foreground text-xs">[PHOTO]</div>
+      {photos && photos.length > 0 ? (
+        <button
+          type="button"
+          onClick={() => setPhotoIdx((i) => (i + 1) % photos.length)}
+          className="w-20 h-20 rounded-full overflow-hidden mb-4 block focus:outline-none focus:ring-2 focus:ring-primary"
+          aria-label={`Cycle photos of ${leader.name}`}
+        >
+          <img src={photos[photoIdx]} alt={leader.name} className="w-full h-full object-cover object-top" />
+        </button>
+      ) : (
+        <div className="w-20 h-20 rounded-full bg-muted mb-4 flex items-center justify-center text-muted-foreground text-xs">[PHOTO]</div>
+      )}
       <h3 className="text-lg font-semibold">{leader.name}</h3>
       <p className="text-primary text-sm font-medium mb-3">{leader.title}</p>
       <p className="text-sm text-muted-foreground leading-relaxed">{leader.shortBio}</p>
