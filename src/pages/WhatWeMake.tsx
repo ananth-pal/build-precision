@@ -16,9 +16,6 @@ import valves1 from "@/assets/portfolio/valves-new.png.asset.json";
 import pto1 from "@/assets/portfolio/PTO_1_cropped.png.asset.json";
 import ptoFinished1 from "@/assets/portfolio/PTO_finished_1_edit.png.asset.json";
 import ptoFinished2 from "@/assets/portfolio/PTO_finished_2_edit.png.asset.json";
-import ptoAssembly1 from "@/assets/portfolio/PTO_assembly_1_edit-4.png.asset.json";
-import ptoAssembly2 from "@/assets/portfolio/PTO_assembly_2_edit-4.png.asset.json";
-import ptoAssembly3 from "@/assets/portfolio/PTO_assembly_3_edit-4.png.asset.json";
 import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.png.asset.json";
 import gearPump1 from "@/assets/portfolio/Gear_pump_1_edited-5.png.asset.json";
 import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.png.asset.json";
@@ -35,9 +32,6 @@ const selectedWork: GalleryItem[] = [
   { src: valve3.url, caption: "Hydraulic Valve" },
   { src: ptoFinished1.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2.url, caption: "PTO Housings" },
-  { src: ptoAssembly1.url, caption: "PTO Assembly" },
-  { src: ptoAssembly2.url, caption: "PTO Assembly" },
-  { src: ptoAssembly3.url, caption: "PTO Assembly" },
   { src: gearPump5.url, caption: "Gear Pump" },
   { src: gearPump1.url, caption: "Gear Pump Housing" },
   { src: machinedHousings.url, caption: "Machined Housings" },
