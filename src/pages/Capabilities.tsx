@@ -41,7 +41,20 @@ const caps: Cap[] = [
       { src: assemblyAlt4.url, alt: "Assembled gear pump module with exposed internal gears on workbench" },
     ],
   },
-  { icon: Cog, title: "Machining", desc: "Precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys. Fixtures and gauges designed and manufactured in-house by a team with a machine-tool-building background.", path: "/capabilities/machining", image: "PTO housing clamped in fixture on Makino machining centre — drill approaching workpiece", imageSrc: machiningImg.url },
+  {
+    icon: Cog,
+    title: "Machining",
+    desc: "Precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys. Fixtures and gauges designed and manufactured in-house by a team with a machine-tool-building background.",
+    path: "/capabilities/machining",
+    image: "PTO housing clamped in fixture on Makino machining centre — drill approaching workpiece",
+    imageSrc: machiningImg.url,
+    images: [
+      { src: machiningImg.url, alt: "PTO housing clamped in fixture on a Makino machining centre — drill approaching the workpiece" },
+      { src: machinedHousings.url, alt: "Row of machined PTO housings on the finished-goods rack, ready for inspection" },
+      { src: fixtures.url, alt: "In-house workholding fixtures organised on shop-floor racks" },
+      { src: airGauge.url, alt: "Air gauges in the metrology area — operator checking bore dimensions against master rings" },
+    ],
+  },
   { icon: CircleDot, title: "Gear Cutting", desc: "Spur and helical gears, splined shafts, and transmission components, produced in a dedicated gear-cutting facility with in-house profile and lead inspection.", path: "/capabilities/gear-cutting", image: "Gear cutting machine mid-setup", imageSrc: gearCuttingImg.url },
 ];
 
