@@ -13,9 +13,16 @@ const inspectionImages = [
   { src: gearPump2.url, alt: "Assembled gear pump module with exposed drive gears on the workbench" },
 ];
 
+const heroImages = [
+  { src: ptoAssembly.url, alt: "PTO gearbox assembly on the workbench — operator fitting drive gear into housing" },
+  { src: gearPump2.url, alt: "Assembled gear pump module with exposed drive gears on the workbench" },
+];
+
 export default function CapAssembly() {
   const [idx, setIdx] = useState(0);
+  const [heroIdx, setHeroIdx] = useState(0);
   const current = inspectionImages[idx];
+  const hero = heroImages[heroIdx];
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
