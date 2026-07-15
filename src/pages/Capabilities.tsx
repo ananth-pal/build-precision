@@ -11,6 +11,7 @@ import assemblyAlt1 from "@/assets/capabilities/assembly-alt-pto-operator.jpg.as
 import assemblyAlt2 from "@/assets/capabilities/assembly-alt-pto-1.jpg.asset.json";
 import assemblyAlt3 from "@/assets/capabilities/assembly-alt-pto-2.jpg.asset.json";
 import assemblyAlt4 from "@/assets/capabilities/assembly-alt-gear-pump-4.jpg.asset.json";
+import assemblyAlt5 from "@/assets/capabilities/assembly-alt-gear-pump-5.png.asset.json";
 
 
 type Cap = {
@@ -36,6 +37,7 @@ const caps: Cap[] = [
       { src: assemblyAlt2.url, alt: "PTO gearbox on assembly bench showing input gear and output shaft" },
       { src: assemblyAlt3.url, alt: "Torque-controlled fastening on PTO housing at assembly bench" },
       { src: assemblyAlt4.url, alt: "Gear pump module during assembly" },
+      { src: assemblyAlt5.url, alt: "Assembled red gear pump module with exposed gears on workbench" },
     ],
   },
   { icon: Cog, title: "Machining", desc: "Precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys. Fixtures and gauges designed and manufactured in-house by a team with a machine-tool-building background.", path: "/capabilities/machining", image: "PTO housing clamped in fixture on Makino machining centre — drill approaching workpiece", imageSrc: machiningImg.url },
