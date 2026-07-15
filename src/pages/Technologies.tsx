@@ -20,6 +20,8 @@ import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.a
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
 import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
 import castingsAsset from "@/assets/technologies/castings.jpg.asset.json";
+import castingsAlt1Asset from "@/assets/technologies/castings-alt-1.png.asset.json";
+import castingsAlt2Asset from "@/assets/technologies/castings-alt-2.png.asset.json";
 
 type Card = {
   icon: typeof Cog;
