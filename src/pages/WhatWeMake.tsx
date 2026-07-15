@@ -27,8 +27,6 @@ const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
   // Assemblies — PTOs, pumps, balancers, valves
-  { src: pto1.url, caption: "PTO Gearbox" },
-  { src: ptoRender.url, caption: "PTO Gearbox" },
   { src: valve3.url, caption: "Hydraulic Valve" },
   { src: ptoFinished1.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2.url, caption: "PTO Housings" },
@@ -45,6 +43,8 @@ const selectedWork: GalleryItem[] = [
   { src: couplers2.url, caption: "Couplers" },
   { src: gears2.url, caption: "Gears" },
   { src: valveSpools1.url, caption: "Valve spools" },
+  { src: pto1.url, caption: "PTO Gearbox" },
+  { src: ptoRender.url, caption: "PTO Gearbox" },
 ];
 
 export default function WhatWeMake() {
