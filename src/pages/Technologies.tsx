@@ -29,6 +29,7 @@ type Card = {
   desc: string;
   details: string[];
   image?: string;
+  images?: string[];
   video?: string;
   dialogImage?: string;
   caption?: string;
