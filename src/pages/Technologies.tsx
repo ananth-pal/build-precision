@@ -137,6 +137,7 @@ const cards: Card[] = [
 
 export default function Technologies() {
   const [requestOpen, setRequestOpen] = useState(false);
+  const [imgIdx, setImgIdx] = useState<Record<string, number>>({});
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
