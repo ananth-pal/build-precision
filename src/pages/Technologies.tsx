@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Cog, Settings, Wrench, Ruler, Hammer, Network, FileText } from "lucide-react";
+import { Cog, Settings, Wrench, Ruler, Hammer, Network, FileText, Shuffle } from "lucide-react";
 import RequestMachineListDialog from "@/components/RequestMachineListDialog";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -20,6 +20,8 @@ import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.a
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
 import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
 import castingsAsset from "@/assets/technologies/castings.jpg.asset.json";
+import castingsAlt1Asset from "@/assets/technologies/castings-alt-1.png.asset.json";
+import castingsAlt2Asset from "@/assets/technologies/castings-alt-2.png.asset.json";
 
 type Card = {
   icon: typeof Cog;
@@ -27,6 +29,7 @@ type Card = {
   desc: string;
   details: string[];
   image?: string;
+  images?: string[];
   video?: string;
   dialogImage?: string;
   caption?: string;
@@ -121,6 +124,7 @@ const cards: Card[] = [
     title: "Sourcing and External Processes",
     desc: "Long-standing vendor network for castings, forgings, heat treatment, and non-critical machined components.",
     image: castingsAsset.url,
+    images: [castingsAsset.url, castingsAlt1Asset.url, castingsAlt2Asset.url],
     caption: "Incoming forgings and castings at incoming inspection",
     details: [
       "Castings and forgings — long-standing certified vendors in India and abroad",
@@ -133,6 +137,7 @@ const cards: Card[] = [
 
 export default function Technologies() {
   const [requestOpen, setRequestOpen] = useState(false);
+  const [imgIdx, setImgIdx] = useState<Record<string, number>>({});
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -167,6 +172,34 @@ export default function Technologies() {
                       playsInline
                       className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
                     />
+                  ) : c.images && c.images.length > 1 ? (
+                    (() => {
+                      const idx = imgIdx[c.title] ?? 0;
+                      const src = c.images[idx];
+                      return (
+                        <div className="relative mb-4">
+                          <img
+                            src={src}
+                            alt={c.title}
+                            loading="lazy"
+                            className="w-full aspect-video object-cover rounded-md bg-muted"
+                          />
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setImgIdx((s) => ({
+                                ...s,
+                                [c.title]: (idx + 1) % c.images!.length,
+                              }))
+                            }
+                            aria-label="Show next photo"
+                            className="absolute bottom-2 right-2 bg-background/80 hover:bg-background text-foreground rounded-md p-1.5 shadow border border-border"
+                          >
+                            <Shuffle size={14} />
+                          </button>
+                        </div>
+                      );
+                    })()
                   ) : c.image ? (
                     <img
                       src={c.image}
