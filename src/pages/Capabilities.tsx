@@ -11,6 +11,7 @@ import assemblyAlt1 from "@/assets/capabilities/assembly-alt-pto-operator.jpg.as
 import assemblyAlt2 from "@/assets/capabilities/assembly-alt-pto-1.jpg.asset.json";
 import assemblyAlt3 from "@/assets/capabilities/assembly-alt-pto-2.jpg.asset.json";
 import assemblyAlt4 from "@/assets/capabilities/assembly-alt-gear-pump-4.jpg.asset.json";
+import assemblyAlt5 from "@/assets/capabilities/assembly-alt-gear-pump-5.png.asset.json";
 
 
 type Cap = {
