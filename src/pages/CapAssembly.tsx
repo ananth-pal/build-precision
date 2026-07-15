@@ -14,6 +14,8 @@ const inspectionImages = [
 ];
 
 export default function CapAssembly() {
+  const [idx, setIdx] = useState(0);
+  const current = inspectionImages[idx];
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
