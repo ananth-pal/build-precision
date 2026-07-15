@@ -23,12 +23,16 @@ import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.png.asset.json";
 import gearPump1 from "@/assets/portfolio/Gear_pump_1_edited-5.png.asset.json";
 import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.png.asset.json";
 import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.png.asset.json";
+import valve3 from "@/assets/portfolio/Valve_3_edit.png.asset.json";
+import ptoRender from "@/assets/portfolio/PTO_render.png.asset.json";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
   // Assemblies — PTOs, pumps, balancers, valves
   { src: pto1.url, caption: "PTO Gearbox" },
+  { src: ptoRender.url, caption: "PTO Gearbox" },
+  { src: valve3.url, caption: "Hydraulic Valve" },
   { src: ptoFinished1.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2.url, caption: "PTO Housings" },
   { src: ptoAssembly1.url, caption: "PTO Assembly" },
