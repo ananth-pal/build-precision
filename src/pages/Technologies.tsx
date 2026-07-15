@@ -85,7 +85,7 @@ const cards: Card[] = [
     title: "Assembly and Testing",
     desc: "Clean-room assembly of hydraulic valves, gear pumps, PTO gearboxes, and engine balancers, with automated testing for hydraulic units.",
     caption: "Clean-room assembly station with hydraulic pump test bench",
-    images: [gearPumpAssembledAsset.url, gearPumpViseAsset.url],
+    images: [asmAlt1.url, asmAlt2.url, asmAlt3.url, asmAlt4.url, asmAlt5.url],
     details: [
       "Automatic pump-testing cycle via Siemens PLC",
       "50 HP AC induction motor with closed-loop RPM control via Siemens vector drive",
