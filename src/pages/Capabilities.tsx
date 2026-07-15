@@ -10,10 +10,10 @@ import machiningImg from "@/assets/capabilities/pto-housing-fixture.png.asset.js
 import machinedHousings from "@/assets/capabilities/machined-housings.png.asset.json";
 import fixtures from "@/assets/capabilities/fixtures.png.asset.json";
 import airGauge from "@/assets/capabilities/air-gauge.png.asset.json";
-import assemblyAlt1 from "@/assets/capabilities/assembly-alt-pto-operator.jpg.asset.json";
-import assemblyAlt2 from "@/assets/capabilities/assembly-alt-pto-1.jpg.asset.json";
-import assemblyAlt3 from "@/assets/capabilities/assembly-alt-pto-2.jpg.asset.json";
-import assemblyAlt4 from "@/assets/capabilities/assembly-alt-gear-pump-4.jpg.asset.json";
+import assemblyAlt1 from "@/assets/capabilities/PTO_assembly_1_edit.png.asset.json";
+import assemblyAlt2 from "@/assets/capabilities/PTO_assembly_2_edit.png.asset.json";
+import assemblyAlt3 from "@/assets/capabilities/PTO_assembly_3_edit.png.asset.json";
+import assemblyAlt4 from "@/assets/capabilities/Gear_pump_5_edit.png.asset.json";
 
 
 type Cap = {
