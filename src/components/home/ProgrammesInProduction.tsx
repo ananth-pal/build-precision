@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Shuffle } from "lucide-react";
 import ptoImg from "@/assets/portfolio/PTO_finished_1_edit.png.asset.json";
 import ptoAlt from "@/assets/portfolio/Air_gauge_edit_1-4.png.asset.json";
 import balancerImg from "@/assets/portfolio/Balancer_1.png.asset.json";
@@ -14,19 +14,23 @@ export default function ProgrammesInProduction() {
       <h2 className="text-2xl lg:text-3xl font-bold mb-8">Programmes in production</h2>
       <div className="grid md:grid-cols-2 gap-6">
         <article className="capability-card space-y-3">
-          <button
-            type="button"
-            onClick={() => setPtoIdx((i) => (i + 1) % ptoImages.length)}
-            className="block w-full"
-            aria-label="Show next image"
-          >
+          <div className="relative">
             <img
               src={ptoImages[ptoIdx]}
               alt="Power Take-Off gearboxes in production"
               loading="lazy"
               className="w-full aspect-[16/10] object-cover rounded-md mb-2 bg-muted"
             />
-          </button>
+            <button
+              type="button"
+              onClick={() => setPtoIdx((i) => (i + 1) % ptoImages.length)}
+              className="absolute top-2 right-2 bg-background/85 hover:bg-background text-foreground rounded-md p-1.5 shadow-sm border border-border transition-colors"
+              aria-label="Shuffle image"
+            >
+              <Shuffle size={14} />
+            </button>
+          </div>
+
           <h3 className="text-xl font-semibold">Transport Hydraulic Assemblies for global transmission brand</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
             26 years of development and ongoing supply to a multinational OEM. High pressure hydraulic spool valves and gear pumps. 75+ Power Take Off (PTO) gearbox variants — cable-operated, pneumatic, hydraulic, and hot-shift — built to run on Allison, Eaton, Hino, Isuzu, Mack, Mitsubishi, Volvo and ZF transmissions. Jigs and fixtures, housing machining, gear cutting, assembly, testing, and engineering change management handled through product lifecycle.
