@@ -122,7 +122,7 @@ export default function Careers() {
                 <textarea rows={4} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
               </div>
               <p className="text-xs text-muted-foreground">
-                On submit, your email client will open a pre-filled message to {CAREERS_EMAIL}. Please attach your CV / resume before sending.
+                On submit, your email client will open a pre-filled message to {CAREERS_EMAIL}. Please attach your CV / resume to the email before sending.
               </p>
               <button type="submit" className="w-full sm:w-auto px-8 py-3 bg-primary text-primary-foreground font-medium rounded hover:opacity-90 transition-opacity">
                 Submit Application
