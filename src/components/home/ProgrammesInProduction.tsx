@@ -5,7 +5,7 @@ import ptoImg from "@/assets/portfolio/PTO_finished_1_edit.png.asset.json";
 import ptoAlt from "@/assets/portfolio/Air_gauge_edit_1-4.png.asset.json";
 import balancerImg from "@/assets/portfolio/Balancer_1.png.asset.json";
 
-const ptoImages = [ptoImg.url, ptoAlt.url];
+const ptoImages = [ptoAlt.url, ptoImg.url];
 
 export default function ProgrammesInProduction() {
   const [ptoIdx, setPtoIdx] = useState(0);
