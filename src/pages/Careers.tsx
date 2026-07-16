@@ -4,7 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 
-const CAREERS_EMAIL = "enquiries@sellvindsgroup.com";
+const CAREERS_EMAIL = "jobs@sellvindsgroup.com";
 
 const areas = [
   "Trainee / Fresher",
