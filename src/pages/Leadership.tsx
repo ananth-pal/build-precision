@@ -76,7 +76,7 @@ export default function Leadership() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <PageHero title="Leadership" subtitle="Technically credentialed and directly engaged — not absentee." />
+      <PageHero title="Leadership" subtitle={"\n"} />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           {/* Founder profile removed — info merged into bio dropdown below */}
