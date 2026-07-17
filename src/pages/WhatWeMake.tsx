@@ -13,15 +13,12 @@ import gearPumpComponents1 from "@/assets/portfolio/Gear_pump_components.png.ass
 import ptoShafts1 from "@/assets/portfolio/Shafts.png.asset.json";
 import valveSpools1 from "@/assets/portfolio/Valve_spools.png.asset.json";
 import valves1 from "@/assets/portfolio/valves-new.png.asset.json";
-import pto1 from "@/assets/portfolio/PTO_1_cropped.png.asset.json";
 import ptoFinished1 from "@/assets/portfolio/PTO_finished_1_edit.png.asset.json";
 import ptoFinished2 from "@/assets/portfolio/PTO_finished_2_edit.png.asset.json";
 import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.png.asset.json";
 import gearPump1 from "@/assets/portfolio/Gear_pump_1_edited-5.png.asset.json";
 import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.png.asset.json";
 import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.png.asset.json";
-import valve3 from "@/assets/portfolio/Valve_3_edit.png.asset.json";
-import ptoRender from "@/assets/portfolio/PTO_render.png.asset.json";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
