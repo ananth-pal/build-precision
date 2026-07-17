@@ -66,8 +66,9 @@ const caps: Cap[] = [
     desc: "Spur and helical gears, splined shafts, and transmission components, produced in a dedicated gear-cutting facility with in-house profile and lead inspection.",
     path: "/capabilities/gear-cutting",
     image: "Gear cutting machine mid-setup",
-    imageSrc: gearCuttingImg.url,
+    imageSrc: angularGrinder.url,
     images: [
+      { src: angularGrinder.url, alt: "Angular wheelhead grinder with coolant lines — shaft being ground between centres" },
       { src: gearCuttingImg.url, alt: "Gear cutting machine mid-setup" },
       { src: gearsImg.url, alt: "Finished gears and splined shafts" },
       { src: shaperCloseup.url, alt: "Lorenz gear shaper — close-up view" },
