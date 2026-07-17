@@ -28,11 +28,11 @@ const selectedWork: GalleryItem[] = [
   { src: ptoFinished2.url, caption: "PTO Housings" },
   { src: gearPump5.url, caption: "Gear Pump" },
   { src: gearPump1.url, caption: "Gear Pump Housing" },
+  { src: valves1.url, caption: "Hydraulic Valves" },
   { src: machinedHousings.url, caption: "Machined Housings" },
   { src: fixtures2.url, caption: "Fixtures" },
   { src: balancers1.url, caption: "Engine Balancers" },
   { src: balancers2.url, caption: "Engine Balancers" },
-  { src: valves1.url, caption: "Hydraulic Valves" },
   // Components
   { src: gearPumpComponents1.url, caption: "Gear Pump Components" },
   { src: ptoShafts1.url, caption: "PTO Shafts" },
