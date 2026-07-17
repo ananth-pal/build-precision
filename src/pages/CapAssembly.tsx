@@ -20,7 +20,7 @@ const allImages = [
   { src: airGauge.url, alt: "Air gauges in metrology area — operator checking bore dimensions on red housing against master rings" },
 ];
 
-const heroImages = allImages;
+const heroImages = [allImages[2], allImages[0], allImages[1], allImages[3], allImages[4], allImages[5]];
 const inspectionImages = [allImages[3], allImages[0], allImages[1], allImages[2], allImages[4], allImages[5]];
 
 export default function CapAssembly() {
