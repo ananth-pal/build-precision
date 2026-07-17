@@ -21,7 +21,7 @@ const allImages = [
 ];
 
 const heroImages = allImages;
-const inspectionImages = allImages;
+const inspectionImages = [allImages[3], allImages[0], allImages[1], allImages[2], allImages[4], allImages[5]];
 
 export default function CapAssembly() {
   const [idx, setIdx] = useState(0);
