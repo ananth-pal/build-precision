@@ -6,6 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
+import angularGrinder from "@/assets/capabilities/angular-wheelhead-grinder.png.asset.json";
 import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
 import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
 import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
