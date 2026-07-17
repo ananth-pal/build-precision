@@ -14,7 +14,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
-import gearGrinderAsset from "@/assets/technologies/gear-grinder.jpg.asset.json";
+import gearGrinderAsset from "@/assets/technologies/gear-image-bore-grinder.jpg.asset.json";
 import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
