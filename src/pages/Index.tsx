@@ -47,7 +47,7 @@ const markets = [
   {
     label: "Automotive and Agriculture",
     body: "Engine components and balancer assemblies produced in repeat production for Indian automotive OEMs.",
-    images: [auto2.url, auto1.url],
+    images: [tractorImg.url, auto2.url, auto1.url],
   },
 ];
 
