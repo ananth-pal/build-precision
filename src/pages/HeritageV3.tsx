@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -269,11 +269,6 @@ const earlyMilestones: Entry[] = [
 ];
 
 export default function Heritage() {
-  const [variant, setVariant] = useState<"v2" | "v3">("v2");
-  const isV2 = variant === "v2";
-  const isV3 = variant === "v3";
-
-
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -281,166 +276,101 @@ export default function Heritage() {
 
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          {/* Layout variant toggle */}
-          <div className="mb-10 flex items-center justify-end gap-1 text-xs">
-            {(["v2", "v3"] as const).map((v) => (
-              <button
-                key={v}
-                type="button"
-                onClick={() => setVariant(v)}
-                className={`px-3 py-1.5 rounded-md border transition-colors ${
-                  variant === v
-                    ? "bg-primary text-primary-foreground border-primary font-semibold"
-                    : "bg-muted text-muted-foreground border-border hover:text-foreground"
-                }`}
-              >
-                {v.toUpperCase()}
-              </button>
-            ))}
-          </div>
-
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
-            {/* V2: family-of-companies lockup at top */}
-            {isV2 && (
+            {/* Family-of-companies lockup at top */}
+            {(
               <div className="mb-16 flex justify-center">
                 <div className="flex items-center gap-8 md:gap-12">
-                  <img
-                    src={sellvindsLogo.url}
-                    alt="Sellvinds Group"
-                    className="h-20 md:h-28 w-auto object-contain"
-                  />
                   <img
                     src={pentagonLogo.url}
                     alt="Pentagon Machines and Services"
                     className="h-8 md:h-11 w-auto object-contain"
                   />
                   <img
+                    src={sellvindsLogo.url}
+                    alt="Sellvinds Group"
+                    className="h-20 md:h-28 w-auto object-contain"
+                  />
+                  <img
                     src={cafomaLogo}
                     alt="CAFOMA"
-                    className="h-8 md:h-11 w-auto object-contain"
+                    className="h-7 md:h-9 w-auto object-contain"
                   />
                 </div>
               </div>
             )}
 
 
-            {/* Intro — V3 places Sellvinds logo to the right of the prose */}
-            {isV3 ? (
-              <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                    Pentagon as part of The Sellvinds Group
-                  </h2>
-                  <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
-                    <p>
-                      The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
-                    </p>
-                    <p>
-                      This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
-                    </p>
-                  </div>
-                </div>
-                <img
-                  src={sellvindsLogo.url}
-                  alt="Sellvinds Group"
-                  className="h-32 md:h-40 w-auto shrink-0 mt-8 md:mt-0 md:self-center justify-self-center md:justify-self-end md:mr-8 lg:mr-16"
-                />
+            {/* Intro */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Pentagon as part of The Sellvinds Group
+              </h2>
+              <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
+                <p>
+                  The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+                </p>
+                <p>
+                  This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
+                </p>
               </div>
-            ) : (
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Pentagon as part of The Sellvinds Group
-                </h2>
-                <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
-                  <p>
-                    The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
-                  </p>
-                  <p>
-                    This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
-                  </p>
-                </div>
-              </div>
-            )}
+            </div>
 
-            {/* V2: combined group milestones — single left-aligned rail */}
-            {isV2 ? (
-              <div className="mt-16">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
-                  Group milestones
-                </h3>
-                <div className="relative">
-                  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-                  <div className="space-y-6 md:space-y-8">
-                    {earlyMilestones.map((entry, i) => {
-                      const isPentagon = entry.body.startsWith("Pentagon Machines");
-                      const isLeft = i % 2 === 0;
-                      return (
-                        <div
-                          key={entry.label + i}
-                          className={`relative flex items-start gap-8 ${
-                            isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                          }`}
-                        >
-                          <div className="hidden md:block flex-1" />
-                          <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-1.5" />
-                          <div className="ml-12 md:ml-0 flex-1">
-                            <div className="text-primary font-bold text-base">{entry.label}</div>
-                            <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                              {isPentagon ? (
-                                <>
-                                  Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
-                                  <a
-                                    href="#pentagon-milestones"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      const el = document.getElementById("pentagon-milestones");
-                                      if (!el) return;
-                                      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                                      el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-                                    }}
-                                    className="group text-primary font-medium whitespace-nowrap hover:underline"
-                                  >
-                                    See Pentagon's full timeline{" "}
-                                    <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
-                                  </a>
-                                </>
-                              ) : (
-                                entry.body
-                              )}
-                            </p>
-                          </div>
+
+            {/* Combined group milestones — single left-aligned rail */}
+            <div className="mt-16">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
+                Group milestones
+              </h3>
+              <div className="relative">
+                <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+                <div className="space-y-6 md:space-y-8">
+                  {earlyMilestones.map((entry, i) => {
+                    const isPentagon = entry.body.startsWith("Pentagon Machines");
+                    const isLeft = i % 2 === 0;
+                    return (
+                      <div
+                        key={entry.label + i}
+                        className={`relative flex items-start gap-8 ${
+                          isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                        }`}
+                      >
+                        <div className="hidden md:block flex-1" />
+                        <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-1.5" />
+                        <div className="ml-12 md:ml-0 flex-1">
+                          <div className="text-primary font-bold text-base">{entry.label}</div>
+                          <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                            {isPentagon ? (
+                              <>
+                                Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
+                                <a
+                                  href="#pentagon-milestones"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    const el = document.getElementById("pentagon-milestones");
+                                    if (!el) return;
+                                    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                                    el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+                                  }}
+                                  className="group text-primary font-medium whitespace-nowrap hover:underline"
+                                >
+                                  See Pentagon's full timeline{" "}
+                                  <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
+                                </a>
+                              </>
+                            ) : (
+                              entry.body
+                            )}
+                          </p>
                         </div>
-                      );
-                    })}
-                  </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-            ) : (
+            </div>
 
-              <>
-                {/* Founder — prose paragraph */}
-                <div className="mt-12">
-                  <h3 className="text-lg md:text-xl font-semibold text-foreground">
-                    A machine-tool engineer's formation
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mt-6">
-                    {founderFormation}
-                  </p>
-                </div>
-
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-                  Companies Affiliated with Sellvinds Group
-                </h3>
-
-                {/* Company profiles — text only */}
-                <div className="space-y-8 mt-10">
-                  {groupCompanies.map((company, i) => (
-                    <CompanyRow key={company.name + i} company={company} />
-                  ))}
-                </div>
-              </>
-            )}
 
             <div className="mt-12">
               <div className="h-px w-10 bg-primary mb-4" />
