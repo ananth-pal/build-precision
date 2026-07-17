@@ -302,43 +302,21 @@ export default function Heritage() {
             )}
 
 
-            {/* Intro — V3 places Sellvinds logo to the right of the prose */}
-            {isV3 ? (
-              <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                    Pentagon as part of The Sellvinds Group
-                  </h2>
-                  <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
-                    <p>
-                      The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
-                    </p>
-                    <p>
-                      This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
-                    </p>
-                  </div>
-                </div>
-                <img
-                  src={sellvindsLogo.url}
-                  alt="Sellvinds Group"
-                  className="h-32 md:h-40 w-auto shrink-0 mt-8 md:mt-0 md:self-center justify-self-center md:justify-self-end md:mr-8 lg:mr-16"
-                />
+            {/* Intro */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Pentagon as part of The Sellvinds Group
+              </h2>
+              <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
+                <p>
+                  The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
+                </p>
+                <p>
+                  This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
+                </p>
               </div>
-            ) : (
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Pentagon as part of The Sellvinds Group
-                </h2>
-                <div className="space-y-5 text-muted-foreground text-sm leading-relaxed mt-8">
-                  <p>
-                    The Sellvinds Group is a Chennai-based industrial group whose companies have built machine tools and machined fully-finished engine components for India's leading automotive OEMs across more than seven decades. Sister companies in the group continue to machine fully-finished cylinder heads at scale.
-                  </p>
-                  <p>
-                    This shared lineage shapes Pentagon's approach to process definition, vendor selection, gauging, and inspection planning. Operating habits developed across decades of high-volume automotive component manufacturing carry over into Pentagon's high-mix, medium-volume contract work. Managers within Pentagon remain and Sellvinds has an active ex-employees association to keep in touch.
-                  </p>
-                </div>
-              </div>
-            )}
+            </div>
+
 
             {/* V2: combined group milestones — single left-aligned rail */}
             {isV2 ? (
