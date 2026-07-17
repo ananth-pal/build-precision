@@ -14,8 +14,8 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 
 const machiningImages = [
-  { src: ptoFixture.url, alt: "PTO housing clamped in fixture on a Makino machining centre — drill approaching the workpiece" },
   { src: machinedHousings.url, alt: "Row of machined PTO housings on the finished-goods rack, ready for inspection" },
+  { src: ptoFixture.url, alt: "PTO housing clamped in fixture on a Makino machining centre — drill approaching the workpiece" },
   { src: fixtures.url, alt: "In-house workholding fixtures organised on shop-floor racks" },
   { src: airGauge.url, alt: "Air gauges in the metrology area — operator checking bore dimensions against master rings" },
 ];
