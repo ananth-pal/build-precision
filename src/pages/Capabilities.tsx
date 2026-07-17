@@ -6,6 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
+import angularGrinder from "@/assets/capabilities/angular-wheelhead-grinder.png.asset.json";
 import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
 import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
 import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
@@ -65,8 +66,9 @@ const caps: Cap[] = [
     desc: "Spur and helical gears, splined shafts, and transmission components, produced in a dedicated gear-cutting facility with in-house profile and lead inspection.",
     path: "/capabilities/gear-cutting",
     image: "Gear cutting machine mid-setup",
-    imageSrc: gearCuttingImg.url,
+    imageSrc: angularGrinder.url,
     images: [
+      { src: angularGrinder.url, alt: "Angular wheelhead grinder with coolant lines — shaft being ground between centres" },
       { src: gearCuttingImg.url, alt: "Gear cutting machine mid-setup" },
       { src: gearsImg.url, alt: "Finished gears and splined shafts" },
       { src: shaperCloseup.url, alt: "Lorenz gear shaper — close-up view" },
