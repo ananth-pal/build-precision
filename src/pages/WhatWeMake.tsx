@@ -30,7 +30,6 @@ const selectedWork: GalleryItem[] = [
   { src: gearPump1.url, caption: "Gear Pump Housing" },
   { src: valves1.url, caption: "Hydraulic Valves" },
   { src: machinedHousings.url, caption: "Machined Housings" },
-  { src: fixtures2.url, caption: "Fixtures" },
   { src: balancers1.url, caption: "Engine Balancers" },
   { src: balancers2.url, caption: "Engine Balancers" },
   // Components
@@ -39,6 +38,7 @@ const selectedWork: GalleryItem[] = [
   { src: couplers2.url, caption: "Couplers" },
   { src: gears2.url, caption: "Gears" },
   { src: valveSpools1.url, caption: "Valve spools" },
+  { src: fixtures2.url, caption: "Fixtures" },
 ];
 
 export default function WhatWeMake() {
