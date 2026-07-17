@@ -32,10 +32,11 @@ const stats = [
 
 import auto1 from "@/assets/markets/automotive_trial_1.jpg.asset.json";
 import auto2 from "@/assets/markets/automotive_trial_2.jpg.asset.json";
-import oh1 from "@/assets/markets/off_highway_truck.jpg.asset.json";
+import oh1 from "@/assets/markets/stock_dump_truck.jpg.asset.json";
 import oh2 from "@/assets/markets/off_highway_trial_2.jpg.asset.json";
 import oh3 from "@/assets/markets/off_highway_trial_3.jpg.asset.json";
-import roboticsImg from "@/assets/markets/robotics_trial_1.jpg.asset.json";
+import tractorImg from "@/assets/markets/stock_tractor.jpg.asset.json";
+import roboticsImg from "@/assets/markets/stock_robot.jpg.asset.json";
 
 const markets = [
   {
