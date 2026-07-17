@@ -269,11 +269,6 @@ const earlyMilestones: Entry[] = [
 ];
 
 export default function Heritage() {
-  const [variant, setVariant] = useState<"v2" | "v3">("v2");
-  const isV2 = variant === "v2";
-  const isV3 = variant === "v3";
-
-
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
@@ -281,44 +276,26 @@ export default function Heritage() {
 
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
-          {/* Layout variant toggle */}
-          <div className="mb-10 flex items-center justify-end gap-1 text-xs">
-            {(["v2", "v3"] as const).map((v) => (
-              <button
-                key={v}
-                type="button"
-                onClick={() => setVariant(v)}
-                className={`px-3 py-1.5 rounded-md border transition-colors ${
-                  variant === v
-                    ? "bg-primary text-primary-foreground border-primary font-semibold"
-                    : "bg-muted text-muted-foreground border-border hover:text-foreground"
-                }`}
-              >
-                {v.toUpperCase()}
-              </button>
-            ))}
-          </div>
-
           {/* Section 1 — Pentagon as part of The Sellvinds Group */}
           <section className="mb-24 md:mb-32">
-            {/* V2: family-of-companies lockup at top */}
-            {isV2 && (
+            {/* Family-of-companies lockup at top */}
+            {(
               <div className="mb-16 flex justify-center">
                 <div className="flex items-center gap-8 md:gap-12">
-                  <img
-                    src={sellvindsLogo.url}
-                    alt="Sellvinds Group"
-                    className="h-20 md:h-28 w-auto object-contain"
-                  />
                   <img
                     src={pentagonLogo.url}
                     alt="Pentagon Machines and Services"
                     className="h-8 md:h-11 w-auto object-contain"
                   />
                   <img
+                    src={sellvindsLogo.url}
+                    alt="Sellvinds Group"
+                    className="h-20 md:h-28 w-auto object-contain"
+                  />
+                  <img
                     src={cafomaLogo}
                     alt="CAFOMA"
-                    className="h-8 md:h-11 w-auto object-contain"
+                    className="h-7 md:h-9 w-auto object-contain"
                   />
                 </div>
               </div>
