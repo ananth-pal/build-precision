@@ -16,7 +16,7 @@ import valves1 from "@/assets/portfolio/valves-new.png.asset.json";
 import ptoFinished1 from "@/assets/portfolio/PTO_finished_1_edit.png.asset.json";
 import ptoFinished2 from "@/assets/portfolio/PTO_finished_2_edit.png.asset.json";
 import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.png.asset.json";
-import gearPump1 from "@/assets/portfolio/Gear_pump_1_edited-5.png.asset.json";
+import gearPump1 from "@/assets/portfolio/Gear_pump_1_edit_2.png.asset.json";
 import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.png.asset.json";
 import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.png.asset.json";
 
