@@ -318,84 +318,59 @@ export default function Heritage() {
             </div>
 
 
-            {/* V2: combined group milestones — single left-aligned rail */}
-            {isV2 ? (
-              <div className="mt-16">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
-                  Group milestones
-                </h3>
-                <div className="relative">
-                  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-                  <div className="space-y-6 md:space-y-8">
-                    {earlyMilestones.map((entry, i) => {
-                      const isPentagon = entry.body.startsWith("Pentagon Machines");
-                      const isLeft = i % 2 === 0;
-                      return (
-                        <div
-                          key={entry.label + i}
-                          className={`relative flex items-start gap-8 ${
-                            isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                          }`}
-                        >
-                          <div className="hidden md:block flex-1" />
-                          <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-1.5" />
-                          <div className="ml-12 md:ml-0 flex-1">
-                            <div className="text-primary font-bold text-base">{entry.label}</div>
-                            <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                              {isPentagon ? (
-                                <>
-                                  Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
-                                  <a
-                                    href="#pentagon-milestones"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      const el = document.getElementById("pentagon-milestones");
-                                      if (!el) return;
-                                      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                                      el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-                                    }}
-                                    className="group text-primary font-medium whitespace-nowrap hover:underline"
-                                  >
-                                    See Pentagon's full timeline{" "}
-                                    <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
-                                  </a>
-                                </>
-                              ) : (
-                                entry.body
-                              )}
-                            </p>
-                          </div>
+            {/* Combined group milestones — single left-aligned rail */}
+            <div className="mt-16">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
+                Group milestones
+              </h3>
+              <div className="relative">
+                <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+                <div className="space-y-6 md:space-y-8">
+                  {earlyMilestones.map((entry, i) => {
+                    const isPentagon = entry.body.startsWith("Pentagon Machines");
+                    const isLeft = i % 2 === 0;
+                    return (
+                      <div
+                        key={entry.label + i}
+                        className={`relative flex items-start gap-8 ${
+                          isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                        }`}
+                      >
+                        <div className="hidden md:block flex-1" />
+                        <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1.5 mt-1.5" />
+                        <div className="ml-12 md:ml-0 flex-1">
+                          <div className="text-primary font-bold text-base">{entry.label}</div>
+                          <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                            {isPentagon ? (
+                              <>
+                                Pentagon Machines and Services Pvt. Ltd. is founded as a custom machine-tool manufacturer.{" "}
+                                <a
+                                  href="#pentagon-milestones"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    const el = document.getElementById("pentagon-milestones");
+                                    if (!el) return;
+                                    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                                    el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+                                  }}
+                                  className="group text-primary font-medium whitespace-nowrap hover:underline"
+                                >
+                                  See Pentagon's full timeline{" "}
+                                  <span className="inline-block transition-transform group-hover:translate-y-0.5">↓</span>
+                                </a>
+                              </>
+                            ) : (
+                              entry.body
+                            )}
+                          </p>
                         </div>
-                      );
-                    })}
-                  </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-            ) : (
+            </div>
 
-              <>
-                {/* Founder — prose paragraph */}
-                <div className="mt-12">
-                  <h3 className="text-lg md:text-xl font-semibold text-foreground">
-                    A machine-tool engineer's formation
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mt-6">
-                    {founderFormation}
-                  </p>
-                </div>
-
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mt-12">
-                  Companies Affiliated with Sellvinds Group
-                </h3>
-
-                {/* Company profiles — text only */}
-                <div className="space-y-8 mt-10">
-                  {groupCompanies.map((company, i) => (
-                    <CompanyRow key={company.name + i} company={company} />
-                  ))}
-                </div>
-              </>
-            )}
 
             <div className="mt-12">
               <div className="h-px w-10 bg-primary mb-4" />
