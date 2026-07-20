@@ -5,50 +5,42 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWorkGallery";
 
-import balancers1 from "@/assets/portfolio/Balancer_1.webp.asset.json";
-import balancers2 from "@/assets/portfolio/Balancer_2.webp.asset.json";
 import couplers2 from "@/assets/portfolio/Couplers.webp.asset.json";
 import gears2 from "@/assets/portfolio/Gears.webp.asset.json";
-import gearPumpComponents1 from "@/assets/portfolio/Gear_pump_components.webp.asset.json";
-import ptoShafts1 from "@/assets/portfolio/Shafts.webp.asset.json";
 import valveSpools1 from "@/assets/portfolio/Valve_spools.webp.asset.json";
-import valves1 from "@/assets/portfolio/valves-new.webp.asset.json";
-import ptoFinished1 from "@/assets/portfolio/PTO_finished_1_edit.webp.asset.json";
-import ptoFinished2 from "@/assets/portfolio/PTO_finished_2_edit.webp.asset.json";
-import ptoHousingsNew from "@/assets/portfolio/PTO_finished_2_edit_2.png.asset.json";
-import ptoFinishedNew from "@/assets/portfolio/pto-finished-1-edit-2.png.asset.json";
-import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.webp.asset.json";
-import gearPump1 from "@/assets/portfolio/Gear_pump_1_edit_2.webp.asset.json";
-import gearPumpHousingNew from "@/assets/gear-pump-1-edit-3.png.asset.json";
-import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.webp.asset.json";
 import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.webp.asset.json";
-import ptoFinished1New from "@/assets/portfolio/pto-finished-1-edit-3.png.asset.json";
-import ptoFinished2New from "@/assets/portfolio/pto-finished-2-edit-3.png.asset.json";
-import gearPumpHousingMatch from "@/assets/portfolio/gear-pump-housing-match.png.asset.json";
-import gearPumpHousingTorque2 from "@/assets/gear-pump-housing-torque-2.png.asset.json";
-import matchTableColorPattern2 from "@/assets/portfolio/match-table-color-pattern-2.png.asset.json";
+
+import ptoGearboxes from "@/assets/portfolio/clean/PTO_finished_1_edit_3-clean.png.asset.json";
+import ptoHousings from "@/assets/portfolio/clean/PTO_finished_2_edit_3-clean.png.asset.json";
+import hydraulicValves from "@/assets/portfolio/clean/Valve_edit_1-clean.png.asset.json";
+import gearPump from "@/assets/portfolio/clean/Gear_pump_5_edit-clean.png.asset.json";
+import gearPumpHousing from "@/assets/portfolio/clean/Gear_pump_1_edit_2-clean.png.asset.json";
+import machinedHousings from "@/assets/portfolio/clean/Machined_housings_1_edited-clean.png.asset.json";
+import balancer2 from "@/assets/portfolio/clean/Balancer_2-clean.png.asset.json";
+import balancer1 from "@/assets/portfolio/clean/Balancer_1-clean.png.asset.json";
+import gearPumpComponents from "@/assets/portfolio/clean/Gear_pump_components-clean.png.asset.json";
+import ptoShafts from "@/assets/portfolio/clean/Shafts-clean.png.asset.json";
 import SEO from "@/components/SEO";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
-  // New lead images
-  { src: ptoFinished1New.url, caption: "PTO Gearboxes" },
-  { src: ptoFinished2New.url, caption: "PTO Housings" },
-  { src: gearPump5.url, caption: "Gear Pump" },
-  { src: valves1.url, caption: "Hydraulic Valves" },
-  { src: matchTableColorPattern2.url, caption: "Gear Pump Housing" },
+  { src: ptoGearboxes.url, caption: "PTO Gearboxes" },
+  { src: ptoHousings.url, caption: "PTO Housings" },
+  { src: hydraulicValves.url, caption: "Hydraulic Valves" },
+  { src: gearPump.url, caption: "Gear Pump" },
+  { src: gearPumpHousing.url, caption: "Gear Pump Housing" },
   { src: machinedHousings.url, caption: "Machined Housings" },
-  { src: balancers1.url, caption: "Engine Balancers" },
-  { src: balancers2.url, caption: "Engine Balancers" },
-  // Components
-  { src: gearPumpComponents1.url, caption: "Gear Pump Components" },
-  { src: ptoShafts1.url, caption: "PTO Shafts" },
+  { src: balancer2.url, caption: "Engine Balancers" },
+  { src: balancer1.url, caption: "Engine Balancers" },
+  { src: gearPumpComponents.url, caption: "Gear Pump Components" },
+  { src: ptoShafts.url, caption: "PTO Shafts" },
   { src: couplers2.url, caption: "Couplers" },
   { src: gears2.url, caption: "Gears" },
   { src: valveSpools1.url, caption: "Valve spools" },
   { src: fixtures2.url, caption: "Fixtures" },
 ];
+
 
 export default function WhatWeMake() {
   return (
