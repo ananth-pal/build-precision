@@ -1,9 +1,23 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 import { trackEvent } from "@/lib/analytics";
+import RequestMachineListDialog from "@/components/RequestMachineListDialog";
+
+function triggerBrochureDownload() {
+  const a = document.createElement("a");
+  a.href = brochure.url;
+  a.download = "Pentagon-Brochure.pdf";
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 
 export default function SiteFooter() {
+  const [open, setOpen] = useState(false);
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -50,9 +64,13 @@ export default function SiteFooter() {
               </div>
             </div>
             <div className="mt-6">
-              <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("brochure_download", { source: "footer" })} className="download-btn text-background border-background/30 hover:bg-background/10 hover:text-background text-xs">
+              <button
+                type="button"
+                onClick={() => { trackEvent("brochure_download_open", { source: "footer" }); setOpen(true); }}
+                className="download-btn text-background border-background/30 hover:bg-background/10 hover:text-background text-xs"
+              >
                 Download Company Brochure
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -60,6 +78,12 @@ export default function SiteFooter() {
           © {new Date().getFullYear()} Pentagon Machines and Services Pvt. Ltd. All rights reserved.
         </div>
       </div>
+      <RequestMachineListDialog
+        open={open}
+        onOpenChange={setOpen}
+        variant="brochure"
+        onSuccess={() => { trackEvent("brochure_download", { source: "footer" }); triggerBrochureDownload(); }}
+      />
     </footer>
   );
 }

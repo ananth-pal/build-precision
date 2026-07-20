@@ -25,11 +25,33 @@ type FormState = z.infer<typeof schema>;
 interface Props {
   open: boolean;
   onOpenChange: (o: boolean) => void;
+  variant?: "machine-list" | "brochure";
+  onSuccess?: () => void;
 }
 
 const initial: FormState = { name: "", company: "", email: "", country: "", phone: "", notes: "" };
 
-export default function RequestMachineListDialog({ open, onOpenChange }: Props) {
+export default function RequestMachineListDialog({ open, onOpenChange, variant = "machine-list", onSuccess }: Props) {
+  const isBrochure = variant === "brochure";
+  const copy = isBrochure
+    ? {
+        title: "Download Company Brochure",
+        description: "Provide a few details and we will start your download and email you a copy for reference.",
+        submit: "Get Brochure",
+        successTitle: "Thank you",
+        successBody: "Your download has started. A confirmation has also been sent to your email.",
+        notesLabel: "Anything specific you're looking to learn?",
+        eventName: "brochure_download_request",
+      }
+    : {
+        title: "Request Detailed Machine List",
+        description: "Provide a few details and we will send the full machine list, including makes, models, and capacities.",
+        submit: "Send Request",
+        successTitle: "Request received",
+        successBody: "Thank you. A confirmation has been sent to your email, and our team will be in touch shortly.",
+        notesLabel: "Intended application / notes",
+        eventName: "machine_list_request",
+      };
   const [form, setForm] = useState<FormState>(initial);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -62,14 +84,15 @@ export default function RequestMachineListDialog({ open, onOpenChange }: Props) 
     setSubmitting(true);
     try {
       const { data, error } = await supabase.functions.invoke("submit-machine-list-request", {
-        body: parsed.data,
+        body: { ...parsed.data, purpose: variant },
       });
       if (error || (data && (data as { error?: string }).error)) {
         throw new Error(error?.message || (data as { error?: string })?.error || "Unknown error");
       }
       setSubmitted(true);
       const { trackEvent } = await import("@/lib/analytics");
-      trackEvent("machine_list_request", {});
+      trackEvent(copy.eventName, {});
+      onSuccess?.();
     } catch (err) {
       console.error(err);
       toast.error("Could not submit your request. Please try again or email enquiries@sellvindsgroup.com.");
@@ -89,18 +112,18 @@ export default function RequestMachineListDialog({ open, onOpenChange }: Props) 
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Request Detailed Machine List</DialogTitle>
+          <DialogTitle>{copy.title}</DialogTitle>
           <DialogDescription>
-            Provide a few details and we will send the full machine list, including makes, models, and capacities.
+            {copy.description}
           </DialogDescription>
         </DialogHeader>
 
         {submitted ? (
           <div className="py-8 text-center space-y-3">
             <CheckCircle2 className="mx-auto text-primary" size={40} />
-            <h3 className="text-lg font-semibold">Request received</h3>
+            <h3 className="text-lg font-semibold">{copy.successTitle}</h3>
             <p className="text-sm text-muted-foreground">
-              Thank you. A confirmation has been sent to your email, and our team will be in touch shortly.
+              {copy.successBody}
             </p>
             <button
               type="button"
@@ -138,7 +161,7 @@ export default function RequestMachineListDialog({ open, onOpenChange }: Props) 
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1.5">Intended application / notes</label>
+              <label className="block text-sm font-medium mb-1.5">{copy.notesLabel}</label>
               <textarea
                 rows={3}
                 value={form.notes ?? ""}
@@ -152,7 +175,7 @@ export default function RequestMachineListDialog({ open, onOpenChange }: Props) 
               className="w-full px-6 py-3 bg-primary text-primary-foreground font-medium rounded hover:opacity-90 transition-opacity disabled:opacity-60 inline-flex items-center justify-center gap-2"
             >
               {submitting && <Loader2 size={16} className="animate-spin" />}
-              {submitting ? "Sending…" : "Send Request"}
+              {submitting ? "Sending…" : copy.submit}
             </button>
           </form>
         )}

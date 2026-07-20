@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
@@ -8,9 +9,21 @@ import plantExterior from "@/assets/plant1-exterior.webp.asset.json";
 import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 import { trackEvent } from "@/lib/analytics";
 import SEO from "@/components/SEO";
+import RequestMachineListDialog from "@/components/RequestMachineListDialog";
 
+function triggerBrochureDownload() {
+  const a = document.createElement("a");
+  a.href = brochure.url;
+  a.download = "Pentagon-Brochure.pdf";
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 
 export default function About() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col">
       <SEO title="About Pentagon — Chennai Precision Manufacturer" description="Family-run precision manufacturer with two plants in Ambattur Industrial Estate, Chennai. 45 years of engineering heritage." />
@@ -67,12 +80,22 @@ export default function About() {
           </div>
 
           <div className="pt-8">
-            <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("brochure_download", { source: "about" })} className="download-btn">
+            <button
+              type="button"
+              onClick={() => { trackEvent("brochure_download_open", { source: "about" }); setOpen(true); }}
+              className="download-btn"
+            >
               <Download size={16} /> Download Company Brochure
-            </a>
+            </button>
           </div>
         </div>
       </main>
+      <RequestMachineListDialog
+        open={open}
+        onOpenChange={setOpen}
+        variant="brochure"
+        onSuccess={() => { trackEvent("brochure_download", { source: "about" }); triggerBrochureDownload(); }}
+      />
       <SiteFooter />
     </div>
   );

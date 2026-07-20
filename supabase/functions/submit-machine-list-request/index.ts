@@ -9,6 +9,7 @@ const BodySchema = z.object({
   country: z.string().trim().max(100).optional().or(z.literal('')),
   phone: z.string().trim().max(50).optional().or(z.literal('')),
   notes: z.string().trim().max(2000).optional().or(z.literal('')),
+  purpose: z.enum(['machine-list', 'brochure']).optional(),
 });
 
 const RECIPIENT = 'enquiries@sellvindsgroup.com';
@@ -23,7 +24,7 @@ function escapeHtml(s: string) {
     .replace(/'/g, '&#39;');
 }
 
-function renderInternalEmail(data: Record<string, string>, id: string) {
+function renderInternalEmail(data: Record<string, string>, id: string, purpose: 'machine-list' | 'brochure') {
   const rows = Object.entries(data)
     .filter(([, v]) => v && v.length > 0)
     .map(
@@ -31,21 +32,27 @@ function renderInternalEmail(data: Record<string, string>, id: string) {
         `<tr><td style="padding:6px 12px;border-bottom:1px solid #eee;color:#666;font-size:13px;text-transform:capitalize;vertical-align:top;">${escapeHtml(k)}</td><td style="padding:6px 12px;border-bottom:1px solid #eee;font-size:14px;color:#111;white-space:pre-wrap;">${escapeHtml(v)}</td></tr>`
     )
     .join('');
+  const heading = purpose === 'brochure' ? 'New Company Brochure download' : 'New Detailed Machine List request';
+  const source = purpose === 'brochure' ? 'Submitted via Pentagon website — Brochure download' : 'Submitted via Pentagon website — Means of Production';
   return `<!doctype html><html><body style="font-family:Arial,sans-serif;background:#fff;color:#111;">
     <div style="max-width:560px;margin:0 auto;padding:24px;">
-      <h2 style="margin:0 0 4px 0;font-size:18px;">New Detailed Machine List request</h2>
-      <p style="margin:0 0 16px 0;color:#666;font-size:13px;">Submitted via Pentagon website — Means of Production</p>
+      <h2 style="margin:0 0 4px 0;font-size:18px;">${heading}</h2>
+      <p style="margin:0 0 16px 0;color:#666;font-size:13px;">${source}</p>
       <table style="width:100%;border-collapse:collapse;border-top:1px solid #eee;">${rows}</table>
       <p style="margin:20px 0 0 0;color:#999;font-size:12px;">Reference ID: ${id}</p>
     </div></body></html>`;
 }
 
-function renderConfirmationEmail(name: string) {
+function renderConfirmationEmail(name: string, purpose: 'machine-list' | 'brochure') {
+  const body = purpose === 'brochure'
+    ? "Thank you for your interest in Pentagon. The Company Brochure download has started in your browser and is attached for your reference. A member of our team may follow up shortly."
+    : "Thank you for your interest in Pentagon's manufacturing capabilities. We have received your request for our detailed machine list and a member of our team will be in touch shortly.";
+  const subjectLine = purpose === 'brochure' ? 'Company Brochure' : 'Request received';
   return `<!doctype html><html><body style="font-family:Arial,sans-serif;background:#fff;color:#111;">
     <div style="max-width:560px;margin:0 auto;padding:24px;">
-      <h2 style="margin:0 0 12px 0;font-size:18px;">Request received</h2>
+      <h2 style="margin:0 0 12px 0;font-size:18px;">${subjectLine}</h2>
       <p style="font-size:14px;line-height:1.6;color:#333;">Dear ${escapeHtml(name)},</p>
-      <p style="font-size:14px;line-height:1.6;color:#333;">Thank you for your interest in Pentagon's manufacturing capabilities. We have received your request for our detailed machine list and a member of our team will be in touch shortly.</p>
+      <p style="font-size:14px;line-height:1.6;color:#333;">${body}</p>
       <p style="font-size:14px;line-height:1.6;color:#333;">If your enquiry is time-sensitive, you may also reach us directly at <a href="mailto:enquiries@sellvindsgroup.com" style="color:#c8102e;">enquiries@sellvindsgroup.com</a>.</p>
       <p style="font-size:14px;line-height:1.6;color:#333;margin-top:24px;">— Pentagon Machines and Services Pvt. Ltd.</p>
     </div></body></html>`;
@@ -111,7 +118,11 @@ Deno.serve(async (req) => {
       );
     }
 
-    const { name, company, email, country, phone, notes } = parsed.data;
+    const { name, company, email, country, phone, notes, purpose } = parsed.data;
+    const kind: 'machine-list' | 'brochure' = purpose ?? 'machine-list';
+    const combinedNotes = purpose === 'brochure'
+      ? [`[Brochure download]`, notes || ''].filter(Boolean).join(' — ')
+      : notes;
 
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL')!,
@@ -126,7 +137,7 @@ Deno.serve(async (req) => {
         email,
         country: country || null,
         phone: phone || null,
-        notes: notes || null,
+        notes: combinedNotes || null,
       })
       .select('id, created_at')
       .single();
@@ -149,12 +160,13 @@ Deno.serve(async (req) => {
       {
         id,
         created_at: inserted.created_at,
+        purpose: kind,
         name,
         company,
         email,
         country: country || null,
         phone: phone || null,
-        notes: notes || null,
+        notes: combinedNotes || null,
       },
       null,
       2
@@ -173,20 +185,26 @@ Deno.serve(async (req) => {
     }
 
     if (resendKey) {
-      const summary = { name, company, email, country: country || '', phone: phone || '', notes: notes || '' };
+      const summary = { name, company, email, country: country || '', phone: phone || '', notes: combinedNotes || '', purpose: kind };
+      const internalSubject = kind === 'brochure'
+        ? `Brochure download — ${company}`
+        : `New machine list request — ${company}`;
+      const confirmationSubject = kind === 'brochure'
+        ? 'Your Pentagon Company Brochure'
+        : 'We received your request — Pentagon';
       tasks.push(
         sendEmail(resendKey, {
           to: [RECIPIENT],
-          subject: `New machine list request — ${company}`,
-          html: renderInternalEmail(summary, id),
+          subject: internalSubject,
+          html: renderInternalEmail(summary, id, kind),
           reply_to: email,
         }).catch((err) => console.error('Internal email send error:', err))
       );
       tasks.push(
         sendEmail(resendKey, {
           to: [email],
-          subject: 'We received your request — Pentagon',
-          html: renderConfirmationEmail(name),
+          subject: confirmationSubject,
+          html: renderConfirmationEmail(name, kind),
         }).catch((err) => console.error('Confirmation email send error:', err))
       );
     } else {
