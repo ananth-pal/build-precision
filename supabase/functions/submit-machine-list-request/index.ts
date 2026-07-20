@@ -118,7 +118,11 @@ Deno.serve(async (req) => {
       );
     }
 
-    const { name, company, email, country, phone, notes } = parsed.data;
+    const { name, company, email, country, phone, notes, purpose } = parsed.data;
+    const kind: 'machine-list' | 'brochure' = purpose ?? 'machine-list';
+    const combinedNotes = purpose === 'brochure'
+      ? [`[Brochure download]`, notes || ''].filter(Boolean).join(' — ')
+      : notes;
 
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL')!,
