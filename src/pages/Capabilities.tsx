@@ -102,7 +102,7 @@ export default function Capabilities() {
                 <Link key={c.title} to={c.path} className="capability-card group">
                   {cycle && current ? (
                     <div className="relative mb-4 aspect-video overflow-hidden rounded-md bg-muted">
-                      <img src={current.src} alt={current.alt} loading="lazy" className="w-full h-full object-cover" style={(current as any).position ? { objectPosition: (current as any).position } : undefined} />
+                      <img src={current.src} alt={current.alt} loading="lazy" className="w-full h-full object-cover" style={current.position ? { objectPosition: current.position } : undefined} />
                       <button
                         type="button"
                         onClick={(e) => {
