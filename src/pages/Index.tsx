@@ -11,12 +11,10 @@ import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
 import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
 import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
-import airGaugeAsset from "@/assets/air-gauge.png.asset.json";
 
 type HeroSlide = { src: string; kind: "image" | "video"; pos: string };
 const heroSlides: HeroSlide[] = [
   { src: gearHobberAsset.url, kind: "image", pos: "center 40%" },
-  { src: airGaugeAsset.url, kind: "image", pos: "center" },
   { src: zeissCmmAsset.url, kind: "image", pos: "center" },
   { src: zollerAsset.url, kind: "image", pos: "center 35%" },
   { src: calibrationProbeAsset.url, kind: "image", pos: "center" },
