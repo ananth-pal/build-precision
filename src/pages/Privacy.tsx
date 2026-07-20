@@ -1,4 +1,3 @@
-import Layout from "@/components/PageHero";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -11,9 +10,10 @@ export default function Privacy() {
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <PageHero eyebrow="Legal" title="Privacy Policy" subtitle="How we handle information you share with us and what we collect through this site." />
+      <PageHero title="Privacy Policy" subtitle="How we handle information you share with us and what we collect through this site." />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 prose prose-neutral">
         <p className="text-sm text-muted-foreground">
+
           This page is maintained by Pentagon Machines &amp; Services Pvt. Ltd. Last updated: {new Date().toLocaleDateString("en-GB", { month: "long", year: "numeric" })}.
         </p>
 
