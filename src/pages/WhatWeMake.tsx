@@ -22,11 +22,18 @@ import gearPump1 from "@/assets/portfolio/Gear_pump_1_edit_2.webp.asset.json";
 import gearPumpHousingNew from "@/assets/gear-pump-1-edit-3.png.asset.json";
 import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.webp.asset.json";
 import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.webp.asset.json";
+import ptoFinished1New from "@/assets/portfolio/pto-finished-1-edit-3.png.asset.json";
+import ptoFinished2New from "@/assets/portfolio/pto-finished-2-edit-3.png.asset.json";
+import gearPumpHousingMatch from "@/assets/portfolio/gear-pump-housing-match.png.asset.json";
 import SEO from "@/components/SEO";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
+  // New lead images
+  { src: ptoFinished1New.url, caption: "PTO Gearboxes" },
+  { src: ptoFinished2New.url, caption: "PTO Housings" },
+  { src: gearPumpHousingMatch.url, caption: "Gear Pump Housing" },
   // Assemblies — PTOs, pumps, balancers, valves
   { src: ptoFinishedNew.url, caption: "PTO Gearboxes" },
   { src: ptoFinished1.url, caption: "PTO Gearboxes" },
