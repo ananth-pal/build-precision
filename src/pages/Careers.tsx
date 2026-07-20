@@ -3,6 +3,7 @@ import { Mail } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import { trackEvent } from "@/lib/analytics";
 
 const CAREERS_EMAIL = "jobs@sellvindsgroup.com";
 
@@ -28,6 +29,7 @@ export default function Careers() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackEvent("careers_apply", { area: form.area });
     const subject = `Career application — ${form.name} (${form.area})`;
     const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nQualification: ${form.qualification}\nArea of interest: ${form.area}\nYears of experience: ${form.experience}\n\nNote:\n${form.note}\n\n(Please attach your CV / resume to this email before sending.)`;
     window.location.href = `mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
