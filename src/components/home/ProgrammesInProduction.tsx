@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import ptoImg from "@/assets/portfolio/clean/PTO_finished_1_edit_3-clean.png.asset.json";
+import ptoImg from "@/assets/portfolio/clean/PTO_finished_1_edit_4-clean.png.asset.json";
 import balancerImg from "@/assets/portfolio/clean/Balancer_1-clean.png.asset.json";
 
 export default function ProgrammesInProduction() {
