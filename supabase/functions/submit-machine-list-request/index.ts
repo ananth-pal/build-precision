@@ -184,20 +184,26 @@ Deno.serve(async (req) => {
     }
 
     if (resendKey) {
-      const summary = { name, company, email, country: country || '', phone: phone || '', notes: notes || '' };
+      const summary = { name, company, email, country: country || '', phone: phone || '', notes: combinedNotes || '', purpose: kind };
+      const internalSubject = kind === 'brochure'
+        ? `Brochure download — ${company}`
+        : `New machine list request — ${company}`;
+      const confirmationSubject = kind === 'brochure'
+        ? 'Your Pentagon Company Brochure'
+        : 'We received your request — Pentagon';
       tasks.push(
         sendEmail(resendKey, {
           to: [RECIPIENT],
-          subject: `New machine list request — ${company}`,
-          html: renderInternalEmail(summary, id),
+          subject: internalSubject,
+          html: renderInternalEmail(summary, id, kind),
           reply_to: email,
         }).catch((err) => console.error('Internal email send error:', err))
       );
       tasks.push(
         sendEmail(resendKey, {
           to: [email],
-          subject: 'We received your request — Pentagon',
-          html: renderConfirmationEmail(name),
+          subject: confirmationSubject,
+          html: renderConfirmationEmail(name, kind),
         }).catch((err) => console.error('Confirmation email send error:', err))
       );
     } else {
