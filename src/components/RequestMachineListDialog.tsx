@@ -36,19 +36,20 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
   const copy = isBrochure
     ? {
         title: "Download Company Brochure",
-        description: "Provide a few details and we will start your download and email you a copy for reference.",
+        description: "Provide a few details and we will email the brochure to you shortly.",
         submit: "Get Brochure",
         successTitle: "Thank you",
-        successBody: "Your download has started. A confirmation has also been sent to your email.",
+        successBody: "The brochure will be emailed to you shortly. For a quicker response, contact us at enquiries@sellvindsgroup.com.",
         notesLabel: "Anything specific you're looking to learn?",
         eventName: "brochure_download_request",
       }
     : {
         title: "Request Detailed Machine List",
-        description: "Provide a few details and we will send the full machine list, including makes, models, and capacities.",
+        description: "Provide a few details and we will email the full machine list, including makes, models, and capacities.",
         submit: "Send Request",
         successTitle: "Request received",
-        successBody: "Thank you. A confirmation has been sent to your email, and our team will be in touch shortly.",
+        successBody: "The machine list will be emailed to you shortly. For a quicker response, contact us at enquiries@sellvindsgroup.com.",
+
         notesLabel: "Intended application / notes",
         eventName: "machine_list_request",
       };
