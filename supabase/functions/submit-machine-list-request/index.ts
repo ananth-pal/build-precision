@@ -9,6 +9,7 @@ const BodySchema = z.object({
   country: z.string().trim().max(100).optional().or(z.literal('')),
   phone: z.string().trim().max(50).optional().or(z.literal('')),
   notes: z.string().trim().max(2000).optional().or(z.literal('')),
+  purpose: z.enum(['machine-list', 'brochure']).optional(),
 });
 
 const RECIPIENT = 'enquiries@sellvindsgroup.com';
