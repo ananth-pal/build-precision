@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import HomeCapabilitySection from "@/components/home/HomeCapabilitySection";
 import MarketCard from "@/components/home/MarketCard";
 import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
-import gearGrinderAsset from "@/assets/technologies/gear-grinder.jpg.asset.json";
+
 import gearStockAsset from "@/assets/capabilities/gear-stock.jpg.asset.json";
 import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
