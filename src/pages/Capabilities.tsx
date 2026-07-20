@@ -30,7 +30,7 @@ type Cap = {
   path: string;
   image: string;
   imageSrc: string | null;
-  images?: { src: string; alt: string }[];
+  images?: { src: string; alt: string; position?: string }[];
 };
 
 const caps: Cap[] = [
