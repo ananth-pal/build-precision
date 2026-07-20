@@ -34,15 +34,8 @@ const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 const selectedWork: GalleryItem[] = [
   // New lead images
   { src: matchTableColorPattern2.url, caption: "Gear Pump Housing" },
-  { src: gearPumpHousingTorque2.url, caption: "Gear Pump Housing" },
   { src: ptoFinished1New.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2New.url, caption: "PTO Housings" },
-  { src: gearPumpHousingMatch.url, caption: "Gear Pump Housing" },
-  // Assemblies — PTOs, pumps, balancers, valves
-  { src: ptoFinishedNew.url, caption: "PTO Gearboxes" },
-  { src: ptoFinished1.url, caption: "PTO Gearboxes" },
-  { src: ptoHousingsNew.url, caption: "PTO Housings" },
-  { src: ptoFinished2.url, caption: "PTO Housings" },
   { src: gearPump5.url, caption: "Gear Pump" },
   { src: gearPumpHousingNew.url, caption: "Gear Pump Housing" },
   { src: gearPump1.url, caption: "Gear Pump Housing" },
