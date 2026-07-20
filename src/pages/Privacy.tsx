@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import SEO from "@/components/SEO";
 
 /**
  * App-owner maintained. Names the analytics tools in use so it stays truthful
@@ -9,6 +10,7 @@ import PageHero from "@/components/PageHero";
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Privacy Policy — Pentagon Machines & Services" description="Privacy policy covering analytics, cookies, and how contact and enquiry data is handled at Pentagon." />
       <SiteHeader />
       <PageHero title="Privacy Policy" subtitle="How we handle information you share with us and what we collect through this site." />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 prose prose-neutral">

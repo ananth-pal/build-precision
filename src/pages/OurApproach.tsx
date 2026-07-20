@@ -7,6 +7,7 @@ import logoEepc from "@/assets/logos/eepc-india.png";
 import logoFieo from "@/assets/logos/fieo.png";
 import logoFpsi from "@/assets/logos/fpsi.jpg";
 import logoAiema from "@/assets/logos/aiema.webp";
+import SEO from "@/components/SEO";
 
 const steps = [
   { num: "01", title: "Kickoff & NDA", desc: "Scope, volumes, applicable standards, and PPAP requirements confirmed." },
@@ -165,6 +166,7 @@ function CredentialCard({ item }: { item: Credential }) {
 export default function WorkingWithPentagon() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Working with Pentagon — Engagement & Approach" description="How Pentagon engages with OEM customers: engineering support, industrial responsibility, and long-term accountability." />
       <SiteHeader />
       <PageHero title="Working with Pentagon" subtitle="Pentagon treats each engagement as long-term production work. We give design feedback before tooling starts, add machinery when a part requires it, and keep traceability standard on every assembly. Our longest and largest customer relationship runs to almost 3 decades." />
       <main className="flex-1">

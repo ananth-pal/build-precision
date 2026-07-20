@@ -8,6 +8,7 @@ import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
 import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
 import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
 import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
+import SEO from "@/components/SEO";
 
 const shaperImages = [gearCuttingImg, shaperCloseup, shaperWide];
 const gearsImages = [
@@ -23,13 +24,14 @@ export default function GearCutting() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Gear Cutting — Pentagon Machines & Services" description="Dedicated gear-cutting division: gear types produced and end-to-end process from cutting to grinding." />
       <SiteHeader />
       <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own assemblies." />
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Gear Types</h3>
+              <h2 className="text-lg font-semibold mb-4">Gear Types</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 External and internal spur and helical gears up to around 6 module and 200 mm outside diameter are produced. Splined shafts, pinion shafts, and other transmission components are also manufactured. Tooth rounding and chamfering are standard, while crowning, tip relief, and similar profile modifications are included where the application calls for them.
               </p>
@@ -62,7 +64,7 @@ export default function GearCutting() {
               </button>
             </div>
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Process</h3>
+              <h2 className="text-lg font-semibold mb-4">Process</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Blank preparation, teeth cutting, heat treatment, and post-heat treatment finishing are managed under one roof. Heat treatment is coordinated with long-standing certified vendors, and post-heat treatment machining of bore and reference faces is standard. Inspection records and material traceability carry through from blank to finished gear.
               </p>

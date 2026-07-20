@@ -27,6 +27,7 @@ import asmAlt2 from "@/assets/technologies/asm-alt-2.png.asset.json";
 import asmAlt3 from "@/assets/technologies/asm-alt-3.png.asset.json";
 import asmAlt4 from "@/assets/technologies/asm-alt-4.png.asset.json";
 import asmAlt5 from "@/assets/technologies/asm-alt-5.png.asset.json";
+import SEO from "@/components/SEO";
 
 type Card = {
   icon: typeof Cog;
@@ -146,6 +147,7 @@ export default function Technologies() {
   const [imgIdx, setImgIdx] = useState<Record<string, number>>({});
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Means of Production — Pentagon Machines & Services" description="Machine tools, inspection equipment, and process technologies used in-house at Pentagon's Chennai plants." />
       <SiteHeader />
       <PageHero
         title="Means of Production"

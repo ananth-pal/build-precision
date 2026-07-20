@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import ananthPassport from "@/assets/leadership/ananth-passport.jpg.asset.json";
 import ananthNewsletter from "@/assets/leadership/ananth-newsletter.jpg.asset.json";
 import varunPhoto from "@/assets/leadership/varun.jpg.asset.json";
+import SEO from "@/components/SEO";
 
 const ananthPhotos = [ananthPassport.url, ananthNewsletter.url];
 const varunPhotos = [varunPhoto.url];
@@ -75,6 +76,7 @@ function LeaderCard({ leader }: { leader: typeof leaders[0] & { photos?: string[
 export default function Leadership() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Leadership — Pentagon Machines & Services" description="Second- and third-generation management supported by line managers with two decades or more of tenure." />
       <SiteHeader />
       <PageHero title="Leadership" subtitle={"\n"} />
       <main className="flex-1 section-padding">

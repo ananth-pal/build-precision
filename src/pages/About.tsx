@@ -7,11 +7,13 @@ import ChennaiLocatorMap from "@/components/ChennaiLocatorMap";
 import plantExterior from "@/assets/plant1-exterior.png.asset.json";
 import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 import { trackEvent } from "@/lib/analytics";
+import SEO from "@/components/SEO";
 
 
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="About Pentagon — Chennai Precision Manufacturer" description="Family-run precision manufacturer with two plants in Ambattur Industrial Estate, Chennai. 45 years of engineering heritage." />
       <SiteHeader />
       <PageHero title="About Pentagon" subtitle="A machine tool manufacturer turned precision contract manufacturer. 45+ years of engineering depth." />
       <main className="flex-1 section-padding">
