@@ -80,12 +80,22 @@ export default function About() {
           </div>
 
           <div className="pt-8">
-            <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("brochure_download", { source: "about" })} className="download-btn">
+            <button
+              type="button"
+              onClick={() => { trackEvent("brochure_download_open", { source: "about" }); setOpen(true); }}
+              className="download-btn"
+            >
               <Download size={16} /> Download Company Brochure
-            </a>
+            </button>
           </div>
         </div>
       </main>
+      <RequestMachineListDialog
+        open={open}
+        onOpenChange={setOpen}
+        variant="brochure"
+        onSuccess={() => { trackEvent("brochure_download", { source: "about" }); triggerBrochureDownload(); }}
+      />
       <SiteFooter />
     </div>
   );
