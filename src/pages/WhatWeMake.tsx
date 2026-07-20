@@ -26,6 +26,7 @@ import ptoFinished1New from "@/assets/portfolio/pto-finished-1-edit-3.png.asset.
 import ptoFinished2New from "@/assets/portfolio/pto-finished-2-edit-3.png.asset.json";
 import gearPumpHousingMatch from "@/assets/portfolio/gear-pump-housing-match.png.asset.json";
 import gearPumpHousingTorque2 from "@/assets/gear-pump-housing-torque-2.png.asset.json";
+import matchTableColorPattern2 from "@/assets/portfolio/match-table-color-pattern-2.png.asset.json";
 import SEO from "@/components/SEO";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
