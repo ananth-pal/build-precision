@@ -15,6 +15,7 @@ import machiningImg from "@/assets/capabilities/pto-housing-fixture.webp.asset.j
 import machinedHousings from "@/assets/capabilities/machined-housings.webp.asset.json";
 import fixtures from "@/assets/capabilities/fixtures.webp.asset.json";
 import airGauge from "@/assets/capabilities/air-gauge.webp.asset.json";
+import assemblyLead from "@/assets/capabilities/assembly-pto-lead.png.asset.json";
 import assemblyAlt1 from "@/assets/capabilities/PTO_assembly_1_edit.webp.asset.json";
 import assemblyAlt2 from "@/assets/capabilities/PTO_assembly_2_edit.webp.asset.json";
 import assemblyAlt3 from "@/assets/capabilities/PTO_assembly_3_edit.webp.asset.json";
@@ -42,6 +43,7 @@ const caps: Cap[] = [
     image: "Cleanroom assembly line — operators at stations, controlled environment",
     imageSrc: null,
     images: [
+      { src: assemblyLead.url, alt: "Operator fitting gear stack into red PTO housing on yellow assembly bench with blue parts bins" },
       { src: assemblyAlt1.url, alt: "Operator fitting drive gear into red PTO housing at assembly bench" },
       { src: assemblyAlt2.url, alt: "Operator using impact wrench on red PTO housing during assembly" },
       { src: assemblyAlt3.url, alt: "Cleanroom operator assembling gear stack into PTO housing" },
