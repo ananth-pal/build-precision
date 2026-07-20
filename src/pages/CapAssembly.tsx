@@ -3,7 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import pto3 from "@/assets/capabilities/pto-assembly-3-edit-2.png.asset.json";
-import gearPump5 from "@/assets/capabilities/Gear_pump_5_edit-2.webp.asset.json";
+import gearPump5 from "@/assets/capabilities/gear-pump-5-clean-2.png.asset.json";
 import SEO from "@/components/SEO";
 
 export default function CapAssembly() {
