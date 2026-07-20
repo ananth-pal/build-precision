@@ -202,7 +202,7 @@ Deno.serve(async (req) => {
   } catch (err) {
     console.error('Unexpected error:', err);
     return new Response(
-      JSON.stringify({ error: 'internal_error', message: (err as Error).message }),
+      JSON.stringify({ error: 'internal_error', message: 'Something went wrong, please try again later.' }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
