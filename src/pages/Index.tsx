@@ -256,7 +256,15 @@ export default function Home() {
                     See how new processes and equipment are handled →
                   </Link>
                 </div>
-                {showExpandingImage_removed_placeholder}
+                <div className="aspect-[4/3] border-l border-border bg-muted">
+                  <img
+                    src={roboticsImg.url}
+                    alt="Collaborative robotic arm handling components on an assembly line"
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
 
               </div>
 
