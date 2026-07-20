@@ -43,10 +43,6 @@ const App = () => (
           <Route path="/working-with-pentagon" element={<WorkingWithPentagon />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/heritage" element={<Heritage />} />
-          <Route path="/about/heritage-v1" element={<Navigate to="/about/heritage" replace />} />
-          <Route path="/about/heritage-v2" element={<Navigate to="/about/heritage" replace />} />
-          <Route path="/about/heritage-v3" element={<Navigate to="/about/heritage" replace />} />
-          <Route path="/about/heritage-v4" element={<Navigate to="/about/heritage" replace />} />
           <Route path="/about/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
