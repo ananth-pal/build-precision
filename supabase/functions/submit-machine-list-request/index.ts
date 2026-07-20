@@ -137,7 +137,7 @@ Deno.serve(async (req) => {
         email,
         country: country || null,
         phone: phone || null,
-        notes: notes || null,
+        notes: combinedNotes || null,
       })
       .select('id, created_at')
       .single();
