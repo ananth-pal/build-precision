@@ -27,7 +27,7 @@ export default function Privacy() {
 
         <h2>What we collect through forms</h2>
         <p>
-          The Contact / RFQ form, Machine List Request dialog, and Careers form collect the details you enter (name, company, email, phone, message, and, for careers, resume link or details). These are sent to us by email only.
+          The Contact / RFQ form, Machine List Request dialog, and Careers form collect the details you enter (name, company, email, phone, message, and, for careers, resume link or details). These are sent to us by email.
         </p>
 
         <h2>Analytics tools</h2>
