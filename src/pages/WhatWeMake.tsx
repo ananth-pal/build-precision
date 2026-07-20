@@ -5,10 +5,11 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWorkGallery";
 
-import couplers2 from "@/assets/portfolio/Couplers.webp.asset.json";
-import gears2 from "@/assets/portfolio/Gears.webp.asset.json";
-import valveSpools1 from "@/assets/portfolio/Valve_spools.webp.asset.json";
-import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.webp.asset.json";
+import couplers2 from "@/assets/portfolio/clean/Couplers-clean.png.asset.json";
+import gears2 from "@/assets/portfolio/clean/Gears-clean.png.asset.json";
+import valveSpools1 from "@/assets/portfolio/clean/Valve_spools-clean.png.asset.json";
+import fixtures2 from "@/assets/portfolio/clean/Fixtures_2_edited-clean.png.asset.json";
+
 
 import ptoGearboxes from "@/assets/portfolio/clean/PTO_finished_1_edit_3-clean.png.asset.json";
 import ptoHousings from "@/assets/portfolio/clean/PTO_finished_2_edit_3-clean.png.asset.json";
