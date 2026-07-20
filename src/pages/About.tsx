@@ -4,7 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ChennaiLocatorMap from "@/components/ChennaiLocatorMap";
-import plantExterior from "@/assets/plant1-exterior.png.asset.json";
+import plantExterior from "@/assets/plant1-exterior.webp.asset.json";
 import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 import { trackEvent } from "@/lib/analytics";
 import SEO from "@/components/SEO";
