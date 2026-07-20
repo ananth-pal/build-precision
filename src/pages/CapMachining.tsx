@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ArrowRight, RefreshCw } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -38,7 +37,6 @@ const materialsCapable = [
 ];
 
 export default function Machining() {
-  const [materialsVersion, setMaterialsVersion] = useState<1 | 2>(1);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -134,58 +132,41 @@ export default function Machining() {
 
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                Materials
-                <button
-                  type="button"
-                  onClick={() => setMaterialsVersion((v) => (v === 1 ? 2 : 1))}
-                  aria-label="Toggle version"
-                  className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <RefreshCw className="h-3.5 w-3.5" />
-                  <span className="text-xs font-normal opacity-70">v{materialsVersion}</span>
-                </button>
-              </h2>
-              {materialsVersion === 1 ? (
-                <div className="space-y-4">
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Established materials and additional materials within machine capability. See table for the full list.
-                  </p>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button variant="outline" size="sm">View materials</Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-3xl">
-                      <DialogHeader>
-                        <DialogTitle>Materials</DialogTitle>
-                      </DialogHeader>
-                      <div className="space-y-6">
-                        <div>
-                          <p className="text-sm font-medium mb-2">Established materials, with tooling, process definition, and repeat experience in place:</p>
-                          <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                            {materialsEstablished.map((m) => (
-                              <li key={m}>{m}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium mb-2">Within machine capability, taken on where tooling can be specified and procured for the job:</p>
-                          <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                            {materialsCapable.map((m) => (
-                              <li key={m}>{m}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <p className="text-sm text-muted-foreground">Stock is accepted as bar, plate, castings, or forgings.</p>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-              ) : (
+              <h2 className="text-lg font-semibold mb-4">Materials</h2>
+              <div className="space-y-4">
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Materials worked regularly include carbon, alloy and tool steels — including case-hardening, nitriding, and through hardening grades — cast steel, gray and ductile iron, wrought aluminium, and cast aluminium. Tooling, process definition, and repeat experience are established for these materials. Stainless steels, titanium, Inconel, PEEK, POM, brass, and copper are within the machines' capability and are taken on where tooling can be specified and procured for the job. Stock is accepted as bar, plate, castings, or forgings.
+                  Established materials and additional materials within machine capability. See table for the full list.
                 </p>
-              )}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm">View materials</Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-3xl">
+                    <DialogHeader>
+                      <DialogTitle>Materials</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-6">
+                      <div>
+                        <p className="text-sm font-medium mb-2">Established materials, with tooling, process definition, and repeat experience in place:</p>
+                        <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                          {materialsEstablished.map((m) => (
+                            <li key={m}>{m}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium mb-2">Within machine capability, taken on where tooling can be specified and procured for the job:</p>
+                        <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                          {materialsCapable.map((m) => (
+                            <li key={m}>{m}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <p className="text-sm text-muted-foreground">Stock is accepted as bar, plate, castings, or forgings.</p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
             </div>
           </div>
 
