@@ -38,10 +38,8 @@ const materialsCapable = [
 ];
 
 export default function Machining() {
-  
   const [materialsVersion, setMaterialsVersion] = useState<1 | 2>(1);
-  const [imgIdx, setImgIdx] = useState(0);
-  const currentImg = machiningImages[imgIdx];
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO title="Precision Machining — Pentagon Machines & Services" description="CNC machining capabilities, batch sizes, DFM support, and quality practices at Pentagon's Chennai facility." />
@@ -179,24 +177,15 @@ export default function Machining() {
             </div>
           </div>
 
-          <figure className="relative my-2 mx-auto w-full max-w-4xl aspect-[16/9] overflow-hidden rounded-lg border border-border bg-muted">
+          <figure className="my-2 mx-auto w-full max-w-4xl aspect-[16/9] overflow-hidden rounded-lg border border-border bg-muted">
             <img
-              src={currentImg.src}
-              alt={currentImg.alt}
+              src={machinedHousings.url}
+              alt="Row of machined PTO housings on the finished-goods rack, ready for inspection"
               className="w-full h-full object-cover"
               loading="lazy"
             />
-            {machiningImages.length > 1 && (
-              <button
-                type="button"
-                onClick={() => setImgIdx((i) => (i + 1) % machiningImages.length)}
-                aria-label="Show next image"
-                className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-background/90 backdrop-blur px-2.5 py-1.5 text-xs font-medium text-foreground border border-border shadow-sm hover:bg-background transition"
-              >
-                <Shuffle className="h-3.5 w-3.5" />
-                {imgIdx + 1}/{machiningImages.length}
-              </button>
-            )}
+          </figure>
+
           </figure>
 
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
