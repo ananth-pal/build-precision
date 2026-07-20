@@ -114,7 +114,7 @@ export default function Home() {
                     ...common,
                     backgroundImage: `url(${slide.src})`,
                     backgroundPosition: slide.pos,
-                    backgroundSize: isContain ? "contain" : "cover",
+                    backgroundSize: "cover",
                   }}
                 />
               );
