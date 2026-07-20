@@ -93,6 +93,7 @@ export default function Home() {
                 opacity: active ? 1 : 0,
                 transition: "opacity 1200ms ease-in-out",
               } as const;
+              const isContain = slide.src === airGaugeAsset.url;
               if (slide.kind === "video") {
                 return (
                   <video
@@ -110,11 +111,12 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className="absolute inset-0 bg-cover"
+                  className="absolute inset-0 bg-no-repeat bg-center"
                   style={{
                     ...common,
                     backgroundImage: `url(${slide.src})`,
                     backgroundPosition: slide.pos,
+                    backgroundSize: isContain ? "contain" : "cover",
                   }}
                 />
               );
