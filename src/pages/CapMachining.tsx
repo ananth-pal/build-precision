@@ -59,14 +59,14 @@ export default function Machining() {
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Batch Sizes</h3>
+              <h2 className="text-lg font-semibold mb-4">Batch Sizes</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 We are best suited to machined parts with enough repeat demand to recover setup cost and enough technical complexity to justify careful process definition. The operation is optimized for high-mix, low-to-medium-volume work, which remains our specialty.
               </p>
             </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Design for Manufacturing & Assembly</h3>
+              <h2 className="text-lg font-semibold mb-4">Design for Manufacturing & Assembly</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 We review tolerances, material choice, datum strategy, clamping, and other features that drive machining cost or process instability. This helps reduce avoidable complexity and supports a clean transition from development into repeat production. For early-stage customers, this can also be offered as a separate project phase. SolidWorks CAD and 3D printing are used to support design review and visual prototyping.
               </p>
@@ -74,14 +74,14 @@ export default function Machining() {
 
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Sourcing and Logistics</h3>
+              <h2 className="text-lg font-semibold mb-4">Sourcing and Logistics</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 We maintain decades-long relationships with key vendors certified for castings, forgings, heat treatment, and raw materials from India and abroad to meet customers' desired quality. Incoming goods inspection, traceability, and controlled storage, support stable production, while packing, labeling, and dispatch ensure parts arrive in the required condition and with the required traceability and documentation. Parts are shipped worldwide.
               </p>
             </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Engineering and Quality</h3>
+              <h2 className="text-lg font-semibold mb-4">Engineering and Quality</h2>
               <div className="space-y-4">
                 <p className="text-base text-muted-foreground leading-relaxed">
                   Our quality management system is certified to ISO 9001:2015. Measurement covers dimensional inspection, form and geometry, surface finish, and gear metrology.
@@ -117,7 +117,7 @@ export default function Machining() {
             </div>
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Machine Tools</h3>
+              <h2 className="text-lg font-semibold mb-4">Machine Tools</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Turning, milling, boring, grinding, gear cutting, and finishing processes are carried out in-house on machines operated and maintained by a team with a machine-tool-building background. Machines are kept to original accuracy through in-house maintenance.
               </p>
@@ -132,7 +132,7 @@ export default function Machining() {
 
 
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 Materials
                 <button
                   type="button"
@@ -143,7 +143,7 @@ export default function Machining() {
                   <RefreshCw className="h-3.5 w-3.5" />
                   <span className="text-xs font-normal opacity-70">v{materialsVersion}</span>
                 </button>
-              </h3>
+              </h2>
               {materialsVersion === 1 ? (
                 <div className="space-y-4">
                   <p className="text-base text-muted-foreground leading-relaxed">
