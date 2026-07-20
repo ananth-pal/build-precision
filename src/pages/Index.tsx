@@ -91,7 +91,7 @@ export default function Home() {
                 opacity: active ? 1 : 0,
                 transition: "opacity 1200ms ease-in-out",
               } as const;
-              const isContain = slide.src === airGaugeAsset.url;
+              
               if (slide.kind === "video") {
                 return (
                   <video
