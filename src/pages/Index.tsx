@@ -128,9 +128,10 @@ export default function Home() {
             }}
           />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background max-w-4xl leading-tight mb-6">
+            <h1 className="sr-only">Precision Contract Manufacturing & Assembly</h1>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background max-w-4xl leading-tight mb-6">
               We build the products you bet your business on.
-            </h1>
+            </p>
             <p className="text-lg text-background/80 max-w-2xl mb-8">
               With 45 years of engineering experience, we are a family-run precision contract manufacturer in Chennai, India, delivering validated, traceable assemblies with a 26-year track record of global export reliability. Our scope extends from in-house tooling and CNC machining to clean-room assembly and automated validation.
             </p>
