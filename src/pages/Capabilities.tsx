@@ -71,6 +71,7 @@ const caps: Cap[] = [
     imageSrc: angularGrinder.url,
     images: [
       { src: angularGrinder.url, alt: "Angular wheelhead grinder with coolant lines — shaft being ground between centres" },
+      { src: angularGrinderAlt.url, alt: "Angular wheelhead grinder interior — shaft mounted between centres with coolant manifold overhead" },
       { src: gearCuttingImg.url, alt: "Gear cutting machine mid-setup" },
       { src: gearsImg.url, alt: "Finished gears and splined shafts" },
       { src: shaperCloseup.url, alt: "Lorenz gear shaper — close-up view" },
