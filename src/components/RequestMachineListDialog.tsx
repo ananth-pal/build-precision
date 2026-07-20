@@ -100,13 +100,6 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
       setSubmitting(false);
     }
   };
-    } catch (err) {
-      console.error(err);
-      toast.error("Could not submit your request. Please try again or email enquiries@sellvindsgroup.com.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   const field = (key: keyof FormState) => ({
     value: form[key] ?? "",
