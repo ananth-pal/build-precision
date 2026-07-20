@@ -425,7 +425,7 @@ export default function Heritage() {
               <img src={pentagonLogo.url} alt="Pentagon Machines and Services Private Limited" className="h-9 md:h-11 w-auto" />
             </div>
             <p className="text-foreground text-lg md:text-xl max-w-2xl">
-              Pentagon is part of The Sellvinds Group — 62 years of manufacturing excellence.
+              Pentagon is part of the Sellvinds Group — 62 years of manufacturing excellence.
             </p>
           </div>
 
