@@ -26,6 +26,7 @@ const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
   // Assemblies — PTOs, pumps, balancers, valves
+  { src: ptoFinishedNew.url, caption: "PTO Gearboxes" },
   { src: ptoFinished1.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2.url, caption: "PTO Housings" },
   { src: gearPump5.url, caption: "Gear Pump" },
