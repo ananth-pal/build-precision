@@ -12,51 +12,7 @@ const BodySchema = z.object({
   purpose: z.enum(['machine-list', 'brochure']).optional(),
 });
 
-const RECIPIENT = 'enquiries@sellvindsgroup.com';
 const DROPBOX_FOLDER = '/Machine List Requests';
-
-function escapeHtml(s: string) {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-function renderInternalEmail(data: Record<string, string>, id: string, purpose: 'machine-list' | 'brochure') {
-  const rows = Object.entries(data)
-    .filter(([, v]) => v && v.length > 0)
-    .map(
-      ([k, v]) =>
-        `<tr><td style="padding:6px 12px;border-bottom:1px solid #eee;color:#666;font-size:13px;text-transform:capitalize;vertical-align:top;">${escapeHtml(k)}</td><td style="padding:6px 12px;border-bottom:1px solid #eee;font-size:14px;color:#111;white-space:pre-wrap;">${escapeHtml(v)}</td></tr>`
-    )
-    .join('');
-  const heading = purpose === 'brochure' ? 'New Company Brochure download' : 'New Detailed Machine List request';
-  const source = purpose === 'brochure' ? 'Submitted via Pentagon website — Brochure download' : 'Submitted via Pentagon website — Means of Production';
-  return `<!doctype html><html><body style="font-family:Arial,sans-serif;background:#fff;color:#111;">
-    <div style="max-width:560px;margin:0 auto;padding:24px;">
-      <h2 style="margin:0 0 4px 0;font-size:18px;">${heading}</h2>
-      <p style="margin:0 0 16px 0;color:#666;font-size:13px;">${source}</p>
-      <table style="width:100%;border-collapse:collapse;border-top:1px solid #eee;">${rows}</table>
-      <p style="margin:20px 0 0 0;color:#999;font-size:12px;">Reference ID: ${id}</p>
-    </div></body></html>`;
-}
-
-function renderConfirmationEmail(name: string, purpose: 'machine-list' | 'brochure') {
-  const body = purpose === 'brochure'
-    ? "Thank you for your interest in Pentagon. The Company Brochure download has started in your browser and is attached for your reference. A member of our team may follow up shortly."
-    : "Thank you for your interest in Pentagon's manufacturing capabilities. We have received your request for our detailed machine list and a member of our team will be in touch shortly.";
-  const subjectLine = purpose === 'brochure' ? 'Company Brochure' : 'Request received';
-  return `<!doctype html><html><body style="font-family:Arial,sans-serif;background:#fff;color:#111;">
-    <div style="max-width:560px;margin:0 auto;padding:24px;">
-      <h2 style="margin:0 0 12px 0;font-size:18px;">${subjectLine}</h2>
-      <p style="font-size:14px;line-height:1.6;color:#333;">Dear ${escapeHtml(name)},</p>
-      <p style="font-size:14px;line-height:1.6;color:#333;">${body}</p>
-      <p style="font-size:14px;line-height:1.6;color:#333;">If your enquiry is time-sensitive, you may also reach us directly at <a href="mailto:enquiries@sellvindsgroup.com" style="color:#c8102e;">enquiries@sellvindsgroup.com</a>.</p>
-      <p style="font-size:14px;line-height:1.6;color:#333;margin-top:24px;">— Pentagon Machines and Services Pvt. Ltd.</p>
-    </div></body></html>`;
-}
 
 async function uploadToDropbox(token: string, path: string, content: string) {
   const res = await fetch('https://content.dropboxapi.com/2/files/upload', {
@@ -81,24 +37,28 @@ async function uploadToDropbox(token: string, path: string, content: string) {
   return res.json();
 }
 
-async function sendEmail(
-  apiKey: string,
-  payload: { to: string[]; subject: string; html: string; reply_to?: string }
+async function invokeSendEmail(
+  supabaseUrl: string,
+  serviceKey: string,
+  payload: {
+    templateName: string;
+    recipientEmail?: string;
+    idempotencyKey: string;
+    templateData: Record<string, unknown>;
+  }
 ) {
-  const res = await fetch('https://api.resend.com/emails', {
+  const res = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer ${serviceKey}`,
+      apikey: serviceKey,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      from: 'Pentagon Website <onboarding@resend.dev>',
-      ...payload,
-    }),
+    body: JSON.stringify(payload),
   });
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`Resend send failed: ${res.status} ${text}`);
+    throw new Error(`send-transactional-email failed: ${res.status} ${text}`);
   }
   return res.json();
 }
@@ -120,14 +80,13 @@ Deno.serve(async (req) => {
 
     const { name, company, email, country, phone, notes, purpose } = parsed.data;
     const kind: 'machine-list' | 'brochure' = purpose ?? 'machine-list';
-    const combinedNotes = purpose === 'brochure'
+    const combinedNotes = kind === 'brochure'
       ? [`[Brochure download]`, notes || ''].filter(Boolean).join(' — ')
       : notes;
 
-    const supabase = createClient(
-      Deno.env.get('SUPABASE_URL')!,
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-    );
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, serviceKey);
 
     const { data: inserted, error: insertError } = await supabase
       .from('machine_list_requests')
@@ -152,10 +111,7 @@ Deno.serve(async (req) => {
 
     const id = inserted.id as string;
 
-    // Dropbox + email run in parallel; failures are logged but do not fail the request.
     const dropboxToken = Deno.env.get('DROPBOX_ACCESS_TOKEN');
-    const resendKey = Deno.env.get('RESEND_API_KEY');
-
     const dropboxPayload = JSON.stringify(
       {
         id,
@@ -184,32 +140,35 @@ Deno.serve(async (req) => {
       console.warn('DROPBOX_ACCESS_TOKEN not set — skipping Dropbox upload');
     }
 
-    if (resendKey) {
-      const summary = { name, company, email, country: country || '', phone: phone || '', notes: combinedNotes || '', purpose: kind };
-      const internalSubject = kind === 'brochure'
-        ? `Brochure download — ${company}`
-        : `New machine list request — ${company}`;
-      const confirmationSubject = kind === 'brochure'
-        ? 'Your Pentagon Company Brochure'
-        : 'We received your request — Pentagon';
-      tasks.push(
-        sendEmail(resendKey, {
-          to: [RECIPIENT],
-          subject: internalSubject,
-          html: renderInternalEmail(summary, id, kind),
-          reply_to: email,
-        }).catch((err) => console.error('Internal email send error:', err))
-      );
-      tasks.push(
-        sendEmail(resendKey, {
-          to: [email],
-          subject: confirmationSubject,
-          html: renderConfirmationEmail(name, kind),
-        }).catch((err) => console.error('Confirmation email send error:', err))
-      );
-    } else {
-      console.warn('RESEND_API_KEY not set — skipping email send');
-    }
+    const templateData = {
+      name,
+      company,
+      email,
+      country: country || '',
+      phone: phone || '',
+      notes: combinedNotes || '',
+      purpose: kind,
+      referenceId: id,
+    };
+
+    // Internal notification (fixed recipient defined on the template)
+    tasks.push(
+      invokeSendEmail(supabaseUrl, serviceKey, {
+        templateName: 'request-internal',
+        idempotencyKey: `request-internal-${id}`,
+        templateData,
+      }).catch((err) => console.error('Internal email enqueue error:', err))
+    );
+
+    // Confirmation to the submitter
+    tasks.push(
+      invokeSendEmail(supabaseUrl, serviceKey, {
+        templateName: 'request-confirmation',
+        recipientEmail: email,
+        idempotencyKey: `request-confirmation-${id}`,
+        templateData,
+      }).catch((err) => console.error('Confirmation email enqueue error:', err))
+    );
 
     await Promise.all(tasks);
 
