@@ -155,15 +155,16 @@ Deno.serve(async (req) => {
 
     const tasks: Promise<unknown>[] = [];
 
-    if (dropboxToken) {
-      tasks.push(
-        uploadToDropbox(dropboxToken, `${DROPBOX_FOLDER}/${id}.json`, dropboxPayload).catch(
-          (err) => console.error('Dropbox upload error:', err)
-        )
-      );
-    } else {
-      console.warn('DROPBOX_ACCESS_TOKEN not set — skipping Dropbox upload');
-    }
+    tasks.push(
+      (async () => {
+        const token = await getDropboxAccessToken();
+        if (!token) {
+          console.warn('Dropbox credentials not set — skipping upload');
+          return;
+        }
+        await uploadToDropbox(token, `${DROPBOX_FOLDER}/${id}.json`, dropboxPayload);
+      })().catch((err) => console.error('Dropbox upload error:', err))
+    );
 
     const templateData = {
       name,
