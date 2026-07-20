@@ -9,7 +9,19 @@ import SEO from "@/components/SEO";
 export default function CapAssembly() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Assembly & Testing — Pentagon Machines & Services" description="Clean-room assembly, inspection, testing, and shipment readiness for hydraulic valves, PTOs, and engineered assemblies." />
+      <SEO
+        title="Assembly & Testing — Pentagon Machines & Services"
+        description="Clean-room assembly, inspection, testing, and shipment readiness for hydraulic valves, PTOs, and engineered assemblies."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Cleanroom Assembly & Testing",
+          "serviceType": "Contract electromechanical assembly",
+          "provider": { "@type": "Organization", "name": "Pentagon Machines and Services Pvt. Ltd." },
+          "areaServed": "Worldwide",
+          "description": "Integrated electromechanical assemblies up to 30 kg — built in a cleanroom, functionally tested, and serialised for traceability on every unit shipped.",
+        }}
+      />
       <SiteHeader />
       <PageHero
         title="Assembly"
