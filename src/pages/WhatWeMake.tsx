@@ -32,6 +32,7 @@ const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
   // New lead images
+  { src: gearPumpHousingTorque2.url, caption: "Gear Pump Housing" },
   { src: ptoFinished1New.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2New.url, caption: "PTO Housings" },
   { src: gearPumpHousingMatch.url, caption: "Gear Pump Housing" },
