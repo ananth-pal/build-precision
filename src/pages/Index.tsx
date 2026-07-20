@@ -233,7 +233,7 @@ export default function Home() {
                       Bringing Pentagon's precision discipline to new regulated sectors.
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Not yet in production for these markets — capabilities transfer directly as qualified programmes emerge.
+                      Not yet in production for these markets — capabilities transfer directly as qualified programmes emerge.&nbsp;AS9100 and ISO 13485 are on our roadmap to serve aerospace and medical customers, and we are prepared to commit the investment and timeline for a program that justifies it.
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-3">
