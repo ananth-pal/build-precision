@@ -15,7 +15,7 @@ import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
 type HeroSlide = { src: string; kind: "image" | "video"; pos: string };
 const heroSlides: HeroSlide[] = [
   { src: gearHobberAsset.url, kind: "image", pos: "center 40%" },
-  { src: gearGrinderAsset.url, kind: "image", pos: "60% center" },
+  
   { src: zeissCmmAsset.url, kind: "image", pos: "center" },
   { src: zollerAsset.url, kind: "image", pos: "center 35%" },
   { src: calibrationProbeAsset.url, kind: "image", pos: "center" },
