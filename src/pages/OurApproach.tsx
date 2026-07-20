@@ -216,7 +216,7 @@ export default function WorkingWithPentagon() {
 
             {/* Standards & Certifications */}
             <div className="border-t border-border pt-8">
-              <h3 className="text-lg font-semibold mb-4">Standards & Certifications</h3>
+              <h2 className="text-lg font-semibold mb-4">Standards &amp; Certifications</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {standards.map((s) => (
                   <CredentialCard key={s.label} item={s} />
@@ -226,7 +226,7 @@ export default function WorkingWithPentagon() {
 
             {/* Memberships & Export Recognition */}
             <div className="mt-12 border-t border-border pt-8">
-              <h3 className="text-lg font-semibold mb-4">Memberships & Export Recognition</h3>
+              <h2 className="text-lg font-semibold mb-4">Memberships &amp; Export Recognition</h2>
               <p className="text-sm text-muted-foreground mb-6 max-w-3xl">
                 Pentagon is a recognised manufacturer-exporter and a member of the principal engineering and fluid-power bodies in India.
               </p>
@@ -239,7 +239,7 @@ export default function WorkingWithPentagon() {
 
             {/* ESG */}
             <div className="mt-12 border-t border-border pt-8">
-              <h3 className="text-lg font-semibold mb-2">Environmental, Social & Governance (ESG)</h3>
+              <h2 className="text-lg font-semibold mb-2">Environmental, Social &amp; Governance (ESG)</h2>
               <p className="text-sm text-muted-foreground mb-6 max-w-3xl">
                 We set benchmarks that exceed statutory requirements through a culture of integrity and continuous improvement. This is demonstrated by our commitment to:
               </p>
