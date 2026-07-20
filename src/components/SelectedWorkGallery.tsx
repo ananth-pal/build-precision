@@ -3,9 +3,12 @@ import ImageLightbox from "@/components/ImageLightbox";
 export interface GalleryItem {
   src: string;
   caption: string;
+  /** Descriptive alt text for screen readers and SEO; defaults to caption. */
+  alt?: string;
   /** Retained for API compatibility; ignored in masonry layout. */
   spanClass?: string;
 }
+
 
 interface Props {
   items: GalleryItem[];
