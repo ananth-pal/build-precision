@@ -71,7 +71,7 @@ export default function SiteFooter() {
         open={open}
         onOpenChange={setOpen}
         variant="brochure"
-        onSuccess={() => { trackEvent("brochure_download", { source: "footer" }); triggerBrochureDownload(); }}
+        onSuccess={() => trackEvent("brochure_download", { source: "footer" })}
       />
     </footer>
   );
