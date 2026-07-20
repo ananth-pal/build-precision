@@ -45,7 +45,7 @@ export default function GearCutting() {
             <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
               <h2 className="text-lg font-semibold mb-4">Process</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Blank preparation, teeth cutting, heat treatment, and post-heat treatment finishing are managed under one roof. Heat treatment is coordinated with long-standing certified vendors, and post-heat treatment machining of bore and reference faces is standard. Inspection records and material traceability carry through from blank to finished gear.
+                Blank preparation, gear cutting and all pre and post heat treatment operations are managed under one roof. Heat treatment is coordinated with long-standing certified vendors, and post-heat treatment machining of bore and reference faces is standard. Inspection records and material traceability carry through from blank to finished gear.
               </p>
             </div>
           </div>
