@@ -14,6 +14,31 @@ const BodySchema = z.object({
 
 const DROPBOX_FOLDER = '/Machine List Requests';
 
+async function getDropboxAccessToken(): Promise<string | null> {
+  const appKey = Deno.env.get('DROPBOX_APP_KEY');
+  const appSecret = Deno.env.get('DROPBOX_APP_SECRET');
+  const refreshToken = Deno.env.get('DROPBOX_REFRESH_TOKEN');
+  if (!appKey || !appSecret || !refreshToken) return null;
+
+  const res = await fetch('https://api.dropbox.com/oauth2/token', {
+    method: 'POST',
+    headers: {
+      Authorization: `Basic ${btoa(`${appKey}:${appSecret}`)}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      grant_type: 'refresh_token',
+      refresh_token: refreshToken,
+    }),
+  });
+  if (!res.ok) {
+    console.error('Dropbox refresh failed:', res.status, await res.text());
+    return null;
+  }
+  const json = await res.json();
+  return json.access_token as string;
+}
+
 async function uploadToDropbox(token: string, path: string, content: string) {
   const res = await fetch('https://content.dropboxapi.com/2/files/upload', {
     method: 'POST',
@@ -111,7 +136,6 @@ Deno.serve(async (req) => {
 
     const id = inserted.id as string;
 
-    const dropboxToken = Deno.env.get('DROPBOX_ACCESS_TOKEN');
     const dropboxPayload = JSON.stringify(
       {
         id,
@@ -130,15 +154,16 @@ Deno.serve(async (req) => {
 
     const tasks: Promise<unknown>[] = [];
 
-    if (dropboxToken) {
-      tasks.push(
-        uploadToDropbox(dropboxToken, `${DROPBOX_FOLDER}/${id}.json`, dropboxPayload).catch(
-          (err) => console.error('Dropbox upload error:', err)
-        )
-      );
-    } else {
-      console.warn('DROPBOX_ACCESS_TOKEN not set — skipping Dropbox upload');
-    }
+    tasks.push(
+      (async () => {
+        const token = await getDropboxAccessToken();
+        if (!token) {
+          console.warn('Dropbox credentials not set — skipping upload');
+          return;
+        }
+        await uploadToDropbox(token, `${DROPBOX_FOLDER}/${id}.json`, dropboxPayload);
+      })().catch((err) => console.error('Dropbox upload error:', err))
+    );
 
     const templateData = {
       name,
