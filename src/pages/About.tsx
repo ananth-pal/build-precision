@@ -83,8 +83,9 @@ export default function About() {
         open={open}
         onOpenChange={setOpen}
         variant="brochure"
-        onSuccess={() => { trackEvent("brochure_download", { source: "about" }); triggerBrochureDownload(); }}
+        onSuccess={() => trackEvent("brochure_download", { source: "about" })}
       />
+
       <SiteFooter />
     </div>
   );
