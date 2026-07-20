@@ -129,7 +129,7 @@ export default function Home() {
             }}
           />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-            <h1 className="sr-only">Precision Contract Manufacturing & Assembly</h1>
+            <h1 className="sr-only">Pentagon Machines — Precision Contract Manufacturing &amp; Assembly in Chennai, India</h1>
             <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background max-w-4xl leading-tight mb-6">
               We build the products you bet your business on.
             </p>
@@ -155,12 +155,13 @@ export default function Home() {
           <div className="max-w-7xl mx-auto space-y-6">
             <div className="flex items-center justify-between gap-4 flex-wrap">
               <h2 className="text-2xl lg:text-3xl font-bold">Who We Are</h2>
-              <div className="inline-flex border border-border rounded overflow-hidden text-xs font-medium">
+              <div className="inline-flex border border-border rounded overflow-hidden text-xs font-medium" role="group" aria-label="Who We Are section layout">
                 <button
                   type="button"
                   onClick={() => setWhoVariant("v1")}
                   className={`px-3 py-1.5 transition-colors ${whoVariant === "v1" ? "bg-foreground text-background" : "bg-background text-muted-foreground hover:text-foreground"}`}
                   aria-pressed={whoVariant === "v1"}
+                  aria-label="Show detailed layout for Who We Are"
                 >
                   V1
                 </button>
@@ -169,6 +170,7 @@ export default function Home() {
                   onClick={() => setWhoVariant("v2")}
                   className={`px-3 py-1.5 border-l border-border transition-colors ${whoVariant === "v2" ? "bg-foreground text-background" : "bg-background text-muted-foreground hover:text-foreground"}`}
                   aria-pressed={whoVariant === "v2"}
+                  aria-label="Show compact layout for Who We Are"
                 >
                   V2
                 </button>

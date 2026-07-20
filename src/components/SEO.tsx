@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 
-const SITE_URL = "https://build-precision.lovable.app";
+const SITE_URL = "https://pentagonmachines.in";
 const DEFAULT_IMAGE =
   "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/02119d0e-416f-4c42-8843-067d691afbbe/id-preview-0cfeb80e--f3d64b8f-8373-4003-ba0c-dfef677a88b4.lovable.app-1775822879066.png";
 
