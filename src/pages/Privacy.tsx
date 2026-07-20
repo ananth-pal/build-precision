@@ -33,9 +33,9 @@ export default function Privacy() {
         <h2>Analytics tools</h2>
         <p>With your consent, this site loads the following analytics scripts:</p>
         <ul>
-          <li><strong>Google Analytics 4</strong> — aggregate usage statistics (pages viewed, referrers, device class).</li>
-          <li><strong>Microsoft Clarity</strong> — anonymised session recordings and heatmaps to understand how visitors interact with the site.</li>
-          <li><strong>LinkedIn Insight Tag</strong> — allows us to understand which pages visitors from LinkedIn visit and, in future, run retargeted campaigns.</li>
+          <li>Google Analytics 4 — aggregate usage statistics (pages viewed, referrers, device class).</li>
+          <li>Microsoft Clarity — anonymised session recordings and heatmaps to understand how visitors interact with the site.</li>
+          <li>LinkedIn Insight Tag — allows us to understand which pages visitors from LinkedIn visit and, in future, run retargeted campaigns.</li>
         </ul>
         <p>
           None of these load before you accept the analytics category in the cookie banner. If you reject analytics, no tracking scripts are loaded.
