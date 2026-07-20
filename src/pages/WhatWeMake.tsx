@@ -37,8 +37,6 @@ const selectedWork: GalleryItem[] = [
   { src: ptoFinished1New.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2New.url, caption: "PTO Housings" },
   { src: gearPump5.url, caption: "Gear Pump" },
-  { src: gearPumpHousingNew.url, caption: "Gear Pump Housing" },
-  { src: gearPump1.url, caption: "Gear Pump Housing" },
   { src: valves1.url, caption: "Hydraulic Valves" },
   { src: machinedHousings.url, caption: "Machined Housings" },
   { src: balancers1.url, caption: "Engine Balancers" },
