@@ -33,11 +33,11 @@ const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
   // New lead images
-  { src: matchTableColorPattern2.url, caption: "Gear Pump Housing" },
   { src: ptoFinished1New.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2New.url, caption: "PTO Housings" },
   { src: gearPump5.url, caption: "Gear Pump" },
   { src: valves1.url, caption: "Hydraulic Valves" },
+  { src: matchTableColorPattern2.url, caption: "Gear Pump Housing" },
   { src: machinedHousings.url, caption: "Machined Housings" },
   { src: balancers1.url, caption: "Engine Balancers" },
   { src: balancers2.url, caption: "Engine Balancers" },
