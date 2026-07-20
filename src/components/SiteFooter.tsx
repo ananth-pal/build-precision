@@ -1,20 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 import { trackEvent } from "@/lib/analytics";
 import RequestMachineListDialog from "@/components/RequestMachineListDialog";
 
-function triggerBrochureDownload() {
-  const a = document.createElement("a");
-  a.href = brochure.url;
-  a.download = "Pentagon-Brochure.pdf";
-  a.target = "_blank";
-  a.rel = "noopener noreferrer";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
 
 export default function SiteFooter() {
   const [open, setOpen] = useState(false);
@@ -82,7 +71,7 @@ export default function SiteFooter() {
         open={open}
         onOpenChange={setOpen}
         variant="brochure"
-        onSuccess={() => { trackEvent("brochure_download", { source: "footer" }); triggerBrochureDownload(); }}
+        onSuccess={() => trackEvent("brochure_download", { source: "footer" })}
       />
     </footer>
   );

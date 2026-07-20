@@ -6,21 +6,10 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import ChennaiLocatorMap from "@/components/ChennaiLocatorMap";
 import plantExterior from "@/assets/plant1-exterior.webp.asset.json";
-import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
 import { trackEvent } from "@/lib/analytics";
 import SEO from "@/components/SEO";
 import RequestMachineListDialog from "@/components/RequestMachineListDialog";
 
-function triggerBrochureDownload() {
-  const a = document.createElement("a");
-  a.href = brochure.url;
-  a.download = "Pentagon-Brochure.pdf";
-  a.target = "_blank";
-  a.rel = "noopener noreferrer";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
 
 export default function About() {
   const [open, setOpen] = useState(false);
@@ -94,8 +83,9 @@ export default function About() {
         open={open}
         onOpenChange={setOpen}
         variant="brochure"
-        onSuccess={() => { trackEvent("brochure_download", { source: "about" }); triggerBrochureDownload(); }}
+        onSuccess={() => trackEvent("brochure_download", { source: "about" })}
       />
+
       <SiteFooter />
     </div>
   );
