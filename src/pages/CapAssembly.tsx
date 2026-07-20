@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import pto1 from "@/assets/capabilities/PTO_assembly_1_edit-2.webp.asset.json";
 import pto2 from "@/assets/capabilities/PTO_assembly_2_edit-2.webp.asset.json";
-import pto3 from "@/assets/capabilities/PTO_assembly_3_edit-2.webp.asset.json";
+import pto3 from "@/assets/capabilities/pto-assembly-3-edit-2.png.asset.json";
 import gearPump5 from "@/assets/capabilities/Gear_pump_5_edit-2.webp.asset.json";
 import gearPump1 from "@/assets/capabilities/Gear_pump_1_edited-3.webp.asset.json";
 import airGauge from "@/assets/capabilities/Air_gauge_edit_1-3.webp.asset.json";
