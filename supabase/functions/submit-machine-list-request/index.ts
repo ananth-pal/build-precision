@@ -134,7 +134,7 @@ Deno.serve(async (req) => {
     if (insertError) {
       console.error('DB insert failed', insertError);
       return new Response(
-        JSON.stringify({ error: 'db_failed', message: insertError.message }),
+        JSON.stringify({ error: 'db_failed', message: 'Something went wrong, please try again later.' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
