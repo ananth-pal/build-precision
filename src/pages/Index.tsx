@@ -66,8 +66,6 @@ const currentlyUnderway = [
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [whoVariant, setWhoVariant] = useState<"v1" | "v2">("v1");
-  const [showExpandingImage, setShowExpandingImage] = useState(true);
 
   useEffect(() => {
     const id = window.setInterval(() => {
