@@ -186,7 +186,7 @@ export default function Machining() {
             />
           </figure>
 
-          </figure>
+
 
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See the equipment and processes behind this capability <ArrowRight size={14} />
