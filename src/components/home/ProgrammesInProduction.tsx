@@ -30,7 +30,7 @@ export default function ProgrammesInProduction() {
           />
           <h3 className="text-xl font-semibold">Engine balancer assemblies for an Indian OEM engine manufacturer</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            18 years of development and ongoing supply of mid-engine balancer assemblies to Simpson and Co. Ltd. (erstwhile Perkins licensee), India's leading tractor engine manufacturer. Designed by AVL and developed in-house for manufacturing, the assembly is driven by the engine crankshaft and rotates at twice the engine RPM, with the lube oil pump mounted on it.
+            18 years of development and ongoing supply of mid-engine balancer assemblies to Simpson and Co. Ltd. (erstwhile Perkins licensee), India's leading tractor engine manufacturer. Developed in-house for manufacturing, the assembly also contains the engine lube oil pump and is driven by the engine crankshaft and rotates at high rpm’s.
           </p>
         </article>
       </div>
