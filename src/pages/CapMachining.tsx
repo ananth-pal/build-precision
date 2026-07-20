@@ -1,25 +1,15 @@
 import { useState } from "react";
-import { ArrowRight, RefreshCw, Shuffle } from "lucide-react";
+import { ArrowRight, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
-import airGauge from "@/assets/capabilities/air-gauge.webp.asset.json";
-import ptoFixture from "@/assets/capabilities/pto-housing-fixture.webp.asset.json";
 import machinedHousings from "@/assets/capabilities/machined-housings.webp.asset.json";
-import fixtures from "@/assets/capabilities/fixtures.webp.asset.json";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 
-const machiningImages = [
-  { src: machinedHousings.url, alt: "Row of machined PTO housings on the finished-goods rack, ready for inspection" },
-  { src: ptoFixture.url, alt: "PTO housing clamped in fixture on a Makino machining centre — drill approaching the workpiece" },
-  { src: fixtures.url, alt: "In-house workholding fixtures organised on shop-floor racks" },
-  { src: airGauge.url, alt: "Air gauges in the metrology area — operator checking bore dimensions against master rings" },
-];
 
 
 const qualityRows: [string, string][] = [
