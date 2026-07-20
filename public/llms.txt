@@ -1,0 +1,23 @@
+# Pentagon Machines & Services
+
+> Family-run precision contract manufacturer in Chennai, India. Machining, gear cutting, and validated assembly of hydraulic valves, PTO gearboxes, and engineered components for global OEMs.
+
+## Pages
+
+- [Home](/): Overview of Pentagon's capabilities, markets, and heritage.
+- [Capabilities](/capabilities): Manufacturing scope across machining, gear cutting, and assembly.
+- [Machining](/capabilities/machining): CNC machining, batch sizes, DFM, and quality practices.
+- [Gear Cutting](/capabilities/gear-cutting): Gear types produced and gear-cutting process.
+- [Assembly](/capabilities/assembly): Assembly types, batch sizes, inspection, and shipment readiness.
+- [Means of Production](/technologies): Machine tools, inspection equipment, and process technologies used in-house.
+- [Portfolio](/what-we-make): Selected components and assemblies delivered to OEM customers.
+- [Working with Pentagon](/working-with-pentagon): Engagement model, industrial responsibility, and customer approach.
+- [About](/about): Company overview, facilities, and locations.
+- [Heritage](/about/heritage): Group history from machine tool origins to today.
+- [Leadership](/about/leadership): Management team and long-tenured line managers.
+- [Careers](/careers): Application details for trainees and freshers.
+- [Contact](/contact): Enquiries and quote requests.
+
+## Optional
+
+- [Privacy](/privacy): Privacy policy and analytics disclosure.
