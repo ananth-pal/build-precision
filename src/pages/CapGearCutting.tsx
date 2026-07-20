@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import gearsImg from "@/assets/portfolio/Gears.webp.asset.json";
+import gearsImg from "@/assets/portfolio/gears-clean-2.png.asset.json";
 import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.webp.asset.json";
 import SEO from "@/components/SEO";
 
