@@ -1,70 +1,29 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ProgrammesInProduction from "./ProgrammesInProduction";
 import makinoImg from "@/assets/home/makino-a51nx-wide.jpg";
-import capabilitiesLoop from "@/assets/home/capabilities-loop.mp4.asset.json";
 import calibrationProbe from "@/assets/technologies/calibration-probe.jpg.asset.json";
 
 export default function HomeCapabilitySection() {
-  const slides = [
-    { type: "image" as const, src: calibrationProbe.url, alt: "Calibration probe in use" },
-    { type: "video" as const, src: capabilitiesLoop.url },
-  ];
-  const [idx, setIdx] = useState(0);
-  const prev = () => setIdx((i) => (i - 1 + slides.length) % slides.length);
-  const next = () => setIdx((i) => (i + 1) % slides.length);
-  const current = slides[idx];
-
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-8">
           <div className="grid md:grid-cols-2 gap-6">
             <article className="capability-card space-y-3">
-              <div className="relative group w-full aspect-[16/10] overflow-hidden rounded-md mb-2 bg-muted">
-                {current.type === "video" ? (
-                  <video
-                    key="video"
-                    src={current.src}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                    style={{ filter: "saturate(0.78) contrast(1.05) brightness(1.02)" }}
-                  />
-                ) : (
-                  <img
-                    key="image"
-                    src={current.src}
-                    alt={current.alt}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                    style={{ filter: "saturate(0.78) contrast(1.05) brightness(1.02)" }}
-                  />
-                )}
+              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-md mb-2 bg-muted">
+                <img
+                  src={calibrationProbe.url}
+                  alt="Calibration probe in use"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                  style={{ filter: "saturate(0.78) contrast(1.05) brightness(1.02)" }}
+                />
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0 mix-blend-overlay"
                   style={{ backgroundColor: "rgb(180, 195, 210)", opacity: 0.06 }}
                 />
-                <button
-                  type="button"
-                  onClick={prev}
-                  aria-label="Previous"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/55 hover:bg-black/75 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={next}
-                  aria-label="Next"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/55 hover:bg-black/75 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
               </div>
               <h3 className="text-xl font-semibold">Capabilities</h3>
               <p className="font-semibold text-foreground text-sm">
