@@ -24,7 +24,7 @@ const heroSlides: HeroSlide[] = [
 
 const stats = [
   { number: "45+", label: "Years manufacturing heritage" },
-  { number: "65", label: "Year group legacy" },
+  { number: "62", label: "Year group legacy" },
   { number: "100+", label: "Product types developed & exported" },
   { number: "25+", label: "Year export to longstanding customers" },
 ];
