@@ -160,12 +160,13 @@ Deno.serve(async (req) => {
       {
         id,
         created_at: inserted.created_at,
+        purpose: kind,
         name,
         company,
         email,
         country: country || null,
         phone: phone || null,
-        notes: notes || null,
+        notes: combinedNotes || null,
       },
       null,
       2
