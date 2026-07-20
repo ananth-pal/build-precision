@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://build-precision.lovable.app/sitemap.xml
+Sitemap: https://pentagonmachines.in/sitemap.xml

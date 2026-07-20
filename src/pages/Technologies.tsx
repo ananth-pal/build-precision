@@ -183,14 +183,14 @@ export default function Technologies() {
                   ) : c.images && c.images.length > 0 ? (
                     <img
                       src={c.images[0]}
-                      alt={c.title}
+                      alt={`${c.title} — production equipment at Pentagon Machines`}
                       loading="lazy"
                       className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
                     />
                   ) : c.image ? (
                     <img
                       src={c.image}
-                      alt={c.title}
+                      alt={`${c.title} — production equipment at Pentagon Machines`}
                       loading="lazy"
                       className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
                     />
