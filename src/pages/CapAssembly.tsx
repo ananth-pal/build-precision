@@ -10,6 +10,7 @@ import pto3 from "@/assets/capabilities/PTO_assembly_3_edit-2.png.asset.json";
 import gearPump5 from "@/assets/capabilities/Gear_pump_5_edit-2.png.asset.json";
 import gearPump1 from "@/assets/capabilities/Gear_pump_1_edited-3.png.asset.json";
 import airGauge from "@/assets/capabilities/Air_gauge_edit_1-3.png.asset.json";
+import SEO from "@/components/SEO";
 
 const allImages = [
   { src: pto1.url, alt: "PTO gearbox on assembly bench — operator fitting drive gear into housing with output shaft in view" },
@@ -30,6 +31,7 @@ export default function CapAssembly() {
   const hero = heroImages[heroIdx];
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Assembly & Testing — Pentagon Machines & Services" description="Clean-room assembly, inspection, testing, and shipment readiness for hydraulic valves, PTOs, and engineered assemblies." />
       <SiteHeader />
       <PageHero
         title="Assembly"

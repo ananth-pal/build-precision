@@ -227,6 +227,7 @@ function CompanyRow({ company }: { company: Company }) {
 
 import pentagonLogo from "@/assets/brand/pentagon-logo.png.asset.json";
 import sellvindsLogoSrc from "@/assets/brand/sellvinds-logo-cropped.png";
+import SEO from "@/components/SEO";
 const sellvindsLogo = { url: sellvindsLogoSrc };
 
 // Member logos for the family-of-companies lockup. Only include logos that exist;
@@ -271,6 +272,7 @@ const earlyMilestones: Entry[] = [
 export default function Heritage() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Heritage — Pentagon Machines & Services" description="From machine tool origins in the 1970s to today: Pentagon's group history and family of companies." />
       <SiteHeader />
       <PageHero title="Heritage" subtitle="Deep engineering roots across machine building, engine components, and contract manufacturing" />
 

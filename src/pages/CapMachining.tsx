@@ -12,6 +12,7 @@ import fixtures from "@/assets/capabilities/fixtures.png.asset.json";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 const machiningImages = [
   { src: machinedHousings.url, alt: "Row of machined PTO housings on the finished-goods rack, ready for inspection" },
@@ -53,6 +54,7 @@ export default function Machining() {
   const currentImg = machiningImages[imgIdx];
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Precision Machining — Pentagon Machines & Services" description="CNC machining capabilities, batch sizes, DFM support, and quality practices at Pentagon's Chennai facility." />
       <SiteHeader />
       <PageHero title="Machining" subtitle="Technically demanding machined components and housings. Suited to parts where process definition and repeat consistency are required." />
       <main className="flex-1 section-padding">

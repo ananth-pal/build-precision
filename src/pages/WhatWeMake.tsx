@@ -19,6 +19,7 @@ import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.png.asset.json";
 import gearPump1 from "@/assets/portfolio/Gear_pump_1_edit_2.png.asset.json";
 import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.png.asset.json";
 import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.png.asset.json";
+import SEO from "@/components/SEO";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
@@ -44,6 +45,7 @@ const selectedWork: GalleryItem[] = [
 export default function WhatWeMake() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Portfolio — Pentagon Machines & Services" description="Selected precision components and assemblies delivered to off-highway, commercial vehicle, agriculture, and automotive OEMs." />
       <SiteHeader />
       <PageHero
         title="Portfolio"

@@ -8,6 +8,7 @@ import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
 import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
 import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
 import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
+import SEO from "@/components/SEO";
 
 const shaperImages = [gearCuttingImg, shaperCloseup, shaperWide];
 const gearsImages = [
@@ -23,6 +24,7 @@ export default function GearCutting() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Gear Cutting — Pentagon Machines & Services" description="Dedicated gear-cutting division: gear types produced and end-to-end process from cutting to grinding." />
       <SiteHeader />
       <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own assemblies." />
       <main className="flex-1 section-padding">

@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import { trackEvent } from "@/lib/analytics";
+import SEO from "@/components/SEO";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", company: "", country: "", email: "", phone: "", message: "" });
@@ -16,6 +17,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Contact Pentagon — Request a Quote" description="Send enquiries or request a quote from Pentagon Machines & Services in Chennai, India." />
       <SiteHeader />
       <PageHero title="Contact / Request a Quote" />
       <main className="flex-1 section-padding">

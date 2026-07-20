@@ -18,6 +18,7 @@ import assemblyAlt1 from "@/assets/capabilities/PTO_assembly_1_edit.png.asset.js
 import assemblyAlt2 from "@/assets/capabilities/PTO_assembly_2_edit.png.asset.json";
 import assemblyAlt3 from "@/assets/capabilities/PTO_assembly_3_edit.png.asset.json";
 import assemblyAlt4 from "@/assets/capabilities/Gear_pump_5_edit.png.asset.json";
+import SEO from "@/components/SEO";
 
 
 
@@ -81,6 +82,7 @@ export default function Capabilities() {
   const [imgIdx, setImgIdx] = useState<Record<string, number>>({});
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Capabilities — Pentagon Machines & Services" description="Overview of Pentagon's manufacturing scope: precision machining, gear cutting, and validated assembly for global OEM customers." />
       <SiteHeader />
       <PageHero title="Capabilities" subtitle="Assembly, machining, and gear cutting — from material in to tested module out" />
       <main className="flex-1 section-padding">

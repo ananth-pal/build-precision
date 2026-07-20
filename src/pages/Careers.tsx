@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import { trackEvent } from "@/lib/analytics";
+import SEO from "@/components/SEO";
 
 const CAREERS_EMAIL = "jobs@sellvindsgroup.com";
 
@@ -37,6 +38,7 @@ export default function Careers() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Careers — Pentagon Machines & Services" description="Opportunities for engineering trainees and freshers to join a family-run precision manufacturer in Chennai." />
       <SiteHeader />
       <PageHero
         title="Careers at Pentagon"

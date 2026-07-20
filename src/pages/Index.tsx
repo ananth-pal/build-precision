@@ -37,6 +37,7 @@ import oh2 from "@/assets/markets/off_highway_trial_2.jpg.asset.json";
 import oh3 from "@/assets/markets/off_highway_trial_3.jpg.asset.json";
 import tractorImg from "@/assets/markets/stock_tractor.jpg.asset.json";
 import roboticsImg from "@/assets/markets/stock_robot.jpg.asset.json";
+import SEO from "@/components/SEO";
 
 const markets = [
   {
@@ -78,6 +79,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title="Pentagon Machines & Services — Precision Manufacturing" description="Family-run precision contract manufacturer in Chennai, India. Machining, gear cutting, and validated assembly for global OEMs." />
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}
