@@ -9,7 +9,19 @@ import SEO from "@/components/SEO";
 export default function GearCutting() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Gear Cutting — Pentagon Machines & Services" description="Dedicated gear-cutting division: gear types produced and end-to-end process from cutting to grinding." />
+      <SEO
+        title="Gear Cutting — Pentagon Machines & Services"
+        description="Dedicated gear-cutting division: gear types produced and end-to-end process from cutting to grinding."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Gear Cutting & Grinding",
+          "serviceType": "Precision gear manufacturing",
+          "provider": { "@type": "Organization", "name": "Pentagon Machines and Services Pvt. Ltd." },
+          "areaServed": "Worldwide",
+          "description": "External and internal gears, splined shafts, and transmission components produced in a dedicated gear-cutting division with in-house profile and lead inspection.",
+        }}
+      />
       <SiteHeader />
       <PageHero title="Gear Cutting" subtitle="External and internal gears, splined shafts, and related transmission components are produced in a dedicated gear cutting division. Gears produced here feed directly into Pentagon's own assemblies." />
       <main className="flex-1 section-padding">

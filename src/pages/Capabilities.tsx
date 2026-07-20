@@ -100,8 +100,9 @@ export default function Capabilities() {
                     </div>
                   ) : c.imageSrc ? (
                     <div className="mb-4 aspect-video overflow-hidden rounded-md bg-muted">
-                      <img src={c.imageSrc} alt={c.title} loading="lazy" className="w-full h-full object-cover" />
+                      <img src={c.imageSrc} alt={c.image} loading="lazy" className="w-full h-full object-cover" />
                     </div>
+
                   ) : (
                     <ImagePlaceholder caption={c.image} ratio="aspect-video" className="mb-4" />
                   )}

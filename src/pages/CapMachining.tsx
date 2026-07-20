@@ -42,7 +42,19 @@ export default function Machining() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Precision Machining — Pentagon Machines & Services" description="CNC machining capabilities, batch sizes, DFM support, and quality practices at Pentagon's Chennai facility." />
+      <SEO
+        title="Precision Machining — Pentagon Machines & Services"
+        description="CNC machining capabilities, batch sizes, DFM support, and quality practices at Pentagon's Chennai facility."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Precision CNC Machining",
+          "serviceType": "Contract precision machining",
+          "provider": { "@type": "Organization", "name": "Pentagon Machines and Services Pvt. Ltd." },
+          "areaServed": "Worldwide",
+          "description": "CNC machining of precision components and housings in steel, cast iron, ductile iron, and non-ferrous alloys, with in-house fixtures, gauges, and DFM support.",
+        }}
+      />
       <SiteHeader />
       <PageHero title="Machining" subtitle="Technically demanding machined components and housings. Suited to parts where process definition and repeat consistency are required." />
       <main className="flex-1 section-padding">

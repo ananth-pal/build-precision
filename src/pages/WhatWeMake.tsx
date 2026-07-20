@@ -26,21 +26,22 @@ import SEO from "@/components/SEO";
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
-  { src: ptoGearboxes.url, caption: "PTO Gearboxes" },
-  { src: ptoHousings.url, caption: "PTO Housings" },
-  { src: hydraulicValves.url, caption: "Hydraulic Valves" },
-  { src: gearPump.url, caption: "Gear Pump" },
-  { src: gearPumpHousing.url, caption: "Gear Pump Housing" },
-  { src: machinedHousings.url, caption: "Machined Housings" },
-  { src: balancer2.url, caption: "Engine Balancers" },
-  { src: balancer1.url, caption: "Engine Balancers" },
-  { src: gearPumpComponents.url, caption: "Gear Pump Components" },
-  { src: ptoShafts.url, caption: "PTO Shafts" },
-  { src: couplers2.url, caption: "Couplers" },
-  { src: gears2.url, caption: "Gears" },
-  { src: valveSpools1.url, caption: "Valve spools" },
-  { src: fixtures2.url, caption: "Fixtures" },
+  { src: ptoGearboxes.url, caption: "PTO Gearboxes", alt: "Finished power take-off gearboxes ready for despatch to OEM customer" },
+  { src: ptoHousings.url, caption: "PTO Housings", alt: "Row of machined PTO housings on finished-goods rack awaiting inspection" },
+  { src: hydraulicValves.url, caption: "Hydraulic Valves", alt: "Precision-machined hydraulic valve body for commercial vehicle application" },
+  { src: gearPump.url, caption: "Gear Pump", alt: "Assembled gear pump module with exposed internal gears on workbench" },
+  { src: gearPumpHousing.url, caption: "Gear Pump Housing", alt: "Operator torquing fasteners on a machined gear pump housing in a vise" },
+  { src: machinedHousings.url, caption: "Machined Housings", alt: "Batch of machined transmission housings staged on yellow shop-floor shelving" },
+  { src: balancer2.url, caption: "Engine Balancers", alt: "Two engine balancer assemblies shown from opposing angles" },
+  { src: balancer1.url, caption: "Engine Balancers", alt: "Complete engine balancer assembly on the finished-goods rack" },
+  { src: gearPumpComponents.url, caption: "Gear Pump Components", alt: "Machined shafts and bronze bushings that make up a gear pump kit" },
+  { src: ptoShafts.url, caption: "PTO Shafts", alt: "Collection of ground and splined PTO output shafts of varying lengths" },
+  { src: couplers2.url, caption: "Couplers", alt: "Array of machined drive couplers and splined coupling components" },
+  { src: gears2.url, caption: "Gears", alt: "Set of black-oxide finished spur and helical production gears" },
+  { src: valveSpools1.url, caption: "Valve spools", alt: "Three precision-ground hydraulic valve spools in graduated sizes" },
+  { src: fixtures2.url, caption: "Fixtures", alt: "Rows of in-house workholding fixtures organised on yellow storage racks" },
 ];
+
 
 
 export default function WhatWeMake() {
