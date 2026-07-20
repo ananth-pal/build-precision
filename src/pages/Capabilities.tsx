@@ -10,6 +10,7 @@ import angularGrinder from "@/assets/technologies/gear-grinder.jpg.asset.json";
 import gearsImg from "@/assets/portfolio/Gears.webp.asset.json";
 import shaperCloseup from "@/assets/capabilities/shaper-closeup.webp.asset.json";
 import shaperWide from "@/assets/capabilities/shaper-wide.webp.asset.json";
+import angularGrinderAlt from "@/assets/capabilities/angular-wheelhead-grinder-edit-2.png.asset.json";
 import machiningImg from "@/assets/capabilities/pto-housing-fixture.webp.asset.json";
 import machinedHousings from "@/assets/capabilities/machined-housings.webp.asset.json";
 import fixtures from "@/assets/capabilities/fixtures.webp.asset.json";
@@ -70,6 +71,7 @@ const caps: Cap[] = [
     imageSrc: angularGrinder.url,
     images: [
       { src: angularGrinder.url, alt: "Angular wheelhead grinder with coolant lines — shaft being ground between centres" },
+      { src: angularGrinderAlt.url, alt: "Angular wheelhead grinder interior — shaft mounted between centres with coolant manifold overhead" },
       { src: gearCuttingImg.url, alt: "Gear cutting machine mid-setup" },
       { src: gearsImg.url, alt: "Finished gears and splined shafts" },
       { src: shaperCloseup.url, alt: "Lorenz gear shaper — close-up view" },
