@@ -30,7 +30,7 @@ type Cap = {
   path: string;
   image: string;
   imageSrc: string | null;
-  images?: { src: string; alt: string }[];
+  images?: { src: string; alt: string; position?: string }[];
 };
 
 const caps: Cap[] = [
@@ -71,7 +71,7 @@ const caps: Cap[] = [
     imageSrc: angularGrinder.url,
     images: [
       { src: angularGrinder.url, alt: "Angular wheelhead grinder with coolant lines — shaft being ground between centres" },
-      { src: angularGrinderAlt.url, alt: "Angular wheelhead grinder interior — shaft mounted between centres with coolant manifold overhead" },
+      { src: angularGrinderAlt.url, alt: "Angular wheelhead grinder interior — shaft mounted between centres with coolant manifold overhead", position: "center 38%" },
       { src: gearCuttingImg.url, alt: "Gear cutting machine mid-setup" },
       { src: gearsImg.url, alt: "Finished gears and splined shafts" },
       { src: shaperCloseup.url, alt: "Lorenz gear shaper — close-up view" },
@@ -102,7 +102,7 @@ export default function Capabilities() {
                 <Link key={c.title} to={c.path} className="capability-card group">
                   {cycle && current ? (
                     <div className="relative mb-4 aspect-video overflow-hidden rounded-md bg-muted">
-                      <img src={current.src} alt={current.alt} loading="lazy" className="w-full h-full object-cover" />
+                      <img src={current.src} alt={current.alt} loading="lazy" className="w-full h-full object-cover" style={current.position ? { objectPosition: current.position } : undefined} />
                       <button
                         type="button"
                         onClick={(e) => {
