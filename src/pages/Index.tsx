@@ -222,16 +222,7 @@ export default function Home() {
             </div>
             {/* Expanding into callout */}
             <div className="mt-8">
-              <div className="flex justify-end mb-2">
-                <button
-                  type="button"
-                  onClick={() => setShowExpandingImage((v) => !v)}
-                  className="text-xs px-3 py-1 border border-border rounded hover:bg-muted transition-colors"
-                  aria-pressed={showExpandingImage}
-                >
-                  {showExpandingImage ? "Hide image" : "Show image"}
-                </button>
-              </div>
+
               <div className="border-l-4 border-primary bg-muted/40 rounded-r-md overflow-hidden grid grid-cols-1 sm:grid-cols-2">
                 <div className="p-6 lg:p-8 flex flex-col justify-between gap-6">
                   <div>
