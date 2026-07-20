@@ -1,6 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
+import RouteTracker from "@/components/RouteTracker";
+import CookieConsent from "@/components/CookieConsent";
+import Privacy from "./pages/Privacy";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -28,6 +31,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <RouteTracker />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/capabilities" element={<Capabilities />} />
@@ -46,8 +50,10 @@ const App = () => (
           <Route path="/about/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

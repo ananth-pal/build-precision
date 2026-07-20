@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import ChennaiLocatorMap from "@/components/ChennaiLocatorMap";
 import plantExterior from "@/assets/plant1-exterior.png.asset.json";
 import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
+import { trackEvent } from "@/lib/analytics";
 
 
 export default function About() {
@@ -64,7 +65,7 @@ export default function About() {
           </div>
 
           <div className="pt-8">
-            <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" className="download-btn">
+            <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("brochure_download", { source: "about" })} className="download-btn">
               <Download size={16} /> Download Company Brochure
             </a>
           </div>

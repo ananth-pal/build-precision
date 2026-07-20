@@ -3,12 +3,14 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", company: "", country: "", email: "", phone: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackEvent("contact_form_submit", { company: form.company, country: form.country });
     window.location.href = `mailto:enquiries@sellvindsgroup.com?subject=RFQ from ${form.name} - ${form.company}&body=${encodeURIComponent(`Name: ${form.name}\nCompany: ${form.company}\nCountry: ${form.country}\nEmail: ${form.email}\nPhone: ${form.phone}\n\n${form.message}`)}`;
   };
 

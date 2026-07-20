@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import brochure from "@/assets/pentagon-brochure.pdf.asset.json";
+import { trackEvent } from "@/lib/analytics";
 
 export default function SiteFooter() {
   return (
@@ -24,6 +25,7 @@ export default function SiteFooter() {
                 { label: "About", path: "/about" },
                 { label: "Careers", path: "/careers" },
                 { label: "Contact / RFQ", path: "/contact" },
+                { label: "Privacy", path: "/privacy" },
               ].map((l) => (
                 <Link key={l.path} to={l.path} className="block text-sm opacity-70 hover:opacity-100 transition-opacity">
                   {l.label}
@@ -48,7 +50,7 @@ export default function SiteFooter() {
               </div>
             </div>
             <div className="mt-6">
-              <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" className="download-btn text-background border-background/30 hover:bg-background/10 hover:text-background text-xs">
+              <a href={brochure.url} download="Pentagon-Brochure.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("brochure_download", { source: "footer" })} className="download-btn text-background border-background/30 hover:bg-background/10 hover:text-background text-xs">
                 Download Company Brochure
               </a>
             </div>
