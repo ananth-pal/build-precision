@@ -61,7 +61,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-8 pt-8">
             <Link to="/about/heritage" className="capability-card group">
               <h2 className="text-xl font-semibold mb-3">Heritage</h2>
-              <p className="text-sm text-muted-foreground mb-4">From India's machine tool pioneers to precision contract manufacturing — a 65-year engineering legacy.</p>
+              <p className="text-sm text-muted-foreground mb-4">From India's machine tool pioneers to precision contract manufacturing — a 62-year engineering legacy.</p>
               <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 Read more <ArrowRight size={14} />
               </span>
