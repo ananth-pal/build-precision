@@ -43,6 +43,7 @@ const caps: Cap[] = [
     image: "Cleanroom assembly line — operators at stations, controlled environment",
     imageSrc: null,
     images: [
+      { src: assemblyLead.url, alt: "Operator fitting gear stack into red PTO housing on yellow assembly bench with blue parts bins" },
       { src: assemblyAlt1.url, alt: "Operator fitting drive gear into red PTO housing at assembly bench" },
       { src: assemblyAlt2.url, alt: "Operator using impact wrench on red PTO housing during assembly" },
       { src: assemblyAlt3.url, alt: "Cleanroom operator assembling gear stack into PTO housing" },
