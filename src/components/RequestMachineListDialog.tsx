@@ -84,14 +84,22 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
     setSubmitting(true);
     try {
       const { data, error } = await supabase.functions.invoke("submit-machine-list-request", {
-        body: parsed.data,
+        body: { ...parsed.data, purpose: variant },
       });
       if (error || (data && (data as { error?: string }).error)) {
         throw new Error(error?.message || (data as { error?: string })?.error || "Unknown error");
       }
       setSubmitted(true);
       const { trackEvent } = await import("@/lib/analytics");
-      trackEvent("machine_list_request", {});
+      trackEvent(copy.eventName, {});
+      onSuccess?.();
+    } catch (err) {
+      console.error(err);
+      toast.error("Could not submit your request. Please try again or email enquiries@sellvindsgroup.com.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
     } catch (err) {
       console.error(err);
       toast.error("Could not submit your request. Please try again or email enquiries@sellvindsgroup.com.");
