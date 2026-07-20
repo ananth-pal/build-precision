@@ -11,7 +11,7 @@ import valveSpools1 from "@/assets/portfolio/clean/Valve_spools-clean.png.asset.
 import fixtures2 from "@/assets/portfolio/clean/Fixtures_2_edited-clean.png.asset.json";
 
 
-import ptoGearboxes from "@/assets/portfolio/clean/PTO_finished_1_edit_3-clean.png.asset.json";
+import ptoGearboxes from "@/assets/portfolio/clean/PTO_finished_1_edit_4-clean.png.asset.json";
 import ptoHousings from "@/assets/portfolio/clean/PTO_finished_2_edit_3-clean.png.asset.json";
 import hydraulicValves from "@/assets/portfolio/clean/Valve_edit_1-clean.png.asset.json";
 import gearPump from "@/assets/portfolio/clean/Gear_pump_5_edit-clean.png.asset.json";
