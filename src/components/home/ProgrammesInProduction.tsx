@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shuffle } from "lucide-react";
-import ptoImg from "@/assets/portfolio/PTO_finished_1_edit.png.asset.json";
-import ptoAlt from "@/assets/portfolio/Air_gauge_edit_1-4.png.asset.json";
-import balancerImg from "@/assets/portfolio/Balancer_1.png.asset.json";
+import ptoImg from "@/assets/portfolio/PTO_finished_1_edit.webp.asset.json";
+import ptoAlt from "@/assets/portfolio/Air_gauge_edit_1-4.webp.asset.json";
+import balancerImg from "@/assets/portfolio/Balancer_1.webp.asset.json";
 
 const ptoImages = [ptoImg.url, ptoAlt.url];
 

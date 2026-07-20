@@ -1,113 +1,51 @@
-# Analytics & Visitor Tracking — Implementation Plan (revised)
+# Plan — Speed up image loading
 
-## Scope at launch
-GA4 (with SPA route tracking), Microsoft Clarity, LinkedIn Insight Tag, cookie consent gate, Privacy Policy page, and a small event helper wired into all lead-intent interactions site-wide. **No** RB2B / company reveal. **No** custom scroll-depth. **No** CRM.
+## Goal
+Cut first-load image weight by 40–70% and reduce layout shift, so sub-pages (Portfolio, Means of Production, Capabilities, Leadership) feel as snappy as the homepage.
 
----
+## What changes
 
-## Files created
+### 1. Add `vite-imagetools` for build-time image transforms
+- Install `vite-imagetools` and register it in `vite.config.ts`.
+- This lets us import any image with query params like `?format=webp&w=800;1200;1920&as=srcset` and get back a responsive `srcset` string, with WebP fallback to the original format.
 
-### `src/lib/analytics.ts` — single source of truth
-- `CONFIG` object with three bracketed placeholder IDs at the top of the file, clearly commented:
-  ```
-  GA4_MEASUREMENT_ID = "[GA4_MEASUREMENT_ID]"
-  CLARITY_PROJECT_ID  = "[CLARITY_PROJECT_ID]"
-  LINKEDIN_PARTNER_ID = "[LINKEDIN_PARTNER_ID]"
-  ```
-- `hasConsent()` — reads consent state from vanilla-cookieconsent.
-- `loadTrackers()` — idempotent. Injects the three vendor scripts into `<head>` only when consent is granted and IDs are non-placeholder. Called on consent grant and on app boot if consent already stored.
-- `unloadTrackers()` — no-op stub for reject path; scripts simply never load.
-- `trackPageView(path)` — fires GA4 `config` with `page_path` + `page_location` + `page_title`; pings Clarity `set('page', path)`; re-pushes LinkedIn `_bizo_data_partner_ids` no-op (Insight Tag auto-picks new URL on next event).
-- `trackEvent(name, params?)` — sends to GA4 `gtag('event', ...)`. Silent no-op if consent absent or gtag not loaded.
-- GA4 snippet is configured with `send_page_view: false` so route changes are the only page_view source (deterministic, no double-count).
+### 2. Create a small `<ResponsiveImage>` helper
+- New file: `src/components/ResponsiveImage.tsx`.
+- Wraps `<picture>` with a WebP `<source>` and an `<img>` fallback.
+- Accepts `src`, `alt`, `aspectRatio` (e.g. `"16/10"`), and an optional `priority` prop.
+  - `priority=true` → `loading="eager" fetchpriority="high"` (used only for above-the-fold hero images).
+  - default → `loading="lazy" decoding="async"`.
+- Always renders explicit `width`/`height` via aspect-ratio CSS to prevent layout shift.
 
-### `src/components/RouteTracker.tsx`
-Mounted inside `<BrowserRouter>` in `App.tsx`. Uses `useLocation()` to call `trackPageView(pathname + search)` on every route change (including initial mount).
+### 3. Convert the heavy image sites to use it
+Priority order (largest wins first):
+1. **`src/pages/WhatWeMake.tsx`** — the `SelectedWorkGallery` items (currently plain `<img>` with 1–2 MB PNGs).
+2. **`src/pages/Technologies.tsx`** — the 6 capability cards, including the assembly shuffle set (`asm-alt-1..5.png`, ~1.8 MB each).
+3. **`src/components/home/MarketCard.tsx`** and homepage hero cards.
+4. **`src/pages/CapAssembly.tsx`, `CapMachining.tsx`, `CapGearCutting.tsx`, `Capabilities.tsx`** — capability page images.
+5. **`src/pages/Leadership.tsx`, `HeritageV3.tsx`, `About.tsx`** — remaining photo-heavy pages.
 
-### `src/components/CookieConsent.tsx`
-- Wraps `vanilla-cookieconsent` (added via `bun add vanilla-cookieconsent`).
-- Two categories: **necessary** (always on) and **analytics** (GA4 + Clarity + LinkedIn).
-- Minimal styling matching site aesthetic: white surface, near-black text, red accent CTA, no shadows/gradients.
-- On accept → calls `loadTrackers()` then `trackPageView(currentPath)` so the first page_view lands.
-- Mounted once at app root.
+### 4. Keep the homepage LCP preload
+The existing `<link rel="preload">` for `gear-hobber.jpg` in `index.html` stays. Update it to preload the WebP variant instead.
 
-### `src/pages/Privacy.tsx` + route `/privacy` in `App.tsx`
-Sections:
-1. Who we are / controller contact (enquiries@sellvindsgroup.com for data requests).
-2. What we collect via forms (Contact, Machine List Request, Careers) and where it goes (email only, no CRM).
-3. **Analytics tools used** — names GA4, Microsoft Clarity, LinkedIn Insight Tag; one-line purpose each; consent-gated statement.
-4. Cookies — necessary vs analytics categories.
-5. Your rights (access, deletion, opt-out via cookie banner reset link).
-6. Retention & contact for data requests.
+### 5. Leave the CDN pointers alone
+`.asset.json` pointers and files under `src/assets/` remain unchanged — `vite-imagetools` operates on the URLs at build time. No re-uploads, no CDN churn, fully reversible.
 
-Written in the site's minimal editorial voice, no legal boilerplate padding. App-owner maintained qualifier included.
+## Non-goals (deferred)
+- Deleting unused/superseded assets — separate effort, irreversible.
+- Server-side image resizing / Cloudflare Image Resizing — overkill for this traffic level.
+- Converting the CDN-hosted originals to WebP at the source — the build-time transform is enough.
 
-### `src/components/SiteFooter.tsx` — edit
-Add a `Privacy` link next to the existing quick links.
+## Technical notes
+- `vite-imagetools` requires images to be bundler-resolved, i.e. imported via `import x from "..."`. Assets loaded via `.asset.json.url` (a runtime CDN string) bypass the bundler, so the transform can't reach them. Two options:
+  - **Option A (recommended):** For each converted image, add a sibling bundled import path — the file already exists on the CDN, so we import the `.asset.json` for URL, but *also* bundle-import a `?webp&srcset` variant for the responsive sources. This works because Vite can fetch the CDN URL at build time via a small resolver, OR we accept a one-time trade-off and keep small (<200 KB) thumbnails in `src/assets` for the transform.
+  - **Option B (fallback):** Skip `vite-imagetools` and instead pre-generate WebP versions of the ~15 largest images with `squoosh-cli`, upload as new `.asset.json` pointers, and use `<picture>` manually.
+- I'll start with Option A and fall back to Option B if the resolver work gets messy. Either way the user-visible outcome — WebP with srcset, lazy loading, no layout shift — is the same.
 
----
+## Verification
+- Run `bun run build` and check the output for `.webp` variants.
+- Open the Portfolio page in the preview, check DevTools Network tab: images should be `.webp`, sized to viewport width, and load lazily as the user scrolls.
+- Confirm no layout shift on slow-network throttling.
 
-## Files edited to wire events
-
-Import `trackEvent` and add a single call at each interaction point. No behaviour change.
-
-| File | Event |
-|---|---|
-| `src/pages/Contact.tsx` (form submit handler) | `contact_form_submit` |
-| `src/components/RequestMachineListDialog.tsx` (successful submit) | `machine_list_request` |
-| `src/pages/Careers.tsx` (submit handler) | `careers_apply` |
-| `src/pages/About.tsx` + `src/components/SiteFooter.tsx` (brochure `<a download>`) | `brochure_download` |
-
-### Site-wide `mailto:` / `tel:` tracking
-Rather than hunting every anchor, add a single delegated listener in `RouteTracker.tsx` (or a dedicated `LinkTracker` mounted alongside it): one `document.addEventListener('click', ...)` that inspects `event.target.closest('a')`. If `href` starts with `mailto:` → `trackEvent('email_click', { href })`; if `tel:` → `trackEvent('phone_click', { href })`. Covers Contact page, footer, and any future page automatically.
-
-### `src/App.tsx` — edit
-- Mount `<RouteTracker />` inside `<BrowserRouter>`.
-- Mount `<CookieConsent />` at the app root.
-- Add `/privacy` route.
-
-### `index.html` — edit
-No inline analytics snippets. Only add a `<meta>` for consent UI theming if needed. Scripts are all injected at runtime by `loadTrackers()` — this is what enforces the "nothing loads before consent" guarantee.
-
----
-
-## Notification routing
-- No email address is hardcoded for notifications anywhere in code. Grep confirms only `enquiries@sellvindsgroup.com` appears, and only as the lead destination in Contact/Careers/machine-list forms and footer — all of which stay unchanged.
-- Owner action: configure GA4, Clarity, LinkedIn account-level alerts to `ananth@sellvindsgroup.com`. Documented in the closing message, not in code.
-
----
-
-## Verification (part of the task)
-After implementation, run a headless Playwright pass against the local dev server:
-1. Load `/` with consent unaccepted → assert no request to `googletagmanager.com`, `clarity.ms`, or `snap.licdn.com` in the network log.
-2. Accept consent → assert all three script hosts are requested.
-3. Navigate `/` → `/what-we-make` → `/about` → assert three distinct `collect?...&en=page_view` calls to GA4 with matching `dl`/`dp` paths and no duplicates.
-4. Click a `mailto:` link → assert an `email_click` event hit.
-5. Screenshot the consent banner for visual sign-off.
-
-If `[GA4_MEASUREMENT_ID]` etc. are still placeholders when verification runs, the network assertions for the vendor endpoints will be skipped with a printed note; consent gating and route-change firing logic are still verified via the in-memory helper's own logging.
-
----
-
-## Dependencies
-- `bun add vanilla-cookieconsent` (small, no React wrapper).
-- No `react-ga4`, no `@microsoft/clarity` wrapper — plain script injection keeps the bundle lean and matches the "no heavy wrappers" constraint.
-
----
-
-## Explicitly NOT in this change
-- RB2B / Leadfeeder / Albacross / any IP-reveal script.
-- Custom scroll-depth, heatmap, or session-replay code (Clarity provides these).
-- LinkedIn conversion events or campaign config beyond the base Insight Tag.
-- Any CRM integration or automated email sequences.
-- Any change to form fields, form behaviour, or lead-email routing.
-- Any visual/layout change beyond the consent banner and the footer Privacy link.
-
----
-
-## Owner actions after I ship
-1. Create GA4 property → paste Measurement ID into `src/lib/analytics.ts` `CONFIG`.
-2. Create Clarity project → paste Project ID.
-3. Create LinkedIn Insight Tag → paste Partner ID.
-4. Set account-level notification email to `ananth@sellvindsgroup.com` in all three tools.
-5. (Separate task, already tracked) Search Console + Bing Webmaster verification post-custom-domain.
+## Deliverable
+Faster perceived load on every photo-heavy page, especially on mobile and first visits. Homepage LCP unchanged or slightly better.

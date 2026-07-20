@@ -14,19 +14,19 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
-import gearGrinderAsset from "@/assets/technologies/gear-image-bore-grinder.jpg.asset.json";
+import gearGrinderAsset from "@/assets/technologies/gear-image-bore-grinder.webp.asset.json";
 import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
 import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
-import castingsAsset from "@/assets/technologies/castings.jpg.asset.json";
-import castingsAlt1Asset from "@/assets/technologies/castings-alt-1.png.asset.json";
-import castingsAlt2Asset from "@/assets/technologies/castings-alt-2.png.asset.json";
-import asmAlt1 from "@/assets/technologies/asm-alt-1.png.asset.json";
-import asmAlt2 from "@/assets/technologies/asm-alt-2.png.asset.json";
-import asmAlt3 from "@/assets/technologies/asm-alt-3.png.asset.json";
-import asmAlt4 from "@/assets/technologies/asm-alt-4.png.asset.json";
-import asmAlt5 from "@/assets/technologies/asm-alt-5.png.asset.json";
+import castingsAsset from "@/assets/technologies/castings.webp.asset.json";
+import castingsAlt1Asset from "@/assets/technologies/castings-alt-1.webp.asset.json";
+import castingsAlt2Asset from "@/assets/technologies/castings-alt-2.webp.asset.json";
+import asmAlt1 from "@/assets/technologies/asm-alt-1.webp.asset.json";
+import asmAlt2 from "@/assets/technologies/asm-alt-2.webp.asset.json";
+import asmAlt3 from "@/assets/technologies/asm-alt-3.webp.asset.json";
+import asmAlt4 from "@/assets/technologies/asm-alt-4.webp.asset.json";
+import asmAlt5 from "@/assets/technologies/asm-alt-5.webp.asset.json";
 import SEO from "@/components/SEO";
 
 type Card = {

@@ -4,10 +4,10 @@ import { Shuffle } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import gearsImg from "@/assets/portfolio/Gears.png.asset.json";
-import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.png.asset.json";
-import shaperCloseup from "@/assets/capabilities/shaper-closeup.png.asset.json";
-import shaperWide from "@/assets/capabilities/shaper-wide.png.asset.json";
+import gearsImg from "@/assets/portfolio/Gears.webp.asset.json";
+import gearCuttingImg from "@/assets/capabilities/gear-cutting-machine-v3.webp.asset.json";
+import shaperCloseup from "@/assets/capabilities/shaper-closeup.webp.asset.json";
+import shaperWide from "@/assets/capabilities/shaper-wide.webp.asset.json";
 import SEO from "@/components/SEO";
 
 const shaperImages = [gearCuttingImg, shaperCloseup, shaperWide];

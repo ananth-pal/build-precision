@@ -24,6 +24,8 @@ export default function SelectedWorkGallery({ items }: Props) {
             <img
               src={item.src}
               alt={item.caption}
+              loading="lazy"
+              decoding="async"
               className="block w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
             />
             <div className="absolute bottom-2 left-2 bg-black/55 text-white text-xs px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity">
