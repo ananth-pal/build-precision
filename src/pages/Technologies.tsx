@@ -223,7 +223,7 @@ export default function Technologies() {
                     />
                   )}
                   <c.icon className="text-primary mb-4" size={28} />
-                  <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
+                  <h2 className="text-lg font-semibold mb-3">{c.title}</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{c.desc}</p>
                   <Dialog>
                     <DialogTrigger asChild>
