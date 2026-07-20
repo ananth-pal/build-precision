@@ -6,10 +6,12 @@ import PageHero from "@/components/PageHero";
 import ananthPassport from "@/assets/leadership/ananth-passport.jpg.asset.json";
 import ananthNewsletter from "@/assets/leadership/ananth-newsletter.jpg.asset.json";
 import varunPhoto from "@/assets/leadership/varun.jpg.asset.json";
+import natarajanPhoto from "@/assets/leadership/natarajan-palaniappan.jpg.asset.json";
 import SEO from "@/components/SEO";
 
 const ananthPhotos = [ananthPassport.url, ananthNewsletter.url];
 const varunPhotos = [varunPhoto.url];
+const natarajanPhotos = [natarajanPhoto.url];
 
 const leaders = [
   {
