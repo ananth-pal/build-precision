@@ -15,6 +15,7 @@ import valveSpools1 from "@/assets/portfolio/Valve_spools.webp.asset.json";
 import valves1 from "@/assets/portfolio/valves-new.webp.asset.json";
 import ptoFinished1 from "@/assets/portfolio/PTO_finished_1_edit.webp.asset.json";
 import ptoFinished2 from "@/assets/portfolio/PTO_finished_2_edit.webp.asset.json";
+import ptoHousingsNew from "@/assets/portfolio/PTO_finished_2_edit_2.png.asset.json";
 import ptoFinishedNew from "@/assets/portfolio/pto-finished-1-edit-2.png.asset.json";
 import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.webp.asset.json";
 import gearPump1 from "@/assets/portfolio/Gear_pump_1_edit_2.webp.asset.json";
