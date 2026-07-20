@@ -152,7 +152,7 @@ export default function Technologies() {
       <PageHero
         title="Means of Production"
         subtitle="Equipment, measurement, and supporting systems across two Pentagon facilities in Chennai."
-        backgroundImage={gearGrinderAsset.url}
+        backgroundImage={gearHobberAsset.url}
       />
       <main className="flex-1">
         <section className="section-padding pb-8 lg:pb-12">
