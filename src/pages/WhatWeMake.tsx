@@ -18,6 +18,7 @@ import ptoFinished2 from "@/assets/portfolio/PTO_finished_2_edit.webp.asset.json
 import ptoFinishedNew from "@/assets/portfolio/pto-finished-1-edit-2.png.asset.json";
 import gearPump5 from "@/assets/portfolio/Gear_pump_5_edit-4.webp.asset.json";
 import gearPump1 from "@/assets/portfolio/Gear_pump_1_edit_2.webp.asset.json";
+import gearPumpHousingNew from "@/assets/gear-pump-1-edit-3.png.asset.json";
 import machinedHousings from "@/assets/portfolio/Machined_housings_1_edited-3.webp.asset.json";
 import fixtures2 from "@/assets/portfolio/Fixtures_2_edited-2.webp.asset.json";
 import SEO from "@/components/SEO";
@@ -30,6 +31,7 @@ const selectedWork: GalleryItem[] = [
   { src: ptoFinished1.url, caption: "PTO Gearboxes" },
   { src: ptoFinished2.url, caption: "PTO Housings" },
   { src: gearPump5.url, caption: "Gear Pump" },
+  { src: gearPumpHousingNew.url, caption: "Gear Pump Housing" },
   { src: gearPump1.url, caption: "Gear Pump Housing" },
   { src: valves1.url, caption: "Hydraulic Valves" },
   { src: machinedHousings.url, caption: "Machined Housings" },
