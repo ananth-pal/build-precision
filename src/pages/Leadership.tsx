@@ -25,6 +25,7 @@ const leaders = [
     title: "Managing Director",
     shortBio: "A mechanical engineer with 36+ years in the industry. Trained under Ananth Ram Iyer, a legend of the Indian machine tool industry. Leads Pentagon directly from the engineering floor.",
     fullBio: "He began his career at Kareyn Precision Machines Pvt. Ltd., Dehradun, where he received two years of hands-on training in engineering. A Fellow of the Indian Institute of Production Engineers, he leads Pentagon with innovation and precision. He holds a diploma in the German language and has been honoured with the Paul Harris Fellowship by Rotary International.",
+    photos: natarajanPhotos,
   },
   {
     name: "Dr. Varun Palaniappan",
