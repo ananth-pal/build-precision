@@ -161,7 +161,7 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1.5">Intended application / notes</label>
+              <label className="block text-sm font-medium mb-1.5">{copy.notesLabel}</label>
               <textarea
                 rows={3}
                 value={form.notes ?? ""}
@@ -175,7 +175,7 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
               className="w-full px-6 py-3 bg-primary text-primary-foreground font-medium rounded hover:opacity-90 transition-opacity disabled:opacity-60 inline-flex items-center justify-center gap-2"
             >
               {submitting && <Loader2 size={16} className="animate-spin" />}
-              {submitting ? "Sending…" : "Send Request"}
+              {submitting ? "Sending…" : copy.submit}
             </button>
           </form>
         )}
