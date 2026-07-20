@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Cog, Settings, Wrench, Ruler, Hammer, Network, FileText, Shuffle } from "lucide-react";
+import { Cog, Settings, Wrench, Ruler, Hammer, Network, FileText } from "lucide-react";
 import RequestMachineListDialog from "@/components/RequestMachineListDialog";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -144,7 +144,7 @@ const cards: Card[] = [
 
 export default function Technologies() {
   const [requestOpen, setRequestOpen] = useState(false);
-  const [imgIdx, setImgIdx] = useState<Record<string, number>>({});
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO title="Means of Production — Pentagon Machines & Services" description="Machine tools, inspection equipment, and process technologies used in-house at Pentagon's Chennai plants." />
@@ -180,34 +180,13 @@ export default function Technologies() {
                       playsInline
                       className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
                     />
-                  ) : c.images && c.images.length > 1 ? (
-                    (() => {
-                      const idx = imgIdx[c.title] ?? 0;
-                      const src = c.images[idx];
-                      return (
-                        <div className="relative mb-4">
-                          <img
-                            src={src}
-                            alt={c.title}
-                            loading="lazy"
-                            className="w-full aspect-video object-cover rounded-md bg-muted"
-                          />
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setImgIdx((s) => ({
-                                ...s,
-                                [c.title]: (idx + 1) % c.images!.length,
-                              }))
-                            }
-                            aria-label="Show next photo"
-                            className="absolute bottom-2 right-2 bg-background/80 hover:bg-background text-foreground rounded-md p-1.5 shadow border border-border"
-                          >
-                            <Shuffle size={14} />
-                          </button>
-                        </div>
-                      );
-                    })()
+                  ) : c.images && c.images.length > 0 ? (
+                    <img
+                      src={c.images[0]}
+                      alt={c.title}
+                      loading="lazy"
+                      className="w-full aspect-video object-cover rounded-md mb-4 bg-muted"
+                    />
                   ) : c.image ? (
                     <img
                       src={c.image}

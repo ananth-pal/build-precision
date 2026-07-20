@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Cog, CircleDot, Box, ArrowRight, Shuffle } from "lucide-react";
+import { Cog, CircleDot, Box, ArrowRight } from "lucide-react";
+
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -78,7 +78,6 @@ const caps: Cap[] = [
 ];
 
 export default function Capabilities() {
-  const [imgIdx, setImgIdx] = useState<Record<string, number>>({});
   return (
     <div className="min-h-screen flex flex-col">
       <SEO title="Capabilities — Pentagon Machines & Services" description="Overview of Pentagon's manufacturing scope: precision machining, gear cutting, and validated assembly for global OEM customers." />
@@ -92,26 +91,12 @@ export default function Capabilities() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {caps.map((c) => {
-              const idx = imgIdx[c.title] ?? 0;
-              const cycle = c.images && c.images.length > 1;
-              const current = cycle ? c.images![idx] : null;
+              const lead = c.images && c.images.length > 0 ? c.images[0] : null;
               return (
                 <Link key={c.title} to={c.path} className="capability-card group">
-                  {cycle && current ? (
-                    <div className="relative mb-4 aspect-video overflow-hidden rounded-md bg-muted">
-                      <img src={current.src} alt={current.alt} loading="lazy" className="w-full h-full object-cover" style={current.position ? { objectPosition: current.position } : undefined} />
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setImgIdx((s) => ({ ...s, [c.title]: (idx + 1) % c.images!.length }));
-                        }}
-                        aria-label="Show next photo"
-                        className="absolute bottom-2 right-2 bg-background/80 hover:bg-background text-foreground rounded-md p-1.5 shadow border border-border"
-                      >
-                        <Shuffle size={14} />
-                      </button>
+                  {lead ? (
+                    <div className="mb-4 aspect-video overflow-hidden rounded-md bg-muted">
+                      <img src={lead.src} alt={lead.alt} loading="lazy" className="w-full h-full object-cover" style={lead.position ? { objectPosition: lead.position } : undefined} />
                     </div>
                   ) : c.imageSrc ? (
                     <div className="mb-4 aspect-video overflow-hidden rounded-md bg-muted">
@@ -130,6 +115,7 @@ export default function Capabilities() {
               );
             })}
           </div>
+
         </div>
       </main>
       <SiteFooter />

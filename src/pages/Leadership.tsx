@@ -42,19 +42,13 @@ const leaders = [
 
 function LeaderCard({ leader }: { leader: typeof leaders[0] & { photos?: string[] } }) {
   const [expanded, setExpanded] = useState(false);
-  const [photoIdx, setPhotoIdx] = useState(0);
   const photos = leader.photos;
   return (
     <div className="capability-card">
       {photos && photos.length > 0 ? (
-        <button
-          type="button"
-          onClick={() => setPhotoIdx((i) => (i + 1) % photos.length)}
-          className="w-20 h-20 rounded-full overflow-hidden mb-4 block focus:outline-none focus:ring-2 focus:ring-primary"
-          aria-label={`Cycle photos of ${leader.name}`}
-        >
-          <img src={photos[photoIdx]} alt={leader.name} className="w-full h-full object-cover object-top" />
-        </button>
+        <div className="w-20 h-20 rounded-full overflow-hidden mb-4">
+          <img src={photos[0]} alt={leader.name} className="w-full h-full object-cover object-top" />
+        </div>
       ) : (
         <div className="w-20 h-20 rounded-full bg-muted mb-4 flex items-center justify-center text-muted-foreground text-xs">[PHOTO]</div>
       )}
@@ -72,6 +66,7 @@ function LeaderCard({ leader }: { leader: typeof leaders[0] & { photos?: string[
     </div>
   );
 }
+
 
 export default function Leadership() {
   return (

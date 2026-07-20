@@ -1,34 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Shuffle } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import pto1 from "@/assets/capabilities/PTO_assembly_1_edit-2.webp.asset.json";
-import pto2 from "@/assets/capabilities/PTO_assembly_2_edit-2.webp.asset.json";
 import pto3 from "@/assets/capabilities/pto-assembly-3-edit-2.png.asset.json";
 import gearPump5 from "@/assets/capabilities/Gear_pump_5_edit-2.webp.asset.json";
-import gearPump1 from "@/assets/capabilities/Gear_pump_1_edited-3.webp.asset.json";
-import airGauge from "@/assets/capabilities/Air_gauge_edit_1-3.webp.asset.json";
 import SEO from "@/components/SEO";
 
-const allImages = [
-  { src: pto1.url, alt: "PTO gearbox on assembly bench — operator fitting drive gear into housing with output shaft in view" },
-  { src: pto2.url, alt: "Operator using impact wrench on red PTO housing at torque station" },
-  { src: pto3.url, alt: "Cleanroom operator assembling gear stack into PTO housing at workbench" },
-  { src: gearPump5.url, alt: "Assembled gear pump module with exposed drive gears on workbench" },
-  { src: gearPump1.url, alt: "Pentagon operator torqueing gear pump housing clamped in bench vise" },
-  { src: airGauge.url, alt: "Air gauges in metrology area — operator checking bore dimensions on red housing against master rings" },
-];
-
-const heroImages = [allImages[2], allImages[0], allImages[1], allImages[3], allImages[4], allImages[5]];
-const inspectionImages = [allImages[3], allImages[0], allImages[1], allImages[2], allImages[4], allImages[5]];
-
 export default function CapAssembly() {
-  const [idx, setIdx] = useState(0);
-  const [heroIdx, setHeroIdx] = useState(0);
-  const current = inspectionImages[idx];
-  const hero = heroImages[heroIdx];
   return (
     <div className="min-h-screen flex flex-col">
       <SEO title="Assembly & Testing — Pentagon Machines & Services" description="Clean-room assembly, inspection, testing, and shipment readiness for hydraulic valves, PTOs, and engineered assemblies." />
@@ -42,22 +20,9 @@ export default function CapAssembly() {
 
           {/* Hero image */}
           <div className="max-w-3xl mx-auto">
-            <figure className="relative">
-              <div className="aspect-[16/9] overflow-hidden rounded-md bg-muted">
-                <img src={hero.src} alt={hero.alt} loading="lazy" className="w-full h-full object-cover" />
-              </div>
-              {heroImages.length > 1 && (
-                <button
-                  type="button"
-                  onClick={() => setHeroIdx((i) => (i + 1) % heroImages.length)}
-                  className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-background/90 backdrop-blur px-2.5 py-1.5 text-xs font-medium text-foreground border border-border shadow-sm hover:bg-background transition"
-                  aria-label="Show next image"
-                >
-                  <Shuffle className="h-3.5 w-3.5" />
-                  {heroIdx + 1}/{heroImages.length}
-                </button>
-              )}
-            </figure>
+            <div className="aspect-[16/9] overflow-hidden rounded-md bg-muted">
+              <img src={pto3.url} alt="Cleanroom operator assembling gear stack into PTO housing at workbench" loading="lazy" className="w-full h-full object-cover" />
+            </div>
           </div>
 
           {/* Types of Assemblies & Batch Sizes */}
@@ -84,22 +49,9 @@ export default function CapAssembly() {
                 Inspection and functional test plans are defined according to the function of the assembly and the customer requirement. Depending on the product, this may include dimensional verification, torque checks, leak or pressure testing, continuity checks, or functional testing. A sampling plan is used for inspection as needed. Test benches can be adapted to the application where needed. Calibration is maintained in line with the Quality Management System, and digital test records form part of the delivered package.
               </p>
             </div>
-            <figure className="relative">
-              <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
-                <img src={current.src} alt={current.alt} loading="lazy" className="w-full h-full object-cover" />
-              </div>
-              {inspectionImages.length > 1 && (
-                <button
-                  type="button"
-                  onClick={() => setIdx((i) => (i + 1) % inspectionImages.length)}
-                  className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-background/90 backdrop-blur px-2.5 py-1.5 text-xs font-medium text-foreground border border-border shadow-sm hover:bg-background transition"
-                  aria-label="Show next image"
-                >
-                  <Shuffle className="h-3.5 w-3.5" />
-                  {idx + 1}/{inspectionImages.length}
-                </button>
-              )}
-            </figure>
+            <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
+              <img src={gearPump5.url} alt="Assembled gear pump module with exposed drive gears on workbench" loading="lazy" className="w-full h-full object-cover" />
+            </div>
           </div>
 
           {/* Sourcing & Logistics */}
@@ -130,3 +82,4 @@ export default function CapAssembly() {
     </div>
   );
 }
+

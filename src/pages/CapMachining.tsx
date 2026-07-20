@@ -1,25 +1,15 @@
 import { useState } from "react";
-import { ArrowRight, RefreshCw, Shuffle } from "lucide-react";
+import { ArrowRight, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
-import airGauge from "@/assets/capabilities/air-gauge.webp.asset.json";
-import ptoFixture from "@/assets/capabilities/pto-housing-fixture.webp.asset.json";
 import machinedHousings from "@/assets/capabilities/machined-housings.webp.asset.json";
-import fixtures from "@/assets/capabilities/fixtures.webp.asset.json";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 
-const machiningImages = [
-  { src: machinedHousings.url, alt: "Row of machined PTO housings on the finished-goods rack, ready for inspection" },
-  { src: ptoFixture.url, alt: "PTO housing clamped in fixture on a Makino machining centre — drill approaching the workpiece" },
-  { src: fixtures.url, alt: "In-house workholding fixtures organised on shop-floor racks" },
-  { src: airGauge.url, alt: "Air gauges in the metrology area — operator checking bore dimensions against master rings" },
-];
 
 
 const qualityRows: [string, string][] = [
@@ -48,10 +38,8 @@ const materialsCapable = [
 ];
 
 export default function Machining() {
-  
   const [materialsVersion, setMaterialsVersion] = useState<1 | 2>(1);
-  const [imgIdx, setImgIdx] = useState(0);
-  const currentImg = machiningImages[imgIdx];
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO title="Precision Machining — Pentagon Machines & Services" description="CNC machining capabilities, batch sizes, DFM support, and quality practices at Pentagon's Chennai facility." />
@@ -189,25 +177,16 @@ export default function Machining() {
             </div>
           </div>
 
-          <figure className="relative my-2 mx-auto w-full max-w-4xl aspect-[16/9] overflow-hidden rounded-lg border border-border bg-muted">
+          <figure className="my-2 mx-auto w-full max-w-4xl aspect-[16/9] overflow-hidden rounded-lg border border-border bg-muted">
             <img
-              src={currentImg.src}
-              alt={currentImg.alt}
+              src={machinedHousings.url}
+              alt="Row of machined PTO housings on the finished-goods rack, ready for inspection"
               className="w-full h-full object-cover"
               loading="lazy"
             />
-            {machiningImages.length > 1 && (
-              <button
-                type="button"
-                onClick={() => setImgIdx((i) => (i + 1) % machiningImages.length)}
-                aria-label="Show next image"
-                className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-background/90 backdrop-blur px-2.5 py-1.5 text-xs font-medium text-foreground border border-border shadow-sm hover:bg-background transition"
-              >
-                <Shuffle className="h-3.5 w-3.5" />
-                {imgIdx + 1}/{machiningImages.length}
-              </button>
-            )}
           </figure>
+
+
 
           <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See the equipment and processes behind this capability <ArrowRight size={14} />
