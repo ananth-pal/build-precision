@@ -59,7 +59,7 @@ const currentlyUnderway = [
   },
   {
     title: "ISO 45001 and ISO 14001 certification",
-    body: "Occupational health and safety, and environmental management systems implementation are in progress.",
+    body: "Certification of our occupational health and safety, and environmental management systems is in progress.",
     placeholder: null,
   },
 ];
