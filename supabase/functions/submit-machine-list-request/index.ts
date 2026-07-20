@@ -136,7 +136,6 @@ Deno.serve(async (req) => {
 
     const id = inserted.id as string;
 
-    const dropboxToken = Deno.env.get('DROPBOX_ACCESS_TOKEN');
     const dropboxPayload = JSON.stringify(
       {
         id,
