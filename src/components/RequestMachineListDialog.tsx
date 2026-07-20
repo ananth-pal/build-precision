@@ -112,18 +112,18 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Request Detailed Machine List</DialogTitle>
+          <DialogTitle>{copy.title}</DialogTitle>
           <DialogDescription>
-            Provide a few details and we will send the full machine list, including makes, models, and capacities.
+            {copy.description}
           </DialogDescription>
         </DialogHeader>
 
         {submitted ? (
           <div className="py-8 text-center space-y-3">
             <CheckCircle2 className="mx-auto text-primary" size={40} />
-            <h3 className="text-lg font-semibold">Request received</h3>
+            <h3 className="text-lg font-semibold">{copy.successTitle}</h3>
             <p className="text-sm text-muted-foreground">
-              Thank you. A confirmation has been sent to your email, and our team will be in touch shortly.
+              {copy.successBody}
             </p>
             <button
               type="button"
