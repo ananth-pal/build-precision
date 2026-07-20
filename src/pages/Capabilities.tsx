@@ -15,6 +15,7 @@ import machiningImg from "@/assets/capabilities/pto-housing-fixture.webp.asset.j
 import machinedHousings from "@/assets/capabilities/machined-housings.webp.asset.json";
 import fixtures from "@/assets/capabilities/fixtures.webp.asset.json";
 import airGauge from "@/assets/capabilities/air-gauge.webp.asset.json";
+import assemblyLead from "@/assets/capabilities/assembly-pto-lead.png.asset.json";
 import assemblyAlt1 from "@/assets/capabilities/PTO_assembly_1_edit.webp.asset.json";
 import assemblyAlt2 from "@/assets/capabilities/PTO_assembly_2_edit.webp.asset.json";
 import assemblyAlt3 from "@/assets/capabilities/PTO_assembly_3_edit.webp.asset.json";
