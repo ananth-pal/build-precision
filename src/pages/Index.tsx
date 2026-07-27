@@ -16,10 +16,8 @@ type HeroSlide = { src: string; kind: "image" | "video"; pos: string };
 const heroSlides: HeroSlide[] = [
   { src: gearHobberAsset.url, kind: "image", pos: "center 40%" },
   { src: zeissCmmAsset.url, kind: "image", pos: "center" },
-  { src: zollerAsset.url, kind: "image", pos: "center 35%" },
+  { src: zollerAsset.url, kind: "image", pos: "center 15%" },
   { src: calibrationProbeAsset.url, kind: "image", pos: "center" },
-  { src: gearStockAsset.url, kind: "image", pos: "center 60%" },
-  { src: drillLoopAsset.url, kind: "video", pos: "center" },
 ];
 
 const stats = [
