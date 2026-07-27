@@ -74,7 +74,7 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-muted">
+        <section className="relative h-[100svh] sm:h-auto sm:min-h-[70vh] flex items-center overflow-hidden bg-muted">
           {/* Rotating hero imagery */}
           <div className="absolute inset-0">
             {heroSlides.map((slide, i) => {
@@ -114,12 +114,12 @@ export default function Home() {
           </div>
           {/* Bottom scrim only — keeps imagery clean up top, darkens area behind copy */}
           <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 w-full">
             <h1 className="sr-only">Pentagon Machines — Precision Contract Manufacturing &amp; Assembly in Chennai, India</h1>
             <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background max-w-4xl leading-tight mb-6 [text-shadow:_0_2px_12px_rgba(0,0,0,0.75)]">
               We build the products you bet your business on.
             </p>
-            <p className="text-lg text-background/90 max-w-2xl mb-8 [text-shadow:_0_1px_8px_rgba(0,0,0,0.7)]">
+            <p className="text-base sm:text-lg text-background/90 max-w-2xl mb-8 [text-shadow:_0_1px_8px_rgba(0,0,0,0.7)]">
               With 45 years of engineering experience, we are a family-run precision contract manufacturer in Chennai, India, delivering validated, traceable assemblies with a 26-year track record of global export reliability. Our scope extends from in-house tooling and CNC machining to clean-room assembly and automated validation.
             </p>
             <div className="flex flex-wrap gap-4">
