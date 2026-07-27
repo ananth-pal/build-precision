@@ -8,8 +8,8 @@ import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWork
 import couplers2 from "@/assets/portfolio/clean/Couplers-clean.png.asset.json";
 import gears2 from "@/assets/portfolio/clean/Gears-clean.png.asset.json";
 import valveSpools1 from "@/assets/portfolio/clean/Valve_spools-clean.png.asset.json";
-import pa41Pic2 from "@/assets/portfolio/clean/PA41_PIC2.jpeg.asset.json";
-import pa43Pic1 from "@/assets/portfolio/clean/PA43_PIC1.jpeg.asset.json";
+import pa41 from "@/assets/portfolio/clean/PA41.png.asset.json";
+import pa43 from "@/assets/portfolio/clean/PA43.png.asset.json";
 
 
 import ptoGearboxes from "@/assets/portfolio/clean/PTO_finished_1_edit_4-clean.png.asset.json";
@@ -27,10 +27,10 @@ import SEO from "@/components/SEO";
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
-  { src: pa41Pic2.url, caption: "PTO Gearboxes", alt: "Row of finished PTO gearboxes with helical output gears staged on the shop floor" },
-  { src: pa43Pic1.url, caption: "PTO Housings", alt: "Machined PTO housings with input gears seated, staged in line for assembly" },
-  { src: ptoGearboxes.url, caption: "PTO Gearboxes", alt: "Finished power take-off gearboxes ready for despatch to OEM customer" },
-  { src: ptoHousings.url, caption: "PTO Housings", alt: "Row of machined PTO housings on finished-goods rack awaiting inspection" },
+  { src: pa41.url, caption: "PTO Gearboxes 1", alt: "Row of finished PTO gearboxes with helical output gears staged on the shop floor" },
+  { src: pa43.url, caption: "PTO Gearboxes 2", alt: "Three PTO gearbox housings with helical gears seated, staged in line" },
+  { src: ptoGearboxes.url, caption: "PTO Gearboxes 3", alt: "Finished power take-off gearboxes ready for despatch to OEM customer" },
+  { src: ptoHousings.url, caption: "PTO Gearboxes 4", alt: "Row of machined PTO gearbox housings on finished-goods rack awaiting inspection" },
   { src: hydraulicValves.url, caption: "Hydraulic Valves", alt: "Precision-machined hydraulic valve body for commercial vehicle application" },
   { src: gearPump.url, caption: "Gear Pump", alt: "Assembled gear pump module with exposed internal gears on workbench" },
   { src: gearPumpHousing.url, caption: "Gear Pump Housing", alt: "Operator torquing fasteners on a machined gear pump housing in a vise" },
