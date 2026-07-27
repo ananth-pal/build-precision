@@ -8,7 +8,8 @@ import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWork
 import couplers2 from "@/assets/portfolio/clean/Couplers-clean.png.asset.json";
 import gears2 from "@/assets/portfolio/clean/Gears-clean.png.asset.json";
 import valveSpools1 from "@/assets/portfolio/clean/Valve_spools-clean.png.asset.json";
-import fixtures2 from "@/assets/portfolio/clean/Fixtures_2_edited-clean.png.asset.json";
+import pa41Pic2 from "@/assets/portfolio/clean/PA41_PIC2.jpeg.asset.json";
+import pa43Pic1 from "@/assets/portfolio/clean/PA43_PIC1.jpeg.asset.json";
 
 
 import ptoGearboxes from "@/assets/portfolio/clean/PTO_finished_1_edit_4-clean.png.asset.json";
@@ -26,6 +27,8 @@ import SEO from "@/components/SEO";
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
 const selectedWork: GalleryItem[] = [
+  { src: pa41Pic2.url, caption: "PTO Gearboxes", alt: "Row of finished PTO gearboxes with helical output gears staged on the shop floor" },
+  { src: pa43Pic1.url, caption: "PTO Housings", alt: "Machined PTO housings with input gears seated, staged in line for assembly" },
   { src: ptoGearboxes.url, caption: "PTO Gearboxes", alt: "Finished power take-off gearboxes ready for despatch to OEM customer" },
   { src: ptoHousings.url, caption: "PTO Housings", alt: "Row of machined PTO housings on finished-goods rack awaiting inspection" },
   { src: hydraulicValves.url, caption: "Hydraulic Valves", alt: "Precision-machined hydraulic valve body for commercial vehicle application" },
@@ -39,7 +42,6 @@ const selectedWork: GalleryItem[] = [
   { src: couplers2.url, caption: "Couplers", alt: "Array of machined drive couplers and splined coupling components" },
   { src: gears2.url, caption: "Gears", alt: "Set of black-oxide finished spur and helical production gears" },
   { src: valveSpools1.url, caption: "Valve spools", alt: "Three precision-ground hydraulic valve spools in graduated sizes" },
-  { src: fixtures2.url, caption: "Fixtures", alt: "Rows of in-house workholding fixtures organised on yellow storage racks" },
 ];
 
 
