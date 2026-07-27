@@ -18,7 +18,7 @@ import gearGrinderAsset from "@/assets/technologies/gear-hobbing-machine.png.ass
 import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
-import drillLoopAsset from "@/assets/technologies/drill-loop.mp4.asset.json";
+import drillLoopAsset from "@/assets/technologies/housing-face-milling.mp4.asset.json";
 import castingsAsset from "@/assets/technologies/castings.webp.asset.json";
 import castingsAlt1Asset from "@/assets/technologies/castings-alt-1.webp.asset.json";
 import castingsAlt2Asset from "@/assets/technologies/castings-alt-2.webp.asset.json";
