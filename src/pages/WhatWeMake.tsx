@@ -8,7 +8,8 @@ import SelectedWorkGallery, { type GalleryItem } from "@/components/SelectedWork
 import couplers2 from "@/assets/portfolio/clean/Couplers-clean.png.asset.json";
 import gears2 from "@/assets/portfolio/clean/Gears-clean.png.asset.json";
 import valveSpools1 from "@/assets/portfolio/clean/Valve_spools-clean.png.asset.json";
-import fixtures2 from "@/assets/portfolio/clean/Fixtures_2_edited-clean.png.asset.json";
+import pa41Pic2 from "@/assets/portfolio/clean/PA41_PIC2.jpeg.asset.json";
+import pa43Pic1 from "@/assets/portfolio/clean/PA43_PIC1.jpeg.asset.json";
 
 
 import ptoGearboxes from "@/assets/portfolio/clean/PTO_finished_1_edit_4-clean.png.asset.json";
