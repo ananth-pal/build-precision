@@ -74,7 +74,7 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-muted">
+        <section className="relative h-[100svh] sm:h-auto sm:min-h-[70vh] flex items-center overflow-hidden bg-muted">
           {/* Rotating hero imagery */}
           <div className="absolute inset-0">
             {heroSlides.map((slide, i) => {
