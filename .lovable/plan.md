@@ -1,15 +1,17 @@
-## Changes to `src/pages/WhatWeMake.tsx`
+## Remove hero tint on `src/pages/Index.tsx`
 
-1. Upload the two new images as CDN assets:
-   - `user-uploads://PA41.png` → `src/assets/portfolio/clean/PA41.png.asset.json`
-   - `user-uploads://PA43.png` → `src/assets/portfolio/clean/PA43.png.asset.json`
-2. Delete the previous asset pointers (`PA41_PIC2.jpeg.asset.json`, `PA43_PIC1.jpeg.asset.json`) so the old CDN objects are removed.
-3. Update imports to reference the new pointers.
-4. Rework the first four entries of `selectedWork` so all four are captioned as PTO Gearboxes, numbered 1–4:
-   - 1: new PA41 image (row of PTO gearboxes with output gears)
-   - 2: new PA43 image (three PTO gearbox housings with helical gears seated)
-   - 3: existing `ptoGearboxes` (finished red PTO gearboxes pair)
-   - 4: existing `ptoHousings` — recaptioned from "PTO Housings" to "PTO Gearboxes 4"
-5. Leave the remainder of the gallery unchanged.
+Currently lines 121–128 render a full-bleed diagonal tint (`linear-gradient(135deg, hsla(220,20%,10%,0.75), hsla(348,76%,45%,0.35))`) across the entire hero. This is what darkens every slide.
 
-Alt text will be updated to match each new caption.
+Changes:
+
+1. **Delete the full-image tint overlay** (lines 121–128).
+2. **Add a bottom-anchored scrim** so only the region behind the copy is darkened, letting the imagery itself read cleanly at the top:
+   ```tsx
+   <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+   ```
+3. **Add a crisp text shadow** to the headline and supporting paragraph so text stays legible against any slide (including light backgrounds), without needing a full tint:
+   - Headline: `[text-shadow:_0_2px_12px_rgba(0,0,0,0.75)]`
+   - Paragraph: `[text-shadow:_0_1px_8px_rgba(0,0,0,0.7)]`
+4. Leave buttons, layout, slide rotation, and everything else unchanged.
+
+No other pages or components are affected.
