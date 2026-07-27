@@ -8,14 +8,12 @@ import gearHobberAsset from "@/assets/technologies/gear-hobber.jpg.asset.json";
 
 import zeissCmmAsset from "@/assets/technologies/zeiss-cmm.jpg.asset.json";
 import zollerAsset from "@/assets/technologies/zoller-presetter.jpg.asset.json";
-import calibrationProbeAsset from "@/assets/technologies/calibration-probe.jpg.asset.json";
 
 type HeroSlide = { src: string; kind: "image" | "video"; pos: string };
 const heroSlides: HeroSlide[] = [
   { src: gearHobberAsset.url, kind: "image", pos: "center 40%" },
   { src: zeissCmmAsset.url, kind: "image", pos: "center" },
-  { src: zollerAsset.url, kind: "image", pos: "center 15%" },
-  { src: calibrationProbeAsset.url, kind: "image", pos: "center" },
+  { src: zollerAsset.url, kind: "image", pos: "center 35%" },
 ];
 
 const stats = [
