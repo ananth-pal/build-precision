@@ -9,7 +9,7 @@ import couplers2 from "@/assets/portfolio/clean/Couplers-clean.png.asset.json";
 import gears2 from "@/assets/portfolio/clean/Gears-clean.png.asset.json";
 import valveSpools1 from "@/assets/portfolio/clean/Valve_spools-clean.png.asset.json";
 import pa41 from "@/assets/portfolio/clean/PA41-clean.png.asset.json";
-import pa43 from "@/assets/portfolio/clean/PA43-clean.png.asset.json";
+import pa43 from "@/assets/portfolio/clean/PA43-clean-v2.png.asset.json";
 
 
 import ptoGearboxes from "@/assets/portfolio/clean/PTO_finished_1_edit_4-clean.png.asset.json";
