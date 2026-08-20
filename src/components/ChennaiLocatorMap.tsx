@@ -97,7 +97,7 @@ export default function ChennaiLocatorMap() {
         </ComposableMap>
       </div>
       <figcaption className="text-xs text-muted-foreground mt-2">
-        Headquartered in Chennai on India's south-east coast — a deep-water port with direct sea and air links across Asia, the Middle East, and Australia.
+        Headquartered in Chennai on India's south-east coast — a deep-water port with direct sea and air links across Asia, the Middle East, Australia, the USA, UK, and the rest of the world.
       </figcaption>
     </figure>
   );
