@@ -1,22 +1,39 @@
-# Fit home hero to phone screen
+# Home page: heritage and leadership snapshot in "Who We Are"
 
-Yes, this is possible. Right now the hero uses `min-h-[70vh]` with `py-24` padding. On a phone, the copy block pushes the section taller than the visible viewport, so the image extends well below the fold (as seen in your screenshot).
+The section keeps the title **Who We Are**. It is extended so that visitors see the heritage and the leadership without leaving the home page.
 
-## Change
+## New layout of "Who We Are"
 
-In `src/pages/Index.tsx` (hero `<section>` at line 77 and its inner container at line 117):
+```text
+Who We Are
+[Sellvinds Group logo] Part of the Sellvinds Group — 62 years of manufacturing excellence
+---------------------------------------------------------------
+Existing 3 paragraphs (machine-tool roots, plants, generations) | Zoller photo
+---------------------------------------------------------------
+Heritage strip: 4 milestones in a row (stacked on phones)
+  1954  Founder joins HMT, later DGM; sets up its SPM Division
+  1970s Pentagon founded as a custom machine-tool builder
+  1999  Contract manufacturing begins for a global hydraulics OEM
+  Today 100+ product types exported; ISO 9001:2015
+  -> See our heritage
+---------------------------------------------------------------
+Leadership: 4 compact cards (photo, name, title, one-line credential)
+  Ramanathan Palaniappan  Founder Chairman (Retired)   Ex-DGM, HMT; founded PROTEL (1965)
+  Natarajan Palaniappan   Managing Director            36+ years; Fellow, IIPE
+  Dr. Varun Palaniappan   Manager, Strategy & Planning Imperial College London
+  Ananth Palaniappan      Manager, Project Engineering Cornell MEng; Six Sigma Black Belt
+  Line note: Line managers average two decades or more with the company.
+  -> Meet the leadership
+```
 
-- Replace `min-h-[70vh]` with a viewport-locked height on mobile that relaxes on larger screens:
-  - `h-[100svh] sm:h-auto sm:min-h-[70vh]`
-  - `100svh` = small viewport height (accounts for the mobile browser URL/toolbar so nothing gets cut off).
-- Reduce vertical padding on mobile so headline + paragraph + buttons fit within one screen:
-  - `py-12 sm:py-24` on the inner container.
-- Slightly tighten the mobile paragraph size (`text-base sm:text-lg`) so the block comfortably fits typical phone heights (iPhone SE included).
+- The Sellvinds line sits right under the heading so visitors recognise the group name straight away.
+- The milestones and the credentials come word for word from the existing Heritage and Leadership pages. Nothing new is invented.
+- The current "Learn more about us" link stays.
+- The design stays minimal: thin red accent rules, round photos the same as on the Leadership page, and no carousels.
 
-Result on phones: the hero image fills exactly one screen, the two headings + buttons sit over it, and the rest of the page begins right at the fold. Desktop/tablet layout is unchanged.
+## Technical details
 
-## Notes
-
-- No image assets change; only the section sizing.
-- `object-cover` on the image means the photo will be cropped (not letterboxed) to fill the phone's portrait aspect. The `backgroundPosition` set per slide continues to control what stays visible.
-- If you'd rather the image is never cropped on phones (letterboxed with brand background), that's a different approach — say the word and I'll swap in that variant instead.
+- Edit only `src/pages/Index.tsx`. Inside the existing "Who We Are" section, add a Sellvinds badge (`@/assets/brand/sellvinds-logo-cropped.png`), a milestone grid (`grid-cols-2 lg:grid-cols-4`) and a leader card grid (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`).
+- Import the leader photos from the existing `src/assets/leadership/*.asset.json` files and load them lazily.
+- Use the semantic tokens that are already in place (`text-primary`, `border-border`, `text-muted-foreground`).
+- The links go to `/about/heritage` and `/about/leadership`.
