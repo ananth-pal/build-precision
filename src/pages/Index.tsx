@@ -31,6 +31,25 @@ import oh3 from "@/assets/markets/off_highway_trial_3.jpg.asset.json";
 import tractorImg from "@/assets/markets/stock_tractor.webp.asset.json";
 import roboticsImg from "@/assets/markets/stock_robot.webp.asset.json";
 import SEO from "@/components/SEO";
+import sellvindsLogo from "@/assets/brand/sellvinds-logo-cropped.png";
+import ramanathanPhoto from "@/assets/leadership/ramanathan-palaniappan.jpg.asset.json";
+import natarajanPhoto from "@/assets/leadership/natarajan-palaniappan.jpg.asset.json";
+import varunPhoto from "@/assets/leadership/varun.jpg.asset.json";
+import ananthPhoto from "@/assets/leadership/ananth-passport.jpg.asset.json";
+
+const milestones = [
+  { year: "1954", text: "Founder joins HMT, later rising to Deputy General Manager and setting up its SPM Division." },
+  { year: "1970s", text: "Pentagon founded as a custom machine-tool builder." },
+  { year: "1999", text: "Contract manufacturing begins for a multinational hydraulics OEM." },
+  { year: "Today", text: "100+ product types exported; ISO 9001:2015 certified." },
+];
+
+const homeLeaders = [
+  { name: "Ramanathan Palaniappan", title: "Founder Chairman (Retired)", cred: "Ex-Deputy General Manager, HMT; founded PROTEL (1965).", photo: ramanathanPhoto.url },
+  { name: "Natarajan Palaniappan", title: "Managing Director", cred: "36+ years in industry; Fellow, Indian Institute of Production Engineers.", photo: natarajanPhoto.url },
+  { name: "Dr. Varun Palaniappan", title: "Manager — Strategy and Planning", cred: "BSc (Hons), Imperial College London.", photo: varunPhoto.url },
+  { name: "Ananth Palaniappan", title: "Manager — Project Engineering", cred: "BS & MEng, Cornell University; Six Sigma Black Belt.", photo: ananthPhoto.url },
+];
 
 const markets = [
   {
@@ -140,6 +159,10 @@ export default function Home() {
         <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-7xl mx-auto space-y-6">
             <h2 className="text-2xl lg:text-3xl font-bold">Who We Are</h2>
+            <div className="flex items-center gap-4">
+              <img src={sellvindsLogo} alt="Sellvinds Group" className="h-12 w-auto" />
+              <p className="text-sm text-foreground font-medium">Part of the Sellvinds Group — 62 years of manufacturing excellence</p>
+            </div>
 
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
               <div className="lg:col-span-3 space-y-6">
@@ -165,6 +188,45 @@ export default function Home() {
                 />
               </div>
 
+            </div>
+
+            {/* Heritage strip */}
+            <div className="pt-6">
+              <div className="h-px w-10 bg-primary mb-4" />
+              <h3 className="text-lg font-semibold mb-4">Our heritage</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                {milestones.map((m) => (
+                  <div key={m.year} className="border-t border-border pt-3">
+                    <div className="text-primary font-bold">{m.year}</div>
+                    <p className="text-sm text-muted-foreground leading-snug mt-1">{m.text}</p>
+                  </div>
+                ))}
+              </div>
+              <Link to="/about/heritage" className="mt-4 text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                See our heritage →
+              </Link>
+            </div>
+
+            {/* Leadership */}
+            <div className="pt-6">
+              <div className="h-px w-10 bg-primary mb-4" />
+              <h3 className="text-lg font-semibold mb-4">Leadership</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {homeLeaders.map((l) => (
+                  <div key={l.name} className="border border-border rounded p-5">
+                    <div className="w-16 h-16 rounded-full overflow-hidden mb-3 bg-muted">
+                      <img src={l.photo} alt={l.name} loading="lazy" className="w-full h-full object-cover object-top" />
+                    </div>
+                    <div className="font-semibold">{l.name}</div>
+                    <div className="text-primary text-sm font-medium">{l.title}</div>
+                    <p className="text-sm text-muted-foreground mt-2 leading-snug">{l.cred}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">Line managers have been with the company for two decades or more.</p>
+              <Link to="/about/leadership" className="mt-3 text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                Meet the leadership →
+              </Link>
             </div>
           </div>
         </section>
