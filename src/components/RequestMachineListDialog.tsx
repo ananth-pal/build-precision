@@ -2,7 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { submitMachineListRequest } from "@/lib/submitMachineListRequest.functions";
 import {
   Dialog,
   DialogContent,

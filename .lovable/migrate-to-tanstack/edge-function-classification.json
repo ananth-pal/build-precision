@@ -1,0 +1,8 @@
+{"functions": [
+  {"name": "submit-machine-list-request", "classification": "internal-only", "signal": "called only from src/components/RequestMachineListDialog.tsx", "outcome": "migrated"},
+  {"name": "handle-email-unsubscribe", "classification": "webhook receiver", "signal": "unsubscribe links in sent emails / one-click unsubscribe point at its URL", "outcome": "left"},
+  {"name": "handle-email-suppression", "classification": "webhook receiver", "signal": "email-provider webhook with signature verification, no src/ callers", "outcome": "left"},
+  {"name": "process-email-queue", "classification": "cron target", "signal": "pg_cron job documented in supabase/migrations/20260720134948_email_infra.sql", "outcome": "left"},
+  {"name": "send-transactional-email", "classification": "internal-only (server-to-server)", "signal": "called by other functions with the service key; part of managed email infra", "outcome": "left"},
+  {"name": "preview-transactional-email", "classification": "unknown", "signal": "no src/ callers; email template preview tooling", "outcome": "left"}
+]}
