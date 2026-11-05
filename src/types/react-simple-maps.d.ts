@@ -1,5 +1,5 @@
 declare module "react-simple-maps" {
-  import type { CSSProperties, ReactNode, SVGProps } from "react";
+  import type { CSSProperties, ReactElement, ReactNode, SVGProps } from "react";
 
   type GeoStyle = { default?: CSSProperties; hover?: CSSProperties; pressed?: CSSProperties };
 
@@ -16,16 +16,16 @@ declare module "react-simple-maps" {
     style?: CSSProperties;
     className?: string;
     children?: ReactNode;
-  }): JSX.Element;
+  }): ReactElement;
 
   export function Geographies(props: {
     geography: string | object;
     children: (args: { geographies: RsmGeography[] }) => ReactNode;
-  }): JSX.Element;
+  }): ReactElement;
 
-  export function Geography(props: { geography: RsmGeography; style?: GeoStyle; className?: string }): JSX.Element;
+  export function Geography(props: { geography: RsmGeography; style?: GeoStyle; className?: string }): ReactElement;
 
   export function Marker(
     props: { coordinates: [number, number]; children?: ReactNode } & Omit<SVGProps<SVGGElement>, "children">,
-  ): JSX.Element;
+  ): ReactElement;
 }
