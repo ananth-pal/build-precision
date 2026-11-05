@@ -50,6 +50,24 @@ export const organizationSchema = {
   ],
   naics: "332710",
   isicV4: "2592",
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      propertyID: "NIC-2008",
+      name: "NIC-2008 (India)",
+      value: "25920",
+      description:
+        "Treatment and coating of metals; machining — Indian classification equivalent to ISIC Rev.4 2592.",
+    },
+    {
+      "@type": "PropertyValue",
+      propertyID: "NIC-2008",
+      name: "NIC-2008 (India)",
+      value: "28140",
+      description:
+        "Gears and gearing, for machine or motor vehicle power transmission — Indian classification equivalent to ISIC Rev.4 2814.",
+    },
+  ],
 };
 
 export const localBusinessSchema = {
