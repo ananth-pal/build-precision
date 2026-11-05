@@ -31,6 +31,7 @@ import oh3 from "@/assets/markets/off_highway_trial_3.jpg.asset.json";
 import tractorImg from "@/assets/markets/stock_tractor.webp.asset.json";
 import roboticsImg from "@/assets/markets/stock_robot.webp.asset.json";
 import SEO from "@/components/SEO";
+import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 import sellvindsLogo from "@/assets/brand/sellvinds-logo-cropped.png";
 import ramanathanPhoto from "@/assets/leadership/ramanathan-palaniappan.jpg.asset.json";
 import natarajanPhoto from "@/assets/leadership/natarajan-palaniappan.jpg.asset.json";
@@ -89,7 +90,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Precision Contract Manufacturer in Chennai, India | Pentagon Machines & Services" description="Precision machining, gear cutting and cleanroom assembly for global OEMs. Two plants in Chennai, India, with 45 years of engineering heritage." />
+      <SEO title="Precision Contract Manufacturer in Chennai, India | Pentagon Machines & Services" description="Precision machining, gear cutting and cleanroom assembly for global OEMs. Two plants in Chennai, India, with 45 years of engineering heritage." jsonLd={[organizationSchema, localBusinessSchema]} />
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}

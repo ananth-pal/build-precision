@@ -21,6 +21,7 @@ import assemblyAlt2 from "@/assets/capabilities/PTO_assembly_2_edit.webp.asset.j
 import assemblyAlt3 from "@/assets/capabilities/PTO_assembly_3_edit.webp.asset.json";
 import assemblyAlt4 from "@/assets/capabilities/Gear_pump_5_edit.webp.asset.json";
 import SEO from "@/components/SEO";
+import { services, serviceSchema, SITE_URL, ORG_ID } from "@/lib/schema";
 
 
 
@@ -80,7 +81,10 @@ const caps: Cap[] = [
 export default function Capabilities() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Precision CNC Machining & Gear Cutting Capabilities | Pentagon Machines & Services" description="CNC machining, gear cutting and tested assembly in steel, cast iron and alloys. Medium-volume OEM work with full traceability, from Chennai." />
+      <SEO title="Precision CNC Machining & Gear Cutting Capabilities | Pentagon Machines & Services" description="CNC machining, gear cutting and tested assembly in steel, cast iron and alloys. Medium-volume OEM work with full traceability, from Chennai." jsonLd={[
+        ...services.map(serviceSchema),
+        { "@context": "https://schema.org", "@type": "CollectionPage", name: "Capabilities", url: `${SITE_URL}/capabilities`, about: { "@id": ORG_ID }, mainEntity: { "@type": "ItemList", itemListElement: services.map((s, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE_URL}${s.path}`, name: s.name })) } },
+      ]} />
       <SiteHeader />
       <PageHero title="Capabilities" subtitle="Assembly, machining, and gear cutting — from material in to tested module out" />
       <main className="flex-1 section-padding">

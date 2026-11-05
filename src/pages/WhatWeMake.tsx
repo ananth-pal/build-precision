@@ -23,6 +23,7 @@ import balancer1 from "@/assets/portfolio/clean/Balancer_1-clean.png.asset.json"
 import gearPumpComponents from "@/assets/portfolio/clean/Gear_pump_components-clean.png.asset.json";
 import ptoShafts from "@/assets/portfolio/clean/Shafts-clean.png.asset.json";
 import SEO from "@/components/SEO";
+import { SITE_URL, ORG_ID } from "@/lib/schema";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
@@ -49,7 +50,23 @@ const selectedWork: GalleryItem[] = [
 export default function WhatWeMake() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Portfolio: PTO Gearboxes, Valves & Gears | Pentagon Machines & Services" description="Selected precision components and assemblies in production for off-highway, commercial vehicle, agriculture and automotive OEMs." />
+      <SEO title="Portfolio: PTO Gearboxes, Valves & Gears | Pentagon Machines & Services" description="Selected precision components and assemblies in production for off-highway, commercial vehicle, agriculture and automotive OEMs." jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "ItemPage",
+        name: "Portfolio",
+        url: `${SITE_URL}/portfolio`,
+        about: { "@id": ORG_ID },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Programmes in production",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, item: { "@type": "Product", name: "Power Take-Off (PTO) gearboxes", description: "75+ PTO gearbox variants (cable, pneumatic, hydraulic and hot-shift) for commercial vehicle transmissions.", manufacturer: { "@id": ORG_ID } } },
+            { "@type": "ListItem", position: 2, item: { "@type": "Product", name: "Hydraulic spool valves and gear pumps", description: "High-pressure hydraulic assemblies machined, assembled and tested in-house.", manufacturer: { "@id": ORG_ID } } },
+            { "@type": "ListItem", position: 3, item: { "@type": "Product", name: "Engine balancer assemblies", description: "Mid-engine balancer assemblies with integrated lube oil pump for tractor engines.", manufacturer: { "@id": ORG_ID } } },
+            { "@type": "ListItem", position: 4, item: { "@type": "Product", name: "Precision gears and splined shafts", description: "Spur and helical gears and transmission components.", manufacturer: { "@id": ORG_ID } } },
+          ],
+        },
+      }} />
       <SiteHeader />
       <PageHero
         title="Portfolio"
