@@ -99,7 +99,7 @@ export default function WhatWeMake() {
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 For the machines and measurement equipment that support these programs, see{" "}
-                <Link to="/technologies" className="text-primary underline underline-offset-4 hover:no-underline">
+                <Link to="/means-of-production" className="text-primary underline underline-offset-4 hover:no-underline">
                   Means of Production
                 </Link>
                 . For a fuller account of what we do and how, see{" "}

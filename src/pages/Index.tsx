@@ -300,7 +300,7 @@ export default function Home() {
                     ))}
                   </div>
                   <Link
-                    to="/technologies#new-processes"
+                    to="/means-of-production#new-processes"
                     className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
                   >
                     See how new processes and equipment are handled →
@@ -320,7 +320,7 @@ export default function Home() {
 
             </div>
             <div className="mt-6">
-              <Link to="/what-we-make" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+              <Link to="/portfolio" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
                 See our portfolio →
               </Link>
             </div>

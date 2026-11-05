@@ -39,8 +39,10 @@ const App = () => (
           <Route path="/capabilities/machining" element={<Machining />} />
           <Route path="/capabilities/gear-cutting" element={<GearCutting />} />
           <Route path="/capabilities/assembly" element={<CapAssembly />} />
-          <Route path="/technologies" element={<Technologies />} />
-          <Route path="/what-we-make" element={<WhatWeMake />} />
+          <Route path="/means-of-production" element={<Technologies />} />
+          <Route path="/portfolio" element={<WhatWeMake />} />
+          <Route path="/technologies" element={<Navigate to="/means-of-production" replace />} />
+          <Route path="/what-we-make" element={<Navigate to="/portfolio" replace />} />
           <Route path="/working-with-pentagon" element={<WorkingWithPentagon />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/heritage" element={<Heritage />} />

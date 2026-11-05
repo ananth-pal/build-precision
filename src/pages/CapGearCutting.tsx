@@ -51,7 +51,7 @@ export default function GearCutting() {
           </div>
 
           <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
-            Materials, batch sizes, sourcing and logistics, and quality apply equally to gear work and are covered on the <Link to="/capabilities/machining" className="text-primary hover:underline">Machining</Link> page. Equipment and gear-specific processes are covered under <Link to="/technologies" className="text-primary hover:underline">Means of Production</Link>.
+            Materials, batch sizes, sourcing and logistics, and quality apply equally to gear work and are covered on the <Link to="/capabilities/machining" className="text-primary hover:underline">Machining</Link> page. Equipment and gear-specific processes are covered under <Link to="/means-of-production" className="text-primary hover:underline">Means of Production</Link>.
           </p>
         </div>
       </main>

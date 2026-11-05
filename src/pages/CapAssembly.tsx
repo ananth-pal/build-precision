@@ -86,7 +86,7 @@ export default function CapAssembly() {
             Machined components, sourcing and logistics, and quality systems that support assembly are covered on the{" "}
             <Link to="/capabilities/machining" className="text-primary hover:underline">Machining</Link>{" "}
             page. Assembly equipment, test rigs, and measurement systems are covered under{" "}
-            <Link to="/technologies" className="text-primary hover:underline">Means of Production</Link>.
+            <Link to="/means-of-production" className="text-primary hover:underline">Means of Production</Link>.
           </p>
         </div>
       </main>
