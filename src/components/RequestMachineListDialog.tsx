@@ -106,7 +106,7 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
     value: form[key] ?? "",
     onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((f) => ({ ...f, [key]: e.target.value })),
-    className: `w-full px-4 py-2.5 border ${errors[key] ? "border-destructive" : "border-input"} rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring`,
+    className: `w-full px-4 py-2.5 border ${errors[key] ? "border-destructive" : "border-input"} rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring`,
   });
 
   return (
@@ -167,7 +167,7 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
                 rows={3}
                 value={form.notes ?? ""}
                 onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
-                className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring resize-none"
               />
             </div>
             <button

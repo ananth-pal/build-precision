@@ -90,27 +90,27 @@ export default function Careers() {
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Full Name *</label>
-                  <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                  <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Email *</label>
-                  <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                  <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring" />
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Phone</label>
-                  <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                  <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Highest Qualification</label>
-                  <input type="text" placeholder="e.g. B.E. Mechanical, ITI Fitter" value={form.qualification} onChange={(e) => setForm({ ...form, qualification: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                  <input type="text" placeholder="e.g. B.E. Mechanical, ITI Fitter" value={form.qualification} onChange={(e) => setForm({ ...form, qualification: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring" />
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Area of Interest *</label>
-                  <select required value={form.area} onChange={(e) => setForm({ ...form, area: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+                  <select required value={form.area} onChange={(e) => setForm({ ...form, area: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring">
                     {areas.map((a) => (
                       <option key={a} value={a}>{a}</option>
                     ))}
@@ -118,12 +118,12 @@ export default function Careers() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Years of Experience</label>
-                  <input type="text" placeholder="0 for freshers" value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                  <input type="text" placeholder="0 for freshers" value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring" />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium mb-1.5">A short note about yourself</label>
-                <textarea rows={4} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
+                <textarea rows={4} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring resize-none" />
               </div>
               <p className="text-xs text-muted-foreground">
                 On submit, your email client will open a pre-filled message to {CAREERS_EMAIL}. Please attach your CV / resume to the email before sending.
