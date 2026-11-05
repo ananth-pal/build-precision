@@ -164,7 +164,7 @@ export default function Technologies() {
               For the parts and assemblies produced on this equipment, see{" "}
               <a href="/capabilities" className="text-primary font-medium hover:underline">Capabilities →</a>
               . For representative examples, see{" "}
-              <a href="/what-we-make" className="text-primary font-medium hover:underline">Portfolio →</a>
+              <a href="/portfolio" className="text-primary font-medium hover:underline">Portfolio →</a>
               .
             </p>
 

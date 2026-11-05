@@ -22,8 +22,8 @@ export default function SiteFooter() {
             <nav className="space-y-2">
               {[
                 { label: "Capabilities", path: "/capabilities" },
-                { label: "Means of Production", path: "/technologies" },
-                { label: "Portfolio", path: "/what-we-make" },
+                { label: "Means of Production", path: "/means-of-production" },
+                { label: "Portfolio", path: "/portfolio" },
                 { label: "Our Commitment", path: "/working-with-pentagon" },
                 { label: "About", path: "/about" },
                 { label: "Careers", path: "/careers" },

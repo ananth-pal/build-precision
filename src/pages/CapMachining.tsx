@@ -108,7 +108,7 @@ export default function Machining() {
                 </Dialog>
                 <p className="text-base text-muted-foreground leading-relaxed">
                   See{" "}
-                  <Link to="/technologies#measurement-metrology" className="text-primary font-medium hover:underline">
+                  <Link to="/means-of-production#measurement-metrology" className="text-primary font-medium hover:underline">
                     Measurement &amp; Metrology
                   </Link>{" "}
                   for the full process list.
@@ -123,7 +123,7 @@ export default function Machining() {
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-4">
                 See{" "}
-                <Link to="/technologies#machine-tools" className="text-primary font-medium hover:underline">
+                <Link to="/means-of-production#machine-tools" className="text-primary font-medium hover:underline">
                   Machine Tools
                 </Link>{" "}
                 for the full list of processes.
@@ -181,7 +181,7 @@ export default function Machining() {
 
 
 
-          <Link to="/technologies" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+          <Link to="/means-of-production" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
             See the equipment and processes behind this capability <ArrowRight size={14} />
           </Link>
         </div>

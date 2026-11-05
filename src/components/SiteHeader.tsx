@@ -14,8 +14,8 @@ const navItems = [
       { label: "Gear Cutting", path: "/capabilities/gear-cutting" },
     ],
   },
-  { label: "Means of Production", path: "/technologies" },
-  { label: "Portfolio", path: "/what-we-make" },
+  { label: "Means of Production", path: "/means-of-production" },
+  { label: "Portfolio", path: "/portfolio" },
   { label: "Our Commitment", path: "/working-with-pentagon" },
   {
     label: "About",

@@ -35,7 +35,7 @@ export default function ProgrammesInProduction() {
         </article>
       </div>
       <div className="mt-6">
-        <Link to="/what-we-make" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+        <Link to="/portfolio" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
           See portfolio <ArrowRight size={14} />
         </Link>
       </div>
