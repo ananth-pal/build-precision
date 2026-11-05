@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import worldData from "@/assets/world-110m.json";
 
@@ -30,8 +29,8 @@ export default function ChennaiLocatorMap() {
           style={{ width: "100%", height: "auto", display: "block" }}
         >
           <Geographies geography={worldData}>
-            {({ geographies }: any) =>
-              geographies.map((geo: any) => (
+            {({ geographies }) =>
+              geographies.map((geo) => (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
