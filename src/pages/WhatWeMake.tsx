@@ -49,7 +49,7 @@ const selectedWork: GalleryItem[] = [
 export default function WhatWeMake() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Portfolio — Pentagon Machines & Services" description="Selected precision components and assemblies delivered to off-highway, commercial vehicle, agriculture, and automotive OEMs." />
+      <SEO title="Portfolio: PTO Gearboxes, Valves & Gears | Pentagon Machines & Services" description="Selected precision components and assemblies in production for off-highway, commercial vehicle, agriculture and automotive OEMs." />
       <SiteHeader />
       <PageHero
         title="Portfolio"

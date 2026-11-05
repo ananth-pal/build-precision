@@ -17,7 +17,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Contact Pentagon — Request a Quote" description="Send enquiries or request a quote from Pentagon Machines & Services in Chennai, India." />
+      <SEO title="Contact & Request a Quote (RFQ) | Pentagon Machines & Services" description="Send drawings or an RFQ for precision machining, gear cutting or assembly. Pentagon Machines & Services, Ambattur, Chennai, India." />
       <SiteHeader />
       <PageHero title="Contact / Request a Quote" />
       <main className="flex-1 section-padding">

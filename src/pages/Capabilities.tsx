@@ -80,7 +80,7 @@ const caps: Cap[] = [
 export default function Capabilities() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Capabilities — Pentagon Machines & Services" description="Overview of Pentagon's manufacturing scope: precision machining, gear cutting, and validated assembly for global OEM customers." />
+      <SEO title="Precision CNC Machining & Gear Cutting Capabilities | Pentagon Machines & Services" description="CNC machining, gear cutting and tested assembly in steel, cast iron and alloys. Medium-volume OEM work with full traceability, from Chennai." />
       <SiteHeader />
       <PageHero title="Capabilities" subtitle="Assembly, machining, and gear cutting — from material in to tested module out" />
       <main className="flex-1 section-padding">

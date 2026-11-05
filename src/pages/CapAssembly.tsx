@@ -10,8 +10,8 @@ export default function CapAssembly() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Assembly & Testing — Pentagon Machines & Services"
-        description="Clean-room assembly, inspection, testing, and shipment readiness for hydraulic valves, PTOs, and engineered assemblies."
+        title="Cleanroom Assembly & Functional Testing | Pentagon Machines & Services"
+        description="Cleanroom assembly of PTOs, hydraulic valves and gear pumps up to 30 kg, functionally tested and serialised for traceability on every unit."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",

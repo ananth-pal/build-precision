@@ -15,7 +15,7 @@ export default function About() {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="About Pentagon — Chennai Precision Manufacturer" description="Family-run precision manufacturer with two plants in Ambattur Industrial Estate, Chennai. 45 years of engineering heritage." />
+      <SEO title="About Us: Precision Manufacturer in Chennai | Pentagon Machines & Services" description="Family-run precision manufacturer with two plants in Ambattur Industrial Estate, Chennai — part of the Sellvinds Group." />
       <SiteHeader />
       <PageHero title="About Pentagon" subtitle="A machine tool manufacturer turned precision contract manufacturer. 45+ years of engineering depth." />
       <main className="flex-1 section-padding">

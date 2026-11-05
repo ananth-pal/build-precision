@@ -38,7 +38,7 @@ export default function Careers() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Careers — Pentagon Machines & Services" description="Opportunities for engineering trainees and freshers to join a family-run precision manufacturer in Chennai." />
+      <SEO title="Careers for Engineering Trainees & Freshers | Pentagon Machines & Services" description="Engineering trainees and freshers: send your resume to join a family-run precision manufacturer in Chennai." />
       <SiteHeader />
       <PageHero
         title="Careers at Pentagon"
