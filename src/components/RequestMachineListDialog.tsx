@@ -84,12 +84,7 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
     setErrors({});
     setSubmitting(true);
     try {
-      const { data, error } = await supabase.functions.invoke("submit-machine-list-request", {
-        body: { ...parsed.data, purpose: variant },
-      });
-      if (error || (data && (data as { error?: string }).error)) {
-        throw new Error(error?.message || (data as { error?: string })?.error || "Unknown error");
-      }
+      await submitMachineListRequest({ data: { ...parsed.data, purpose: variant } });
       setSubmitted(true);
       const { trackEvent } = await import("@/lib/analytics");
       trackEvent(copy.eventName, {});
