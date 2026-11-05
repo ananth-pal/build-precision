@@ -33,7 +33,7 @@ export default function ImageCarousel({ images, tight = false }: ImageCarouselPr
     return () => window.removeEventListener("keydown", onKey);
   }, [open, images.length]);
 
-  const current = images[idx];
+  const current = images[idx]!;
 
   return (
     <div className={tight ? "w-full" : "max-w-5xl mx-auto"}>
@@ -130,8 +130,8 @@ export default function ImageCarousel({ images, tight = false }: ImageCarouselPr
         <DialogContent className="max-w-[95vw] max-h-[95vh] w-auto h-auto p-0 border-0 bg-transparent shadow-none translate-x-0 translate-y-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [&>button]:bg-black/50 [&>button]:rounded-full [&>button]:text-white [&>button]:h-8 [&>button]:w-8 [&>button]:p-1 [&>button]:right-3 [&>button]:top-3 [&>button]:ring-white [&>button]:ring-offset-0">
           <div className="relative flex items-center justify-center">
             <img
-              src={images[lightboxIdx].src}
-              alt={images[lightboxIdx].alt ?? images[lightboxIdx].caption}
+              src={images[lightboxIdx]!.src}
+              alt={images[lightboxIdx]!.alt ?? images[lightboxIdx]!.caption}
               className="max-w-[95vw] max-h-[85vh] object-contain rounded-md"
             />
             {multi && (
@@ -155,7 +155,7 @@ export default function ImageCarousel({ images, tight = false }: ImageCarouselPr
               </>
             )}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs px-3 py-1.5 rounded-full">
-              {images[lightboxIdx].caption}
+              {images[lightboxIdx]!.caption}
               {multi && (
                 <span className="ml-2 opacity-70">
                   {lightboxIdx + 1} / {images.length}
