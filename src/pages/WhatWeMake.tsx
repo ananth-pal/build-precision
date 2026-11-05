@@ -23,7 +23,7 @@ import balancer1 from "@/assets/portfolio/clean/Balancer_1-clean.png.asset.json"
 import gearPumpComponents from "@/assets/portfolio/clean/Gear_pump_components-clean.png.asset.json";
 import ptoShafts from "@/assets/portfolio/clean/Shafts-clean.png.asset.json";
 import SEO from "@/components/SEO";
-import { SITE_URL, ORG_ID, servicesCatalog } from "@/lib/schema";
+import { SITE_URL, ORG_ID } from "@/lib/schema";
 
 const emergingMarkets = ["Defence", "Aerospace", "Robotics", "Medical"];
 
@@ -66,7 +66,6 @@ export default function WhatWeMake() {
             { "@type": "ListItem", position: 4, item: { "@type": "Product", name: "Precision gears and splined shafts", description: "Spur and helical gears and transmission components.", manufacturer: { "@id": ORG_ID } } },
           ],
         },
-        hasOfferCatalog: servicesCatalog,
       }} />
       <SiteHeader />
       <PageHero
