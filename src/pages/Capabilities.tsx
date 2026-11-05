@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { Cog, CircleDot, Box, ArrowRight } from "lucide-react";
 
 import SiteHeader from "@/components/SiteHeader";
