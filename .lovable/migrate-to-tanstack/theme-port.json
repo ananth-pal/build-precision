@@ -1,0 +1,21 @@
+{
+  "customizations": [
+    { "token": "--primary (brand red 348 76% 45%) and full shadcn colour set", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--radius 0.375rem", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--hero-overlay", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--section-alt / bg-section-alt", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--stat-highlight", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--sidebar-* colours", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "font-sans Inter", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "animate-fade-in-up keyframes", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "container (centered, 2rem, 1400px)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "html smooth scroll + heading base styles", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".section-padding", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".container-narrow", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".page-hero", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".stat-number", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".capability-card", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".download-btn", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "@tailwindcss/typography plugin (prose)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" }
+  ]
+}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { submitMachineListRequest } from "@/lib/submitMachineListRequest.functions";
 import {
   Dialog,
   DialogContent,
@@ -84,12 +84,7 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
     setErrors({});
     setSubmitting(true);
     try {
-      const { data, error } = await supabase.functions.invoke("submit-machine-list-request", {
-        body: { ...parsed.data, purpose: variant },
-      });
-      if (error || (data && (data as { error?: string }).error)) {
-        throw new Error(error?.message || (data as { error?: string })?.error || "Unknown error");
-      }
+      await submitMachineListRequest({ data: { ...parsed.data, purpose: variant } });
       setSubmitted(true);
       const { trackEvent } = await import("@/lib/analytics");
       trackEvent(copy.eventName, {});
@@ -106,7 +101,7 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
     value: form[key] ?? "",
     onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((f) => ({ ...f, [key]: e.target.value })),
-    className: `w-full px-4 py-2.5 border ${errors[key] ? "border-destructive" : "border-input"} rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring`,
+    className: `w-full px-4 py-2.5 border ${errors[key] ? "border-destructive" : "border-input"} rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring`,
   });
 
   return (
@@ -167,7 +162,7 @@ export default function RequestMachineListDialog({ open, onOpenChange, variant =
                 rows={3}
                 value={form.notes ?? ""}
                 onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
-                className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                className="w-full px-4 py-2.5 border border-input rounded bg-background text-sm focus:outline-hidden focus:ring-2 focus:ring-ring resize-none"
               />
             </div>
             <button

@@ -74,7 +74,8 @@ export function loadTrackers() {
       t.async = true;
       t.src = "https://www.clarity.ms/tag/" + i;
       const y = l.getElementsByTagName(r)[0];
-      y.parentNode!.insertBefore(t, y);
+      if (y?.parentNode) y.parentNode.insertBefore(t, y);
+      else l.head.appendChild(t);
     })(window, document, "clarity", "script", CONFIG.CLARITY_PROJECT_ID);
   }
 
@@ -95,7 +96,8 @@ export function loadTrackers() {
       b.type = "text/javascript";
       b.async = true;
       b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-      s.parentNode!.insertBefore(b, s);
+      if (s?.parentNode) s.parentNode.insertBefore(b, s);
+      else document.head.appendChild(b);
     })(window.lintrk);
   }
 }

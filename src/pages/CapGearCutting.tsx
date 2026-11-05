@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -27,7 +27,7 @@ export default function GearCutting() {
       <main className="flex-1 section-padding">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <div className="bg-card border border-border rounded-lg p-8 shadow-xs">
               <h2 className="text-lg font-semibold mb-4">Gear Types</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 External and internal spur and helical gears up to around 6 module and 200 mm outside diameter are produced. Splined shafts, pinion shafts, and other transmission components are also manufactured. Tooth rounding and chamfering are standard, while crowning, tip relief, and similar profile modifications are included where the application calls for them.
@@ -42,7 +42,7 @@ export default function GearCutting() {
             <div className="aspect-[4/3] overflow-hidden rounded-md bg-muted">
               <img src={gearCuttingImg.url} alt="Lorenz gear shaper on the floor" loading="lazy" className="w-full h-full object-cover" />
             </div>
-            <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <div className="bg-card border border-border rounded-lg p-8 shadow-xs">
               <h2 className="text-lg font-semibold mb-4">Process</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Blank preparation, gear cutting and all pre and post heat treatment operations are managed under one roof. Heat treatment is coordinated with long-standing certified vendors, and post-heat treatment machining of bore and reference faces is standard. Inspection records and material traceability carry through from blank to finished gear.
