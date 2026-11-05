@@ -77,7 +77,7 @@ function LeaderCard({ leader }: { leader: typeof leaders[0] & { photos?: string[
 export default function Leadership() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Leadership — Pentagon Machines & Services" description="Second- and third-generation management supported by line managers with two decades or more of tenure." />
+      <SEO title="Leadership Team | Pentagon Machines & Services" description="Second- and third-generation engineering leadership, backed by line managers with two decades or more at the company." />
       <SiteHeader />
       <PageHero title="Leadership" subtitle={"\n"} />
       <main className="flex-1 section-padding">

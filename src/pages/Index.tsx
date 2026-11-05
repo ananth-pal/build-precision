@@ -89,7 +89,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Pentagon Machines & Services — Precision Manufacturing" description="Family-run precision contract manufacturer in Chennai, India. Machining, gear cutting, and validated assembly for global OEMs." />
+      <SEO title="Precision Contract Manufacturer in Chennai, India | Pentagon Machines & Services" description="Precision machining, gear cutting and cleanroom assembly for global OEMs. Two plants in Chennai, India, with 45 years of engineering heritage." />
       <SiteHeader />
       <main className="flex-1">
         {/* Hero */}

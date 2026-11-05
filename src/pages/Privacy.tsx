@@ -10,7 +10,7 @@ import SEO from "@/components/SEO";
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-background">
-      <SEO title="Privacy Policy — Pentagon Machines & Services" description="Privacy policy covering analytics, cookies, and how contact and enquiry data is handled at Pentagon." />
+      <SEO title="Privacy Policy | Pentagon Machines & Services" description="How Pentagon handles analytics, cookies, and the contact and enquiry data you share with us." />
       <SiteHeader />
       <PageHero title="Privacy Policy" subtitle="How we handle information you share with us and what we collect through this site." />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 prose prose-neutral">

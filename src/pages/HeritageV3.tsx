@@ -272,7 +272,7 @@ const earlyMilestones: Entry[] = [
 export default function Heritage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Heritage — Pentagon Machines & Services" description="From machine tool origins in the 1970s to today: Pentagon's group history and family of companies." />
+      <SEO title="Heritage: From Machine Tools to Precision Parts | Pentagon Machines & Services" description="From machine tool origins in the 1970s to today: the history of Pentagon and the Sellvinds Group of companies." />
       <SiteHeader />
       <PageHero title="Heritage" subtitle="Deep engineering roots across machine building, engine components, and contract manufacturing" />
 

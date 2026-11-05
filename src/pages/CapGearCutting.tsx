@@ -10,8 +10,8 @@ export default function GearCutting() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Gear Cutting — Pentagon Machines & Services"
-        description="Dedicated gear-cutting division: gear types produced and end-to-end process from cutting to grinding."
+        title="Gear Cutting, Hobbing & Grinding Services | Pentagon Machines & Services"
+        description="Spur and helical gears, splined shafts and transmission parts, cut and ground in a dedicated division with in-house profile and lead testing."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",

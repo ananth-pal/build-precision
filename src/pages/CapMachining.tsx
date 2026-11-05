@@ -41,8 +41,8 @@ export default function Machining() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Precision Machining — Pentagon Machines & Services"
-        description="CNC machining capabilities, batch sizes, DFM support, and quality practices at Pentagon's Chennai facility."
+        title="Precision CNC Machining Services in Chennai | Pentagon Machines & Services"
+        description="CNC machining of housings, shafts and valve bodies in steel, cast iron and alloys, with in-house fixtures, gauges and DFM support."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",

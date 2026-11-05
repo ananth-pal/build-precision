@@ -147,7 +147,7 @@ export default function Technologies() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Means of Production — Pentagon Machines & Services" description="Machine tools, inspection equipment, and process technologies used in-house at Pentagon's Chennai plants." />
+      <SEO title="Means of Production: Machine Tools & Metrology | Pentagon Machines & Services" description="CNC machining centres, gear hobbing, shaping and grinding, CMM and surface metrology across two plants in Ambattur, Chennai." />
       <SiteHeader />
       <PageHero
         title="Means of Production"
