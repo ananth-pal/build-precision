@@ -9,8 +9,8 @@
 - [Machining](/capabilities/machining): CNC machining, batch sizes, DFM, and quality practices.
 - [Gear Cutting](/capabilities/gear-cutting): Gear types produced and gear-cutting process.
 - [Assembly](/capabilities/assembly): Assembly types, batch sizes, inspection, and shipment readiness.
-- [Means of Production](/technologies): Machine tools, inspection equipment, and process technologies used in-house.
-- [Portfolio](/what-we-make): Selected components and assemblies delivered to OEM customers.
+- [Means of Production](/means-of-production): Machine tools, inspection equipment, and process technologies used in-house.
+- [Portfolio](/portfolio): Selected components and assemblies delivered to OEM customers.
 - [Working with Pentagon](/working-with-pentagon): Engagement model, industrial responsibility, and customer approach.
 - [About](/about): Company overview, facilities, and locations.
 - [Heritage](/about/heritage): Group history from machine tool origins to today.
