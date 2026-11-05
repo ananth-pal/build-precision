@@ -37,20 +37,20 @@ export default function ChennaiLocatorMap() {
                   geography={geo}
                   style={{
                     default: {
-                      fill: "hsl(var(--muted))",
-                      stroke: "hsl(var(--border))",
+                      fill: "var(--muted)",
+                      stroke: "var(--border)",
                       strokeWidth: 0.5,
                       outline: "none",
                     },
                     hover: {
-                      fill: "hsl(var(--muted))",
-                      stroke: "hsl(var(--border))",
+                      fill: "var(--muted)",
+                      stroke: "var(--border)",
                       strokeWidth: 0.5,
                       outline: "none",
                     },
                     pressed: {
-                      fill: "hsl(var(--muted))",
-                      stroke: "hsl(var(--border))",
+                      fill: "var(--muted)",
+                      stroke: "var(--border)",
                       strokeWidth: 0.5,
                       outline: "none",
                     },
@@ -62,7 +62,7 @@ export default function ChennaiLocatorMap() {
 
           {referenceCities.map((c) => (
             <Marker key={c.name} coordinates={c.coords}>
-              <circle r={3} fill="hsl(var(--foreground))" opacity={0.55} />
+              <circle r={3} fill="var(--foreground)" opacity={0.55} />
               <text
                 textAnchor={c.anchor ?? "start"}
                 x={c.dx ?? 6}
@@ -70,7 +70,7 @@ export default function ChennaiLocatorMap() {
                 style={{
                   fontFamily: "inherit",
                   fontSize: 10,
-                  fill: "hsl(var(--muted-foreground))",
+                  fill: "var(--muted-foreground)",
                 }}
               >
                 {c.name}
@@ -79,7 +79,7 @@ export default function ChennaiLocatorMap() {
           ))}
 
           <Marker coordinates={chennai.coords}>
-            <circle r={6} fill="hsl(var(--primary))" stroke="hsl(var(--background))" strokeWidth={1.5} />
+            <circle r={6} fill="var(--primary)" stroke="var(--background)" strokeWidth={1.5} />
             <text
               textAnchor={chennai.anchor}
               x={chennai.dx}
@@ -88,7 +88,7 @@ export default function ChennaiLocatorMap() {
                 fontFamily: "inherit",
                 fontSize: 12,
                 fontWeight: 600,
-                fill: "hsl(var(--foreground))",
+                fill: "var(--foreground)",
               }}
             >
               Chennai, India

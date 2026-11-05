@@ -52,7 +52,7 @@ export default function ImageCarousel({ images, tight = false }: ImageCarouselPr
               className={
                 tight
                   ? "relative block w-full overflow-hidden cursor-zoom-in"
-                  : "relative block w-full aspect-[16/10] overflow-hidden cursor-zoom-in bg-[hsl(var(--section-alt))] ring-1 ring-border shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]"
+                  : "relative block w-full aspect-[16/10] overflow-hidden cursor-zoom-in bg-[var(--section-alt)] ring-1 ring-border shadow-[0_20px_50px_-20px_hsl(220_20%_10%/0.25)]"
               }
               aria-label={`Expand ${current.caption}`}
             >
